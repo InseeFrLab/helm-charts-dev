@@ -135,7 +135,7 @@
         "enabled": {
           "type": "boolean",
           "description": "Create a persistent volume",
-          "default": true
+          "default": false
         },
         "size": {
           "type": "string",

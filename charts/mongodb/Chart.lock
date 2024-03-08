@@ -1,0 +1,9 @@
+dependencies:
+- name: mongodb
+  repository: https://charts.bitnami.com/bitnami
+  version: 14.12.3
+- name: library-chart
+  repository: https://inseefrlab.github.io/helm-charts-interactive-services
+  version: 1.5.21
+digest: sha256:555f552818138ab86d85d38bae3f13313ec232adcf32d84b2cdc2f5bc0fbe083
+generated: "2024-03-01T15:28:32.09495369Z"

@@ -18,13 +18,13 @@
 {{- end -}}
 {{- if .Values.ingress.enabled }}
 - Vous pouvez vous connecter à Apache Airflow avec votre navigateur à ce [lien](http{{ if $.Values.ingress.tls }}s{{ end }}://{{ .Values.ingress.hostname }})
-{{- end -}}
+{{- end }}
 
 **Git-Sync :**
 {{- if not .Values.airflow.dags.gitSync.enabled }}
 - **Git-Sync est désactivé !**
-  Pour une utilisation optimale de ce service, il est recommandé d'activer Git-Sync depuis la page de configuration de votre service
-  et de spécifier des identifiants et un dépôt git qui sera utilisé comme repertoire de travail.
+  Pour une utilisation optimale de ce service, il est recommandé d'activer Git-Sync depuis la page de configuration de votre service,
+  de renseigner des identifiants git et de lister des dépôts git qui seront utilisés pour alimenter le dossier de DAG.
 {{- else }}
 - Git-Sync est configuré pour synchroniser le repertoire de DAG avec la branche `{{ .Values.airflow.dags.gitSync.branch }}`
   du dépôt git `{{ .Values.airflow.dags.gitSync.repo }}{{ .Values.airflow.dags.gitSync.repoSubPath }}`.
@@ -32,10 +32,10 @@
 
 {{- if not (empty $pvcList) }}
 
-**NOTES sur la suppression :**
-- Vous pouvez supprimer ce chart en toute sécurité et en recréer un plus tard
-- Les volumes de données ne seront pas supprimés
-- Si vous démarrez un nouveau Apache Airflow, il réutilisera automatiquement ces volumes
+**REMARQUES concernant la suppression :**
+- Les données de ce Chart ne sont pas effacées automatiquement, vous pouvez le supprimer sans risque.
+- Si vous souhaitez afficher le volume de données créé : `get pvc -l app=postgresql,release={{ .Release.Name }}`
+- Un nouveau service Airflow pourra réutiliser ce volume en indiquant son nom dans la configuration du service
 - Si vous souhaitez supprimer définitivement ces volumes : `kubectl delete pvc {{ join " " $pvcList }}`
 {{- end -}}
 
@@ -52,13 +52,13 @@
 {{- end -}}
 {{- if .Values.ingress.enabled }}
 - You can connect to Apache Airflow with your browser on this [link](http{{ if $.Values.ingress.tls }}s{{ end }}://{{ .Values.ingress.hostname }})
-{{- end -}}
+{{- end }}
 
 **Git-Sync :**
 {{- if not .Values.airflow.dags.gitSync.enabled }}
 - **Git-Sync is disabled!**
-  For optimal use of this service, it is recommended to enable Git-Sync from the configuration page of your service
-  and to specify credentials and a Git repository that will be used as the working directory.
+  For optimal use of this service, it is recommended to enable Git-Sync from the configuration page of your service,
+  to specify git credentials and to list repositories that will be used to fill in the DAG folder.
 {{- else }}
 - Git-Sync is configured to synchronize the DAG directory with the branch `{{ .Values.airflow.dags.gitSync.branch }}`
   of the Git repository `{{ .Values.airflow.dags.gitSync.repo }}{{ .Values.airflow.dags.gitSync.repoSubPath }}`.
@@ -67,9 +67,9 @@
 {{- if not (empty $pvcList) }}
 
 **NOTES about deletion:**
-- You can safely delete this chart and recreate one later
-- The underlying data volumes will not be deleted
-- If you start a new Apache Airflow service, it will automatically reuse those volumes
+- The data of this Chart is not automatically erased; you can safely delete it
+- To display the created data volume: `get pvc -l app=postgresql,release={{ .Release.Name }}`
+- A new Airflow service can reuse this volume by specifying its name in the service configuration
 - If you want to delete those volumes definitely: `kubectl delete pvc {{ join " " $pvcList }}`
 {{- end -}}
 

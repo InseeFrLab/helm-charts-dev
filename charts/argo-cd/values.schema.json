@@ -1,0 +1,372 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "ingress": {
+      "type": "object",
+      "form": true,
+      "title": "Ingress Details",
+      "properties": {
+        "enabled": {
+          "description": "Enable Ingress",
+          "type": "boolean",
+          "default": true,
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "k8s.ingress"
+          }
+        },
+        "hostname": {
+          "type": "string",
+          "form": true,
+          "title": "Hostname",
+          "default": "chart-example.local",
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{project.id}}-argo-cd.{{k8s.domain}}"
+          }
+        },
+        "ingressClassName": {
+          "type": "string",
+          "form": true,
+          "title": "ingressClassName",
+          "default": "",
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "{{k8s.ingressClassName}}"
+          }
+        }
+      }
+    },
+    "route": {
+      "type": "object",
+      "form": true,
+      "title": "Route details",
+      "properties": {
+        "enabled": {
+          "description": "Enable route",
+          "type": "boolean",
+          "default": false,
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "k8s.route"
+          }
+        },
+        "hostname": {
+          "type": "string",
+          "form": true,
+          "title": "Hostname",
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "{{project.id}}-argo-cd.{{k8s.domain}}"
+          }
+        }
+      }
+    },
+    "security": {
+      "description": "security specific configuration",
+      "type": "object",
+      "properties": {
+        "networkPolicy": {
+            "type": "object",
+            "description": "Define access policy to the service",
+            "x-onyxia": {
+                "overwriteSchemaWith": "network-policy.json"
+            },
+            "properties": {
+                "enabled": {
+                    "type": "boolean",
+                    "title": "Enable network policy",
+                    "description": "Only pod from the same namespace will be allowed",
+                    "default": false,
+                    "x-onyxia": {
+                        "overwriteDefaultWith": "region.defaultNetworkPolicy"
+                    }
+                },
+                "from": {
+                    "type": "array",
+                    "description": "Array of source allowed to have network access to your service",
+                    "default": [],
+                    "x-onyxia": {
+                        "hidden": true,
+                        "overwriteDefaultWith": "region.from"
+                    }
+                }
+            }
+        }
+      }
+    },
+    "secret": {
+      "type": "object",
+      "form": true,
+      "title": "Gestion des secrets",
+      "properties": {
+        "password": {
+          "description": "password of the admin account",
+          "type": "string",
+          "default": "changeme",
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{project.password}}"
+          }
+        }
+      }
+    },
+    "argo-cd": {
+      "type": "object",
+      "title": "argocd",
+      "properties": {
+        "dex": {
+          "type": "object",
+          "title": "controller",
+          "properties": {
+            "tolerations": {
+              "type": "array",
+              "description": "Array of tolerations",
+              "default": [],
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.tolerations",
+                "overwriteSchemaWith": "tolerations.json"
+              }
+            },
+            "nodeSelector": {
+              "type": "object",
+              "description": "NodeSelector",
+              "default": {},
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.nodeSelector",
+                "overwriteSchemaWith": "nodeSelector.json"
+              }
+            }
+          }
+        },
+        "server": {
+          "type": "object",
+          "title": "controller",
+          "properties": {
+            "resources": {
+              "description": "Your service will have at least the requested resources and never more than its limits. No limit for a resource and you can consume everything left on the host machine.",
+              "type": "object",
+              "properties": {
+                "requests": {
+                    "description": "Guaranteed resources",
+                    "type": "object",
+                    "properties": {
+                        "cpu": {
+                            "description": "The amount of cpu guaranteed",
+                            "title": "CPU",
+                            "type": "string",
+                            "default": "100m",
+                            "render": "slider",
+                            "sliderMin": 50,
+                            "sliderMax": 16000,
+                            "sliderStep": 50,
+                            "sliderUnit": "m",
+                            "sliderExtremity": "down",
+                            "sliderExtremitySemantic": "guaranteed",
+                            "sliderRangeId": "cpu"
+                        },
+                        "memory": {
+                            "description": "The amount of memory guaranteed",
+                            "title": "memory",
+                            "type": "string",
+                            "default": "200Mi",
+                            "render": "slider",
+                            "sliderMin": 100,
+                            "sliderMax": 8000,
+                            "sliderStep": 100,
+                            "sliderUnit": "Mi",
+                            "sliderExtremity": "down",
+                            "sliderExtremitySemantic": "guaranteed",
+                            "sliderRangeId": "memory"
+                        }
+                    }
+                },
+                "limits": {
+                    "description": "max resources",
+                    "type": "object",
+                    "properties": {
+                        "cpu": {
+                            "description": "The maximum amount of cpu",
+                            "title": "CPU",
+                            "type": "string",
+                            "default": "2000m",
+                            "render": "slider",
+                            "sliderMin": 50,
+                            "sliderMax": 16000,
+                            "sliderStep": 50,
+                            "sliderUnit": "m",
+                            "sliderExtremity": "up",
+                            "sliderExtremitySemantic": "Maximum",
+                            "sliderRangeId": "cpu"
+                        },
+                        "memory": {
+                            "description": "The maximum amount of memory",
+                            "title": "Memory",
+                            "type": "string",
+                            "default": "2000Mi",
+                            "render": "slider",
+                            "sliderMin": 100,
+                            "sliderMax": 8000,
+                            "sliderStep": 100,
+                            "sliderUnit": "Mi",
+                            "sliderExtremity": "up",
+                            "sliderExtremitySemantic": "Maximum",
+                            "sliderRangeId": "memory"
+                        }
+                    }
+                }
+            }
+            },
+            "tolerations": {
+              "type": "array",
+              "description": "Array of tolerations",
+              "default": [],
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.tolerations",
+                "overwriteSchemaWith": "tolerations.json"
+              }
+            },
+            "nodeSelector": {
+              "type": "object",
+              "description": "NodeSelector",
+              "default": {},
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.nodeSelector",
+                "overwriteSchemaWith": "nodeSelector.json"
+              }
+            }
+          }
+        },
+        "controller": {
+          "type": "object",
+          "title": "controller",
+          "properties": {
+            "resources": {
+              "description": "Your service will have at least the requested resources and never more than its limits. No limit for a resource and you can consume everything left on the host machine.",
+              "type": "object",
+              "properties": {
+                "requests": {
+                    "description": "Guaranteed resources",
+                    "type": "object",
+                    "properties": {
+                        "cpu": {
+                            "description": "The amount of cpu guaranteed",
+                            "title": "CPU",
+                            "type": "string",
+                            "default": "100m",
+                            "render": "slider",
+                            "sliderMin": 50,
+                            "sliderMax": 16000,
+                            "sliderStep": 50,
+                            "sliderUnit": "m",
+                            "sliderExtremity": "down",
+                            "sliderExtremitySemantic": "guaranteed",
+                            "sliderRangeId": "cpu"
+                        },
+                        "memory": {
+                            "description": "The amount of memory guaranteed",
+                            "title": "memory",
+                            "type": "string",
+                            "default": "200Mi",
+                            "render": "slider",
+                            "sliderMin": 100,
+                            "sliderMax": 8000,
+                            "sliderStep": 100,
+                            "sliderUnit": "Mi",
+                            "sliderExtremity": "down",
+                            "sliderExtremitySemantic": "guaranteed",
+                            "sliderRangeId": "memory"
+                        }
+                    }
+                },
+                "limits": {
+                    "description": "max resources",
+                    "type": "object",
+                    "properties": {
+                        "cpu": {
+                            "description": "The maximum amount of cpu",
+                            "title": "CPU",
+                            "type": "string",
+                            "default": "2000m",
+                            "render": "slider",
+                            "sliderMin": 50,
+                            "sliderMax": 16000,
+                            "sliderStep": 50,
+                            "sliderUnit": "m",
+                            "sliderExtremity": "up",
+                            "sliderExtremitySemantic": "Maximum",
+                            "sliderRangeId": "cpu"
+                        },
+                        "memory": {
+                            "description": "The maximum amount of memory",
+                            "title": "Memory",
+                            "type": "string",
+                            "default": "2000Mi",
+                            "render": "slider",
+                            "sliderMin": 100,
+                            "sliderMax": 8000,
+                            "sliderStep": 100,
+                            "sliderUnit": "Mi",
+                            "sliderExtremity": "up",
+                            "sliderExtremitySemantic": "Maximum",
+                            "sliderRangeId": "memory"
+                        }
+                    }
+                }
+            }
+            },
+            "tolerations": {
+              "type": "array",
+              "description": "Array of tolerations",
+              "default": [],
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.tolerations",
+                "overwriteSchemaWith": "tolerations.json"
+              }
+            },
+            "nodeSelector": {
+              "type": "object",
+              "description": "NodeSelector",
+              "default": {},
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.nodeSelector",
+                "overwriteSchemaWith": "nodeSelector.json"
+              }
+            }
+          }
+        },
+        "repoServer": {
+          "type": "object",
+          "title": "controller",
+          "properties": {
+            "tolerations": {
+              "type": "array",
+              "description": "Array of tolerations",
+              "default": [],
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.tolerations",
+                "overwriteSchemaWith": "tolerations.json"
+              }
+            },
+            "nodeSelector": {
+              "type": "object",
+              "description": "NodeSelector",
+              "default": {},
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.nodeSelector",
+                "overwriteSchemaWith": "nodeSelector.json"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

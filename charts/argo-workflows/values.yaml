@@ -1,0 +1,83 @@
+ingress:
+  enabled: true
+  tls: true
+  ingressClassName: ""
+  annotations:
+    []
+    # kubernetes.io/tls-acme: "true"
+  hostname: chart-example.local
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+  useCertManager: false
+  certManagerClusterIssuer: ""
+
+route:
+  enabled: false
+  annotations: []
+    # route.openshift.io/termination: "reencrypt"
+  hostname: chart-example.local
+  tls:
+    termination: edge
+    # key:
+    # certificate:
+    # caCertificate:
+    # destinationCACertificate:
+  wildcardPolicy: None
+
+security:
+  allowlist:
+    enabled: true
+    ip: "0.0.0.0/0"
+  networkPolicy:
+    enabled: true
+    from: []
+
+serviceAccount:
+  create: true
+  name: workflow
+  role: workflow
+  roleBinding: workflow
+
+argo-workflows:
+  crds:
+    install: false
+  createAggregateRoles: false
+  singleNamespace: true
+  workflow:
+    serviceAccount:
+      create: true # Specifies whether a service account should be created
+      annotations: {}
+      name: "argo-workflows" # Service account which is used to run workflows
+  controller:
+    resources:
+      requests:
+        cpu: 100m
+        memory: 200Mi
+      limits:
+        cpu: 2000m
+        memory: 2000Mi   
+    workflowNamespaces: []
+    replicas: 1
+    #containerRuntimeExecutor: k8sapi
+    clusterWorkflowTemplates:
+      enabled: false
+
+  server:
+    resources:
+      requests:
+        cpu: 100m
+        memory: 200Mi
+      limits:
+        cpu: 2000m
+        memory: 2000Mi 
+    enabled: true
+    clusterWorkflowTemplates:
+      enabled: false
+
+    extraArgs:
+      #- --auth-mode=sso
+      - --auth-mode=server
+
+    ingress:
+      enabled: false

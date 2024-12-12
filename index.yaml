@@ -2,6 +2,34 @@ apiVersion: v1
 entries:
   airflow:
   - apiVersion: v2
+    appVersion: 2.10.3
+    created: "2024-12-12T17:16:18.713418407Z"
+    dependencies:
+    - name: airflow
+      repository: https://charts.bitnami.com/bitnami
+      version: 22.4.1
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.34
+    description: Apache Airflow is a tool to express and execute workflows as directed
+      acyclic graphs (DAGs). It includes utilities to schedule tasks, monitor task
+      progress and handle task dependencies.
+    digest: 4dc3f7b662823e4f3f99ac0cbab2d2fe57478021fe4a06f27960b99f1c912447
+    home: https://airflow.apache.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/airflow.svg
+    keywords:
+    - apache
+    - airflow
+    - workflow
+    - dag
+    name: airflow
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/airflow
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/airflow-0.0.5/airflow-0.0.5.tgz
+    version: 0.0.5
+  - apiVersion: v2
     appVersion: 2.8.4
     created: "2024-12-12T12:21:15.114250907Z"
     dependencies:
@@ -2417,6 +2445,28 @@ entries:
     version: 5.4.5
   vscode-python:
   - apiVersion: v2
+    created: "2024-12-12T17:16:18.866293145Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.33
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 5b5406e4f23c062eadcbb5a18b9a86184a654e369937ae7f849dc4aecce155ed
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.1.22/vscode-python-2.1.22.tgz
+    version: 2.1.22
+  - apiVersion: v2
     created: "2024-12-12T16:05:04.343765479Z"
     dependencies:
     - name: library-chart
@@ -3190,4 +3240,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python2-1.11.30/vscode-python2-1.11.30.tgz
     version: 1.11.30
-generated: "2024-12-12T16:05:04.344077777Z"
+generated: "2024-12-12T17:16:18.866658567Z"

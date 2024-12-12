@@ -6,12 +6,13 @@
       "description": "Test template Onyxia",
       "type": "array",
       "items":{
-        "type": "string"
+        "type": "object"
       },
       "default": [],
       "x-onyxia": {
-        "overwriteDefaultWith": [ "{{git.token}}", "{{git.name}}" ]
-      }
+        "overwriteDefaultWith": [ { "token": "{{git.token}}" }, { "name": "test-template-{{git.name}}"} ]
+      },
+      "render": "password"
     },
     "service": {
       "description": "Service specific configuration",

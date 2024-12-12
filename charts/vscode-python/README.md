@@ -1,6 +1,6 @@
 # vscode-python
 
-![Version: 1.11.27](https://img.shields.io/badge/Version-1.11.27-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 2.1.19](https://img.shields.io/badge/Version-2.1.19-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
 
@@ -15,7 +15,7 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://inseefrlab.github.io/helm-charts-interactive-services | library-chart | 1.5.21 |
+| https://inseefrlab.github.io/helm-charts-interactive-services | library-chart | 1.5.33 |
 
 ## Values
 
@@ -26,12 +26,14 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
+| certificates | object | `{}` |  |
 | coresite.configMapName | string | `""` |  |
 | discovery.hive | bool | `true` |  |
 | discovery.metaflow | bool | `true` |  |
 | discovery.mlflow | bool | `true` |  |
 | environment.group | string | `"users"` |  |
 | environment.user | string | `"onyxia"` |  |
+| extraEnvVars | list | `[]` |  |
 | fullnameOverride | string | `""` |  |
 | git.branch | string | `""` |  |
 | git.cache | string | `""` |  |
@@ -39,6 +41,7 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | git.email | string | `""` |  |
 | git.enabled | bool | `true` |  |
 | git.name | string | `""` |  |
+| global.suspend | bool | `false` |  |
 | hive.configMapName | string | `""` |  |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | list | `[]` |  |
@@ -48,6 +51,7 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | ingress.ingressClassName | string | `""` |  |
 | ingress.tls | bool | `true` |  |
 | ingress.useCertManager | bool | `false` |  |
+| ingress.useTlsSecret | bool | `false` |  |
 | ingress.userHostname | string | `"chart-example-user.local"` |  |
 | init.personalInit | string | `""` |  |
 | init.personalInitArgs | string | `""` |  |
@@ -56,6 +60,8 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | init.standardInitPath | string | `"/opt/onyxia-init.sh"` |  |
 | kubernetes.enabled | bool | `true` |  |
 | kubernetes.role | string | `"view"` |  |
+| message.en | string | `""` |  |
+| message.fr | string | `""` |  |
 | metaflow.configMapName | string | `""` |  |
 | mlflow.configMapName | string | `""` |  |
 | nameOverride | string | `""` |  |
@@ -64,12 +70,19 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | networking.type | string | `"ClusterIP"` |  |
 | networking.user.enabled | bool | `false` |  |
 | networking.user.port | int | `5000` |  |
+| networking.user.ports | list | `[]` |  |
 | nodeSelector | object | `{}` |  |
+| openshiftSCC.enabled | bool | `false` |  |
+| openshiftSCC.scc | string | `""` |  |
 | persistence.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.enabled | bool | `true` |  |
 | persistence.size | string | `"10Gi"` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext.fsGroup | int | `100` |  |
+| proxy.enabled | bool | `false` |  |
+| proxy.httpProxy | string | `""` |  |
+| proxy.httpsProxy | string | `""` |  |
+| proxy.noProxy | string | `""` |  |
 | replicaCount | int | `1` |  |
 | repository.condaRepository | string | `""` |  |
 | repository.configMapName | string | `""` |  |
@@ -94,13 +107,19 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | security.networkPolicy.from | list | `[]` |  |
 | security.password | string | `"changeme"` |  |
 | securityContext | object | `{}` |  |
+| service.customPythonEnv | bool | `false` |  |
 | service.image.custom.enabled | bool | `false` |  |
-| service.image.custom.version | string | `""` |  |
+| service.image.custom.version | string | `"inseefrlab/onyxia-vscode-python:py3.12.7"` |  |
 | service.image.pullPolicy | string | `"IfNotPresent"` |  |
-| service.image.version | string | `""` |  |
+| service.image.version | string | `"inseefrlab/onyxia-vscode-python:py3.12.7"` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
+| startupProbe.failureThreshold | int | `60` |  |
+| startupProbe.initialDelaySeconds | int | `10` |  |
+| startupProbe.periodSeconds | int | `10` |  |
+| startupProbe.successThreshold | int | `1` |  |
+| startupProbe.timeoutSeconds | int | `2` |  |
 | tolerations | list | `[]` |  |
 | userPreferences.darkMode | bool | `false` |  |
 | userPreferences.language | string | `"en"` |  |

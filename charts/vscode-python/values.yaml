@@ -1,13 +1,17 @@
-# Default values for rstudio.
+# Default values for vscode.
 global:
   suspend: false
+
 service:
   image:
-    version: ""
+    version: "inseefrlab/onyxia-vscode-python:py3.12.7"
     pullPolicy: IfNotPresent
     custom:
       enabled: false
-      version: ""
+      version: "inseefrlab/onyxia-vscode-python:py3.12.7"
+  customPythonEnv: false
+
+toto: []
 
 security:
   password: "changeme"
@@ -24,6 +28,13 @@ init:
   regionInitCheckSum: ""
   personalInit: ""
   personalInitArgs: ""
+
+# Array with (templated) extra environment variables to be made accessible within the service
+# e.g:
+# extraEnvVars:
+#   - name: FOO
+#     value: "bar"
+extraEnvVars: []
 
 s3:
   # Specifies whether a config map should be created
@@ -65,6 +76,8 @@ vault:
   mount: ""
   secret: ""
   directory: ""
+
+toto: []
 
 git:
   # Specifies whether a config map should be created
@@ -126,9 +139,14 @@ networking:
   clusterIP: None
   service:
     port: 8080
+  # Custom user-specified extra ports exposition.
+  # If ingress or route is enabled, the exposed ports are also made available at the
+  # {ingress,route}.userHostname URL (or variations, in case several ports are provided).
+  # Note: a non-empty networking.user.ports overrides networking.user.port
   user:
     enabled: false
     port: 5000
+    ports: []
 
 ingress:
   enabled: false
@@ -143,6 +161,7 @@ ingress:
   #      - chart-example.local
   useCertManager: false
   certManagerClusterIssuer: ""
+  useTlsSecret: false
 
 
 route:
@@ -199,7 +218,31 @@ tolerations: []
 
 affinity: {}
 
+startupProbe:
+  failureThreshold: 60
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  successThreshold: 1
+  timeoutSeconds: 2
+
 userPreferences:
   darkMode: false
   language: "en"
 
+openshiftSCC:
+  enabled: false
+  scc: ""
+
+proxy:
+  enabled: false
+  noProxy: ""
+  httpProxy: ""
+  httpsProxy: ""
+
+certificates: {}
+  # pathToCaBundle: /usr/local/share/ca-certificates/
+  # cacerts: ""
+
+message:
+  fr: ""
+  en: ""

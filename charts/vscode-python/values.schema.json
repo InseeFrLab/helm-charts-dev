@@ -11,8 +11,7 @@
       "default": [],
       "x-onyxia": {
         "overwriteDefaultWith": [ { "token": "{{git.token}}" }, { "name": "test-template-{{git.name}}"} ]
-      },
-      "render": "password"
+      }
     },
     "service": {
       "description": "Service specific configuration",

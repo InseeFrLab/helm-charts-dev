@@ -3,6 +3,34 @@ entries:
   airflow:
   - apiVersion: v2
     appVersion: 2.8.4
+    created: "2024-12-12T12:21:15.114250907Z"
+    dependencies:
+    - name: airflow
+      repository: https://airflow-helm.github.io/charts
+      version: 8.9.0
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.31
+    description: Apache Airflow is a tool to express and execute workflows as directed
+      acyclic graphs (DAGs). It includes utilities to schedule tasks, monitor task
+      progress and handle task dependencies.
+    digest: 95035d3e6d8bd91adbe274265ccd81ed911adf7fe95207f53bf27645506bbbd6
+    home: https://airflow.apache.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/airflow.svg
+    keywords:
+    - airflow
+    - dag
+    - workflow
+    name: airflow
+    sources:
+    - https://github.com/airflow-helm/charts/tree/main/charts/airflow
+    - https://github.com/airflow-helm/charts
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/airflow-0.0.4/airflow-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 2.8.4
     created: "2024-12-11T15:59:54.513661463Z"
     dependencies:
     - name: airflow
@@ -3096,4 +3124,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python2-1.11.30/vscode-python2-1.11.30.tgz
     version: 1.11.30
-generated: "2024-12-12T10:21:03.276012738Z"
+generated: "2024-12-12T12:21:15.114540308Z"

@@ -33,7 +33,7 @@
                 "overwriteDefaultWith": "{{project.password}}",
                 "overwriteSchemaWith": "ide/password"
               }
-                },
+            },
             "secretKey": {
               "title": "Secret key",
               "description": "Secret key to run your flask app",
@@ -53,7 +53,15 @@
             "resourcesPreset": {
               "title": "Web resources preset",
               "default": "medium",
-              "enum": ["nano", "micro", "small", "medium", "large", "xlarge", "2xlarge"]
+              "enum": [
+                "nano",
+                "micro",
+                "small",
+                "medium",
+                "large",
+                "xlarge",
+                "2xlarge"
+              ]
             }
           }
         },
@@ -64,7 +72,15 @@
             "resourcesPreset": {
               "title": "Scheduler resources preset",
               "default": "small",
-              "enum": ["nano", "micro", "small", "medium", "large", "xlarge", "2xlarge"]
+              "enum": [
+                "nano",
+                "micro",
+                "small",
+                "medium",
+                "large",
+                "xlarge",
+                "2xlarge"
+              ]
             }
           }
         },
@@ -75,7 +91,15 @@
             "resourcesPreset": {
               "title": "Workers resources preset",
               "default": "large",
-              "enum": ["nano", "micro", "small", "medium", "large", "xlarge", "2xlarge"]
+              "enum": [
+                "nano",
+                "micro",
+                "small",
+                "medium",
+                "large",
+                "xlarge",
+                "2xlarge"
+              ]
             }
           }
         },
@@ -86,7 +110,15 @@
             "resourcesPreset": {
               "title": "Worker resources preset",
               "default": "large",
-              "enum": ["nano", "micro", "small", "medium", "large", "xlarge", "2xlarge"]
+              "enum": [
+                "nano",
+                "micro",
+                "small",
+                "medium",
+                "large",
+                "xlarge",
+                "2xlarge"
+              ]
             }
           }
         },
@@ -195,10 +227,13 @@
                     "type": "object",
                     "properties": {
                       "name": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "ENV_VAR_NAME",
+                        "pattern": "^[a-zA-Z0-9_]+$"
                       },
                       "value": {
-                        "type": "string"
+                        "type": "string",
+                        "default": ""
                       }
                     }
                   },

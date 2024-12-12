@@ -77,8 +77,6 @@ vault:
   secret: ""
   directory: ""
 
-toto: []
-
 git:
   # Specifies whether a config map should be created
   enabled: true

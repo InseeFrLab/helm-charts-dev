@@ -448,6 +448,60 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/argilla-0.0.1/argilla-0.0.1.tgz
     version: 0.0.1
+  argo-cd:
+  - apiVersion: v2
+    appVersion: "1"
+    created: "2024-12-12T10:21:03.132880272Z"
+    dependencies:
+    - name: argo-cd
+      repository: https://argoproj.github.io/argo-helm
+      version: 6.11.1
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.21
+    description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
+    digest: c6712d6e1e252929bee5126903eb5214abbe64fa245da9b69df21aa07ac69cc1
+    home: https://argo-cd.readthedocs.io/en/stable/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/argo.png
+    keywords:
+    - gitops
+    - deployment
+    - delivery
+    name: argo-cd
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-automation/blob/master/charts/argo-cd
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/argo-cd-1.0.1/argo-cd-1.0.1.tgz
+    version: 1.0.1
+  argo-workflows:
+  - apiVersion: v2
+    appVersion: "1"
+    created: "2024-12-12T10:21:03.275826451Z"
+    dependencies:
+    - name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.40.11
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.21
+    description: Argo Workflows is an open source container-native workflow engine
+      for orchestrating parallel jobs on Kubernetes.
+    digest: f5e99df0979b283cff16c542436b4b792f40c0703f9ace5345e05646a7b5eebd
+    home: https://argoproj.github.io/argo-workflows/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/argo.png
+    keywords:
+    - Worklow
+    - Job
+    - Task
+    name: argo-workflows
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-automation/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/argo-workflows-1.0.1/argo-workflows-1.0.1.tgz
+    version: 1.0.1
   dagster:
   - apiVersion: v2
     created: "2024-04-02T08:44:28.124958975Z"
@@ -3042,4 +3096,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python2-1.11.30/vscode-python2-1.11.30.tgz
     version: 1.11.30
-generated: "2024-12-11T15:59:54.513918163Z"
+generated: "2024-12-12T10:21:03.276012738Z"

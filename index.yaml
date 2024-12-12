@@ -3,6 +3,34 @@ entries:
   airflow:
   - apiVersion: v2
     appVersion: 2.10.3
+    created: "2024-12-12T17:38:40.705999712Z"
+    dependencies:
+    - name: airflow
+      repository: https://charts.bitnami.com/bitnami
+      version: 22.4.1
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.34
+    description: Apache Airflow is a tool to express and execute workflows as directed
+      acyclic graphs (DAGs). It includes utilities to schedule tasks, monitor task
+      progress and handle task dependencies.
+    digest: 8ae184ff7f06d956f1f17fae572e4f2bf4290fa24757c4d074ca3423f8e7c6ed
+    home: https://airflow.apache.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/airflow.svg
+    keywords:
+    - apache
+    - airflow
+    - workflow
+    - dag
+    name: airflow
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/airflow
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/airflow-0.0.7/airflow-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v2
+    appVersion: 2.10.3
     created: "2024-12-12T17:28:25.413928778Z"
     dependencies:
     - name: airflow
@@ -3268,4 +3296,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python2-1.11.30/vscode-python2-1.11.30.tgz
     version: 1.11.30
-generated: "2024-12-12T17:28:25.41419371Z"
+generated: "2024-12-12T17:38:40.706250523Z"

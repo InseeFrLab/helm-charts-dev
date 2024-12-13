@@ -52,6 +52,7 @@
           "properties": {
             "resourcesPreset": {
               "title": "Web interface resources preset",
+              "type": "string",
               "default": "medium",
               "enum": [
                 "nano",
@@ -270,9 +271,9 @@
       }
     },
     "ingress": {
+      "title": "Ingress Details",
       "type": "object",
       "form": true,
-      "title": "Ingress Details",
       "properties": {
         "enabled": {
           "description": "Enable Ingress",

@@ -6,6 +6,8 @@
       "type": "object",
       "properties": {
         "auth": {
+          "title": "Authentication",
+          "description": "Authentication",
           "type": "object",
           "properties": {
             "username": {
@@ -353,7 +355,8 @@
                 "path": "security/allowlist/enabled"
               }
             }
-          }
+          },
+          "hidden": true
         },
         "networkPolicy": {
           "type": "object",

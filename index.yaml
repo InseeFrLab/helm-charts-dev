@@ -1389,6 +1389,149 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/fuseki-0.3.5/fuseki-0.3.5.tgz
     version: 0.3.5
+  gfy-jupyter-pyspark:
+  - apiVersion: v2
+    created: "2025-01-02T13:49:02.414816521Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.34
+    description: The JupyterLab IDE with PySpark, an interface to use Apache Spark
+      from Python.
+    digest: 495abf8faa74f42bade0e77bf7dec1d02778c8c2719ca28253bdfa9cc8872d6c
+    home: https://jupyter.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jupyter.png
+    keywords:
+    - Jupyter
+    - Python
+    - Spark
+    - VTL
+    name: gfy-jupyter-pyspark
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/gfy-jupyter-pyspark-2.1.20/gfy-jupyter-pyspark-2.1.20.tgz
+    version: 2.1.20
+  gfy-jupyter-python:
+  - apiVersion: v2
+    created: "2025-01-02T13:49:02.567908125Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.34
+    description: The JupyterLab IDE with Python, Julia, and a collection of standard
+      data science packages.
+    digest: 1ef5bd87ae03080d1913eae2b475d314fda2ed0d859666eb51ccca59055ba948
+    home: https://jupyter.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jupyter.png
+    keywords:
+    - Jupyter
+    - Python
+    name: gfy-jupyter-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/gfy-jupyter-python-2.1.19/gfy-jupyter-python-2.1.19.tgz
+    version: 2.1.19
+  gfy-rstudio:
+  - apiVersion: v2
+    created: "2025-01-02T13:49:02.69224699Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.34
+    description: The RStudio IDE with a collection of standard data science packages.
+    digest: 68dc37f7ef6a8694e4f039f6ba3983f4ee50b51ded6bce4686c03ca202137532
+    home: https://www.rstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
+    keywords:
+    - RStudio
+    - R
+    name: gfy-rstudio
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/gfy-rstudio-2.1.14/gfy-rstudio-2.1.14.tgz
+    version: 2.1.14
+  gfy-rstudio-sparkr:
+  - apiVersion: v2
+    created: "2025-01-02T13:49:02.831616818Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.34
+    description: The RStudio IDE with a collection of standard data science packages.
+      It includes SparkR, an R package that provides an interface to use Apache Spark
+      from R.
+    digest: 87085ff94866fbfcb2775bd281fd22d61a752d5c75fc4ec98bc933307b122fe1
+    home: https://www.rstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
+    keywords:
+    - RStudio
+    - R
+    - Spark
+    name: gfy-rstudio-sparkr
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/gfy-rstudio-sparkr-2.1.17/gfy-rstudio-sparkr-2.1.17.tgz
+    version: 2.1.17
+  gfy-vscode-pyspark:
+  - apiVersion: v2
+    created: "2025-01-02T13:49:02.956042423Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.34
+    description: The Visual Studio Code IDE with PySpark, an interface to use Apache
+      Spark from Python.
+    digest: 3fb4fe71cfbff18c6cfe29c7b559f574351a3078e30e4adbca590c6a3497a1a7
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    - Spark
+    - VTL
+    name: gfy-vscode-pyspark
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/gfy-vscode-pyspark-2.1.21/gfy-vscode-pyspark-2.1.21.tgz
+    version: 2.1.21
+  gfy-vscode-python:
+  - apiVersion: v2
+    created: "2025-01-02T13:49:03.099781124Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.34
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: df0831a4810014f7715d0cf4d9216af1dcb533cf060134727548b7fe25f16e13
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: gfy-vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/gfy-vscode-python-2.1.20/gfy-vscode-python-2.1.20.tgz
+    version: 2.1.20
   jupyter-python:
   - apiVersion: v2
     created: "2024-09-02T09:18:09.484656694Z"
@@ -3380,4 +3523,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python2-1.11.30/vscode-python2-1.11.30.tgz
     version: 1.11.30
-generated: "2024-12-16T13:02:15.338260794Z"
+generated: "2025-01-02T13:49:03.10006864Z"

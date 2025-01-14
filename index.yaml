@@ -1486,6 +1486,27 @@ entries:
   gfy-pgadmin:
   - apiVersion: v2
     appVersion: latest
+    created: "2025-01-14T16:01:01.715183564Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.33
+    description: pgAdmin is an administration and development platform for PostgreSQL.
+      It's a GUI for Postgress SQL.
+    digest: 39a0035e2488d6eadd843301ae5ff75f9c9ebe20f7ab0faeb85f9c3553264e54
+    home: https://www.pgadmin.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/post.png
+    keywords:
+    - SQL
+    name: gfy-pgadmin
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/pgadmin
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/gfy-pgadmin-1.0.9/gfy-pgadmin-1.0.9.tgz
+    version: 1.0.9
+  - apiVersion: v2
+    appVersion: latest
     created: "2025-01-14T15:31:59.117502483Z"
     dependencies:
     - name: library-chart
@@ -3728,4 +3749,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python2-1.11.30/vscode-python2-1.11.30.tgz
     version: 1.11.30
-generated: "2025-01-14T15:31:59.258009023Z"
+generated: "2025-01-14T16:01:01.715724463Z"

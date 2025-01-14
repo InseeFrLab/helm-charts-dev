@@ -1483,6 +1483,52 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/gfy-jupyter-python-2.1.19/gfy-jupyter-python-2.1.19.tgz
     version: 2.1.19
+  gfy-pgadmin:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2025-01-14T15:31:59.117502483Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.33
+    description: pgAdmin is an administration and development platform for PostgreSQL.
+      It's a GUI for Postgress SQL.
+    digest: cb8dd7671b2b9fadd4fd0b598f46b294f4a9fe9cab6a5a5ffbe423c25813603f
+    home: https://www.pgadmin.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/post.png
+    keywords:
+    - SQL
+    name: gfy-pgadmin
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/pgadmin
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/gfy-pgadmin-1.0.8/gfy-pgadmin-1.0.8.tgz
+    version: 1.0.8
+  gfy-postgresql:
+  - apiVersion: v2
+    created: "2025-01-14T15:31:59.257783511Z"
+    dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.2.5
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.33
+    description: An object-relational database management system, a database server.
+    digest: a749add79007d71d68eb9649e40203e2f86cc3aa59630cf477647cf69f39baec
+    home: https://www.postgresql.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/post.png
+    keywords:
+    - SQL
+    - Database
+    name: gfy-postgresql
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/postgresql
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/gfy-postgresql-1.0.8/gfy-postgresql-1.0.8.tgz
+    version: 1.0.8
   gfy-rstudio:
   - apiVersion: v2
     created: "2025-01-09T15:30:26.689470251Z"
@@ -3682,4 +3728,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python2-1.11.30/vscode-python2-1.11.30.tgz
     version: 1.11.30
-generated: "2025-01-09T15:30:27.081247269Z"
+generated: "2025-01-14T15:31:59.258009023Z"

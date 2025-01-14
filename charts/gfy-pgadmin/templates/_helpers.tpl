@@ -1,6 +1,6 @@
 {{/* vim: set filetype=mustache: */}}
 
-{{- define "pgadmin.configmap" -}}
+{{- define "pgadmin.servers" -}}
 {{ printf "{" }}
 {{ printf "\"Servers\": {" | indent 2 }}
 {{- $virgule := 0 }}
@@ -23,6 +23,7 @@
 {{ printf "\"Username\": \"%s\"," $username | indent 6}}
 {{ printf "\"SSLMode\": \"prefer\"," | indent 6 }}
 {{ printf "\"MaintenanceDB\": \"%s\"" $database | indent 6}}
+{{ printf "\"PassFile\": \"/config/pgpass.conf\"" $database | indent 6}}
 {{- $virgule = 1}}
 {{ printf "}" | indent 4}}
 {{- end }}
@@ -30,8 +31,17 @@
 {{- end }}
 {{ printf "}" | indent 2}}
 {{ printf "}" }}
-{{- end }}
+{{- end -}}
+
+{{- define "pgadmin.pgpass" -}}
+{{- $service := ( index $secret.data "postgres-service" | default "") | b64dec  -}}
+{{- $username:= ( index $secret.data "postgres-username") | b64dec  -}}
+{{- $database:= ( index $secret.data "postgres-database") | b64dec  -}}
+{{- $password:= ( index $secret.data "postgres-password") | b64dec  -}}
+{{- $port    := ( index $secret.data "postgres-port")  -}}
+{{- printf "%s:%s:%s:%s:%s" $service $port $database $username $password }}
+{{ end -}}
 
 {{- define "pgadmin.cleanemail" -}}
 {{ printf "%s" .Values.security.mail  |  replace "@" "_"}}
-{{- end }}
+{{- end -}}

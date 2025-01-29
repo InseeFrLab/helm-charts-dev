@@ -102,19 +102,3 @@ kubernetes:
   role: view
 
 podAnnotations: {}
-
-deployment:
-  image:
-    repository: vllm/vllm-openai
-    pullPolicy: Always
-    tag: latest
-  hftoken: your_token
-  args:
-    model: microsoft/Phi-3-mini-4k-instruct # Phi-3-mini-4k-instruct
-    memoryutilization: 0.8
-    dtype: half
-    maxModelLen: 8208
-  gpu:
-    number: 1
-
-

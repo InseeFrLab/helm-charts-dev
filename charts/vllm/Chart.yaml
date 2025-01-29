@@ -26,5 +26,5 @@ appVersion: "0.0.12"
 
 dependencies:
   - name: llm-serving
-    version: "0.0.6"
+    version: "0.0.5"
     repository: https://thomasfaria.github.io/helm-charts

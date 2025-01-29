@@ -1,43 +1,120 @@
-# Default values for lomas chart.
+# Default values for vllm chart.
+global:
+  suspend: false
 
-llm-serving:
-  nameOverride: ""
-  fullnameOverride: "llm-serving"
-  podAnnotations: {}
+service:
+  image:
+    version: "vllm/vllm-openai:v0.6.4"
+    pullPolicy: IfNotPresent
+    custom:
+      enabled: false
+      version: ""
+  proxyArtifact:
+    enabled: true
+  gunicornTimeout: "600"
+  customArgs: #[]
+    - --workers=2
 
-  deployment:
-    image:
-      repository: vllm/vllm-openai
-      pullPolicy: Always
-      tag: latest
-    hftoken: your_token
-    args:
-      model: microsoft/Phi-3-mini-4k-instruct # Phi-3-mini-4k-instruct
-      memoryutilization: 0.8
-      dtype: half
-      maxModelLen: 8208
-    gpu:
-      number: 1
+resources: {}
+# We usually recommend not to specify default resources and to leave this as a conscious
+# choice for the user. This also increases chances charts run on environments with little
+# resources, such as Minikube. If you do want to specify resources, uncomment the following
+# lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+# limits:
+#   cpu: 100m
+#   memory: 128Mi
+# requests:
+#   cpu: 100m
+#   memory: 128Mi
 
-  service:
-    port:
-      number: 8000
+s3:
+  # Specifies whether a config map should be created
+  enabled: true
+  # The name of the configmap to use.
+  # If not set and create is true, a name is generated using the fullname template
+  configMapName: ""
+  accessKeyId: ""
+  endpoint: ""
+  defaultRegion: ""
+  secretAccessKey: ""
+  sessionToken: ""
+  modelPath: ""
+
+ingress:
+  enabled: true
+  tls: true
+  ingressClassName: ""
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    # kubernetes.io/tls-acme: "true"
+  hostname: chart-example.local
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+  useCertManager: false
+  certManagerClusterIssuer: ""
+
+route:
+  enabled: false
+  annotations:
+    []
+    # route.openshift.io/termination: "reencrypt"
+  hostname: chart-example.local
+  tls:
+    termination: edge
+    # key:
+    # certificate:
+    # caCertificate:
+    # destinationCACertificate:
+  wildcardPolicy: None
+
+security:
+  networkPolicy:
+    enabled: false
+    from:
+      - ipBlock:
+          cidr: 10.233.103.0/32
+      - ipBlock:
+          cidr: 10.233.111.0/32
+  allowlist:
+    enabled: true
+    ip: "0.0.0.0/0"
+
+nodeSelector: {}
+
+huggingFace: 
+  hftoken: ""
+
+llm:
+  model: microsoft/Phi-3-mini-4k-instruct
+  memoryutilization: 0.8
+  dtype: "half"
+  maxModelLen": 8208
+
+replicaCount: 1
+
+nameOverride: ""
+
+fullnameOverride: ""
+
+kubernetes:
+  enabled: true
+  role: view
+
+podAnnotations: {}
+
+deployment:
+  image:
+    repository: vllm/vllm-openai
+    pullPolicy: Always
+    tag: latest
+  hftoken: your_token
+  args:
+    model: microsoft/Phi-3-mini-4k-instruct # Phi-3-mini-4k-instruct
+    memoryutilization: 0.8
+    dtype: half
+    maxModelLen: 8208
+  gpu:
+    number: 1
 
 
-  ingress:
-      enabled: true
-      className: "nginx"
-      annotations:
-        nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
-      hostname: "llm-serving.example.com"
-
-  s3:
-    enabled: false # Set to true to use S3
-    bucket: "your_bucket_name"
-    modelPath: "path_to_model"
-    # If not set and create is true, a name is generated using the fullname template
-    accessKeyId: ""
-    endpoint: ""
-    defaultRegion: ""
-    secretAccessKey: ""
-    sessionToken: ""

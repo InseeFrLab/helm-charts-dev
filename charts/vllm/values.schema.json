@@ -233,6 +233,12 @@
             "value": false,
             "path": "s3/enabled"
           }
+        },
+        "modelPath": {
+          "description": "Path to the model within the S3 bucket",
+          "title": "Model Path",
+          "type": "string",
+          "default": "projet-models-hf/hf_hub/diffusion"
         }
       }
     },
@@ -300,15 +306,6 @@
       "description": "security specific configuration",
       "type": "object",
       "properties": {
-        "password": {
-          "type": "string",
-          "description": "Password",
-          "default": "changeme",
-          "render": "password",
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{project.password}}"
-          }
-        },
         "networkPolicy": {
           "type": "object",
           "description": "Define access policy to the service",

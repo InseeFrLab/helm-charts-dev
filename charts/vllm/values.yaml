@@ -1,4 +1,5 @@
 # Default values for vllm chart.
+
 # global:
 #   suspend: false
 
@@ -7,35 +8,26 @@ llm-serving:
   fullnameOverride: "llm-serving"
   podAnnotations: {}
 
-  # service:
-  #   image:
-  #     version: "vllm/vllm-openai:v0.6.4"
-  #     pullPolicy: IfNotPresent
-  #     custom:
-  #       enabled: false
-  #       version: ""
-
-  deployment:
+  service:
     image:
-      repository: vllm/vllm-openai
-      pullPolicy: Always
-      tag: latest
-    hftoken: your_token
-    args: 
-      model: Llama-3.2-3B-Instruct
-      memoryutilization: 0.8
-      dtype: half
-      maxModelLen: 8208
+      version: "vllm/vllm-openai:v0.7.0"
+      pullPolicy: IfNotPresent
+      custom:
+        enabled: false
+        version: ""
 
+  resources: {}
 
-  # huggingFace: 
-  #   hftoken: ""
+  huggingFace: 
+    hfToken: ""
 
-  # llm:
-  #   model: microsoft/Phi-3-mini-4k-instruct
-  #   memoryutilization: 0.8
-  #   dtype: "half"
-  #   maxModelLen": 8208
+  llm:
+    hfNamespace: meta-llama
+    hfModel: Llama-3.2-1B-Instruct
+    localPath: "/root/.cache/huggingface"
+    memoryUtilization: 0.8
+    dtype: "half"
+    maxModelLen": 8208
     
   networking:
     port:
@@ -55,102 +47,12 @@ llm-serving:
     secretAccessKey: ""
     sessionToken: ""
 
-  resources: {}
-
-
-##########################
-
 ingress:
   enabled: true
   tls: true
   ingressClassName: ""
   annotations:
     nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
-    # kubernetes.io/tls-acme: "true"
   hostname: chart-example.local
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
   useCertManager: false
   certManagerClusterIssuer: ""
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# s3:
-#   # Specifies whether a config map should be created
-#   enabled: true
-#   # The name of the configmap to use.
-#   # If not set and create is true, a name is generated using the fullname template
-#   configMapName: ""
-#   accessKeyId: ""
-#   endpoint: ""
-#   defaultRegion: ""
-#   secretAccessKey: ""
-#   sessionToken: ""
-#   modelPath: ""
-
-
-# route:
-#   enabled: false
-#   annotations:
-#     []
-#     # route.openshift.io/termination: "reencrypt"
-#   hostname: chart-example.local
-#   tls:
-#     termination: edge
-#     # key:
-#     # certificate:
-#     # caCertificate:
-#     # destinationCACertificate:
-#   wildcardPolicy: None
-
-# security:
-#   networkPolicy:
-#     enabled: false
-#     from:
-#       - ipBlock:
-#           cidr: 10.233.103.0/32
-#       - ipBlock:
-#           cidr: 10.233.111.0/32
-#   allowlist:
-#     enabled: true
-#     ip: "0.0.0.0/0"
-
-# nodeSelector: {}
-
-
-
-# replicaCount: 1
-
-# nameOverride: ""
-
-# fullnameOverride: ""
-
-# kubernetes:
-#   enabled: true
-#   role: view
-
-# podAnnotations: {}

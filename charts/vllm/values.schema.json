@@ -4,6 +4,7 @@
   "properties": {
     "llm-serving": {
       "type": "object",
+      "title": "VLLM configuration",
       "properties": {
         "service": {
           "description": "Service specific configuration",
@@ -346,4 +347,3 @@
     }
   }
 }
-

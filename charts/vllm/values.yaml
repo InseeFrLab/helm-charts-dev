@@ -46,6 +46,8 @@ llm-serving:
     defaultRegion: ""
     secretAccessKey: ""
     sessionToken: ""
+  
+  nodeSelector: {}
 
 ingress:
   enabled: true
@@ -56,3 +58,4 @@ ingress:
   hostname: chart-example.local
   useCertManager: false
   certManagerClusterIssuer: ""
+

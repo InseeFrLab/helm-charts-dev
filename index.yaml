@@ -2954,6 +2954,25 @@ entries:
     version: 5.4.5
   vllm:
   - apiVersion: v2
+    appVersion: 0.0.15
+    created: "2025-01-30T18:14:59.898664531Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://thomasfaria.github.io/helm-charts
+      version: 0.0.10
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.40
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: 9536d2889e01f2b6b320918cdb872300f7a9ad00e5707e508e09bb890c232fa2
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.15/vllm-0.0.15.tgz
+    version: 0.0.15
+  - apiVersion: v2
     appVersion: 0.0.14
     created: "2025-01-30T16:48:52.527571979Z"
     dependencies:
@@ -3849,4 +3868,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python2-1.11.30/vscode-python2-1.11.30.tgz
     version: 1.11.30
-generated: "2025-01-30T16:48:52.527880845Z"
+generated: "2025-01-30T18:14:59.898980251Z"

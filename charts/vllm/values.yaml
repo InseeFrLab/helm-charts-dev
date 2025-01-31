@@ -59,3 +59,10 @@ ingress:
   useCertManager: false
   certManagerClusterIssuer: ""
 
+networking:
+  service:
+    port: 8000
+
+security:
+  allowlist:
+    enable: false

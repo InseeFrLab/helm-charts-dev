@@ -65,6 +65,41 @@
             }
           }
         },
+      "ingress": {
+        "type": "object",
+        "form": true,
+        "title": "Ingress Details",
+        "properties": {
+          "enabled": {
+            "description": "Enable Ingress",
+            "type": "boolean",
+            "default": true,
+            "x-onyxia": {
+              "hidden": true,
+              "overwriteDefaultWith": "k8s.ingress"
+            }
+          },
+          "hostname": {
+            "type": "string",
+            "form": true,
+            "title": "Hostname",
+            "x-onyxia": {
+              "hidden": false,
+              "overwriteDefaultWith": "{{project.id}}-vllm.{{k8s.domain}}"
+            }
+          },
+          "ingressClassName": {
+            "type": "string",
+            "form": true,
+            "title": "ingressClassName",
+            "default": "",
+            "x-onyxia": {
+              "hidden": true,
+              "overwriteDefaultWith": "{{k8s.ingressClassName}}"
+            }
+          }
+        }
+      },
         "resources": {
           "description": "Your service will have at least the requested resources and never more than its limits. No limit for a resource and you can consume everything left on the host machine.",
           "type": "object",
@@ -238,11 +273,11 @@
                 "path": "s3/enabled"
               }
             },
-            "modelPath": {
+            "modelHfBucket": {
               "description": "Path to the model within the S3 bucket",
               "title": "Model Path",
               "type": "string",
-              "default": "projet-models-hf/hf_hub/diffusion"
+              "default": "projet-models-hf/diffusion/hf_hub"
             }
           }
         },
@@ -287,7 +322,7 @@
             "memoryutilization": {
               "type": "number",
               "description": "GPU memory utilization",
-              "default": 0.8
+              "default": 0.95
             },
             "dtype": {
               "type": "string",
@@ -297,7 +332,7 @@
             "maxModelLen": {
               "type": "integer",
               "description": "Maximum model length",
-              "default": 8208
+              "default": 8200
             }
           }
         },
@@ -309,41 +344,6 @@
           }
         }
     }
-    },
-    "ingress": {
-      "type": "object",
-      "form": true,
-      "title": "Ingress Details",
-      "properties": {
-        "enabled": {
-          "description": "Enable Ingress",
-          "type": "boolean",
-          "default": true,
-          "x-onyxia": {
-            "hidden": true,
-            "overwriteDefaultWith": "k8s.ingress"
-          }
-        },
-        "hostname": {
-          "type": "string",
-          "form": true,
-          "title": "Hostname",
-          "x-onyxia": {
-            "hidden": false,
-            "overwriteDefaultWith": "{{project.id}}-vllm.{{k8s.domain}}"
-          }
-        },
-        "ingressClassName": {
-          "type": "string",
-          "form": true,
-          "title": "ingressClassName",
-          "default": "",
-          "x-onyxia": {
-            "hidden": true,
-            "overwriteDefaultWith": "{{k8s.ingressClassName}}"
-          }
-        }
-      }
     }
   }
 }

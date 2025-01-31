@@ -24,7 +24,7 @@ llm-serving:
   llm:
     hfNamespace: meta-llama
     hfModel: Llama-3.2-1B-Instruct
-    localPath: "/tmp/.cache/huggingface"
+    localPath: "/root/.cache/huggingface"
     memoryUtilization: 0.95
     dtype: "auto"
     maxModelLen": 8200
@@ -34,7 +34,11 @@ llm-serving:
       number: 8000
 
   ingress:
-      enabled: false
+      enabled: true
+      className: ""
+      annotations: 
+        nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+      hostname: "chart-example.local"
 
   s3:
     enabled: true # Set to true to use S3
@@ -46,21 +50,3 @@ llm-serving:
     sessionToken: ""
 
   nodeSelector: {}
-
-ingress:
-  enabled: true
-  tls: true
-  ingressClassName: ""
-  annotations:
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
-  hostname: chart-example.local
-  useCertManager: false
-  certManagerClusterIssuer: ""
-
-networking:
-  service:
-    port: 8000
-
-security:
-  allowlist:
-    enable: false

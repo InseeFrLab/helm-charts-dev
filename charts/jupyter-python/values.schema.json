@@ -228,10 +228,6 @@
         "description": "environment variables available within your service",
         "type": "array",
         "default": [],
-        "x-onyxia": {
-          "hidden": true,
-          "overwriteSchemaWith": "ide/extraenv.json"
-        },
         "items": {
           "type": "object",
           "properties": {

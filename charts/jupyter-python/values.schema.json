@@ -230,6 +230,7 @@
         "default": [],
         "items": {
           "type": "object",
+          "title": "Env var",
           "properties": {
             "name": {
               "type": "string",

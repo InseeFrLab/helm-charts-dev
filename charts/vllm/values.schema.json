@@ -11,15 +11,13 @@
           "form": true,
           "title": "Large Language Model",
           "properties": {
-            "hfNamespace": {
+            "hfModelName": {
               "type": "string",
-              "default": "microsoft",
-              "description": "Huggingface namespace of the model to be served"
-            },
-            "hfModel": {
-              "type": "string",
-              "default": "Phi-3.5-mini-instruct",
-              "description": "Model to be served"
+              "default": "microsoft/Phi-3.5-mini-instruct",
+              "description": "Huggingface namespace of the model to be served",
+              "x-onyxia": {
+                    "overwriteSchemaWith": "llModel.json"
+                  }
             },
             "memoryutilization": {
               "type": "number",

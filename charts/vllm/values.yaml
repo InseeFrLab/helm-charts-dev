@@ -22,8 +22,7 @@ llm-serving:
     hfToken: ""
 
   llm:
-    hfNamespace: meta-llama
-    hfModel: Llama-3.2-1B-Instruct
+    hfModelName: meta-llama/Llama-3.2-1B-Instruct
     localPath: "/tmp/.cache/huggingface"
     memoryUtilization: 0.95
     dtype: "auto"

@@ -41,7 +41,7 @@
           "form": true,
           "title": "HuggingFace 🤗",
           "properties": {
-            "hftoken": {
+            "hfToken": {
               "type": "string",
               "render": "password",
               "description": "Token for Hugging Face model access",

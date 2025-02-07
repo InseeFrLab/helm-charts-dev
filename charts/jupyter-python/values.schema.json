@@ -7,12 +7,12 @@
         "type": "object",
         "properties": {
           "image": {
-            "description": "image docker",
+            "title": "Docker image",
             "type": "object",
             "properties": {
               "pullPolicy": {
+                "title": "Pull image from registry",
                 "type": "string",
-                "description": "option when pulling the docker image",
                 "default": "IfNotPresent",
                 "enum": [
                   "IfNotPresent",
@@ -21,7 +21,7 @@
                 ]
               },
               "version": {
-                "description": "supported versions",
+                "title": "Name of the service's Docker image",
                 "type": "string",
                 "listEnum": [
                   "inseefrlab/onyxia-jupyter-python:py3.12.7",
@@ -35,20 +35,18 @@
                 "default": "inseefrlab/onyxia-jupyter-python:py3.12.7"
               },
               "custom": {
-                "description": "use a custom jupyter docker image",
                 "type": "object",
                 "properties": {
                   "enabled": {
-                    "title": "custom image",
+                    "title": "Use a custom docker image",
                     "type": "boolean",
-                    "description": "use a custom jupyter docker image",
                     "default": false,
                     "x-onyxia": {
                       "overwriteSchemaWith": "ide/customImage.json"
                     }
                   },
                   "version": {
-                    "description": "jupyter unsupported version",
+                    "title": "Name of the custom image",
                     "type": "string",
                     "default": "inseefrlab/onyxia-jupyter-python:py3.12.6",
                     "hidden": {
@@ -61,9 +59,8 @@
             }
           },
           "customPythonEnv": {
-            "title": "custom python environment",
+            "title": "Use a custom Python environment",
             "type": "boolean",
-            "description": "Use a custom python environment",
             "default": false
           }
         }
@@ -946,4 +943,3 @@
       }
     }
   }
-  

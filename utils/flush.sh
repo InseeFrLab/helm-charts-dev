@@ -9,12 +9,15 @@ fi
 CHART_NAME="$1"
 
 # Deleting the chart from current branch
-CHART_PATH=$(grep -Er "^ *name *: *$CHART_NAME *$" charts/ --include=Chart.yaml  | awk -F':' '{print $1}' | xargs -n1 dirname)
-if [[ -n "$CHART_PATH" ]]; then
-    echo "rm -r \"$CHART_PATH\""
-    echo "git add \"$CHART_PATH\""
-    echo "git commit -m \"[$CHART_NAME] Flushing chart\""
-    echo "git push"
+CHART_FILE=$(grep -Er "^ *name *: *$CHART_NAME *$" charts/ --include=Chart.yaml)
+if [[ -n "$CHART_FILE" ]]; then
+    CHART_PATH=$(echo "$CHART_FILE" | awk -F':' '{print $1}' | xargs -n1 dirname)
+    if [[ -n "$CHART_PATH" ]]; then
+        echo "rm -r \"$CHART_PATH\""
+        echo "git add \"$CHART_PATH\""
+        echo "git commit -m \"[$CHART_NAME] Flushing chart\""
+        echo "git push"
+    fi
 fi
 
 # Retrieve the helm repo index.yaml
@@ -26,7 +29,7 @@ wget "$INDEX_URL" -q -P /tmp/
 TAGS=$(yq '.entries | to_entries | .[] | select(.key == "'"$CHART_NAME"'") | .key as $chart | .value[].version | "\($chart)-\(.)"' /tmp/index.yaml)
 # Iterate over the list
 for TAG in $TAGS; do
-    echo "gh release delete $TAG -y"
+    gh release view $TAG > /dev/null 2>&1 && echo "gh release delete $TAG -y"
 done
 
 # Commands

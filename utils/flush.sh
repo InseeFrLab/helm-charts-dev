@@ -33,7 +33,7 @@ done
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 echo "git checkout gh-pages"
 echo "git pull"
-echo "yq -i 'del(.entries["'"$CHART_NAME"'"])' index.yaml"
+echo "yq -i 'del(.entries[\"$CHART_NAME\"])' index.yaml"
 echo "git commit -m \"[$CHART_NAME] Flushing chart from helm repo\""
 echo "git push"
 echo "git checkout $CURRENT_BRANCH"

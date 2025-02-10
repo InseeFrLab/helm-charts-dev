@@ -1196,30 +1196,6 @@ entries:
       urls:
         - https://github.com/InseeFrLab/helm-charts-dev/releases/download/gfy-pgadmin-1.0.8/gfy-pgadmin-1.0.8.tgz
       version: 1.0.8
-  gfy-postgresql:
-    - apiVersion: v2
-      created: "2025-01-14T15:31:59.257783511Z"
-      dependencies:
-        - name: postgresql
-          repository: https://charts.bitnami.com/bitnami
-          version: 16.2.5
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.33
-      description: An object-relational database management system, a database server.
-      digest: a749add79007d71d68eb9649e40203e2f86cc3aa59630cf477647cf69f39baec
-      home: https://www.postgresql.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/post.png
-      keywords:
-        - SQL
-        - Database
-      name: gfy-postgresql
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/postgresql
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/gfy-postgresql-1.0.8/gfy-postgresql-1.0.8.tgz
-      version: 1.0.8
   gfy-rstudio:
     - apiVersion: v2
       created: "2025-01-09T15:30:26.689470251Z"

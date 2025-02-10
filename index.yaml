@@ -1155,49 +1155,6 @@ entries:
       urls:
         - https://github.com/InseeFrLab/helm-charts-dev/releases/download/gfy-jupyter-python-2.1.19/gfy-jupyter-python-2.1.19.tgz
       version: 2.1.19
-  gfy-rstudio:
-    - apiVersion: v2
-      created: "2025-01-09T15:30:26.689470251Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.39
-      description: The RStudio IDE with a collection of standard data science packages.
-      digest: cb58adf8ff63cd2bd49df40f1525c6709e078c2ac672e14a64eaa10924ed27f6
-      home: https://www.rstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
-      keywords:
-        - RStudio
-        - R
-      name: gfy-rstudio
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/gfy-rstudio-2.1.16/gfy-rstudio-2.1.16.tgz
-      version: 2.1.16
-    - apiVersion: v2
-      created: "2025-01-02T13:49:02.69224699Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.34
-      description: The RStudio IDE with a collection of standard data science packages.
-      digest: 68dc37f7ef6a8694e4f039f6ba3983f4ee50b51ded6bce4686c03ca202137532
-      home: https://www.rstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
-      keywords:
-        - RStudio
-        - R
-      name: gfy-rstudio
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/gfy-rstudio-2.1.14/gfy-rstudio-2.1.14.tgz
-      version: 2.1.14
   gfy-rstudio-sparkr:
     - apiVersion: v2
       created: "2025-01-09T15:30:26.828080488Z"

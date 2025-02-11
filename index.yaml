@@ -1355,6 +1355,27 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/postgresql-0.5.0/postgresql-0.5.0.tgz
     version: 0.5.0
+  qrant:
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-11T15:53:12.96941359Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: 5ecddde64fdb91766a92ffbb605d3df3429c8f31633d2ccb5881a2a6a74452d2
+    home: https://qdrant.tech
+    keywords:
+    - vector database
+    name: qrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qrant-0.0.1/qrant-0.0.1.tgz
+    version: 0.0.1
   superset:
   - apiVersion: v2
     created: "2024-02-12T14:02:01.073364938Z"
@@ -2397,4 +2418,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-darkmode-1.11.11/vscode-python-darkmode-1.11.11.tgz
     version: 1.11.11
-generated: "2025-02-10T16:07:15.767202863Z"
+generated: "2025-02-11T15:53:12.969632168Z"

@@ -49,7 +49,6 @@
               "title": "ingressClassName",
               "default": "",
               "x-onyxia": {
-                "hidden": true,
                 "overwriteDefaultWith": "{{k8s.ingressClassName}}"
               }
             },
@@ -63,7 +62,6 @@
                     "form": true,
                     "title": "Hostname",
                     "x-onyxia": {
-                      "hidden": true,
                       "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}"
                     }
                   },

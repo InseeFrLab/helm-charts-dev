@@ -90,62 +90,18 @@
                         "servicePort": {
                           "type": "integer",
                           "description": "Port of the backend service the path routes to.",
-                          "port": 6333
+                          "default": 6333
                         }
                       }
                     }
                   },
-                  "ingressClassName": {
-                    "type": "string",
-                    "form": true,
-                    "title": "ingressClassName",
-                    "default": "",
-                    "x-onyxia": {
-                      "hidden": true,
-                      "overwriteDefaultWith": "{{k8s.ingressClassName}}"
-                    }
-                  },
-                  "useCertManager": {
-                    "type": "boolean",
-                    "description": "Whether CertManager should be used to generate a certificate",
-                    "default": false,
-                    "x-onyxia": {
-                      "hidden": true,
-                      "overwriteDefaultWith": "k8s.useCertManager"
-                    }
-                  },
-                  "certManagerClusterIssuer": {
-                    "type": "string",
-                    "description": "certManager cluster issuer",
-                    "title": "CertManager Cluster Issuer",
-                    "default": "",
-                    "x-onyxia": {
-                      "hidden": true,
-                      "overwriteDefaultWith": "k8s.certManagerClusterIssuer"
-                    }
-                  },
-                  "useTlsSecret": {
-                    "type": "boolean",
-                    "description": "Whether you want to use the specified secretName in ingress tls",
-                    "default": false,
-                    "x-onyxia": {
-                      "hidden": true
-                    }
-                  }
                 }
               }
             },
             "tls": {
               "type": "array",
               "description": "TLS settings for ingress.",
-              "default": [
-                {
-                  "hosts": [
-                    "qdrant.user.lab.sspcloud.fr"
-                  ],
-                  "secretName": "tls-secret-name"
-                }
-              ],
+              "default": [],
               "items": {
                 "type": "object",
                 "properties": {

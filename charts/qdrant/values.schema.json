@@ -24,7 +24,6 @@
                 "title": "Tag",
                 "type": "string",
                 "default": "v1.13.2-gpu-nvidia",
-                "render": "list"
               },
               "repository": {
                 "title": "repository",

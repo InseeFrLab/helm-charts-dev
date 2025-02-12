@@ -46,6 +46,15 @@
                 "hidden": true,
                 "overwriteDefaultWith": "k8s.ingress"
               }
+            },
+            "ingressClassName": {
+              "type": "string",
+              "title": "ingressClassName",
+              "default": "",
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "{{k8s.ingressClassName}}"
+              }
             }
           }
         }

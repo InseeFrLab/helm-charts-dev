@@ -57,6 +57,34 @@ entries:
   chromadb:
   - apiVersion: v2
     appVersion: 0.6.3
+    created: "2025-02-12T15:25:07.300054456Z"
+    dependencies:
+    - name: chromadb
+      repository: https://amikos-tech.github.io/chromadb-chart
+      version: 0.1.23
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.42
+    description: ChromaDB is an open-source vector database for storing, indexing,
+      and querying high-dimensional embeddings efficiently.
+    digest: aef8e9210436a27ae20abe2104e042c9d0f028ece87e436c0dd90e181bce65be
+    home: https://www.trychroma.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
+    keywords:
+    - Vector Database
+    - Vector Store
+    - AI/ML
+    - Embedding
+    name: chromadb
+    sources:
+    - https://github.com/chroma-core/chroma
+    - https://github.com/amikos-tech/chromadb-chart/
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.3/chromadb-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: 0.6.3
     created: "2025-02-12T14:08:48.228546096Z"
     dependencies:
     - name: chromadb
@@ -1672,4 +1700,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-darkmode-1.11.11/vscode-python-darkmode-1.11.11.tgz
     version: 1.11.11
-generated: "2025-02-12T14:09:23.204894352Z"
+generated: "2025-02-12T15:25:07.300233518Z"

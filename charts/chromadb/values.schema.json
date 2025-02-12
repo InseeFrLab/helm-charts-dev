@@ -88,8 +88,7 @@
                       "default": "changeme",
                       "render": "password",
                       "x-onyxia": {
-                        "overwriteDefaultWith": "{{service.oneTimePassword}}",
-                        "overwriteSchemaWith": "ide/password"
+                        "overwriteDefaultWith": "{{project.password}}"
                       },
                       "hidden": {
                         "value": false,

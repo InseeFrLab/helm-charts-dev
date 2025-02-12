@@ -21,12 +21,10 @@
                 ]
               },
               "tag": {
-                "title": "Tag",
                 "type": "string",
                 "default": "v1.13.2-gpu-nvidia",
               },
               "repository": {
-                "title": "repository",
                 "type": "string",
                 "default": "docker.io/qdrant/qdrant"
               }

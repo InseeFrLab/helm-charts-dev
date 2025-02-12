@@ -59,8 +59,7 @@
                 "properties": {
                   "host": {
                     "type": "string",
-                    "form": true,
-                    "title": "Hostname",
+                    "default": "chart-example.com",
                     "x-onyxia": {
                       "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}"
                     }
@@ -106,7 +105,8 @@
                     "type": "array",
                     "description": "List of hosts covered by this TLS configuration.",
                     "items": {
-                      "type": "string"
+                      "type": "string",
+                      "default": "chart-example.com"
                     },
                     "x-onyxia": {
                       "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}"

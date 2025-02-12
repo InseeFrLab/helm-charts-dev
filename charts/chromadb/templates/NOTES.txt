@@ -1,35 +1,57 @@
-{{- if .Values.chromadb.chromadb.auth.enabled -}}
-{{- if eq .Values.chromadb.chromadb.auth.type "token" -}}
-First provide your access token in a environment variable using bash:
+{{- $hostname := "http://localhost" -}}
+{{- $httpport := "<port-local>" -}}
+{{- $ssl := "False" -}}
+{{- if or (.Values.ingress).enabled (.Values.route).enabled -}}
+{{-   $hostname = include "library-chart.service-url" . -}}
+{{-   $httpport = "80" -}}
+{{-   if or (.Values.route).enabled (.Values.ingress).tls -}}
+{{-     $httpport = "443" -}}
+{{-     $ssl = "True" -}}
+{{-   end -}}
+{{- end -}}
+
+
+{{- if not (or (.Values.ingress).enabled (.Values.route).enabled) -}}
+Enable access to your service using port forwarding:
 ```bash
-export CHROMA_TOKEN=$(kubectl get secret chromadb-auth -o jsonpath="{.data.token}" | base64 --decode)
+kubectl port-forward service/{{ include "chart.fullname" .Subcharts.chromadb }} <port-local>:{{ .Values.chromadb.chromadb.serverHttpPort }}
 ```
 
-Then use the variable for authentication with Python:
-```python
-import os
-import chromadb
-from chromadb.config import Settings
+{{ end -}}
 
-client = chromadb.HttpClient(
-  settings=Settings(
-      chroma_client_auth_provider="chromadb.auth.token_authn.TokenAuthClientProvider",
-      chroma_client_auth_credentials=os.environ.get("CHROMA_TOKEN")
-{{- else if eq .Values.chromadb.chromadb.auth.type "basic" -}}
-Authenticate directly using your password with Python:
-```python
-import chromadb
-from chromadb.config import Settings
+Configure the access to your service using environment variables:
+```bash
+export CHROMA_SERVER_HOST={{ $hostname }}
+export CHROMA_SERVER_HTTP_PORT={{ $httpport }}
 
-client = chromadb.HttpClient(
-  settings=Settings(
-      chroma_client_auth_provider="chromadb.auth.basic_authn.BasicAuthClientProvider",
-      chroma_client_auth_credentials="{{ .Values.chromadb.chromadb.auth.basic.username }}:{{ .Values.chromadb.chromadb.auth.basic.password }}"
+{{- if .Values.chromadb.chromadb.auth.enabled -}}
+{{- if eq .Values.chromadb.chromadb.auth.type "token" }}
+export CHROMA_CLIENT_AUTH_CREDENTIALS=$(kubectl get secret chromadb-auth -o jsonpath="{.data.token}" | base64 --decode)
+export CHROMA_CLIENT_AUTH_PROVIDER=chromadb.auth.token_authn.TokenAuthClientProvider
+export CHROMA_AUTH_TOKEN_TRANSPORT_HEADER={{ .Values.chromadb.chromadb.auth.token.headerType }}
+{{- else }}
+export CHROMA_CLIENT_AUTH_CREDENTIALS=$(kubectl get secret chromadb-auth -o jsonpath="{.data}" | yq '(.username|@base64d)+":"+(.password|@base64d)')
+export CHROMA_CLIENT_AUTH_PROVIDER=chromadb.auth.basic_authn.BasicAuthClientProvider
+{{- end -}}
 {{- end }}
-  )
+```
+
+Then use the variables for authentication with Python:
+```python
+import chromadb
+from chromadb.config import Settings
+
+# Setup client using environment variables
+client = chromadb.HttpClient(
+    host="{{ $hostname }}",
+    port={{ $httpport }},
+    ssl={{ $ssl }},
+   settings=Settings()
 )
 
-# if everything is correctly configured the below should list all collections
-client.list_collections()
+# Create a dummy collection
+client.get_or_create_collection("test", metadata={"key": "value"})
+
+# Print out all existing collections
+print("This should print ['test']:", client.list_collections())
 ```
-{{- end -}}

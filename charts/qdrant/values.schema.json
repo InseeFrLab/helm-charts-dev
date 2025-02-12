@@ -34,128 +34,20 @@
             }
         },
         "ingress": {
-            "type": "object",
-            "form": true,
-            "title": "Ingress Details",
-            "properties": {
-              "enabled": {
-                "description": "Enable Ingress",
-                "type": "boolean",
-                "default": true,
-                "x-onyxia": {
-                  "hidden": true,
-                  "overwriteDefaultWith": "k8s.ingress"
-                }
-              },
-              "hosts": {
-                "type": "array",
-                "items": {
-                    "type": "object",
-                    "properties": {
-                "host": {
-                    "type": "string",
-                    "form": true,
-                    "title": "Hostname",
-                    "x-onyxia": {
-                    "hidden": true,
-                    "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}"
-                    }
-                },
-                "paths": {
-                    "type": "array",
-                    "description": "List of path-based routing rules for the host.",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "path": {
-                          "type": "string",
-                          "default": "/"
-                        },
-                        "pathType": {
-                          "type": "string",
-                          "enum": ["Exact", "Prefix", "ImplementationSpecific"],
-                          "description": "Defines how the path should be matched.",
-                          "default": "Prefix"
-                        },
-                        "servicePort": {
-                          "type": "integer",
-                          "description": "Port of the backend service the path routes to.",
-                          "port": 6333
-                        }
-                      }
-                    }
-                },
-              "ingressClassName": {
-                "type": "string",
-                "form": true,
-                "title": "ingressClassName",
-                "default": "",
-                "x-onyxia": {
-                  "hidden": true,
-                  "overwriteDefaultWith": "{{k8s.ingressClassName}}"
-                }
-              },
-              "useCertManager": {
-                "type": "boolean",
-                "description": "Whether CertManager should be used to generate a certificate",
-                "default": false,
-                "x-onyxia": {
-                  "hidden": true,
-                  "overwriteDefaultWith": "k8s.useCertManager"
-                }
-              },
-              "certManagerClusterIssuer": {
-                "type": "string",
-                "description": "certManager cluster issuer",
-                "title": "CertManager Cluster Issuer",
-                "default": "",
-                "x-onyxia": {
-                  "hidden": true,
-                  "overwriteDefaultWith": "k8s.certManagerClusterIssuer"
-                }
-              },
-              "useTlsSecret": {
-                "type": "boolean",
-                "description": "Whether you want to use the specified secretName in ingress tls",
-                "default": false,
-                "x-onyxia": {
-                  "hidden": true
-                }
-              }
-            }
-        }
-      },
-      "tls": {
-        "type": "array",
-        "description": "TLS settings for ingress.",
-        "default": [
-          {
-            "hosts": ["qdrant.user.lab.sspcloud.fr"],
-            "secretName": "tls-secret-name"
-          }
-        ],
-        "items": {
           "type": "object",
+          "form": true,
+          "title": "Ingress Details",
           "properties": {
-            "hosts": {
-              "type": "array",
-              "description": "List of hosts covered by this TLS configuration.",
-              "items": {
-                "type": "string"
-              },
+            "enabled": {
+              "description": "Enable Ingress",
+              "type": "boolean",
+              "default": true,
               "x-onyxia": {
-              "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}"
+                "hidden": true,
+                "overwriteDefaultWith": "k8s.ingress"
               }
-            },
-            "secretName": {
-              "type": "string",
-              "description": "Secret name for TLS certificate.",
-              "default": "tls-secret-name"
-    }
-  }
-}
-      }
             }
+          }
         }
       }
     }

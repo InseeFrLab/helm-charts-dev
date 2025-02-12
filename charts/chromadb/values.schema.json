@@ -76,7 +76,11 @@
                     "username": {
                       "title": "Service user name",
                       "type": "string",
-                      "default": "chroma"
+                      "default": "chroma",
+                      "hidden": {
+                        "value": false,
+                        "path": "chromadb/chromadb/auth/enabled"
+                      }
                     },
                     "password": {
                       "title": "Service password",
@@ -86,6 +90,10 @@
                       "x-onyxia": {
                         "overwriteDefaultWith": "{{service.oneTimePassword}}",
                         "overwriteSchemaWith": "ide/password"
+                      },
+                      "hidden": {
+                        "value": false,
+                        "path": "chromadb/chromadb/auth/enabled"
                       }
                     }
                   }
@@ -105,7 +113,11 @@
                       "enum": [
                         "Authorization",
                         "X-Chroma-Token"
-                      ]
+                      ],
+                      "hidden": {
+                        "value": false,
+                        "path": "chromadb/chromadb/auth/enabled"
+                      }
                     }
                   }
                 }

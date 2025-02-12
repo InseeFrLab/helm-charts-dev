@@ -101,7 +101,6 @@
             "tls": {
               "type": "array",
               "description": "TLS settings for ingress.",
-              "default": [],
               "items": {
                 "type": "object",
                 "properties": {

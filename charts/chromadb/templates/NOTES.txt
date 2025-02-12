@@ -1,0 +1,35 @@
+{{- if .Values.chromadb.chromadb.auth.enabled -}}
+{{- if eq .Values.chromadb.chromadb.auth.type "token" -}}
+First provide your access token in a environment variable using bash:
+```bash
+export CHROMA_TOKEN=$(kubectl get secret chromadb-auth -o jsonpath="{.data.token}" | base64 --decode)
+```
+
+Then use the variable for authentication with Python:
+```python
+import os
+import chromadb
+from chromadb.config import Settings
+
+client = chromadb.HttpClient(
+  settings=Settings(
+      chroma_client_auth_provider="chromadb.auth.token_authn.TokenAuthClientProvider",
+      chroma_client_auth_credentials=os.environ.get("CHROMA_TOKEN")
+{{- else if eq .Values.chromadb.chromadb.auth.type "basic" -}}
+Authenticate directly using your password with Python:
+```python
+import chromadb
+from chromadb.config import Settings
+
+client = chromadb.HttpClient(
+  settings=Settings(
+      chroma_client_auth_provider="chromadb.auth.basic_authn.BasicAuthClientProvider",
+      chroma_client_auth_credentials="{{ .Values.chromadb.chromadb.auth.basic.username }}:{{ .Values.chromadb.chromadb.auth.basic.password }}"
+{{- end }}
+  )
+)
+
+# if everything is correctly configured the below should list all collections
+client.list_collections()
+```
+{{- end -}}

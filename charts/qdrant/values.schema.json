@@ -93,7 +93,19 @@
                     }
                   }
                 }
-              }
+              },
+              "default": [
+                {
+                  "host": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}",
+                  "paths": [
+                    {
+                      "path": "/",
+                      "pathType": "Prefix",
+                      "servicePort": 6333
+                    }
+                  ]
+                }
+              ]
             },
             "tls": {
               "type": "array",
@@ -106,10 +118,10 @@
                     "description": "List of hosts covered by this TLS configuration.",
                     "items": {
                       "type": "string",
-                      "default": "chart-example.com"
-                    },
-                    "x-onyxia": {
-                      "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}"
+                      "default": "chart-example.com",
+                      "x-onyxia": {
+                        "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}"
+                      }
                     }
                   },
                   "secretName": {
@@ -118,7 +130,15 @@
                     "default": "tls-secret-name"
                   }
                 }
-              }
+              },
+              "default": [
+                {
+                  "hosts": [
+                    "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}"
+                  ],
+                  "secretName": "tls-secret-name"
+                }
+              ]
             }
           }
         }

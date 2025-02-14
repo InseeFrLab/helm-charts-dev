@@ -94,18 +94,20 @@
                   }
                 }
               },
-              "default": [
-                {
-                  "host": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}",
-                  "paths": [
-                    {
-                      "path": "/",
-                      "pathType": "Prefix",
-                      "servicePort": 6333
-                    }
-                  ]
-                }
-              ]
+              "x-onyxia": {
+                "overwriteDefaultWith": [
+                  {
+                    "host": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}",
+                    "paths": [
+                      {
+                        "path": "/",
+                        "pathType": "Prefix",
+                        "servicePort": 6333
+                      }
+                    ]
+                  }
+                ]
+              }
             },
             "tls": {
               "type": "array",
@@ -131,14 +133,16 @@
                   }
                 }
               },
-              "default": [
-                {
-                  "hosts": [
-                    "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}"
-                  ],
-                  "secretName": "tls-secret-name"
-                }
-              ]
+              "x-onyxia": {
+                "overwriteDefaultWith": [
+                  {
+                    "hosts": [
+                      "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}"
+                    ],
+                    "secretName": "tls-secret-name"
+                  }
+                ]
+              }
             }
           }
         }

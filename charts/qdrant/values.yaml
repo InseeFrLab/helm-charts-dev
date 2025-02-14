@@ -50,7 +50,7 @@ qdrant:
         paths:
           - path: /
             pathType: Prefix
-            servicePort: 6334 # replace with 6333
+            servicePort: 6333 
     tls: []
 
   livenessProbe:

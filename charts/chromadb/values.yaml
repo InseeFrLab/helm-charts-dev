@@ -1,6 +1,3 @@
-global:
-  suspend: false
-
 chromadb:
   replicaCount: 1
   image:

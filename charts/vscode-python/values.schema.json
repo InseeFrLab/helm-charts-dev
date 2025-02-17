@@ -47,7 +47,7 @@
                   }
                 },
                 "version": {
-                  "title": "Name of the custom Docker image",
+                  "title": "Name of the custom image",
                   "type": "string",
                   "default": "inseefrlab/onyxia-vscode-python:py3.12.7",
                   "hidden": {
@@ -229,7 +229,7 @@
       }
     },
     "extraEnvVars": {
-      "description": "environment variables available within your service",
+      "title": "Environment variables available within your service",
       "type": "array",
       "default": [],
       "x-onyxia": {
@@ -241,7 +241,7 @@
         "properties": {
           "name": {
             "type": "string",
-            "default": "",
+            "default": "CHANGE_ME",
             "pattern": "^[a-zA-Z0-9_]+$"
           },
           "value": {
@@ -265,7 +265,7 @@
           "default": true
         },
         "role": {
-          "title": "Bind your service account to this Kubernetes role",
+          "title": "Kubernetes role",
           "type": "string",
           "default": "view",
           "hidden": {
@@ -789,19 +789,24 @@
       "type": "object",
       "properties": {
         "failureThreshold": {
-          "type": "integer"
+          "type": "integer",
+          "default": 60
         },
         "initialDelaySeconds": {
-          "type": "integer"
+          "type": "integer",
+          "default": 10
         },
         "periodSeconds": {
-          "type": "integer"
+          "type": "integer",
+          "default": 10
         },
         "successThreshold": {
-          "type": "integer"
+          "type": "integer",
+          "default": 1
         },
         "timeoutSeconds": {
-          "type": "integer"
+          "type": "integer",
+          "default": 2
         }
       },
       "default": {

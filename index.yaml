@@ -1,1835 +1,1907 @@
 apiVersion: v1
 entries:
   argo-cd:
-    - apiVersion: v2
-      appVersion: "1"
-      created: "2024-12-12T10:21:03.132880272Z"
-      dependencies:
-        - name: argo-cd
-          repository: https://argoproj.github.io/argo-helm
-          version: 6.11.1
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.21
-      description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
-      digest: c6712d6e1e252929bee5126903eb5214abbe64fa245da9b69df21aa07ac69cc1
-      home: https://argo-cd.readthedocs.io/en/stable/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/argo.png
-      keywords:
-        - gitops
-        - deployment
-        - delivery
-      name: argo-cd
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-automation/blob/master/charts/argo-cd
-        - https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/argo-cd-1.0.1/argo-cd-1.0.1.tgz
-      version: 1.0.1
+  - apiVersion: v2
+    appVersion: "1"
+    created: "2024-12-12T10:21:03.132880272Z"
+    dependencies:
+    - name: argo-cd
+      repository: https://argoproj.github.io/argo-helm
+      version: 6.11.1
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.21
+    description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
+    digest: c6712d6e1e252929bee5126903eb5214abbe64fa245da9b69df21aa07ac69cc1
+    home: https://argo-cd.readthedocs.io/en/stable/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/argo.png
+    keywords:
+    - gitops
+    - deployment
+    - delivery
+    name: argo-cd
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-automation/blob/master/charts/argo-cd
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/argo-cd-1.0.1/argo-cd-1.0.1.tgz
+    version: 1.0.1
   argo-workflows:
-    - apiVersion: v2
-      appVersion: "1"
-      created: "2024-12-12T10:21:03.275826451Z"
-      dependencies:
-        - name: argo-workflows
-          repository: https://argoproj.github.io/argo-helm
-          version: 0.40.11
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.21
-      description: Argo Workflows is an open source container-native workflow engine for orchestrating parallel jobs on Kubernetes.
-      digest: f5e99df0979b283cff16c542436b4b792f40c0703f9ace5345e05646a7b5eebd
-      home: https://argoproj.github.io/argo-workflows/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/argo.png
-      keywords:
-        - Worklow
-        - Job
-        - Task
-      name: argo-workflows
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-automation/tree/master/charts/argo-workflows
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/argo-workflows-1.0.1/argo-workflows-1.0.1.tgz
-      version: 1.0.1
+  - apiVersion: v2
+    appVersion: "1"
+    created: "2024-12-12T10:21:03.275826451Z"
+    dependencies:
+    - name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.40.11
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.21
+    description: Argo Workflows is an open source container-native workflow engine
+      for orchestrating parallel jobs on Kubernetes.
+    digest: f5e99df0979b283cff16c542436b4b792f40c0703f9ace5345e05646a7b5eebd
+    home: https://argoproj.github.io/argo-workflows/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/argo.png
+    keywords:
+    - Worklow
+    - Job
+    - Task
+    name: argo-workflows
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-automation/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/argo-workflows-1.0.1/argo-workflows-1.0.1.tgz
+    version: 1.0.1
   chromadb:
-    - apiVersion: v2
-      appVersion: 0.6.3
-      created: "2025-02-17T14:20:33.739961777Z"
-      dependencies:
-        - name: chromadb
-          repository: https://amikos-tech.github.io/chromadb-chart
-          version: 0.1.23
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.44
-      description: ChromaDB is an open-source vector database for storing, indexing, and querying high-dimensional embeddings efficiently.
-      digest: d5a01d98fa6aebf892ada495302d7f65cce11c35c9663dc68dd7074d7987b5aa
-      home: https://www.trychroma.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
-      keywords:
-        - Vector Database
-        - Vector Store
-        - AI/ML
-        - Embedding
-      name: chromadb
-      sources:
-        - https://github.com/chroma-core/chroma
-        - https://github.com/amikos-tech/chromadb-chart/
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.8/chromadb-0.0.8.tgz
-      version: 0.0.8
-    - apiVersion: v2
-      appVersion: 0.6.3
-      created: "2025-02-17T14:15:45.919195631Z"
-      dependencies:
-        - name: chromadb
-          repository: https://amikos-tech.github.io/chromadb-chart
-          version: 0.1.23
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.42
-      description: ChromaDB is an open-source vector database for storing, indexing, and querying high-dimensional embeddings efficiently.
-      digest: 3767cb86a46966a880ed51bcf961d8d04ae81396b108de909c37439436a03fa0
-      home: https://www.trychroma.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
-      keywords:
-        - Vector Database
-        - Vector Store
-        - AI/ML
-        - Embedding
-      name: chromadb
-      sources:
-        - https://github.com/chroma-core/chroma
-        - https://github.com/amikos-tech/chromadb-chart/
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.7/chromadb-0.0.7.tgz
-      version: 0.0.7
-    - apiVersion: v2
-      appVersion: 0.6.3
-      created: "2025-02-17T13:14:52.715235058Z"
-      dependencies:
-        - name: chromadb
-          repository: https://amikos-tech.github.io/chromadb-chart
-          version: 0.1.23
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.42
-      description: ChromaDB is an open-source vector database for storing, indexing, and querying high-dimensional embeddings efficiently.
-      digest: e083e78e23dd5b6d82b1f9994ab86b6ecaab9e0b1f8b6ccb3dbec5de8531f191
-      home: https://www.trychroma.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
-      keywords:
-        - Vector Database
-        - Vector Store
-        - AI/ML
-        - Embedding
-      name: chromadb
-      sources:
-        - https://github.com/chroma-core/chroma
-        - https://github.com/amikos-tech/chromadb-chart/
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.6/chromadb-0.0.6.tgz
-      version: 0.0.6
-    - apiVersion: v2
-      appVersion: 0.6.3
-      created: "2025-02-17T12:56:10.801464909Z"
-      dependencies:
-        - name: chromadb
-          repository: https://amikos-tech.github.io/chromadb-chart
-          version: 0.1.23
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.42
-      description: ChromaDB is an open-source vector database for storing, indexing, and querying high-dimensional embeddings efficiently.
-      digest: 1a953a2e64c9a70d63757292513b56aec92981315683762ae6e24225b4ed7eb8
-      home: https://www.trychroma.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
-      keywords:
-        - Vector Database
-        - Vector Store
-        - AI/ML
-        - Embedding
-      name: chromadb
-      sources:
-        - https://github.com/chroma-core/chroma
-        - https://github.com/amikos-tech/chromadb-chart/
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.5/chromadb-0.0.5.tgz
-      version: 0.0.5
-    - apiVersion: v2
-      appVersion: 0.6.3
-      created: "2025-02-12T16:52:24.90769662Z"
-      dependencies:
-        - name: chromadb
-          repository: https://amikos-tech.github.io/chromadb-chart
-          version: 0.1.23
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.42
-      description: ChromaDB is an open-source vector database for storing, indexing, and querying high-dimensional embeddings efficiently.
-      digest: b6199c74be8544a91df68104258bd448f43df6fbba4c13e741347b26c70fcb49
-      home: https://www.trychroma.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
-      keywords:
-        - Vector Database
-        - Vector Store
-        - AI/ML
-        - Embedding
-      name: chromadb
-      sources:
-        - https://github.com/chroma-core/chroma
-        - https://github.com/amikos-tech/chromadb-chart/
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.4/chromadb-0.0.4.tgz
-      version: 0.0.4
-    - apiVersion: v2
-      appVersion: 0.6.3
-      created: "2025-02-12T15:25:07.300054456Z"
-      dependencies:
-        - name: chromadb
-          repository: https://amikos-tech.github.io/chromadb-chart
-          version: 0.1.23
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.42
-      description: ChromaDB is an open-source vector database for storing, indexing, and querying high-dimensional embeddings efficiently.
-      digest: aef8e9210436a27ae20abe2104e042c9d0f028ece87e436c0dd90e181bce65be
-      home: https://www.trychroma.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
-      keywords:
-        - Vector Database
-        - Vector Store
-        - AI/ML
-        - Embedding
-      name: chromadb
-      sources:
-        - https://github.com/chroma-core/chroma
-        - https://github.com/amikos-tech/chromadb-chart/
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.3/chromadb-0.0.3.tgz
-      version: 0.0.3
-    - apiVersion: v2
-      appVersion: 0.6.3
-      created: "2025-02-12T14:08:48.228546096Z"
-      dependencies:
-        - name: chromadb
-          repository: https://amikos-tech.github.io/chromadb-chart
-          version: 0.1.23
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.42
-      description: ChromaDB is an open-source vector database for storing, indexing, and querying high-dimensional embeddings efficiently.
-      digest: 46a94d2b083ab2ba476da5d6cb7e9c47cfbbb84853698b978b8071b7fd376b47
-      home: https://www.trychroma.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
-      keywords:
-        - Vector Database
-        - Vector Store
-        - AI/ML
-        - Embedding
-      name: chromadb
-      sources:
-        - https://github.com/chroma-core/chroma
-        - https://github.com/amikos-tech/chromadb-chart/
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.2/chromadb-0.0.2.tgz
-      version: 0.0.2
-    - apiVersion: v2
-      appVersion: 0.6.3
-      created: "2025-02-12T13:29:54.909075992Z"
-      dependencies:
-        - name: chromadb
-          repository: https://amikos-tech.github.io/chromadb-chart
-          version: 0.1.23
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.42
-      description: ChromaDB is an open-source vector database for storing, indexing, and querying high-dimensional embeddings efficiently.
-      digest: 0e2ef66e993dae0dccd61d380bcf348898eb7022bed69e44bac84954e291f071
-      home: https://www.trychroma.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
-      keywords:
-        - Vector Database
-        - Vector Store
-        - AI/ML
-        - Embedding
-      name: chromadb
-      sources:
-        - https://github.com/chroma-core/chroma
-        - https://github.com/amikos-tech/chromadb-chart/
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.1/chromadb-0.0.1.tgz
-      version: 0.0.1
+  - apiVersion: v2
+    appVersion: 0.6.3
+    created: "2025-02-17T14:20:33.739961777Z"
+    dependencies:
+    - name: chromadb
+      repository: https://amikos-tech.github.io/chromadb-chart
+      version: 0.1.23
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.44
+    description: ChromaDB is an open-source vector database for storing, indexing,
+      and querying high-dimensional embeddings efficiently.
+    digest: d5a01d98fa6aebf892ada495302d7f65cce11c35c9663dc68dd7074d7987b5aa
+    home: https://www.trychroma.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
+    keywords:
+    - Vector Database
+    - Vector Store
+    - AI/ML
+    - Embedding
+    name: chromadb
+    sources:
+    - https://github.com/chroma-core/chroma
+    - https://github.com/amikos-tech/chromadb-chart/
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.8/chromadb-0.0.8.tgz
+    version: 0.0.8
+  - apiVersion: v2
+    appVersion: 0.6.3
+    created: "2025-02-17T14:15:45.919195631Z"
+    dependencies:
+    - name: chromadb
+      repository: https://amikos-tech.github.io/chromadb-chart
+      version: 0.1.23
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.42
+    description: ChromaDB is an open-source vector database for storing, indexing,
+      and querying high-dimensional embeddings efficiently.
+    digest: 3767cb86a46966a880ed51bcf961d8d04ae81396b108de909c37439436a03fa0
+    home: https://www.trychroma.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
+    keywords:
+    - Vector Database
+    - Vector Store
+    - AI/ML
+    - Embedding
+    name: chromadb
+    sources:
+    - https://github.com/chroma-core/chroma
+    - https://github.com/amikos-tech/chromadb-chart/
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.7/chromadb-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v2
+    appVersion: 0.6.3
+    created: "2025-02-17T13:14:52.715235058Z"
+    dependencies:
+    - name: chromadb
+      repository: https://amikos-tech.github.io/chromadb-chart
+      version: 0.1.23
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.42
+    description: ChromaDB is an open-source vector database for storing, indexing,
+      and querying high-dimensional embeddings efficiently.
+    digest: e083e78e23dd5b6d82b1f9994ab86b6ecaab9e0b1f8b6ccb3dbec5de8531f191
+    home: https://www.trychroma.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
+    keywords:
+    - Vector Database
+    - Vector Store
+    - AI/ML
+    - Embedding
+    name: chromadb
+    sources:
+    - https://github.com/chroma-core/chroma
+    - https://github.com/amikos-tech/chromadb-chart/
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.6/chromadb-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v2
+    appVersion: 0.6.3
+    created: "2025-02-17T12:56:10.801464909Z"
+    dependencies:
+    - name: chromadb
+      repository: https://amikos-tech.github.io/chromadb-chart
+      version: 0.1.23
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.42
+    description: ChromaDB is an open-source vector database for storing, indexing,
+      and querying high-dimensional embeddings efficiently.
+    digest: 1a953a2e64c9a70d63757292513b56aec92981315683762ae6e24225b4ed7eb8
+    home: https://www.trychroma.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
+    keywords:
+    - Vector Database
+    - Vector Store
+    - AI/ML
+    - Embedding
+    name: chromadb
+    sources:
+    - https://github.com/chroma-core/chroma
+    - https://github.com/amikos-tech/chromadb-chart/
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.5/chromadb-0.0.5.tgz
+    version: 0.0.5
+  - apiVersion: v2
+    appVersion: 0.6.3
+    created: "2025-02-12T16:52:24.90769662Z"
+    dependencies:
+    - name: chromadb
+      repository: https://amikos-tech.github.io/chromadb-chart
+      version: 0.1.23
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.42
+    description: ChromaDB is an open-source vector database for storing, indexing,
+      and querying high-dimensional embeddings efficiently.
+    digest: b6199c74be8544a91df68104258bd448f43df6fbba4c13e741347b26c70fcb49
+    home: https://www.trychroma.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
+    keywords:
+    - Vector Database
+    - Vector Store
+    - AI/ML
+    - Embedding
+    name: chromadb
+    sources:
+    - https://github.com/chroma-core/chroma
+    - https://github.com/amikos-tech/chromadb-chart/
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.4/chromadb-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 0.6.3
+    created: "2025-02-12T15:25:07.300054456Z"
+    dependencies:
+    - name: chromadb
+      repository: https://amikos-tech.github.io/chromadb-chart
+      version: 0.1.23
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.42
+    description: ChromaDB is an open-source vector database for storing, indexing,
+      and querying high-dimensional embeddings efficiently.
+    digest: aef8e9210436a27ae20abe2104e042c9d0f028ece87e436c0dd90e181bce65be
+    home: https://www.trychroma.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
+    keywords:
+    - Vector Database
+    - Vector Store
+    - AI/ML
+    - Embedding
+    name: chromadb
+    sources:
+    - https://github.com/chroma-core/chroma
+    - https://github.com/amikos-tech/chromadb-chart/
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.3/chromadb-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: 0.6.3
+    created: "2025-02-12T14:08:48.228546096Z"
+    dependencies:
+    - name: chromadb
+      repository: https://amikos-tech.github.io/chromadb-chart
+      version: 0.1.23
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.42
+    description: ChromaDB is an open-source vector database for storing, indexing,
+      and querying high-dimensional embeddings efficiently.
+    digest: 46a94d2b083ab2ba476da5d6cb7e9c47cfbbb84853698b978b8071b7fd376b47
+    home: https://www.trychroma.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
+    keywords:
+    - Vector Database
+    - Vector Store
+    - AI/ML
+    - Embedding
+    name: chromadb
+    sources:
+    - https://github.com/chroma-core/chroma
+    - https://github.com/amikos-tech/chromadb-chart/
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.2/chromadb-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 0.6.3
+    created: "2025-02-12T13:29:54.909075992Z"
+    dependencies:
+    - name: chromadb
+      repository: https://amikos-tech.github.io/chromadb-chart
+      version: 0.1.23
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.42
+    description: ChromaDB is an open-source vector database for storing, indexing,
+      and querying high-dimensional embeddings efficiently.
+    digest: 0e2ef66e993dae0dccd61d380bcf348898eb7022bed69e44bac84954e291f071
+    home: https://www.trychroma.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
+    keywords:
+    - Vector Database
+    - Vector Store
+    - AI/ML
+    - Embedding
+    name: chromadb
+    sources:
+    - https://github.com/chroma-core/chroma
+    - https://github.com/amikos-tech/chromadb-chart/
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/chromadb-0.0.1/chromadb-0.0.1.tgz
+    version: 0.0.1
   dagster:
-    - apiVersion: v2
-      created: "2024-04-02T08:44:28.124958975Z"
-      dependencies:
-        - name: dagster
-          repository: https://dagster-io.github.io/helm
-          version: 1.6.14
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.20
-      description: The data orchestration platform built for productivity.
-      digest: 23c66e5f9a1e405c5c84ed928e679ea68af5e7bc553fb3154743b34008be9e9e
-      icon: https://dagster.io/images/brand/logos/dagster-primary-mark.png
-      keywords:
-        - analytics
-        - data-orchestrator
-        - data-pipelines
-        - etl
-        - workflow
-      name: dagster
-      sources:
-        - https://github.com/dagster-io/dagster/tree/master/helm/dagster
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dagster-0.0.1/dagster-0.0.1.tgz
-      version: 0.0.1
+  - apiVersion: v2
+    created: "2024-04-02T08:44:28.124958975Z"
+    dependencies:
+    - name: dagster
+      repository: https://dagster-io.github.io/helm
+      version: 1.6.14
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.20
+    description: The data orchestration platform built for productivity.
+    digest: 23c66e5f9a1e405c5c84ed928e679ea68af5e7bc553fb3154743b34008be9e9e
+    icon: https://dagster.io/images/brand/logos/dagster-primary-mark.png
+    keywords:
+    - analytics
+    - data-orchestrator
+    - data-pipelines
+    - etl
+    - workflow
+    name: dagster
+    sources:
+    - https://github.com/dagster-io/dagster/tree/master/helm/dagster
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dagster-0.0.1/dagster-0.0.1.tgz
+    version: 0.0.1
   dask:
-    - apiVersion: v2
-      created: "2024-05-02T14:59:19.291464399Z"
-      dependencies:
-        - name: dask
-          repository: https://helm.dask.org
-          version: 2024.1.1
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.20
-      description: Dask is a flexible open-source Python library for parallel computing
-      digest: b45f8e059a6215a85bfea9e0b758861781729ae56623f465f98922562498f194
-      home: https://www.dask.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-      name: dask
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-databases
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.8/dask-0.1.8.tgz
-      version: 0.1.8
-    - apiVersion: v2
-      created: "2024-05-02T14:34:47.887433566Z"
-      dependencies:
-        - name: dask
-          repository: https://helm.dask.org
-          version: 2024.1.1
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.20
-      description: Dask is a flexible open-source Python library for parallel computing
-      digest: 8919fa3dcd1659d804dabc562fdb272eae181ad7bca6ad8acd6476f90fd7687b
-      home: https://www.dask.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-      name: dask
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-databases
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.7/dask-0.1.7.tgz
-      version: 0.1.7
-    - apiVersion: v2
-      created: "2024-05-02T11:12:55.888671719Z"
-      dependencies:
-        - name: dask
-          repository: https://helm.dask.org
-          version: 2024.1.1
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.20
-      description: Dask is a flexible open-source Python library for parallel computing
-      digest: 47e4ca01e2b281fb2772f0543286e8d37c318e02e778eb99fc3a3de3cd0f5292
-      home: https://www.dask.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-      name: dask
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-databases
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.6/dask-0.1.6.tgz
-      version: 0.1.6
-    - apiVersion: v2
-      created: "2024-05-02T09:15:41.780868823Z"
-      dependencies:
-        - name: dask
-          repository: https://helm.dask.org
-          version: 2024.1.1
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.20
-      description: Dask is a flexible open-source Python library for parallel computing
-      digest: 8a7a59c11b775b03596b7cf9fad8086f9ceaede9c9d0cadcdfe51be64db182cb
-      home: https://www.dask.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-      name: dask
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-databases
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.5/dask-0.1.5.tgz
-      version: 0.1.5
-    - apiVersion: v2
-      created: "2024-05-02T09:13:36.153721604Z"
-      dependencies:
-        - name: dask
-          repository: https://helm.dask.org
-          version: 2024.1.1
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.20
-      description: Dask is a flexible open-source Python library for parallel computing
-      digest: 25fb8be4fa553a9d8bc55d6776a1240489498e4e4e1e95e31ae36bb1b4b02828
-      home: https://www.dask.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-      name: dask
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-databases
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.4/dask-0.1.4.tgz
-      version: 0.1.4
-    - apiVersion: v2
-      created: "2024-05-02T08:56:08.929059669Z"
-      dependencies:
-        - name: dask
-          repository: https://helm.dask.org
-          version: 2024.1.1
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.20
-      description: Dask is a flexible open-source Python library for parallel computing
-      digest: 442e16285858ea02e09f5c7ca2d5490186414ef1ba97b3a0d24379f5735119d2
-      home: https://www.dask.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-      name: dask
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-databases
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.3/dask-0.1.3.tgz
-      version: 0.1.3
-    - apiVersion: v2
-      created: "2024-05-02T08:44:25.007962321Z"
-      dependencies:
-        - name: dask
-          repository: https://helm.dask.org
-          version: 2024.1.1
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.20
-      description: dask
-      digest: cc364068d3956482bd9c1133cbc2f4ff5eaa8e6da6666b4b716111cc43fd0698
-      home: https://jupyter.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-      name: dask
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.2/dask-0.1.2.tgz
-      version: 0.1.2
-    - apiVersion: v2
-      created: "2024-05-02T08:41:32.100858619Z"
-      dependencies:
-        - name: dask
-          repository: https://helm.dask.org
-          version: 2024.1.1
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.20
-      description: dask
-      digest: df669103255db1ecbc8afb9f4c8fd22631fffe1bfdcf7fd19f0b1f2cc4b08b05
-      home: https://jupyter.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-      name: dask
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.1/dask-0.1.1.tgz
-      version: 0.1.1
-    - apiVersion: v2
-      created: "2024-04-29T16:12:39.338443649Z"
-      dependencies:
-        - name: dask
-          repository: https://helm.dask.org
-          version: 2024.1.1
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.20
-      description: dask
-      digest: 865d1d3bbb5fba94673c36e0c268199cccb02421b3571f34d9a47f0cdf6aa9be
-      home: https://jupyter.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-      name: dask
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.0/dask-0.1.0.tgz
-      version: 0.1.0
+  - apiVersion: v2
+    created: "2024-05-02T14:59:19.291464399Z"
+    dependencies:
+    - name: dask
+      repository: https://helm.dask.org
+      version: 2024.1.1
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.20
+    description: Dask is a flexible open-source Python library for parallel computing
+    digest: b45f8e059a6215a85bfea9e0b758861781729ae56623f465f98922562498f194
+    home: https://www.dask.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+    name: dask
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-databases
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.8/dask-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    created: "2024-05-02T14:34:47.887433566Z"
+    dependencies:
+    - name: dask
+      repository: https://helm.dask.org
+      version: 2024.1.1
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.20
+    description: Dask is a flexible open-source Python library for parallel computing
+    digest: 8919fa3dcd1659d804dabc562fdb272eae181ad7bca6ad8acd6476f90fd7687b
+    home: https://www.dask.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+    name: dask
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-databases
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.7/dask-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    created: "2024-05-02T11:12:55.888671719Z"
+    dependencies:
+    - name: dask
+      repository: https://helm.dask.org
+      version: 2024.1.1
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.20
+    description: Dask is a flexible open-source Python library for parallel computing
+    digest: 47e4ca01e2b281fb2772f0543286e8d37c318e02e778eb99fc3a3de3cd0f5292
+    home: https://www.dask.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+    name: dask
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-databases
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.6/dask-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    created: "2024-05-02T09:15:41.780868823Z"
+    dependencies:
+    - name: dask
+      repository: https://helm.dask.org
+      version: 2024.1.1
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.20
+    description: Dask is a flexible open-source Python library for parallel computing
+    digest: 8a7a59c11b775b03596b7cf9fad8086f9ceaede9c9d0cadcdfe51be64db182cb
+    home: https://www.dask.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+    name: dask
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-databases
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.5/dask-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    created: "2024-05-02T09:13:36.153721604Z"
+    dependencies:
+    - name: dask
+      repository: https://helm.dask.org
+      version: 2024.1.1
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.20
+    description: Dask is a flexible open-source Python library for parallel computing
+    digest: 25fb8be4fa553a9d8bc55d6776a1240489498e4e4e1e95e31ae36bb1b4b02828
+    home: https://www.dask.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+    name: dask
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-databases
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.4/dask-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    created: "2024-05-02T08:56:08.929059669Z"
+    dependencies:
+    - name: dask
+      repository: https://helm.dask.org
+      version: 2024.1.1
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.20
+    description: Dask is a flexible open-source Python library for parallel computing
+    digest: 442e16285858ea02e09f5c7ca2d5490186414ef1ba97b3a0d24379f5735119d2
+    home: https://www.dask.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+    name: dask
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-databases
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.3/dask-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    created: "2024-05-02T08:44:25.007962321Z"
+    dependencies:
+    - name: dask
+      repository: https://helm.dask.org
+      version: 2024.1.1
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.20
+    description: dask
+    digest: cc364068d3956482bd9c1133cbc2f4ff5eaa8e6da6666b4b716111cc43fd0698
+    home: https://jupyter.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+    name: dask
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.2/dask-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    created: "2024-05-02T08:41:32.100858619Z"
+    dependencies:
+    - name: dask
+      repository: https://helm.dask.org
+      version: 2024.1.1
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.20
+    description: dask
+    digest: df669103255db1ecbc8afb9f4c8fd22631fffe1bfdcf7fd19f0b1f2cc4b08b05
+    home: https://jupyter.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+    name: dask
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.1/dask-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    created: "2024-04-29T16:12:39.338443649Z"
+    dependencies:
+    - name: dask
+      repository: https://helm.dask.org
+      version: 2024.1.1
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.20
+    description: dask
+    digest: 865d1d3bbb5fba94673c36e0c268199cccb02421b3571f34d9a47f0cdf6aa9be
+    home: https://jupyter.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+    name: dask
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.0/dask-0.1.0.tgz
+    version: 0.1.0
   fuseki:
-    - apiVersion: v2
-      appVersion: 4.0.0
-      created: "2024-07-02T13:09:38.846537872Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.23
-      description: Apache Jena Fuseki is a SPARQL server.
-      digest: e483bfdf8a2f163d755cdbaa3dce79fb0ed117864ade99333450614386befcd4
-      home: https://jena.apache.org/documentation/fuseki2/index.html
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jena.png
-      keywords:
-        - RDF
-        - Triplestore
-        - Linked Data
-      name: fuseki
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/fuseki
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/fuseki-0.3.6/fuseki-0.3.6.tgz
-      version: 0.3.6
-    - apiVersion: v2
-      appVersion: 4.0.0
-      created: "2024-06-27T09:10:20.493333174Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.23
-      description: Apache Jena Fuseki is a SPARQL server.
-      digest: a7c5880cfc5d28cc19a7eb44b6d64cfc5f2b0686d5ba0b91b44918e3e85c307b
-      home: https://jena.apache.org/documentation/fuseki2/index.html
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jena.png
-      keywords:
-        - RDF
-        - Triplestore
-        - Linked Data
-      name: fuseki
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/fuseki
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/fuseki-0.3.5/fuseki-0.3.5.tgz
-      version: 0.3.5
+  - apiVersion: v2
+    appVersion: 4.0.0
+    created: "2024-07-02T13:09:38.846537872Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: Apache Jena Fuseki is a SPARQL server.
+    digest: e483bfdf8a2f163d755cdbaa3dce79fb0ed117864ade99333450614386befcd4
+    home: https://jena.apache.org/documentation/fuseki2/index.html
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jena.png
+    keywords:
+    - RDF
+    - Triplestore
+    - Linked Data
+    name: fuseki
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/fuseki
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/fuseki-0.3.6/fuseki-0.3.6.tgz
+    version: 0.3.6
+  - apiVersion: v2
+    appVersion: 4.0.0
+    created: "2024-06-27T09:10:20.493333174Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: Apache Jena Fuseki is a SPARQL server.
+    digest: a7c5880cfc5d28cc19a7eb44b6d64cfc5f2b0686d5ba0b91b44918e3e85c307b
+    home: https://jena.apache.org/documentation/fuseki2/index.html
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jena.png
+    keywords:
+    - RDF
+    - Triplestore
+    - Linked Data
+    name: fuseki
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/fuseki
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/fuseki-0.3.5/fuseki-0.3.5.tgz
+    version: 0.3.5
   launcher:
-    - apiVersion: v2
-      created: "2024-04-28T23:12:01.460216969Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.21
-      description: Test pour developpper le launcher
-      digest: a3ec013656805fa025942651f6d48a0767cd5173e2357ab63057067ec2c97f86
-      home: https://jupyter.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jupyter.png
-      keywords:
-        - Jupyter
-        - Python
-      name: launcher
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-dev
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/launcher-1.0.0/launcher-1.0.0.tgz
-      version: 1.0.0
+  - apiVersion: v2
+    created: "2024-04-28T23:12:01.460216969Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.21
+    description: Test pour developpper le launcher
+    digest: a3ec013656805fa025942651f6d48a0767cd5173e2357ab63057067ec2c97f86
+    home: https://jupyter.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jupyter.png
+    keywords:
+    - Jupyter
+    - Python
+    name: launcher
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-dev
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/launcher-1.0.0/launcher-1.0.0.tgz
+    version: 1.0.0
   onyxia:
-    - apiVersion: v2
-      created: "2024-09-17T09:00:01.870293199Z"
-      description: Onyxia is your datalab's hub.
-      digest: 994a7e9ee30d8550b036d48ae699cc065cd03b903c03ab6d500775e3275ceff1
-      icon: https://inseefrlab.github.io/onyxia/icon.svg
-      name: onyxia
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-9.0.2/onyxia-9.0.2.tgz
-      version: 9.0.2
-    - apiVersion: v2
-      created: "2024-09-17T08:33:34.214100692Z"
-      description: Onyxia is your datalab's hub.
-      digest: 56d2509dabbe7b3ae8cca41c67e12d896125a33e0073c16dc3c5726ce2e19542
-      icon: https://inseefrlab.github.io/onyxia/icon.svg
-      name: onyxia
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-9.0.1/onyxia-9.0.1.tgz
-      version: 9.0.1
-    - apiVersion: v2
-      created: "2024-09-17T07:11:02.599866997Z"
-      description: Onyxia is your datalab's hub.
-      digest: 774932d14ca081e0ffcb69ea11db7067e6128c8a1f1c389b883264c912570e3a
-      icon: https://inseefrlab.github.io/onyxia/icon.svg
-      name: onyxia
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-9.0.0/onyxia-9.0.0.tgz
-      version: 9.0.0
-    - apiVersion: v2
-      created: "2024-07-24T08:34:59.070417084Z"
-      description: Onyxia is your datalab's hub.
-      digest: 8ccd159f05cbcf1b8f67788f73c54fa0f602c1a3b1e6b007598c8be5173b0831
-      icon: https://inseefrlab.github.io/onyxia/icon.svg
-      name: onyxia
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-8.25.0/onyxia-8.25.0.tgz
-      version: 8.25.0
+  - apiVersion: v2
+    created: "2024-09-17T09:00:01.870293199Z"
+    description: Onyxia is your datalab's hub.
+    digest: 994a7e9ee30d8550b036d48ae699cc065cd03b903c03ab6d500775e3275ceff1
+    icon: https://inseefrlab.github.io/onyxia/icon.svg
+    name: onyxia
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-9.0.2/onyxia-9.0.2.tgz
+    version: 9.0.2
+  - apiVersion: v2
+    created: "2024-09-17T08:33:34.214100692Z"
+    description: Onyxia is your datalab's hub.
+    digest: 56d2509dabbe7b3ae8cca41c67e12d896125a33e0073c16dc3c5726ce2e19542
+    icon: https://inseefrlab.github.io/onyxia/icon.svg
+    name: onyxia
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-9.0.1/onyxia-9.0.1.tgz
+    version: 9.0.1
+  - apiVersion: v2
+    created: "2024-09-17T07:11:02.599866997Z"
+    description: Onyxia is your datalab's hub.
+    digest: 774932d14ca081e0ffcb69ea11db7067e6128c8a1f1c389b883264c912570e3a
+    icon: https://inseefrlab.github.io/onyxia/icon.svg
+    name: onyxia
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-9.0.0/onyxia-9.0.0.tgz
+    version: 9.0.0
+  - apiVersion: v2
+    created: "2024-07-24T08:34:59.070417084Z"
+    description: Onyxia is your datalab's hub.
+    digest: 8ccd159f05cbcf1b8f67788f73c54fa0f602c1a3b1e6b007598c8be5173b0831
+    icon: https://inseefrlab.github.io/onyxia/icon.svg
+    name: onyxia
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-8.25.0/onyxia-8.25.0.tgz
+    version: 8.25.0
   qdrant:
-    - apiVersion: v2
-      appVersion: 1.13.2
-      created: "2025-02-14T08:24:47.721857867Z"
-      dependencies:
-        - name: qdrant
-          repository: https://qdrant.github.io/qdrant-helm
-          version: 1.13.2
-      description: Qdrant - Vector Database for the next generation of AI applications.
-      digest: 37d8b3c74e6a49cb9ae2d095874bcd9ddf498a2646285803a309bce3bdcf6f76
-      home: https://qdrant.tech
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-      keywords:
-        - vector database
-      name: qdrant
-      sources:
-        - https://github.com/qdrant/qdrant
-        - https://github.com/qdrant/qdrant-helm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.17/qdrant-0.0.17.tgz
-      version: 0.0.17
-    - apiVersion: v2
-      appVersion: 1.13.2
-      created: "2025-02-14T08:05:52.763627443Z"
-      dependencies:
-        - name: qdrant
-          repository: https://qdrant.github.io/qdrant-helm
-          version: 1.13.2
-      description: Qdrant - Vector Database for the next generation of AI applications.
-      digest: 7d4d80a109f70f120be2d941478b8acea13f233e36f64d357eb9eeb5c936d1e4
-      home: https://qdrant.tech
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-      keywords:
-        - vector database
-      name: qdrant
-      sources:
-        - https://github.com/qdrant/qdrant
-        - https://github.com/qdrant/qdrant-helm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.16/qdrant-0.0.16.tgz
-      version: 0.0.16
-    - apiVersion: v2
-      appVersion: 1.13.2
-      created: "2025-02-12T14:09:23.20466267Z"
-      dependencies:
-        - name: qdrant
-          repository: https://qdrant.github.io/qdrant-helm
-          version: 1.13.2
-      description: Qdrant - Vector Database for the next generation of AI applications.
-      digest: b6a8b1cc603a9380bca190065c8f883d3d5f3ea2c37786964fba5b6e36c0e46a
-      home: https://qdrant.tech
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-      keywords:
-        - vector database
-      name: qdrant
-      sources:
-        - https://github.com/qdrant/qdrant
-        - https://github.com/qdrant/qdrant-helm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.15/qdrant-0.0.15.tgz
-      version: 0.0.15
-    - apiVersion: v2
-      appVersion: 1.13.2
-      created: "2025-02-12T14:03:34.66092231Z"
-      dependencies:
-        - name: qdrant
-          repository: https://qdrant.github.io/qdrant-helm
-          version: 1.13.2
-      description: Qdrant - Vector Database for the next generation of AI applications.
-      digest: c007aac6f85204d2ae432098aaeca92700fe8bf8f3d98a304164d28ae44cdb2b
-      home: https://qdrant.tech
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-      keywords:
-        - vector database
-      name: qdrant
-      sources:
-        - https://github.com/qdrant/qdrant
-        - https://github.com/qdrant/qdrant-helm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.14/qdrant-0.0.14.tgz
-      version: 0.0.14
-    - apiVersion: v2
-      appVersion: 1.13.2
-      created: "2025-02-12T13:16:59.95648949Z"
-      dependencies:
-        - name: qdrant
-          repository: https://qdrant.github.io/qdrant-helm
-          version: 1.13.2
-      description: Qdrant - Vector Database for the next generation of AI applications.
-      digest: 66eeadd8ab55c029924b85e239caa35580074f8bd4436d80ba30c8038bc22e66
-      home: https://qdrant.tech
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-      keywords:
-        - vector database
-      name: qdrant
-      sources:
-        - https://github.com/qdrant/qdrant
-        - https://github.com/qdrant/qdrant-helm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.13/qdrant-0.0.13.tgz
-      version: 0.0.13
-    - apiVersion: v2
-      appVersion: 1.13.2
-      created: "2025-02-12T13:09:34.562821749Z"
-      dependencies:
-        - name: qdrant
-          repository: https://qdrant.github.io/qdrant-helm
-          version: 1.13.2
-      description: Qdrant - Vector Database for the next generation of AI applications.
-      digest: 46c6f233dda3f838276d73eae90b48518887c6ceed7805b434da112eec2ed99b
-      home: https://qdrant.tech
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-      keywords:
-        - vector database
-      name: qdrant
-      sources:
-        - https://github.com/qdrant/qdrant
-        - https://github.com/qdrant/qdrant-helm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.12/qdrant-0.0.12.tgz
-      version: 0.0.12
-    - apiVersion: v2
-      appVersion: 1.13.2
-      created: "2025-02-12T12:59:27.22292882Z"
-      dependencies:
-        - name: qdrant
-          repository: https://qdrant.github.io/qdrant-helm
-          version: 1.13.2
-      description: Qdrant - Vector Database for the next generation of AI applications.
-      digest: 2495691ab4d32abad6d49298d2b66c899fe75aa19b3f9aa6b1e7ff7acf6ccade
-      home: https://qdrant.tech
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-      keywords:
-        - vector database
-      name: qdrant
-      sources:
-        - https://github.com/qdrant/qdrant
-        - https://github.com/qdrant/qdrant-helm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.11/qdrant-0.0.11.tgz
-      version: 0.0.11
-    - apiVersion: v2
-      appVersion: 1.13.2
-      created: "2025-02-12T11:07:49.223384188Z"
-      dependencies:
-        - name: qdrant
-          repository: https://qdrant.github.io/qdrant-helm
-          version: 1.13.2
-      description: Qdrant - Vector Database for the next generation of AI applications.
-      digest: 05e93ca23883ac7a6c703cfc8f91210160315ee3d1afbef11d2eccaf398b782b
-      home: https://qdrant.tech
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-      keywords:
-        - vector database
-      name: qdrant
-      sources:
-        - https://github.com/qdrant/qdrant
-        - https://github.com/qdrant/qdrant-helm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.9/qdrant-0.0.9.tgz
-      version: 0.0.9
-    - apiVersion: v2
-      appVersion: 1.13.2
-      created: "2025-02-12T10:50:19.189187359Z"
-      dependencies:
-        - name: qdrant
-          repository: https://qdrant.github.io/qdrant-helm
-          version: 1.13.2
-      description: Qdrant - Vector Database for the next generation of AI applications.
-      digest: 50cc67dd0e650d1723004b451dcb9eebb71b60262673ae8966aff6bc1e75cb4d
-      home: https://qdrant.tech
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-      keywords:
-        - vector database
-      name: qdrant
-      sources:
-        - https://github.com/qdrant/qdrant
-        - https://github.com/qdrant/qdrant-helm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.8/qdrant-0.0.8.tgz
-      version: 0.0.8
-    - apiVersion: v2
-      appVersion: 1.13.2
-      created: "2025-02-12T10:33:56.836755947Z"
-      dependencies:
-        - name: qdrant
-          repository: https://qdrant.github.io/qdrant-helm
-          version: 1.13.2
-      description: Qdrant - Vector Database for the next generation of AI applications.
-      digest: b24dfba57cac787ca7ee1b336e8b57eb21ec53718e66dce612626552e38aa99e
-      home: https://qdrant.tech
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-      keywords:
-        - vector database
-      name: qdrant
-      sources:
-        - https://github.com/qdrant/qdrant
-        - https://github.com/qdrant/qdrant-helm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.6/qdrant-0.0.6.tgz
-      version: 0.0.6
-    - apiVersion: v2
-      appVersion: 1.13.2
-      created: "2025-02-12T10:11:51.684271197Z"
-      dependencies:
-        - name: qdrant
-          repository: https://qdrant.github.io/qdrant-helm
-          version: 1.13.2
-      description: Qdrant - Vector Database for the next generation of AI applications.
-      digest: 3e3b9175b79898820ef4d229af1510134b7a6650a303ce3ef42894a0e835b5bc
-      home: https://qdrant.tech
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-      keywords:
-        - vector database
-      name: qdrant
-      sources:
-        - https://github.com/qdrant/qdrant
-        - https://github.com/qdrant/qdrant-helm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.5/qdrant-0.0.5.tgz
-      version: 0.0.5
-    - apiVersion: v2
-      appVersion: 1.13.2
-      created: "2025-02-12T10:01:39.02449184Z"
-      dependencies:
-        - name: qdrant
-          repository: https://qdrant.github.io/qdrant-helm
-          version: 1.13.2
-      description: Qdrant - Vector Database for the next generation of AI applications.
-      digest: 7f3d37e58d568ffc4698caac9196bf862c48d7ed3414a6642f96f8b53ac0f6ee
-      home: https://qdrant.tech
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-      keywords:
-        - vector database
-      name: qdrant
-      sources:
-        - https://github.com/qdrant/qdrant
-        - https://github.com/qdrant/qdrant-helm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.4/qdrant-0.0.4.tgz
-      version: 0.0.4
-    - apiVersion: v2
-      appVersion: 1.13.2
-      created: "2025-02-12T09:01:23.161533984Z"
-      dependencies:
-        - name: qdrant
-          repository: https://qdrant.github.io/qdrant-helm
-          version: 1.13.2
-      description: Qdrant - Vector Database for the next generation of AI applications.
-      digest: 0997201197648409a0099c61e2b539d045d0a08a0cb6e9bd42c1553bad82f527
-      home: https://qdrant.tech
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-      keywords:
-        - vector database
-      name: qdrant
-      sources:
-        - https://github.com/qdrant/qdrant
-        - https://github.com/qdrant/qdrant-helm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.3/qdrant-0.0.3.tgz
-      version: 0.0.3
-    - apiVersion: v2
-      appVersion: 1.13.2
-      created: "2025-02-12T08:45:15.802916661Z"
-      dependencies:
-        - name: qdrant
-          repository: https://qdrant.github.io/qdrant-helm
-          version: 1.13.2
-      description: Qdrant - Vector Database for the next generation of AI applications.
-      digest: 074018f48928aa99f2ac3ac147f695cb92269a0998b5ecdc473e7a9f889ae15d
-      home: https://qdrant.tech
-      keywords:
-        - vector database
-      name: qdrant
-      sources:
-        - https://github.com/qdrant/qdrant
-        - https://github.com/qdrant/qdrant-helm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.2/qdrant-0.0.2.tgz
-      version: 0.0.2
-    - apiVersion: v2
-      appVersion: 1.13.2
-      created: "2025-02-11T16:25:04.109637992Z"
-      dependencies:
-        - name: qdrant
-          repository: https://qdrant.github.io/qdrant-helm
-          version: 1.13.2
-      description: Qdrant - Vector Database for the next generation of AI applications.
-      digest: c20fd2da215151d423ce0a5c738e7c7abf996bfa974728316a8adcf345c3c378
-      home: https://qdrant.tech
-      keywords:
-        - vector database
-      name: qdrant
-      sources:
-        - https://github.com/qdrant/qdrant
-        - https://github.com/qdrant/qdrant-helm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.1/qdrant-0.0.1.tgz
-      version: 0.0.1
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-14T08:24:47.721857867Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: 37d8b3c74e6a49cb9ae2d095874bcd9ddf498a2646285803a309bce3bdcf6f76
+    home: https://qdrant.tech
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.17/qdrant-0.0.17.tgz
+    version: 0.0.17
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-14T08:05:52.763627443Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: 7d4d80a109f70f120be2d941478b8acea13f233e36f64d357eb9eeb5c936d1e4
+    home: https://qdrant.tech
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.16/qdrant-0.0.16.tgz
+    version: 0.0.16
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-12T14:09:23.20466267Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: b6a8b1cc603a9380bca190065c8f883d3d5f3ea2c37786964fba5b6e36c0e46a
+    home: https://qdrant.tech
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.15/qdrant-0.0.15.tgz
+    version: 0.0.15
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-12T14:03:34.66092231Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: c007aac6f85204d2ae432098aaeca92700fe8bf8f3d98a304164d28ae44cdb2b
+    home: https://qdrant.tech
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.14/qdrant-0.0.14.tgz
+    version: 0.0.14
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-12T13:16:59.95648949Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: 66eeadd8ab55c029924b85e239caa35580074f8bd4436d80ba30c8038bc22e66
+    home: https://qdrant.tech
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.13/qdrant-0.0.13.tgz
+    version: 0.0.13
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-12T13:09:34.562821749Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: 46c6f233dda3f838276d73eae90b48518887c6ceed7805b434da112eec2ed99b
+    home: https://qdrant.tech
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.12/qdrant-0.0.12.tgz
+    version: 0.0.12
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-12T12:59:27.22292882Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: 2495691ab4d32abad6d49298d2b66c899fe75aa19b3f9aa6b1e7ff7acf6ccade
+    home: https://qdrant.tech
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.11/qdrant-0.0.11.tgz
+    version: 0.0.11
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-12T11:07:49.223384188Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: 05e93ca23883ac7a6c703cfc8f91210160315ee3d1afbef11d2eccaf398b782b
+    home: https://qdrant.tech
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.9/qdrant-0.0.9.tgz
+    version: 0.0.9
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-12T10:50:19.189187359Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: 50cc67dd0e650d1723004b451dcb9eebb71b60262673ae8966aff6bc1e75cb4d
+    home: https://qdrant.tech
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.8/qdrant-0.0.8.tgz
+    version: 0.0.8
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-12T10:33:56.836755947Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: b24dfba57cac787ca7ee1b336e8b57eb21ec53718e66dce612626552e38aa99e
+    home: https://qdrant.tech
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.6/qdrant-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-12T10:11:51.684271197Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: 3e3b9175b79898820ef4d229af1510134b7a6650a303ce3ef42894a0e835b5bc
+    home: https://qdrant.tech
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.5/qdrant-0.0.5.tgz
+    version: 0.0.5
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-12T10:01:39.02449184Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: 7f3d37e58d568ffc4698caac9196bf862c48d7ed3414a6642f96f8b53ac0f6ee
+    home: https://qdrant.tech
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.4/qdrant-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-12T09:01:23.161533984Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: 0997201197648409a0099c61e2b539d045d0a08a0cb6e9bd42c1553bad82f527
+    home: https://qdrant.tech
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.3/qdrant-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-12T08:45:15.802916661Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: 074018f48928aa99f2ac3ac147f695cb92269a0998b5ecdc473e7a9f889ae15d
+    home: https://qdrant.tech
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.2/qdrant-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2025-02-11T16:25:04.109637992Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: c20fd2da215151d423ce0a5c738e7c7abf996bfa974728316a8adcf345c3c378
+    home: https://qdrant.tech
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.1/qdrant-0.0.1.tgz
+    version: 0.0.1
   superset:
-    - apiVersion: v2
-      created: "2024-02-12T14:02:01.073364938Z"
-      dependencies:
-        - name: superset
-          repository: https://apache.github.io/superset
-          version: 0.12.4
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.20
-      description: Apache Superset is a modern data exploration and visualization platform.
-      digest: 6623b0544b70863511bba0420c83723678f056998650cbf427842a156655c28d
-      home: https://superset.apache.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/superset.png
-      keywords:
-        - BI
-        - Visualization
-      name: superset
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/superset
-        - https://github.com/apache/superset
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/superset-0.1.3/superset-0.1.3.tgz
-      version: 0.1.3
-    - apiVersion: v2
-      created: "2024-02-12T13:52:54.855568739Z"
-      dependencies:
-        - name: superset
-          repository: https://apache.github.io/superset
-          version: 0.12.4
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.20
-      description: Apache Superset is a modern data exploration and visualization platform.
-      digest: feec7bef989294df2eb8dd8d3837d6b66cf5c7d53ffb0fa668e02fbf448a09b8
-      home: https://superset.apache.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/superset.png
-      keywords:
-        - BI
-        - Visualization
-      name: superset
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/superset
-        - https://github.com/apache/superset
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/superset-0.1.2/superset-0.1.2.tgz
-      version: 0.1.2
-    - apiVersion: v2
-      created: "2024-02-12T13:47:32.731418963Z"
-      dependencies:
-        - name: superset
-          repository: https://apache.github.io/superset
-          version: 0.12.4
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.20
-      description: Apache Superset is a modern data exploration and visualization platform.
-      digest: ed3ba032e40f4eb18b623759773a74a36c52900e50528dffc8ff5d0d63332592
-      home: https://superset.apache.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/superset.png
-      keywords:
-        - BI
-        - Visualization
-      name: superset
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/superset
-        - https://github.com/apache/superset
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/superset-0.1.1/superset-0.1.1.tgz
-      version: 0.1.1
-    - apiVersion: v2
-      created: "2024-02-12T13:36:35.78181578Z"
-      dependencies:
-        - name: superset
-          repository: https://apache.github.io/superset
-          version: 0.12.4
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.20
-      description: Apache Superset is a modern data exploration and visualization platform.
-      digest: de88206b6bc0b67806aa61cf85f6c23d8ff6d40bb0eeda0dd3cb16b55c1b6483
-      home: https://superset.apache.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/superset.png
-      keywords:
-        - BI
-        - Visualization
-      name: superset
-      sources:
-        - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/superset
-        - https://github.com/apache/superset
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/superset-0.1.0/superset-0.1.0.tgz
-      version: 0.1.0
+  - apiVersion: v2
+    created: "2024-02-12T14:02:01.073364938Z"
+    dependencies:
+    - name: superset
+      repository: https://apache.github.io/superset
+      version: 0.12.4
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.20
+    description: Apache Superset is a modern data exploration and visualization platform.
+    digest: 6623b0544b70863511bba0420c83723678f056998650cbf427842a156655c28d
+    home: https://superset.apache.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/superset.png
+    keywords:
+    - BI
+    - Visualization
+    name: superset
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/superset
+    - https://github.com/apache/superset
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/superset-0.1.3/superset-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    created: "2024-02-12T13:52:54.855568739Z"
+    dependencies:
+    - name: superset
+      repository: https://apache.github.io/superset
+      version: 0.12.4
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.20
+    description: Apache Superset is a modern data exploration and visualization platform.
+    digest: feec7bef989294df2eb8dd8d3837d6b66cf5c7d53ffb0fa668e02fbf448a09b8
+    home: https://superset.apache.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/superset.png
+    keywords:
+    - BI
+    - Visualization
+    name: superset
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/superset
+    - https://github.com/apache/superset
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/superset-0.1.2/superset-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    created: "2024-02-12T13:47:32.731418963Z"
+    dependencies:
+    - name: superset
+      repository: https://apache.github.io/superset
+      version: 0.12.4
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.20
+    description: Apache Superset is a modern data exploration and visualization platform.
+    digest: ed3ba032e40f4eb18b623759773a74a36c52900e50528dffc8ff5d0d63332592
+    home: https://superset.apache.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/superset.png
+    keywords:
+    - BI
+    - Visualization
+    name: superset
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/superset
+    - https://github.com/apache/superset
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/superset-0.1.1/superset-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    created: "2024-02-12T13:36:35.78181578Z"
+    dependencies:
+    - name: superset
+      repository: https://apache.github.io/superset
+      version: 0.12.4
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.20
+    description: Apache Superset is a modern data exploration and visualization platform.
+    digest: de88206b6bc0b67806aa61cf85f6c23d8ff6d40bb0eeda0dd3cb16b55c1b6483
+    home: https://superset.apache.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/superset.png
+    keywords:
+    - BI
+    - Visualization
+    name: superset
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/superset
+    - https://github.com/apache/superset
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/superset-0.1.0/superset-0.1.0.tgz
+    version: 0.1.0
   test-values:
-    - apiVersion: v2
-      appVersion: 1.16.0
-      created: "2024-09-26T10:10:12.428032993Z"
-      dependencies:
-        - name: vscode-python
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 2.1.2
-      description: A Helm chart for Kubernetes
-      digest: ec375d3a711a29cb6463bbc995f0807ff6d2c2923c828d8b871679e4d5363236
-      name: test-values
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/test-values-0.1.0/test-values-0.1.0.tgz
-      version: 0.1.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-09-26T10:10:12.428032993Z"
+    dependencies:
+    - name: vscode-python
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.1.2
+    description: A Helm chart for Kubernetes
+    digest: ec375d3a711a29cb6463bbc995f0807ff6d2c2923c828d8b871679e4d5363236
+    name: test-values
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/test-values-0.1.0/test-values-0.1.0.tgz
+    version: 0.1.0
   tmp-vscode-python:
-    - apiVersion: v2
-      created: "2025-02-10T16:07:15.766923872Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.42
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 0aa58a20d0180b8f8146e80d0fedafb20593cdad36c38f681a344afe9ef4a435
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: tmp-vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/tmp-vscode-python-0.0.2/tmp-vscode-python-0.0.2.tgz
-      version: 0.0.2
-    - apiVersion: v2
-      created: "2025-02-10T14:31:14.65595596Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.42
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 6e638d92fc980879fe76f51150e74126155c575e8ac93ee3a513e4cf51fbdb52
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: tmp-vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/tmp-vscode-python-0.0.1/tmp-vscode-python-0.0.1.tgz
-      version: 0.0.1
+  - apiVersion: v2
+    created: "2025-02-17T17:20:25.746944725Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.42
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: aa253382de3c9ee4f3c9efbe4ced78382b1c9c052addaa22bfa967b30867a79b
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: tmp-vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/tmp-vscode-python-0.0.3/tmp-vscode-python-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    created: "2025-02-10T16:07:15.766923872Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.42
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 0aa58a20d0180b8f8146e80d0fedafb20593cdad36c38f681a344afe9ef4a435
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: tmp-vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/tmp-vscode-python-0.0.2/tmp-vscode-python-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    created: "2025-02-10T14:31:14.65595596Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.42
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 6e638d92fc980879fe76f51150e74126155c575e8ac93ee3a513e4cf51fbdb52
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: tmp-vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/tmp-vscode-python-0.0.1/tmp-vscode-python-0.0.1.tgz
+    version: 0.0.1
   ubuntu:
-    - apiVersion: v2
-      appVersion: latest
-      created: "2024-09-18T09:44:07.874230899Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.25
-      description: Ubuntu with a graphical user interface.
-      digest: a76b347c0945db025ab079737631ae3270163722338ee247edffc5650c722d19
-      home: https://www.ubuntu-fr.org/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/ubuntu.png
-      keywords:
-        - Linux
-        - Tool
-      name: ubuntu
-      sources:
-        - https://github.com/InseeFrLab/ubuntu-vnc
-        - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/ubuntu
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/ubuntu-5.4.5/ubuntu-5.4.5.tgz
-      version: 5.4.5
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-09-18T09:44:07.874230899Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.25
+    description: Ubuntu with a graphical user interface.
+    digest: a76b347c0945db025ab079737631ae3270163722338ee247edffc5650c722d19
+    home: https://www.ubuntu-fr.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/ubuntu.png
+    keywords:
+    - Linux
+    - Tool
+    name: ubuntu
+    sources:
+    - https://github.com/InseeFrLab/ubuntu-vnc
+    - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/ubuntu
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/ubuntu-5.4.5/ubuntu-5.4.5.tgz
+    version: 5.4.5
   vllm:
-    - apiVersion: v2
-      appVersion: 0.0.24
-      created: "2025-02-05T16:03:59.32518436Z"
-      dependencies:
-        - name: llm-serving
-          repository: https://dscc-admin-ch.github.io/helm-charts
-          version: 0.0.7
-      description: vLLM is a high-performance, low-latency, and memory-efficient library designed for serving large language models (LLMs) at scale.
-      digest: 04595a0e115ba3a89716fa262852ed288077cbee47ccaec2675b4164fba00682
-      icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
-      name: vllm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.24/vllm-0.0.24.tgz
-      version: 0.0.24
-    - apiVersion: v2
-      appVersion: 0.0.23
-      created: "2025-02-05T16:00:54.816794477Z"
-      dependencies:
-        - name: llm-serving
-          repository: https://thomasfaria.github.io/helm-charts
-          version: 0.0.17
-      description: vLLM is a high-performance, low-latency, and memory-efficient library designed for serving large language models (LLMs) at scale.
-      digest: c1baf3cff0a4a0e93dfc4d1c2728b52314b6b2928ebbf50d57c110752e0fcebd
-      icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
-      name: vllm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.23/vllm-0.0.23.tgz
-      version: 0.0.23
-    - apiVersion: v2
-      appVersion: 0.0.21
-      created: "2025-01-31T16:02:56.145693116Z"
-      dependencies:
-        - name: llm-serving
-          repository: https://thomasfaria.github.io/helm-charts
-          version: 0.0.15
-      description: vLLM is a high-performance, low-latency, and memory-efficient library designed for serving large language models (LLMs) at scale.
-      digest: 0bfb086acf21bf441baef51753917950c3504c38f1b660e2e4b81ce58717370a
-      icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
-      name: vllm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.21/vllm-0.0.21.tgz
-      version: 0.0.21
-    - apiVersion: v2
-      appVersion: 0.0.20
-      created: "2025-01-31T15:36:17.003746302Z"
-      dependencies:
-        - name: llm-serving
-          repository: https://thomasfaria.github.io/helm-charts
-          version: 0.0.14
-      description: vLLM is a high-performance, low-latency, and memory-efficient library designed for serving large language models (LLMs) at scale.
-      digest: 58459287888ca0a326726b68b2d41c546992860076ebe530bc52f08f4f654b22
-      icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
-      name: vllm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.20/vllm-0.0.20.tgz
-      version: 0.0.20
-    - apiVersion: v2
-      appVersion: 0.0.19
-      created: "2025-01-31T12:30:06.996132681Z"
-      dependencies:
-        - name: llm-serving
-          repository: https://thomasfaria.github.io/helm-charts
-          version: 0.0.12
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.40
-      description: vLLM is a high-performance, low-latency, and memory-efficient library designed for serving large language models (LLMs) at scale.
-      digest: 2d15a07977c9ba1c178716572b1607a971c156c0c0c8e0b2fc282333df358163
-      icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
-      name: vllm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.19/vllm-0.0.19.tgz
-      version: 0.0.19
-    - apiVersion: v2
-      appVersion: 0.0.18
-      created: "2025-01-31T09:59:12.093940666Z"
-      dependencies:
-        - name: llm-serving
-          repository: https://thomasfaria.github.io/helm-charts
-          version: 0.0.11
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.40
-      description: vLLM is a high-performance, low-latency, and memory-efficient library designed for serving large language models (LLMs) at scale.
-      digest: 65301a1622b76420dccdc312c24036803bb95f731d775e4869d593bbf02b7935
-      icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
-      name: vllm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.18/vllm-0.0.18.tgz
-      version: 0.0.18
-    - apiVersion: v2
-      appVersion: 0.0.17
-      created: "2025-01-31T09:15:57.70972851Z"
-      dependencies:
-        - name: llm-serving
-          repository: https://thomasfaria.github.io/helm-charts
-          version: 0.0.11
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.40
-      description: vLLM is a high-performance, low-latency, and memory-efficient library designed for serving large language models (LLMs) at scale.
-      digest: 7e6e83be25e24973c0cdef51e2fc11ce621c1b0c8b1e5669cbc769a604446997
-      icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
-      name: vllm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.17/vllm-0.0.17.tgz
+  - apiVersion: v2
+    appVersion: 0.0.24
+    created: "2025-02-05T16:03:59.32518436Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://dscc-admin-ch.github.io/helm-charts
+      version: 0.0.7
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: 04595a0e115ba3a89716fa262852ed288077cbee47ccaec2675b4164fba00682
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.24/vllm-0.0.24.tgz
+    version: 0.0.24
+  - apiVersion: v2
+    appVersion: 0.0.23
+    created: "2025-02-05T16:00:54.816794477Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://thomasfaria.github.io/helm-charts
       version: 0.0.17
-    - apiVersion: v2
-      appVersion: 0.0.16
-      created: "2025-01-30T18:35:02.909381425Z"
-      dependencies:
-        - name: llm-serving
-          repository: https://thomasfaria.github.io/helm-charts
-          version: 0.0.11
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.40
-      description: vLLM is a high-performance, low-latency, and memory-efficient library designed for serving large language models (LLMs) at scale.
-      digest: 08e816280e4de023b523662efb20d84ec35058c3f88aca16783fea6bd4d397a6
-      icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
-      name: vllm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.16/vllm-0.0.16.tgz
-      version: 0.0.16
-    - apiVersion: v2
-      appVersion: 0.0.15
-      created: "2025-01-30T18:14:59.898664531Z"
-      dependencies:
-        - name: llm-serving
-          repository: https://thomasfaria.github.io/helm-charts
-          version: 0.0.10
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.40
-      description: vLLM is a high-performance, low-latency, and memory-efficient library designed for serving large language models (LLMs) at scale.
-      digest: 9536d2889e01f2b6b320918cdb872300f7a9ad00e5707e508e09bb890c232fa2
-      icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
-      name: vllm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.15/vllm-0.0.15.tgz
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: c1baf3cff0a4a0e93dfc4d1c2728b52314b6b2928ebbf50d57c110752e0fcebd
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.23/vllm-0.0.23.tgz
+    version: 0.0.23
+  - apiVersion: v2
+    appVersion: 0.0.21
+    created: "2025-01-31T16:02:56.145693116Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://thomasfaria.github.io/helm-charts
       version: 0.0.15
-    - apiVersion: v2
-      appVersion: 0.0.14
-      created: "2025-01-30T16:48:52.527571979Z"
-      dependencies:
-        - name: llm-serving
-          repository: https://thomasfaria.github.io/helm-charts
-          version: 0.0.9
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.40
-      description: vLLM is a high-performance, low-latency, and memory-efficient library designed for serving large language models (LLMs) at scale.
-      digest: c5ee399867f84bdbe3e84185d0165e2f7c987527a6b8280ec10b3fb0b937f40c
-      icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
-      name: vllm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.14/vllm-0.0.14.tgz
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: 0bfb086acf21bf441baef51753917950c3504c38f1b660e2e4b81ce58717370a
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.21/vllm-0.0.21.tgz
+    version: 0.0.21
+  - apiVersion: v2
+    appVersion: 0.0.20
+    created: "2025-01-31T15:36:17.003746302Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://thomasfaria.github.io/helm-charts
       version: 0.0.14
-    - apiVersion: v2
-      appVersion: 0.0.13
-      created: "2025-01-29T15:32:22.873921682Z"
-      dependencies:
-        - name: llm-serving
-          repository: https://thomasfaria.github.io/helm-charts
-          version: 0.0.7
-      description: vLLM is a high-performance, low-latency, and memory-efficient library designed for serving large language models (LLMs) at scale.
-      digest: ab606b309699400fd5b63217675cd5d302ddb3f8508e7081b2723e706477f56c
-      icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
-      name: vllm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.13/vllm-0.0.13.tgz
-      version: 0.0.13
-    - apiVersion: v2
-      appVersion: 0.0.12
-      created: "2025-01-29T15:26:31.733042207Z"
-      dependencies:
-        - name: llm-serving
-          repository: https://thomasfaria.github.io/helm-charts
-          version: 0.0.5
-      description: vLLM is a high-performance, low-latency, and memory-efficient library designed for serving large language models (LLMs) at scale.
-      digest: 5bcaea622f7adb12602c59ba005b28d1c1401c97c8d8c792032b2b8cc7a36358
-      icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
-      name: vllm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.12/vllm-0.0.12.tgz
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: 58459287888ca0a326726b68b2d41c546992860076ebe530bc52f08f4f654b22
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.20/vllm-0.0.20.tgz
+    version: 0.0.20
+  - apiVersion: v2
+    appVersion: 0.0.19
+    created: "2025-01-31T12:30:06.996132681Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://thomasfaria.github.io/helm-charts
       version: 0.0.12
-    - apiVersion: v2
-      appVersion: 0.0.11
-      created: "2025-01-29T14:10:39.125409377Z"
-      dependencies:
-        - name: llm-serving
-          repository: https://dscc-admin-ch.github.io/helm-charts
-          version: 0.0.5
-      description: vLLM is a high-performance, low-latency, and memory-efficient library designed for serving large language models (LLMs) at scale.
-      digest: 74acecbb8a639106ccf5eb91f50f89e1d156074cc18c726a9ac88c70b0d92f92
-      icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
-      name: vllm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.11/vllm-0.0.11.tgz
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.40
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: 2d15a07977c9ba1c178716572b1607a971c156c0c0c8e0b2fc282333df358163
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.19/vllm-0.0.19.tgz
+    version: 0.0.19
+  - apiVersion: v2
+    appVersion: 0.0.18
+    created: "2025-01-31T09:59:12.093940666Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://thomasfaria.github.io/helm-charts
       version: 0.0.11
-    - apiVersion: v2
-      appVersion: 0.0.10
-      created: "2025-01-29T13:33:46.772753949Z"
-      dependencies:
-        - name: llm-serving
-          repository: https://dscc-admin-ch.github.io/helm-charts
-          version: 0.0.5
-      description: vLLM is a high-performance, low-latency, and memory-efficient library designed for serving large language models (LLMs) at scale.
-      digest: 03b4c847cc3f41c879f6acd2f61c3fbdf92ec0d21d17a7f2174e82845eed616e
-      icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
-      name: vllm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.10/vllm-0.0.10.tgz
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.40
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: 65301a1622b76420dccdc312c24036803bb95f731d775e4869d593bbf02b7935
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.18/vllm-0.0.18.tgz
+    version: 0.0.18
+  - apiVersion: v2
+    appVersion: 0.0.17
+    created: "2025-01-31T09:15:57.70972851Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://thomasfaria.github.io/helm-charts
+      version: 0.0.11
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.40
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: 7e6e83be25e24973c0cdef51e2fc11ce621c1b0c8b1e5669cbc769a604446997
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.17/vllm-0.0.17.tgz
+    version: 0.0.17
+  - apiVersion: v2
+    appVersion: 0.0.16
+    created: "2025-01-30T18:35:02.909381425Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://thomasfaria.github.io/helm-charts
+      version: 0.0.11
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.40
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: 08e816280e4de023b523662efb20d84ec35058c3f88aca16783fea6bd4d397a6
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.16/vllm-0.0.16.tgz
+    version: 0.0.16
+  - apiVersion: v2
+    appVersion: 0.0.15
+    created: "2025-01-30T18:14:59.898664531Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://thomasfaria.github.io/helm-charts
       version: 0.0.10
-    - apiVersion: v2
-      appVersion: 0.0.9
-      created: "2025-01-29T10:46:30.308945738Z"
-      dependencies:
-        - name: llm-serving
-          repository: https://dscc-admin-ch.github.io/helm-charts
-          version: 0.0.5
-      description: vLLM is a high-performance, low-latency, and memory-efficient library designed for serving large language models (LLMs) at scale.
-      digest: 240659de374550b46f9e641c4edfebbf60ad6428f35990b3871538ef05d5f29e
-      icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
-      name: vllm
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.9/vllm-0.0.9.tgz
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.40
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: 9536d2889e01f2b6b320918cdb872300f7a9ad00e5707e508e09bb890c232fa2
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.15/vllm-0.0.15.tgz
+    version: 0.0.15
+  - apiVersion: v2
+    appVersion: 0.0.14
+    created: "2025-01-30T16:48:52.527571979Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://thomasfaria.github.io/helm-charts
       version: 0.0.9
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.40
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: c5ee399867f84bdbe3e84185d0165e2f7c987527a6b8280ec10b3fb0b937f40c
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.14/vllm-0.0.14.tgz
+    version: 0.0.14
+  - apiVersion: v2
+    appVersion: 0.0.13
+    created: "2025-01-29T15:32:22.873921682Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://thomasfaria.github.io/helm-charts
+      version: 0.0.7
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: ab606b309699400fd5b63217675cd5d302ddb3f8508e7081b2723e706477f56c
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.13/vllm-0.0.13.tgz
+    version: 0.0.13
+  - apiVersion: v2
+    appVersion: 0.0.12
+    created: "2025-01-29T15:26:31.733042207Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://thomasfaria.github.io/helm-charts
+      version: 0.0.5
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: 5bcaea622f7adb12602c59ba005b28d1c1401c97c8d8c792032b2b8cc7a36358
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.12/vllm-0.0.12.tgz
+    version: 0.0.12
+  - apiVersion: v2
+    appVersion: 0.0.11
+    created: "2025-01-29T14:10:39.125409377Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://dscc-admin-ch.github.io/helm-charts
+      version: 0.0.5
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: 74acecbb8a639106ccf5eb91f50f89e1d156074cc18c726a9ac88c70b0d92f92
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.11/vllm-0.0.11.tgz
+    version: 0.0.11
+  - apiVersion: v2
+    appVersion: 0.0.10
+    created: "2025-01-29T13:33:46.772753949Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://dscc-admin-ch.github.io/helm-charts
+      version: 0.0.5
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: 03b4c847cc3f41c879f6acd2f61c3fbdf92ec0d21d17a7f2174e82845eed616e
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.10/vllm-0.0.10.tgz
+    version: 0.0.10
+  - apiVersion: v2
+    appVersion: 0.0.9
+    created: "2025-01-29T10:46:30.308945738Z"
+    dependencies:
+    - name: llm-serving
+      repository: https://dscc-admin-ch.github.io/helm-charts
+      version: 0.0.5
+    description: vLLM is a high-performance, low-latency, and memory-efficient library
+      designed for serving large language models (LLMs) at scale.
+    digest: 240659de374550b46f9e641c4edfebbf60ad6428f35990b3871538ef05d5f29e
+    icon: https://raw.githubusercontent.com/vllm-project/vllm/refs/heads/main/docs/source/assets/logos/vllm-logo-only-light.png
+    name: vllm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.9/vllm-0.0.9.tgz
+    version: 0.0.9
   vscode-python:
-    - apiVersion: v2
-      created: "2024-12-12T17:16:18.866293145Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.33
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 5b5406e4f23c062eadcbb5a18b9a86184a654e369937ae7f849dc4aecce155ed
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.1.22/vscode-python-2.1.22.tgz
-      version: 2.1.22
-    - apiVersion: v2
-      created: "2024-12-12T16:05:04.343765479Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.33
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 8b0126a9ef618a93eb61fa7754e7458525865e52a8bb04cd9b5f3feef1abbf58
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.1.21/vscode-python-2.1.21.tgz
-      version: 2.1.21
-    - apiVersion: v2
-      created: "2024-12-12T16:00:29.938349802Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.33
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 8dd6258e45cc8764324b9bf9e758b812f48ed5b0932c337ce4e04f689bd5e345
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.1.20/vscode-python-2.1.20.tgz
-      version: 2.1.20
-    - apiVersion: v2
-      created: "2024-12-12T15:51:51.683060198Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.33
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 485e9475b5953b5b2d790b8c4259300570ee74a2eb9a1746713279067334a879
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.1.19/vscode-python-2.1.19.tgz
-      version: 2.1.19
-    - apiVersion: v2
-      created: "2024-11-14T14:41:03.965629154Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.31
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: a34c80a5176def4903b8db9ab153ee18164e21577ab7fb5dfbebfe9271398d89
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.1.17/vscode-python-2.1.17.tgz
-      version: 2.1.17
-    - apiVersion: v2
-      created: "2024-10-14T21:33:31.969135008Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.23
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 09433a708892079110f26c48bd003eeb075a0be8e4f75f51c526d77e42c194c7
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.14/vscode-python-2.0.14.tgz
-      version: 2.0.14
-    - apiVersion: v2
-      created: "2024-10-14T21:24:36.788695764Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.23
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: b18d308c6875dba8f7461829422d7d835bc55e1df0d0f866eabd31ce929afe88
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.13/vscode-python-2.0.13.tgz
-      version: 2.0.13
-    - apiVersion: v2
-      created: "2024-10-08T12:35:13.751637477Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.23
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: ea60e35fad04b3b05b1a97ddc4e0aa7faeeac82c39f2cfc529b842ea2081015e
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.12/vscode-python-2.0.12.tgz
-      version: 2.0.12
-    - apiVersion: v2
-      created: "2024-10-07T17:48:38.633582886Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.23
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: af54edc79c2afee8012ee0873a14e47352ca3612f3832994433c8578ede9537d
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.11/vscode-python-2.0.11.tgz
-      version: 2.0.11
-    - apiVersion: v2
-      created: "2024-10-07T17:42:44.259724574Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.23
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 0734c3ae1644c3c8346dd8b8bf999d4ad370dd5135b32026162e68c20cb9579e
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.10/vscode-python-2.0.10.tgz
-      version: 2.0.10
-    - apiVersion: v2
-      created: "2024-10-03T13:50:00.201695179Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.23
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 4ac7a9cb648840af60e5327e8e567aa14a4a4c80b26a69e95e75c608bd84c7c4
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.9/vscode-python-2.0.9.tgz
-      version: 2.0.9
-    - apiVersion: v2
-      created: "2024-08-22T10:03:14.64659524Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.23
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 37016e3d12afd2e0ffb816b877437bc25ba879ddc6df675d828a74e322219692
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.8/vscode-python-2.0.8.tgz
-      version: 2.0.8
-    - apiVersion: v2
-      created: "2024-08-22T09:54:27.530191161Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.23
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 47fe2e15a76c16aad907c5eddd88489fdb7e74685ebd4b7c08e3a3e05d3e7c73
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.7/vscode-python-2.0.7.tgz
-      version: 2.0.7
-    - apiVersion: v2
-      created: "2024-08-20T08:19:44.460169375Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.23
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: e494a2a0ee7012fc7a0d380eb6852855e67b7fe7f7238dce868e85ab21fd5d1e
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.6/vscode-python-2.0.6.tgz
-      version: 2.0.6
-    - apiVersion: v2
-      created: "2024-08-20T07:59:22.028189577Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.23
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: bf44bf97f9cd687b33c0bdbfba8b709560a760e78af83b054e4741c8abb8a82f
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.5/vscode-python-2.0.5.tgz
-      version: 2.0.5
-    - apiVersion: v2
-      created: "2024-07-26T13:44:41.620101369Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.23
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: ae7e677ba74161dab9e7afbc30685a68eb54f197b898469b6524bf14e6fc23be
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.4/vscode-python-2.0.4.tgz
-      version: 2.0.4
-    - apiVersion: v2
-      created: "2024-07-26T12:17:47.8333619Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.23
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 5d18408e54718ffe8fa8a7c3361a68e612d162a6149f2ba1d32d0d505dc6c87c
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.3/vscode-python-2.0.3.tgz
-      version: 2.0.3
-    - apiVersion: v2
-      created: "2024-06-27T12:45:29.449435285Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.23
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 62d06eab647fd5237a327e2160383b7d86723813e602de6fcc4a7872762bad66
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.2/vscode-python-2.0.2.tgz
-      version: 2.0.2
-    - apiVersion: v2
-      created: "2024-04-10T18:03:38.419225369Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.21
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 839cd937e5ea8191d9f2b35a6e05851180fa44c777e6cec217828b40a780efa0
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.1/vscode-python-2.0.1.tgz
-      version: 2.0.1
-    - apiVersion: v2
-      created: "2024-04-09T11:53:04.946108348Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.21
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: a54f458b3c14642285c3669891c3c17dacaaa92bf2495ee0e4764298ec0338ab
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.0/vscode-python-2.0.0.tgz
-      version: 2.0.0
-    - apiVersion: v2
-      created: "2023-10-20T13:56:08.921708306Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.14
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 82965d8f70ca9e3032dfb126cf12e9ffb46dbd5db64eb063aa63da42019fa113
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-1.12.1/vscode-python-1.12.1.tgz
-      version: 1.12.1
-    - apiVersion: v2
-      created: "2023-10-20T13:34:08.866246622Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.14
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: cecb41424ee4da7d099a0946e88688341ada298f377ff16724b647462279816c
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-1.12.0/vscode-python-1.12.0.tgz
-      version: 1.12.0
-    - apiVersion: v2
-      created: "2024-04-09T11:49:28.828018083Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.21
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: 8e7f4f6ffc0c8588e4104488bcfe4219f37743361f7eef333583f4bcf03d44d7
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-1.11.27/vscode-python-1.11.27.tgz
-      version: 1.11.27
+  - apiVersion: v2
+    created: "2024-12-12T17:16:18.866293145Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.33
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 5b5406e4f23c062eadcbb5a18b9a86184a654e369937ae7f849dc4aecce155ed
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.1.22/vscode-python-2.1.22.tgz
+    version: 2.1.22
+  - apiVersion: v2
+    created: "2024-12-12T16:05:04.343765479Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.33
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 8b0126a9ef618a93eb61fa7754e7458525865e52a8bb04cd9b5f3feef1abbf58
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.1.21/vscode-python-2.1.21.tgz
+    version: 2.1.21
+  - apiVersion: v2
+    created: "2024-12-12T16:00:29.938349802Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.33
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 8dd6258e45cc8764324b9bf9e758b812f48ed5b0932c337ce4e04f689bd5e345
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.1.20/vscode-python-2.1.20.tgz
+    version: 2.1.20
+  - apiVersion: v2
+    created: "2024-12-12T15:51:51.683060198Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.33
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 485e9475b5953b5b2d790b8c4259300570ee74a2eb9a1746713279067334a879
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.1.19/vscode-python-2.1.19.tgz
+    version: 2.1.19
+  - apiVersion: v2
+    created: "2024-11-14T14:41:03.965629154Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.31
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: a34c80a5176def4903b8db9ab153ee18164e21577ab7fb5dfbebfe9271398d89
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.1.17/vscode-python-2.1.17.tgz
+    version: 2.1.17
+  - apiVersion: v2
+    created: "2024-10-14T21:33:31.969135008Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 09433a708892079110f26c48bd003eeb075a0be8e4f75f51c526d77e42c194c7
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.14/vscode-python-2.0.14.tgz
+    version: 2.0.14
+  - apiVersion: v2
+    created: "2024-10-14T21:24:36.788695764Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: b18d308c6875dba8f7461829422d7d835bc55e1df0d0f866eabd31ce929afe88
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.13/vscode-python-2.0.13.tgz
+    version: 2.0.13
+  - apiVersion: v2
+    created: "2024-10-08T12:35:13.751637477Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: ea60e35fad04b3b05b1a97ddc4e0aa7faeeac82c39f2cfc529b842ea2081015e
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.12/vscode-python-2.0.12.tgz
+    version: 2.0.12
+  - apiVersion: v2
+    created: "2024-10-07T17:48:38.633582886Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: af54edc79c2afee8012ee0873a14e47352ca3612f3832994433c8578ede9537d
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.11/vscode-python-2.0.11.tgz
+    version: 2.0.11
+  - apiVersion: v2
+    created: "2024-10-07T17:42:44.259724574Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 0734c3ae1644c3c8346dd8b8bf999d4ad370dd5135b32026162e68c20cb9579e
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.10/vscode-python-2.0.10.tgz
+    version: 2.0.10
+  - apiVersion: v2
+    created: "2024-10-03T13:50:00.201695179Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 4ac7a9cb648840af60e5327e8e567aa14a4a4c80b26a69e95e75c608bd84c7c4
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.9/vscode-python-2.0.9.tgz
+    version: 2.0.9
+  - apiVersion: v2
+    created: "2024-08-22T10:03:14.64659524Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 37016e3d12afd2e0ffb816b877437bc25ba879ddc6df675d828a74e322219692
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.8/vscode-python-2.0.8.tgz
+    version: 2.0.8
+  - apiVersion: v2
+    created: "2024-08-22T09:54:27.530191161Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 47fe2e15a76c16aad907c5eddd88489fdb7e74685ebd4b7c08e3a3e05d3e7c73
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.7/vscode-python-2.0.7.tgz
+    version: 2.0.7
+  - apiVersion: v2
+    created: "2024-08-20T08:19:44.460169375Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: e494a2a0ee7012fc7a0d380eb6852855e67b7fe7f7238dce868e85ab21fd5d1e
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.6/vscode-python-2.0.6.tgz
+    version: 2.0.6
+  - apiVersion: v2
+    created: "2024-08-20T07:59:22.028189577Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: bf44bf97f9cd687b33c0bdbfba8b709560a760e78af83b054e4741c8abb8a82f
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.5/vscode-python-2.0.5.tgz
+    version: 2.0.5
+  - apiVersion: v2
+    created: "2024-07-26T13:44:41.620101369Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: ae7e677ba74161dab9e7afbc30685a68eb54f197b898469b6524bf14e6fc23be
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.4/vscode-python-2.0.4.tgz
+    version: 2.0.4
+  - apiVersion: v2
+    created: "2024-07-26T12:17:47.8333619Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 5d18408e54718ffe8fa8a7c3361a68e612d162a6149f2ba1d32d0d505dc6c87c
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.3/vscode-python-2.0.3.tgz
+    version: 2.0.3
+  - apiVersion: v2
+    created: "2024-06-27T12:45:29.449435285Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.23
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 62d06eab647fd5237a327e2160383b7d86723813e602de6fcc4a7872762bad66
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.2/vscode-python-2.0.2.tgz
+    version: 2.0.2
+  - apiVersion: v2
+    created: "2024-04-10T18:03:38.419225369Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.21
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 839cd937e5ea8191d9f2b35a6e05851180fa44c777e6cec217828b40a780efa0
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.1/vscode-python-2.0.1.tgz
+    version: 2.0.1
+  - apiVersion: v2
+    created: "2024-04-09T11:53:04.946108348Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.21
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: a54f458b3c14642285c3669891c3c17dacaaa92bf2495ee0e4764298ec0338ab
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.0.0/vscode-python-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v2
+    created: "2023-10-20T13:56:08.921708306Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.14
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 82965d8f70ca9e3032dfb126cf12e9ffb46dbd5db64eb063aa63da42019fa113
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-1.12.1/vscode-python-1.12.1.tgz
+    version: 1.12.1
+  - apiVersion: v2
+    created: "2023-10-20T13:34:08.866246622Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.14
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: cecb41424ee4da7d099a0946e88688341ada298f377ff16724b647462279816c
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-1.12.0/vscode-python-1.12.0.tgz
+    version: 1.12.0
+  - apiVersion: v2
+    created: "2024-04-09T11:49:28.828018083Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.21
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 8e7f4f6ffc0c8588e4104488bcfe4219f37743361f7eef333583f4bcf03d44d7
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-1.11.27/vscode-python-1.11.27.tgz
+    version: 1.11.27
   vscode-python-darkmode:
-    - apiVersion: v2
-      created: "2023-10-19T07:50:07.735966656Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.12
-      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-      digest: d2b10a7c52f67d7aa41dfa42d610142bf55ea0539208c866e25fb3e9d5a52a98
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-      name: vscode-python-darkmode
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-darkmode-1.11.11/vscode-python-darkmode-1.11.11.tgz
-      version: 1.11.11
-generated: "2025-02-17T14:20:33.740182931Z"
+  - apiVersion: v2
+    created: "2023-10-19T07:50:07.735966656Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.12
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: d2b10a7c52f67d7aa41dfa42d610142bf55ea0539208c866e25fb3e9d5a52a98
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python-darkmode
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-darkmode-1.11.11/vscode-python-darkmode-1.11.11.tgz
+    version: 1.11.11
+generated: "2025-02-17T17:20:25.747137014Z"

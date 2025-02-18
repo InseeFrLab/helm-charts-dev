@@ -49,12 +49,14 @@
               "title": "ingressClassName",
               "default": "",
               "x-onyxia": {
-                "overwriteDefaultWith": "{{k8s.ingressClassName}}"
+                "overwriteDefaultWith": "{{k8s.ingressClassName}}",
+                "hidden": true
               }
             },
             "hosts": {
               "type": "array",
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": [
                   {
                     "host": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}",
@@ -73,6 +75,7 @@
               "type": "array",
               "description": "TLS settings for ingress.",
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": [
                   {
                     "hosts": [

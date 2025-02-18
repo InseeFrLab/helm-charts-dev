@@ -141,7 +141,6 @@ qdrant:
     annotations: {}
     storageVolumeName: data
     # storageClassName: local-path
-
   # If you use snapshots or the snapshot shard transfer mechanism, we recommend
   # creating a separate volume of the same size as your main volume so that your
   # cluster won't crash if the snapshot is too big.

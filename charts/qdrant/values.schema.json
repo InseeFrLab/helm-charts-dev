@@ -147,6 +147,7 @@
           }
         },
         "persistence": {
+          "title": "Persistence",
           "type": "string",
           "default": "10Gi",
           "size": {

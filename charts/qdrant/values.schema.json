@@ -57,6 +57,7 @@
               "type": "array",
               "x-onyxia": {
                 "hidden": true,
+                "default": [],
                 "overwriteDefaultWith": [
                   {
                     "host": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}",
@@ -74,6 +75,7 @@
             "tls": {
               "type": "array",
               "description": "TLS settings for ingress.",
+              "default": [],
               "x-onyxia": {
                 "hidden": true,
                 "overwriteDefaultWith": [
@@ -103,7 +105,7 @@
             "sliderMax": 100,
             "sliderStep": 1,
             "sliderUnit": "Gi"
-          }  
+          }
         }
       }
     }

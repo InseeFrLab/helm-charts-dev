@@ -9,7 +9,7 @@ qdrant:
 
   imagePullSecrets: []
   nameOverride: ""
-  fullnameOverride: ""
+  fullnameOverride: "qdrant"
   args: ["./config/initialize.sh"]
   env: {}
     # - name: QDRANT_ALLOW_RECOVERY_MODE
@@ -139,7 +139,7 @@ qdrant:
     accessModes: ["ReadWriteOnce"]
     size: 10Gi
     annotations: {}
-    # storageVolumeName: qdrant-storage
+    storageVolumeName: data
     # storageClassName: local-path
 
   # If you use snapshots or the snapshot shard transfer mechanism, we recommend

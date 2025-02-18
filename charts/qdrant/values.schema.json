@@ -145,6 +145,22 @@
               }
             }
           }
+        },
+        "persistence": {
+          "type": "string",
+          "default": "10Gi",
+          "size": {
+            "type": "string",
+            "title": "Persistent volume size",
+            "description": "Size of the persistent volume",
+            "default": "10Gi",
+            "form": true,
+            "render": "slider",
+            "sliderMin": 1,
+            "sliderMax": 100,
+            "sliderStep": 1,
+            "sliderUnit": "Gi"
+          }  
         }
       }
     }

@@ -1,4 +1,4 @@
-{{- if .Values.qdrant.apikey }}
+{{- if .Values.qdrant.apiKey }}
 - Your token is {{ .Values.qdrant.apiKey }}
 {{- end }}
 

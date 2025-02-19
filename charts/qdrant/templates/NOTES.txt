@@ -1,5 +1,5 @@
 {{- if .Values.qdrant.apikey }}
-- Your token is **TODO** 
+- Your token is {{ .Values.qdrant.apiKey }}
 {{- end }}
 
 {{- if .Values.qdrant.ingress.enabled }}

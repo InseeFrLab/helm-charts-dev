@@ -630,6 +630,27 @@ entries:
   qdrant:
   - apiVersion: v2
     appVersion: 1.13.2
+    created: "2025-02-19T16:39:56.360201541Z"
+    dependencies:
+    - name: qdrant
+      repository: https://qdrant.github.io/qdrant-helm
+      version: 1.13.2
+    description: Qdrant - Vector Database for the next generation of AI applications.
+    digest: 5ee75c14e74e7e767a0b2b576c691720cbd9f0146651edbb54cf8c1a4bc1ee75
+    home: https://qdrant.tech
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
+    keywords:
+    - vector database
+    name: qdrant
+    sources:
+    - https://github.com/qdrant/qdrant
+    - https://github.com/qdrant/qdrant-helm
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.26/qdrant-0.0.26.tgz
+    version: 0.0.26
+  - apiVersion: v2
+    appVersion: 1.13.2
     created: "2025-02-19T16:30:05.694262534Z"
     dependencies:
     - name: qdrant
@@ -2100,4 +2121,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-darkmode-1.11.11/vscode-python-darkmode-1.11.11.tgz
     version: 1.11.11
-generated: "2025-02-19T16:30:05.694593584Z"
+generated: "2025-02-19T16:39:56.36049026Z"

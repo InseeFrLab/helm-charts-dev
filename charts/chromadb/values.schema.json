@@ -14,7 +14,7 @@
       "default": false,
       "hidden": {
         "value": "",
-        "path": "savePersistentVolume"
+        "path": "fullnameOverride"
       }
     },
     "chromadb": {

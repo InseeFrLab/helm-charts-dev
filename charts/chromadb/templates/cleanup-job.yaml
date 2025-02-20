@@ -45,4 +45,6 @@ spec:
             - -c
             - |
               kubectl delete secret {{ .Values.chromadb.chromadb.auth.existingSecret | default "chromadb-auth" }} --ignore-not-found --wait=false
+{{- if not .Values.savePersistentVolume }}
               kubectl delete pvc data-{{ include "chart.fullname" .Subcharts.chromadb }}-0 --ignore-not-found --wait=false
+{{- end }}

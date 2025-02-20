@@ -46,3 +46,7 @@ security:
 
 userPreferences:
   language: "en"
+
+nameOverride: ""
+fullnameOverride: ""
+savePersistentVolume: false

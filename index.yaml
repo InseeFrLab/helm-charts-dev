@@ -1458,6 +1458,28 @@ entries:
     version: 0.0.1
   tmp-vscode-python:
   - apiVersion: v2
+    created: "2025-02-24T14:25:30.447849948Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.5.44
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 0bcbe44f3de1193bb942552d79c1f6630250b51674dc74facf4f7815d8531eb0
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: tmp-vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/tmp-vscode-python-0.0.6/tmp-vscode-python-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v2
     created: "2025-02-21T15:30:09.530472792Z"
     dependencies:
     - name: library-chart
@@ -2379,4 +2401,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-darkmode-1.11.11/vscode-python-darkmode-1.11.11.tgz
     version: 1.11.11
-generated: "2025-02-24T09:33:23.840803558Z"
+generated: "2025-02-24T14:25:30.448366259Z"

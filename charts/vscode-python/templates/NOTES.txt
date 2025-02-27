@@ -1,14 +1,22 @@
 {{- template "library-chart.notes" (dict "serviceName" "Visual Studio Code (Python)" "context" $) -}}
 
 <details>
-  <summary>Test collapsible section</summary>
-    ### Heading
+  <summary>Test `of a` **collapsible** *section*</summary>
+
+    # Heading 1
+
+    ## Heading 2
+
+    ### Heading 3
+
+    List:
     1. Foo
     2. Bar
-        * Baz
-        * Qux
+      * Baz
+      * Qux
 
     ### Some Javascript
+
     ```js
     function logSomething(something) {
         console.log('Something', something);
@@ -23,6 +31,7 @@
 {{- $mlflow_tracking_password := $secretData.MLFLOW_TRACKING_PASSWORD | default "" | b64dec }}
 <details>
   <summary>Mlflow discovery</summary>
+
   The following information where injected in your service:
   ```
 {{- if $uri }}

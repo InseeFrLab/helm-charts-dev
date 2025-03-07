@@ -193,14 +193,14 @@ It is possible to associate an initialization script with your service to set up
 <details>
   <summary>Mlflow</summary>
 {{ . }}
-<details>
+</details>
 {{ end -}}
 
 {{- with (include "library-chart.metaflow-discovery-help" .) }}
 <details>
   <summary>Metaflow</summary>
 {{ . }}
-<details>
+</details>
 {{ end -}}
 
 {{ end -}}

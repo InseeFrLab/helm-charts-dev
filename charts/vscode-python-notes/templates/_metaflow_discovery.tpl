@@ -43,20 +43,20 @@ stringData:
 {{- define "library-chart.metaflow-discovery-help" }}
 A `config.json` file was created with the following values:
 ```sh
-"METAFLOW_DEFAULT_METADATA": "service",
-"METAFLOW_KUBERNETES_SERVICE_ACCOUNT": "default",
-"METAFLOW_S3_ENDPOINT_URL": "https://{{ eq .Values.s3.endpoint "s3.amazonaws.com" | ternary (printf "s3.%s.amazonaws.com" .Values.s3.defaultRegion) .Values.s3.endpoint }}",
+"METAFLOW_DEFAULT_METADATA": "service"
+"METAFLOW_KUBERNETES_SERVICE_ACCOUNT": "default"
+"METAFLOW_S3_ENDPOINT_URL": "https://{{ eq .Values.s3.endpoint "s3.amazonaws.com" | ternary (printf "s3.%s.amazonaws.com" .Values.s3.defaultRegion) .Values.s3.endpoint }}"
 {{- if .Values.discovery.metaflow }}
 {{- $namespace := .Release.Namespace -}}
 {{- with $secretData := first (include "library-chart.getOnyxiaDiscoverySecrets" (list $namespace "metaflow") | fromJsonArray) }}
 {{- $host     := $secretData.host     | default "" | b64dec }}
 {{- $s3Bucket := $secretData.s3Bucket | default "" | b64dec }}
 {{- $s3Secret := $secretData.s3Secret | default "" | b64dec }}
-"METAFLOW_KUBERNETES_NAMESPACE": {{ $namespace | quote }},
-"METAFLOW_SERVICE_URL": {{ $host | quote }},
-"METAFLOW_KUBERNETES_SECRETS": {{ $s3Secret | quote }},
-"METAFLOW_DATASTORE_SYSROOT_S3": {{ $s3Bucket | quote }},
-"METAFLOW_DATATOOLS_SYSROOT_S3": {{ $s3Bucket | quote }},
+"METAFLOW_KUBERNETES_NAMESPACE": {{ $namespace | quote }}
+"METAFLOW_SERVICE_URL": {{ $host | quote }}
+"METAFLOW_KUBERNETES_SECRETS": {{ $s3Secret | quote }}
+"METAFLOW_DATASTORE_SYSROOT_S3": {{ $s3Bucket | quote }}
+"METAFLOW_DATATOOLS_SYSROOT_S3": {{ $s3Bucket | quote }}
 {{- end }}
 {{- end }}
 "METAFLOW_DEFAULT_DATASTORE": "s3"

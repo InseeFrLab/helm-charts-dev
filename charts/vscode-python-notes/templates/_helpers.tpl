@@ -203,8 +203,13 @@ It is possible to associate an initialization script with your service to set up
 </details>
 {{ end -}}
 
+{{- with (include "library-chart.hive-discovery-help" .) }}
+<details>
+  <summary>Hive Metastore</summary>
+{{ . }}
+</details>
 {{ end -}}
-
+{{ end -}}
 
 
 {{/*

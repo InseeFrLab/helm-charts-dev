@@ -3,25 +3,25 @@
 <details>
   <summary>Test `of a` **collapsible** *section*</summary>
 
-    # Heading 1
+# Heading 1
 
-    ## Heading 2
+## Heading 2
 
-    ### Heading 3
+### Heading 3
 
-    List:
-    1. Foo
-    2. Bar
-      * Baz
-      * Qux
+List:
+1. Foo
+2. Bar
+  * Baz
+  * Qux
 
-    ### Some Javascript
+### Some Javascript
 
-    ```js
-    function logSomething(something) {
-        console.log('Something', something);
-    }
-    ```
+```js
+function logSomething(something) {
+    console.log('Something', something);
+}
+```
 </details>
 
 {{- if .Values.discovery.mlflow }}
@@ -32,16 +32,16 @@
 <details>
   <summary>Mlflow discovery</summary>
 
-  The following information where injected in your service:
-  ```
+The following information where injected in your service:
+```
 {{- if $uri }}
-  MLFLOW_TRACKING_URI: {{ $uri | quote }}
+MLFLOW_TRACKING_URI: {{ $uri | quote }}
 {{- end }}
 {{- if and $mlflow_tracking_username $mlflow_tracking_password }}
-  MLFLOW_TRACKING_USERNAME: {{ $mlflow_tracking_username | quote }}
-  MLFLOW_TRACKING_PASSWORD: {{ $mlflow_tracking_password | quote }}
+MLFLOW_TRACKING_USERNAME: {{ $mlflow_tracking_username | quote }}
+MLFLOW_TRACKING_PASSWORD: {{ $mlflow_tracking_password | quote }}
 {{- end }}
-  ```
+```
 </details>
 {{- end }}
 {{- end }}

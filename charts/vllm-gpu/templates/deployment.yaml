@@ -1,0 +1,134 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "llm-serving.fullname" . }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "llm-serving.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "llm-serving.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.service.image.version }}"
+        imagePullPolicy: {{ .Values.service.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.networking.port.number }}
+        resources:
+          limits:
+            nvidia.com/gpu: "{{ .Values.resources.limits.gpu.number }}"
+        env:
+        - name: HF_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: "{{ include "llm-serving.secretName" . }}"
+              key: HF_TOKEN
+        args:
+        - --model
+        {{- if .Values.s3.enabled }}
+        - {{ .Values.llm.localPath }}/{{ .Values.llm.hfModelName }}
+        - --served_model_name
+        - {{ .Values.llm.hfModelName }}
+        {{- else }}
+        - {{ .Values.llm.hfModelName }}
+        {{- end }}
+        {{- if hasKey .Values.llm "memoryUtilization" }}
+        - --gpu-memory-utilization
+        - "{{ .Values.llm.memoryUtilization }}"
+        {{- end }}
+        {{- if hasKey .Values.llm "dtype" }}
+        - --dtype
+        - "{{ .Values.llm.dtype }}"
+        {{- end }}
+        {{- if hasKey .Values.llm "maxModelLen" }}
+        - --max-model-len
+        - "{{ .Values.llm.maxModelLen }}"
+        {{- end }}
+        {{- range $arg := splitList " " .Values.args }}
+        - {{ $arg }}
+        {{- end }}
+        volumeMounts:
+        - mountPath: /dev/shm
+          name: dshm
+        {{- if .Values.s3.enabled }}
+        - mountPath: {{ .Values.llm.localPath }}/{{ .Values.llm.hfModelName }}
+          name: minio-bucket
+        {{- end }}
+      {{- if .Values.s3.enabled }}
+      initContainers:
+      - name: minio-init
+        image: inseefrlab/onyxia-base:latest
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            set -e  # Exit on error
+
+            echo "🔹 Downloading Hugging Face access check script..."
+            wget -q -O /tmp/check_hf_access.sh https://raw.githubusercontent.com/dscc-admin-ch/helm-charts/master/charts/vllm-gpu/utils/check_hf_access.sh
+            chmod +x /tmp/check_hf_access.sh
+            
+            echo "🔹 Checking model access on Hugging Face..."
+            /tmp/check_hf_access.sh {{ .Values.llm.hfModelName }} $HF_TOKEN
+            
+            export MC_HOST_s3=https://$AWS_ACCESS_KEY_ID:$AWS_SECRET_ACCESS_KEY:$AWS_SESSION_TOKEN@$AWS_S3_ENDPOINT
+            MC_PATH=s3/{{ .Values.s3.s3ModelPath }}/{{ .Values.llm.hfModelName }}
+            
+            echo "🔹 Checking model availability on SSPCloud..."
+            if mc stat "$MC_PATH" >/dev/null 2>&1; then
+                echo "✅ Model is available"
+            else
+                echo "❌ {{ .Values.llm.hfModelName }} is not yet available on SSPCloud, please try another one or unable S3 to fetch it directly from HuggingFace 🤗."
+                exit 1
+            fi
+
+            mc cp -r $MC_PATH/ {{ .Values.llm.localPath }}/{{ .Values.llm.hfModelName }}/
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: "{{ include "llm-serving.secretName" . }}"
+              key: AWS_ACCESS_KEY_ID
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: "{{ include "llm-serving.secretName" . }}"
+              key: AWS_SECRET_ACCESS_KEY
+        - name: AWS_S3_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: "{{ include "llm-serving.secretName" . }}"
+              key: AWS_S3_ENDPOINT
+        - name: AWS_SESSION_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: "{{ include "llm-serving.secretName" . }}"
+              key: AWS_SESSION_TOKEN
+        - name: HF_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: "{{ include "llm-serving.secretName" . }}"
+              key: HF_TOKEN
+        volumeMounts:
+        - name: minio-bucket
+          mountPath: {{ .Values.llm.localPath }}/{{ .Values.llm.hfModelName }}
+      {{- end }}
+      volumes:
+      - name: dshm
+        emptyDir:
+          medium: Memory
+      {{- if .Values.s3.enabled }}
+      - name: minio-bucket
+        emptyDir: {}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

@@ -726,6 +726,17 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/launcher-1.0.0/launcher-1.0.0.tgz
     version: 1.0.0
+  llm-serving:
+  - apiVersion: v2
+    appVersion: 0.0.8
+    created: "2025-03-10T13:51:34.062170925Z"
+    description: An example of helm chart to deploy a llm serving
+    digest: 25bbda625f17d7bd368ba9edbbb9d90e98345ca3307c0104c11009bdb6703d1b
+    name: llm-serving
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/llm-serving-0.0.8/llm-serving-0.0.8.tgz
+    version: 0.0.8
   onyxia:
   - apiVersion: v2
     created: "2024-09-17T09:00:01.870293199Z"
@@ -2531,4 +2542,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-notes-0.0.1/vscode-python-notes-0.0.1.tgz
     version: 0.0.1
-generated: "2025-03-10T13:35:27.267165149Z"
+generated: "2025-03-10T13:51:34.062568897Z"

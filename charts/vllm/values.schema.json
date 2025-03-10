@@ -18,21 +18,13 @@
               "x-onyxia": {
                     "overwriteSchemaWith": "llModel.json"
                   }
-            },
-            "memoryutilization": {
-              "type": "number",
-              "description": "GPU memory utilization",
-              "default": 0.95
-            },
-            "dtype": {
-              "type": "string",
-              "description": "Data type for computation",
-              "default": "auto"
-            },
-            "maxModelLen": {
-              "type": "integer",
-              "description": "Maximum model length",
-              "default": 8200
+            }
+          },
+          "args":{
+            "type": "string",
+            "title": "Command arguments",
+            "default": "--gpu-memory-utilization 0.95 --dtype 'auto' --max-model-len 8200",
+            "description": "Command arguments"
             }
           }
         },

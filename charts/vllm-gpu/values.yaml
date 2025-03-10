@@ -24,6 +24,7 @@ llm:
   memoryUtilization: 0.8
   dtype: "half"
   maxModelLen": 8208
+  args: ""
 
 networking:
   port:
@@ -47,4 +48,3 @@ s3:
 
 nodeSelector: {}
 
-args: ""

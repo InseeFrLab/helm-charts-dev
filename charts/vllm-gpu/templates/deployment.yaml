@@ -52,7 +52,7 @@ spec:
         - --max-model-len
         - "{{ .Values.llm.maxModelLen }}"
         {{- end }}
-        {{- range $arg := splitList " " .Values.args }}
+        {{- range $arg := splitList " " .Values.llm.args }}
         - {{ $arg }}
         {{- end }}
         volumeMounts:

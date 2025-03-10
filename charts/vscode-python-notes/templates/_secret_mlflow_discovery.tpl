@@ -56,7 +56,7 @@ client.create_registered_model("TestModel")
 # Create a new version of the model under the registered model name
 client.create_model_version("TestModel", ...)
 ```
-To know more, have a look at [the full documentation](https://mlflow.org/docs/latest/api_reference/python_api/index.html).
+To learn more about integrating MLflow, read [the full documentation](https://mlflow.org/docs/latest/api_reference/python_api/index.html).
 {{- end }}
 {{- else }}
 There is no well-supported MLflow client for R yet.

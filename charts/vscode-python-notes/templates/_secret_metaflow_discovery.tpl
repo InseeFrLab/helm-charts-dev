@@ -43,9 +43,32 @@ stringData:
 {{- define "library-chart.metaflow-discovery-help" }}
 {{- if (.Values.discovery).metaflow }}
 {{- if first (include "library-chart.getOnyxiaDiscoverySecrets" (list .Release.Namespace "metaflow") | fromJsonArray) }}
-The connection to your MetaFlow service is already preconfigured in your service.
+The connection to your [MetaFlow](https://metaflow.org/) service is already preconfigured in your service.
 All MetaFlow objects (flows, runs, tasks, projects, etc.) created using this interactive service
 are tracked and can directly be browsed from your MetaFlow user interface.
+{{- if hasKey .Values.service "customPythonEnv" }}
+
+For instance, using Python, start by installing MetaFlow with `pip install metaflow`.
+Then the following script can be executed with `python helloflow.py run`:
+
+```python
+# helloflow.py
+from metaflow import FlowSpec, step
+
+class HelloFlow(FlowSpec):
+    @step
+    def start(self):
+        print("HelloFlow is starting.")
+        self.next(self.end)
+    @step
+    def end(self):
+        print("HelloFlow is all done.")
+
+if __name__ == "__main__":
+    HelloFlow()
+```
+
+To learn more about integrating MetaFlow to your data ingestion pipelines, read [the full documentation](https://docs.metaflow.org/).
 {{- end }}
 {{- end }}
 {{- end -}}

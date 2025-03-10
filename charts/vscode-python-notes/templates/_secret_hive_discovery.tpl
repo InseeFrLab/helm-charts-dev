@@ -1,6 +1,6 @@
 {{/* Create the name of the secret Hive to use */}}
 {{- define "library-chart.secretNameHive" -}}
-{{- if .Values.discovery.hive }}
+{{- if (.Values.discovery).hive }}
 {{- $name := printf "%s-secrethive" (include "library-chart.fullname" .) }}
 {{- default $name (.Values.hive).secretName }}
 {{- else }}
@@ -10,7 +10,7 @@
 
 {{/* Template to generate a Secret for Hive */}}
 {{- define "library-chart.secretHive" -}}
-{{- if .Values.discovery.hive -}}
+{{- if (.Values.discovery).hive -}}
 apiVersion: v1
 kind: Secret
 metadata:
@@ -34,10 +34,10 @@ stringData:
 
 
 {{- define "library-chart.hive-discovery-help" }}
-{{- if .Values.discovery.hive }}
+{{- if (.Values.discovery).hive }}
 {{- with first (include "library-chart.getOnyxiaDiscoverySecrets" (list .Release.Namespace "hive") | fromJsonArray) }}
-{{- if hasKey $.Values.service "customPythonEnv" -}}
-{{- if $.Values.spark }}
+{{- if hasKey (($.Values).service | default dict) "customPythonEnv" -}}
+{{- if hasKey $.Values "spark" }}
 The connection to your Hive Metastore is already preconfigured in your service.
 A Spark session can be configured to use Hive:
 ```python

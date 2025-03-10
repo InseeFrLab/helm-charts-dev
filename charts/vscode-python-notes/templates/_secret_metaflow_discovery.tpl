@@ -1,6 +1,6 @@
 {{/* Create the name of the secret Metaflow to use */}}
 {{- define "library-chart.secretNameMetaflow" -}}
-{{- if .Values.discovery.metaflow }}
+{{- if (.Values.discovery).metaflow }}
 {{- $name := printf "%s-secretmetaflow" (include "library-chart.fullname" .) }}
 {{- default $name (.Values.metaflow).secretName }}
 {{- else }}
@@ -23,7 +23,7 @@ stringData:
       "METAFLOW_DEFAULT_METADATA": "service",
       "METAFLOW_KUBERNETES_SERVICE_ACCOUNT": "default",
       "METAFLOW_S3_ENDPOINT_URL": "https://{{ eq .Values.s3.endpoint "s3.amazonaws.com" | ternary (printf "s3.%s.amazonaws.com" .Values.s3.defaultRegion) .Values.s3.endpoint }}",
-{{- if .Values.discovery.metaflow }}
+{{- if (.Values.discovery).metaflow }}
 {{- with $secretData := first (include "library-chart.getOnyxiaDiscoverySecrets" (list $namespace "metaflow") | fromJsonArray) }}
 {{- $host     := $secretData.host     | default "" | b64dec }}
 {{- $s3Bucket := $secretData.s3Bucket | default "" | b64dec }}
@@ -41,7 +41,7 @@ stringData:
 
 
 {{- define "library-chart.metaflow-discovery-help" }}
-{{- if .Values.discovery.metaflow }}
+{{- if (.Values.discovery).metaflow }}
 {{- if first (include "library-chart.getOnyxiaDiscoverySecrets" (list .Release.Namespace "metaflow") | fromJsonArray) }}
 The connection to your MetaFlow service is already preconfigured in your service.
 All MetaFlow objects (flows, runs, tasks, projects, etc.) created using this interactive service

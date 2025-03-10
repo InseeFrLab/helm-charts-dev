@@ -36,7 +36,7 @@ stringData:
 
 
 {{- define "library-chart.mlflow-discovery-help" -}}
-{{- if .Values.discovery.mlflow }}
+{{- if (.Values.discovery).mlflow }}
 {{- if first (include "library-chart.getOnyxiaDiscoverySecrets" (list .Release.Namespace "mlflow") | fromJsonArray) }}
 The connection to your MLflow service is already preconfigured in your service.
 {{- if hasKey .Values.service "customPythonEnv" }}

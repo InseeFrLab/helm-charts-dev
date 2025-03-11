@@ -729,6 +729,16 @@ entries:
   llm-serving:
   - apiVersion: v2
     appVersion: 0.0.8
+    created: "2025-03-11T15:22:25.710952106Z"
+    description: An example of helm chart to deploy a llm serving
+    digest: a2a640092851edb8ec8058f3408864ab57d2fda8cc3e6863c3544f589107345a
+    name: llm-serving
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/llm-serving-0.0.10/llm-serving-0.0.10.tgz
+    version: 0.0.10
+  - apiVersion: v2
+    appVersion: 0.0.8
     created: "2025-03-10T14:08:53.589976352Z"
     description: An example of helm chart to deploy a llm serving
     digest: fa0751cb5145a5d48b2824dedc8be9a5d589ebf9ba991cd7468af43827b8287f
@@ -2648,4 +2658,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-notes-0.0.1/vscode-python-notes-0.0.1.tgz
     version: 0.0.1
-generated: "2025-03-11T14:41:55.120632739Z"
+generated: "2025-03-11T15:22:25.711230146Z"

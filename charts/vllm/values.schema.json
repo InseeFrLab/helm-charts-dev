@@ -22,7 +22,7 @@
             "args":{
               "type": "string",
               "title": "Command arguments",
-              "default": "--gpu-memory-utilization \"0.95\" --dtype 'auto' --max-model-len \"8200\"",
+              "default": "--gpu-memory-utilization \"0.95\" --dtype \"auto\" --max-model-len \"8200\"",
               "description": "Command arguments"
               }
             }

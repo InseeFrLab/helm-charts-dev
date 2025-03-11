@@ -23,7 +23,7 @@ llm:
   localPath: "/root/.cache/huggingface"
   memoryUtilization: 0.8
   dtype: "half"
-  maxModelLen": 8208
+  maxModelLen: 8208
   args: ""
 
 networking:

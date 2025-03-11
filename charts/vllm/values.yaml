@@ -26,8 +26,8 @@ llm-serving:
     localPath: "/tmp/.cache/huggingface"
     memoryUtilization: 
     dtype: 
-    maxModelLen": 
-    args: "--gpu-memory-utilization \\"0.95\\" --dtype auto --max-model-len \\"8200\\""
+    maxModelLen: 
+    args: "--gpu-memory-utilization "0.95" --dtype auto --max-model-len "8200"
 
   networking:
     port:

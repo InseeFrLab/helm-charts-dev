@@ -40,18 +40,6 @@ spec:
         {{- else }}
         - {{ .Values.llm.hfModelName }}
         {{- end }}
-        {{- if hasKey .Values.llm "memoryUtilization" }}
-        - --gpu-memory-utilization
-        - "{{ .Values.llm.memoryUtilization }}"
-        {{- end }}
-        {{- if hasKey .Values.llm "dtype" }}
-        - --dtype
-        - "{{ .Values.llm.dtype }}"
-        {{- end }}
-        {{- if hasKey .Values.llm "maxModelLen" }}
-        - --max-model-len
-        - "{{ .Values.llm.maxModelLen }}"
-        {{- end }}
         {{- range $arg := splitList " " .Values.llm.args }}
         - {{ $arg }}
         {{- end }}

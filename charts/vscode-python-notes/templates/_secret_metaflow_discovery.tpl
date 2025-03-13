@@ -71,4 +71,5 @@ if __name__ == "__main__":
 To learn more about integrating MetaFlow to your data ingestion pipelines, read [the full documentation](https://docs.metaflow.org/).
 {{- end }}
 {{- end }}
+{{- end }}
 {{- end -}}

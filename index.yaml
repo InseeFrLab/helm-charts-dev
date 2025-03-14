@@ -2049,6 +2049,31 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vllm-0.0.9/vllm-0.0.9.tgz
     version: 0.0.9
+  vscode-pyspark-notes:
+  - apiVersion: v2
+    created: "2025-03-14T08:59:22.547970523Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.6.4
+    description: The Visual Studio Code IDE with PySpark, an interface to use Apache
+      Spark from Python.
+    digest: b4f2fb80f40d6d20f24a29bd2e0c78753c3009bc64d1a7adabe4ed703de01a2e
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    - Spark
+    - VTL
+    name: vscode-pyspark-notes
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-pyspark-notes-0.0.1/vscode-pyspark-notes-0.0.1.tgz
+    version: 0.0.1
   vscode-python:
   - apiVersion: v2
     created: "2024-12-12T17:16:18.866293145Z"
@@ -2712,4 +2737,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-notes-0.0.1/vscode-python-notes-0.0.1.tgz
     version: 0.0.1
-generated: "2025-03-13T15:58:11.132353452Z"
+generated: "2025-03-14T08:59:22.548135521Z"

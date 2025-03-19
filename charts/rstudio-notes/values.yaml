@@ -1,39 +1,14 @@
-# Default values for vscode.
+# Default values for rstudio.
 global:
   suspend: false
 
 service:
   image:
-    version: "inseefrlab/onyxia-vscode-pyspark:py3.12.9-spark3.5.4"
+    version: "inseefrlab/onyxia-rstudio:r4.4.2"
     pullPolicy: IfNotPresent
     custom:
       enabled: false
-      version: "inseefrlab/onyxia-vscode-pyspark:py3.12.9-spark3.5.4"
-  customPythonEnv: false
-
-spark:
-  sparkui: false
-  secretName: ""
-  default: true
-  disabledCertChecking: false
-  config:
-    spark.master: k8s://https://kubernetes.default.svc:443
-    spark.kubernetes.authenticate.driver.serviceAccountName: '{{ include "library-chart.fullname" . }}'
-    spark.kubernetes.driver.pod.name: '{{ include "library-chart.fullname" . }}-0'
-    spark.kubernetes.namespace: '{{ .Release.Namespace }}'
-    spark.kubernetes.container.image: '{{ ternary .Values.service.image.custom.version .Values.service.image.version .Values.service.image.custom.enabled }}'
-    spark.driver.extraJavaOptions: '{{ include "library-chart.sparkExtraJavaOptions" . }}'
-    spark.executor.extraJavaOptions: '{{ include "library-chart.sparkExtraJavaOptions" . }}'
-  userConfig:
-    spark.dynamicAllocation.enabled: "true"
-    spark.dynamicAllocation.initialExecutors: "1"
-    spark.dynamicAllocation.minExecutors: "1"
-    spark.dynamicAllocation.maxExecutors: "10"
-    spark.executor.memory: "2g"
-    spark.driver.memory: "2g"
-    spark.dynamicAllocation.executorAllocationRatio: "1"
-    spark.dynamicAllocation.shuffleTracking.enabled: "true"
-    spark.hadoop.fs.s3a.bucket.all.committer.magic.enabled: "true"
+      version: "inseefrlab/onyxia-rstudio:r4.4.2"
 
 security:
   password: "changeme"
@@ -97,40 +72,10 @@ git:
   repository: ""
   branch: ""
 
-proxy:
-  enabled: false
-  noProxy: ""
-  httpProxy: ""
-  httpsProxy: ""
-
 repository:
   configMapName: ""
-  pipRepository: ""
-  condaRepository: ""
-  mavenRepository: ""
-
-# active ou non la recherche de secrets discovery dans le namespace
-# see secret-{service}.yaml
-discovery:
-  hive: true
-  mlflow: true
-  metaflow: true
-  chromadb: true
-
-hive:
-  secretName: ""
-
-mlflow:
-  secretName: ""
-
-metaflow:
-  secretName: ""
-
-chromadb:
-  secretName: ""
-
-coresite:
-  secretName: ""
+  packageManagerUrl: ""
+  rRepository: ""
 
 replicaCount: 1
 
@@ -148,7 +93,7 @@ serviceAccount:
   name: ""
 
 kubernetes:
-  enabled: false
+  enabled: true
   role: "view"
 
 podAnnotations: {}
@@ -168,7 +113,7 @@ networking:
   type: ClusterIP
   clusterIP: None
   service:
-    port: 8080
+    port: 8787
   sparkui:
     port: 4040
   # Custom user-specified extra ports exposition.
@@ -183,7 +128,6 @@ networking:
 ingress:
   enabled: false
   tls: true
-  ingressClassName: ""
   annotations: []
     # kubernetes.io/tls-acme: "true"
   hostname: chart-example.local
@@ -234,7 +178,6 @@ persistence:
   accessMode: ReadWriteOnce
   size: 10Gi
   # existingClaim: ""
-
 autoscaling:
   enabled: false
   minReplicas: 1
@@ -259,9 +202,11 @@ userPreferences:
   darkMode: false
   language: "en"
 
-certificates: {}
-  # pathToCaBundle: /usr/local/share/ca-certificates/
-  # cacerts: ""
+proxy:
+  enabled: false
+  noProxy: ""
+  httpProxy: ""
+  httpsProxy: ""
 
 message:
   fr: ""

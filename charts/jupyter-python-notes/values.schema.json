@@ -21,36 +21,36 @@
               ]
             },
             "version": {
-              "description": "vscode supported version",
+              "description": "supported versions",
               "type": "string",
-              "default": "inseefrlab/onyxia-vscode-python:py3.12.9",
               "listEnum": [
-                "inseefrlab/onyxia-vscode-python:py3.12.9",
-                "inseefrlab/onyxia-vscode-python:py3.11.11"
+                "inseefrlab/onyxia-jupyter-python:py3.12.9",
+                "inseefrlab/onyxia-jupyter-python:py3.11.11"
               ],
               "render": "list",
               "hidden": {
                 "value": true,
                 "path": "service/image/custom/enabled"
-              }
+              },
+              "default": "inseefrlab/onyxia-jupyter-python:py3.12.9"
             },
             "custom": {
-              "description": "use a custom vscode docker image",
+              "description": "use a custom jupyter docker image",
               "type": "object",
               "properties": {
                 "enabled": {
                   "title": "custom image",
                   "type": "boolean",
-                  "description": "use a custom vscode docker images",
+                  "description": "use a custom jupyter docker image",
                   "default": false,
                   "x-onyxia": {
                     "overwriteSchemaWith": "ide/customImage.json"
                   }
                 },
                 "version": {
-                  "description": "vscode unsupported version",
+                  "description": "jupyter unsupported version",
                   "type": "string",
-                  "default": "inseefrlab/onyxia-vscode-python:py3.12.9",
+                  "default": "inseefrlab/onyxia-jupyter-python:py3.12.9",
                   "hidden": {
                     "value": false,
                     "path": "service/image/custom/enabled"
@@ -211,15 +211,6 @@
             "overwriteDefaultWith": "{{k8s.initScriptUrl}}"
           }
         },
-        "regionInitCheckSum": {
-          "type": "string",
-          "description": "region initialization script",
-          "default": "",
-          "x-onyxia": {
-            "hidden": true,
-            "overwriteDefaultWith": "{{k8s.initScriptCheckSum}}"
-          }
-        },
         "personalInit": {
           "type": "string",
           "description": "user initialization script",
@@ -281,33 +272,6 @@
             "admin"
           ],
           "render": "list"
-        }
-      }
-    },
-    "openshiftSCC": {
-      "description": "configuration for openshift compatibility",
-      "type": "object",
-      "x-onyxia": {
-        "overwriteSchemaWith": "ide/openshiftSCC.json"
-      },
-      "properties": {
-        "enabled": {
-          "description": "enable rolebinding with openshift scc",
-          "type": "boolean",
-          "default": false,
-          "x-onyxia": {
-            "hidden": true,
-            "overwriteDefaultWith": "region.openshiftSCC.enabled"
-          }
-        },
-        "scc": {
-          "type": "string",
-          "description": "name of scc for rolebinding",
-          "default": "anyuid",
-          "x-onyxia": {
-            "hidden": true,
-            "overwriteDefaultWith": "region.openshiftSCC.scc"
-          }
         }
       }
     },
@@ -395,7 +359,7 @@
           "description": "AWS Access Key",
           "type": "string",
           "x-onyxia": {
-            "overwriteDefaultWith": "s3.AWS_ACCESS_KEY_ID"
+            "overwriteDefaultWith": "{{s3.AWS_ACCESS_KEY_ID}}"
           },
           "hidden": {
             "value": false,
@@ -537,7 +501,7 @@
         },
         "repository": {
           "type": "string",
-          "description": "projet",
+          "description": "Repository url",
           "default": "",
           "x-onyxia": {
             "overwriteDefaultWith": "{{git.project}}"
@@ -688,6 +652,33 @@
         "overwriteSchemaWith": "nodeSelector.json"
       }
     },
+    "openshiftSCC": {
+      "description": "configuration for openshift compatibility",
+      "type": "object",
+      "x-onyxia": {
+        "overwriteSchemaWith": "ide/openshiftSCC.json"
+      },
+      "properties": {
+        "enabled": {
+          "description": "enable rolebinding with openshift scc",
+          "type": "boolean",
+          "default": false,
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "region.openshiftSCC.enabled"
+          }
+        },
+        "scc": {
+          "type": "string",
+          "description": "name of scc for rolebinding",
+          "default": "anyuid",
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "region.openshiftSCC.scc"
+          }
+        }
+      }
+    },
     "ingress": {
       "title": "Ingress Details",
       "type": "object",
@@ -825,19 +816,24 @@
       "type": "object",
       "properties": {
         "failureThreshold": {
-          "type": "integer"
+          "type": "integer",
+          "default": 60
         },
         "initialDelaySeconds": {
-          "type": "integer"
+          "type": "integer",
+          "default": 10
         },
         "periodSeconds": {
-          "type": "integer"
+          "type": "integer",
+          "default": 10
         },
         "successThreshold": {
-          "type": "integer"
+          "type": "integer",
+          "default": 1
         },
         "timeoutSeconds": {
-          "type": "integer"
+          "type": "integer",
+          "default": 2
         }
       },
       "default": {

@@ -21,36 +21,36 @@
               ]
             },
             "version": {
-              "description": "vscode supported version",
+              "description": "supported versions",
               "type": "string",
-              "default": "inseefrlab/onyxia-vscode-python:py3.12.9",
               "listEnum": [
-                "inseefrlab/onyxia-vscode-python:py3.12.9",
-                "inseefrlab/onyxia-vscode-python:py3.11.11"
+                "inseefrlab/onyxia-rstudio:r4.4.2",
+                "inseefrlab/onyxia-rstudio:r4.3.3"
               ],
               "render": "list",
               "hidden": {
                 "value": true,
                 "path": "service/image/custom/enabled"
-              }
+              },
+              "default": "inseefrlab/onyxia-rstudio:r4.4.2"
             },
             "custom": {
-              "description": "use a custom vscode docker image",
+              "description": "use a custom RStudio docker image",
               "type": "object",
               "properties": {
                 "enabled": {
                   "title": "custom image",
                   "type": "boolean",
-                  "description": "use a custom vscode docker images",
+                  "description": "use a custom RStudio docker image",
                   "default": false,
                   "x-onyxia": {
                     "overwriteSchemaWith": "ide/customImage.json"
                   }
                 },
                 "version": {
-                  "description": "vscode unsupported version",
+                  "description": "RStudio unsupported version",
                   "type": "string",
-                  "default": "inseefrlab/onyxia-vscode-python:py3.12.9",
+                  "default": "inseefrlab/onyxia-rstudio:r4.4.2",
                   "hidden": {
                     "value": false,
                     "path": "service/image/custom/enabled"
@@ -59,12 +59,6 @@
               }
             }
           }
-        },
-        "customPythonEnv": {
-          "title": "custom python environment",
-          "type": "boolean",
-          "description": "Use a custom python environment",
-          "default": false
         }
       }
     },
@@ -211,15 +205,6 @@
             "overwriteDefaultWith": "{{k8s.initScriptUrl}}"
           }
         },
-        "regionInitCheckSum": {
-          "type": "string",
-          "description": "region initialization script",
-          "default": "",
-          "x-onyxia": {
-            "hidden": true,
-            "overwriteDefaultWith": "{{k8s.initScriptCheckSum}}"
-          }
-        },
         "personalInit": {
           "type": "string",
           "description": "user initialization script",
@@ -281,33 +266,6 @@
             "admin"
           ],
           "render": "list"
-        }
-      }
-    },
-    "openshiftSCC": {
-      "description": "configuration for openshift compatibility",
-      "type": "object",
-      "x-onyxia": {
-        "overwriteSchemaWith": "ide/openshiftSCC.json"
-      },
-      "properties": {
-        "enabled": {
-          "description": "enable rolebinding with openshift scc",
-          "type": "boolean",
-          "default": false,
-          "x-onyxia": {
-            "hidden": true,
-            "overwriteDefaultWith": "region.openshiftSCC.enabled"
-          }
-        },
-        "scc": {
-          "type": "string",
-          "description": "name of scc for rolebinding",
-          "default": "anyuid",
-          "x-onyxia": {
-            "hidden": true,
-            "overwriteDefaultWith": "region.openshiftSCC.scc"
-          }
         }
       }
     },
@@ -395,7 +353,7 @@
           "description": "AWS Access Key",
           "type": "string",
           "x-onyxia": {
-            "overwriteDefaultWith": "s3.AWS_ACCESS_KEY_ID"
+            "overwriteDefaultWith": "{{s3.AWS_ACCESS_KEY_ID}}"
           },
           "hidden": {
             "value": false,
@@ -537,7 +495,7 @@
         },
         "repository": {
           "type": "string",
-          "description": "projet",
+          "description": "Repository url",
           "default": "",
           "x-onyxia": {
             "overwriteDefaultWith": "{{git.project}}"
@@ -601,30 +559,6 @@
               }
             }
           }
-        }
-      }
-    },
-    "discovery": {
-      "description": "configure your service to autodetect some ressources.",
-      "type": "object",
-      "properties": {
-        "hive": {
-          "type": "boolean",
-          "title": "Enable hive metastore discovery",
-          "description": "discover your hive metastore service",
-          "default": true
-        },
-        "mlflow": {
-          "type": "boolean",
-          "title": "Enable mlflow discovery",
-          "description": "discover your mlflow service",
-          "default": true
-        },
-        "metaflow": {
-          "type": "boolean",
-          "title": "Enable metaflow discovery",
-          "description": "discover your metaflow service",
-          "default": true
         }
       }
     },
@@ -797,25 +731,25 @@
       }
     },
     "repository": {
-      "description": "python repositories for pip and conda",
+      "description": "r repository (eg : cran mirrors or proxy caches)",
       "type": "object",
       "properties": {
-        "pipRepository": {
+        "rRepository": {
           "type": "string",
-          "description": "python repository for pip",
+          "description": "r repository",
           "default": "",
           "x-onyxia": {
             "hidden": true,
-            "overwriteDefaultWith": "{{packageRepositoryInjection.pypiProxyUrl}}"
+            "overwriteDefaultWith": "{{packageRepositoryInjection.cranProxyUrl}}"
           }
         },
-        "condaRepository": {
+        "packageManagerUrl": {
           "type": "string",
-          "description": "python repository for pip",
+          "description": "Posit Package Manager URL",
           "default": "",
           "x-onyxia": {
             "hidden": true,
-            "overwriteDefaultWith": "{{packageRepositoryInjection.condaProxyUrl}}"
+            "overwriteDefaultWith": "{{packageRepositoryInjection.packageManagerUrl}}"
           }
         }
       }
@@ -942,32 +876,6 @@
           "hidden": {
             "value": false,
             "path": "proxy/enabled"
-          }
-        }
-      }
-    },
-    "certificates": {
-      "description": "It can be used to inject certificate authority into the services, if the Helm chart in the catalog allows it you can bind this value to the Helm chart value to add some certificate authorities in the pod.",
-      "type": "object",
-      "x-onyxia": {
-        "overwriteSchemaWith": "certificates.json"
-      },
-      "default": {},
-      "properties": {
-        "cacerts": {
-          "type": "string",
-          "description": "String of concatenated CA certificates. Alternatively a target URL can be provided.",
-          "default": "",
-          "x-onyxia": {
-            "hidden": true
-          }
-        },
-        "pathToCaBundle": {
-          "type": "string",
-          "description": "String path where a bundle is made or injected by third party solution",
-          "default": "/usr/local/share/ca-certificates/",
-          "x-onyxia": {
-            "hidden": true
           }
         }
       }

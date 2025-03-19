@@ -1,39 +1,15 @@
-# Default values for vscode.
+# Default values for jupyter.
 global:
   suspend: false
 
 service:
   image:
-    version: "inseefrlab/onyxia-vscode-pyspark:py3.12.9-spark3.5.4"
+    version: "inseefrlab/onyxia-jupyter-python:py3.12.9"
     pullPolicy: IfNotPresent
     custom:
       enabled: false
-      version: "inseefrlab/onyxia-vscode-pyspark:py3.12.9-spark3.5.4"
+      version: "inseefrlab/onyxia-jupyter-python:py3.12.9"
   customPythonEnv: false
-
-spark:
-  sparkui: false
-  secretName: ""
-  default: true
-  disabledCertChecking: false
-  config:
-    spark.master: k8s://https://kubernetes.default.svc:443
-    spark.kubernetes.authenticate.driver.serviceAccountName: '{{ include "library-chart.fullname" . }}'
-    spark.kubernetes.driver.pod.name: '{{ include "library-chart.fullname" . }}-0'
-    spark.kubernetes.namespace: '{{ .Release.Namespace }}'
-    spark.kubernetes.container.image: '{{ ternary .Values.service.image.custom.version .Values.service.image.version .Values.service.image.custom.enabled }}'
-    spark.driver.extraJavaOptions: '{{ include "library-chart.sparkExtraJavaOptions" . }}'
-    spark.executor.extraJavaOptions: '{{ include "library-chart.sparkExtraJavaOptions" . }}'
-  userConfig:
-    spark.dynamicAllocation.enabled: "true"
-    spark.dynamicAllocation.initialExecutors: "1"
-    spark.dynamicAllocation.minExecutors: "1"
-    spark.dynamicAllocation.maxExecutors: "10"
-    spark.executor.memory: "2g"
-    spark.driver.memory: "2g"
-    spark.dynamicAllocation.executorAllocationRatio: "1"
-    spark.dynamicAllocation.shuffleTracking.enabled: "true"
-    spark.hadoop.fs.s3a.bucket.all.committer.magic.enabled: "true"
 
 security:
   password: "changeme"
@@ -97,17 +73,10 @@ git:
   repository: ""
   branch: ""
 
-proxy:
-  enabled: false
-  noProxy: ""
-  httpProxy: ""
-  httpsProxy: ""
-
 repository:
   configMapName: ""
   pipRepository: ""
   condaRepository: ""
-  mavenRepository: ""
 
 # active ou non la recherche de secrets discovery dans le namespace
 # see secret-{service}.yaml
@@ -168,7 +137,7 @@ networking:
   type: ClusterIP
   clusterIP: None
   service:
-    port: 8080
+    port: 8888
   sparkui:
     port: 4040
   # Custom user-specified extra ports exposition.
@@ -222,7 +191,7 @@ resources: {}
   #   memory: 128Mi
 
 persistence:
-  enabled: true
+  enabled: false
   ## database data Persistent Volume Storage Class
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -258,6 +227,16 @@ startupProbe:
 userPreferences:
   darkMode: false
   language: "en"
+
+openshiftSCC:
+  enabled: false
+  scc: ""
+
+proxy:
+  enabled: false
+  noProxy: ""
+  httpProxy: ""
+  httpsProxy: ""
 
 certificates: {}
   # pathToCaBundle: /usr/local/share/ca-certificates/

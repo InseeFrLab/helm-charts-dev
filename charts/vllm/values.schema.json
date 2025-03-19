@@ -21,6 +21,7 @@
             },
             "args":{
               "type": "string",
+              "render": "textarea",
               "title": "Command arguments",
               "default": "--gpu-memory-utilization \"0.95\" --dtype \"auto\" --max-model-len \"8200\"",
               "description": "Command arguments"

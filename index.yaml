@@ -705,6 +705,29 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/fuseki-0.3.5/fuseki-0.3.5.tgz
     version: 0.3.5
+  jupyter-python-notes:
+  - apiVersion: v2
+    created: "2025-03-19T14:24:45.329344216Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.6.8
+    description: The JupyterLab IDE with Python, Julia, and a collection of standard
+      data science packages.
+    digest: 5af6e559adc1d77311e8f706e7ab9d30e505611119785012e46afda635c82c5e
+    home: https://jupyter.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jupyter.png
+    keywords:
+    - Jupyter
+    - Python
+    name: jupyter-python-notes
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/jupyter-python-notes-0.0.1/jupyter-python-notes-0.0.1.tgz
+    version: 0.0.1
   launcher:
   - apiVersion: v2
     created: "2024-04-28T23:12:01.460216969Z"
@@ -1406,6 +1429,28 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.1/qdrant-0.0.1.tgz
     version: 0.0.1
+  rstudio-notes:
+  - apiVersion: v2
+    created: "2025-03-19T14:24:45.480697807Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.6.8
+    description: The RStudio IDE with a collection of standard data science packages.
+    digest: 05c8a8fb1bd52a05ff5f577331bb65de071240be08c0d59cf35c966f83cc5218
+    home: https://www.rstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
+    keywords:
+    - RStudio
+    - R
+    name: rstudio-notes
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/rstudio-notes-0.0.1/rstudio-notes-0.0.1.tgz
+    version: 0.0.1
   test-values:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -2083,6 +2128,30 @@ entries:
     version: 0.0.9
   vscode-pyspark-notes:
   - apiVersion: v2
+    created: "2025-03-19T14:24:45.639502043Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.6.8
+    description: The Visual Studio Code IDE with PySpark, an interface to use Apache
+      Spark from Python.
+    digest: 441f953d30b4882b9f94505d231d5a43dc5045506dc0507499283e37befb526a
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    - Spark
+    - VTL
+    name: vscode-pyspark-notes
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-pyspark-notes-0.0.2/vscode-pyspark-notes-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2025-03-14T08:59:22.547970523Z"
     dependencies:
     - name: library-chart
@@ -2638,6 +2707,28 @@ entries:
     version: 1.11.11
   vscode-python-notes:
   - apiVersion: v2
+    created: "2025-03-19T14:24:45.775715256Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.6.8
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: e9c0fd30933e49e6766e138b22004e159e204a70da022e80bf6f91dea95ef2e8
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python-notes
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-notes-0.0.7/vscode-python-notes-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v2
     created: "2025-03-13T15:58:11.132092927Z"
     dependencies:
     - name: library-chart
@@ -2769,4 +2860,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-notes-0.0.1/vscode-python-notes-0.0.1.tgz
     version: 0.0.1
-generated: "2025-03-19T12:21:24.561673467Z"
+generated: "2025-03-19T14:24:45.776050675Z"

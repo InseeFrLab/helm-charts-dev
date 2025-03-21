@@ -751,6 +751,30 @@ entries:
     version: 1.0.0
   light-jupyter-pyspark:
   - apiVersion: v2
+    created: "2025-03-21T10:43:28.35738086Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.6.8
+    description: The JupyterLab IDE with PySpark, an interface to use Apache Spark
+      from Python.
+    digest: d193c5d14da4170c7dfc6444d6e609af6d374e6d287bf5b6c6d635fe2c64fa9b
+    home: https://jupyter.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jupyter.png
+    keywords:
+    - Jupyter
+    - Python
+    - Spark
+    - VTL
+    name: light-jupyter-pyspark
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/light-jupyter-pyspark-0.0.4/light-jupyter-pyspark-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     created: "2025-03-21T09:43:48.477657533Z"
     dependencies:
     - name: library-chart
@@ -824,6 +848,27 @@ entries:
     version: 0.0.1
   light-rstudio:
   - apiVersion: v2
+    created: "2025-03-21T10:43:28.466956195Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.6.8
+    description: The RStudio IDE with a collection of standard data science packages.
+    digest: cbe2d7db7a6bd37154280173ccd0909d2671800b0ad240c3302f6e829d779cfc
+    home: https://www.rstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
+    keywords:
+    - RStudio
+    - R
+    name: light-rstudio
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/light-rstudio-0.0.4/light-rstudio-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     created: "2025-03-21T09:43:48.588369135Z"
     dependencies:
     - name: library-chart
@@ -887,6 +932,28 @@ entries:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/light-rstudio-0.0.1/light-rstudio-0.0.1.tgz
     version: 0.0.1
   light-vscode-python:
+  - apiVersion: v2
+    created: "2025-03-21T10:43:28.583811518Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.6.8
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 97595cb31a84f8f562ab948c7802b7d44b79b97e842bfef828e5343d48b9c670
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: light-vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/light-vscode-python-0.0.4/light-vscode-python-0.0.4.tgz
+    version: 0.0.4
   - apiVersion: v2
     created: "2025-03-21T09:43:48.714868737Z"
     dependencies:
@@ -2340,4 +2407,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-notes-0.0.1/vscode-python-notes-0.0.1.tgz
     version: 0.0.1
-generated: "2025-03-21T09:43:48.71509697Z"
+generated: "2025-03-21T10:43:28.58403213Z"

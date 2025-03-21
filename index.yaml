@@ -1435,21 +1435,6 @@ entries:
       urls:
         - https://github.com/InseeFrLab/helm-charts-dev/releases/download/rstudio-notes-0.0.1/rstudio-notes-0.0.1.tgz
       version: 0.0.1
-  test-values:
-    - apiVersion: v2
-      appVersion: 1.16.0
-      created: "2024-09-26T10:10:12.428032993Z"
-      dependencies:
-        - name: vscode-python
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 2.1.2
-      description: A Helm chart for Kubernetes
-      digest: ec375d3a711a29cb6463bbc995f0807ff6d2c2923c828d8b871679e4d5363236
-      name: test-values
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/test-values-0.1.0/test-values-0.1.0.tgz
-      version: 0.1.0
   tmp-vscode-python:
     - apiVersion: v2
       created: "2025-03-07T13:53:49.142212883Z"

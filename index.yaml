@@ -1450,30 +1450,6 @@ entries:
       urls:
         - https://github.com/InseeFrLab/helm-charts-dev/releases/download/test-values-0.1.0/test-values-0.1.0.tgz
       version: 0.1.0
-  tmp-vscode-pyspark:
-    - apiVersion: v2
-      created: "2025-02-21T13:49:21.298276059Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.5.44
-      description: The Visual Studio Code IDE with PySpark, an interface to use Apache Spark from Python.
-      digest: 40cd11e994df361040aca020ebb4c8344331b9cb8115c4aca2fd5af6d8ffe131
-      home: https://code.visualstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-      keywords:
-        - VSCode
-        - Python
-        - Spark
-        - VTL
-      name: tmp-vscode-pyspark
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/tmp-vscode-pyspark-0.0.1/tmp-vscode-pyspark-0.0.1.tgz
-      version: 0.0.1
   tmp-vscode-python:
     - apiVersion: v2
       created: "2025-03-07T13:53:49.142212883Z"

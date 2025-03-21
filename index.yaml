@@ -1413,28 +1413,6 @@ entries:
       urls:
         - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.1/qdrant-0.0.1.tgz
       version: 0.0.1
-  rstudio-notes:
-    - apiVersion: v2
-      created: "2025-03-19T14:24:45.480697807Z"
-      dependencies:
-        - name: library-chart
-          repository: https://inseefrlab.github.io/helm-charts-interactive-services
-          version: 1.6.8
-      description: The RStudio IDE with a collection of standard data science packages.
-      digest: 05c8a8fb1bd52a05ff5f577331bb65de071240be08c0d59cf35c966f83cc5218
-      home: https://www.rstudio.com/
-      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
-      keywords:
-        - RStudio
-        - R
-      name: rstudio-notes
-      sources:
-        - https://github.com/InseeFrLab/images-datascience
-        - https://github.com/InseeFrLab/helm-charts-interactive-services
-      type: application
-      urls:
-        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/rstudio-notes-0.0.1/rstudio-notes-0.0.1.tgz
-      version: 0.0.1
   ubuntu:
     - apiVersion: v2
       appVersion: latest

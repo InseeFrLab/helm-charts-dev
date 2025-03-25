@@ -950,6 +950,13 @@
               "x-onyxia": {
                 "overwriteDefaultWith": "trucindefini.apiKey"
               }
+            },
+            "useLegacyCompletionsEndpoint":{
+              "type": "boolean",
+              "default": true,
+              "x-onyxia": {
+                "overwriteDefaultWith": "trucindefini.useLegacyCompletionsEndpoint"
+              }
             }
           }
         }  

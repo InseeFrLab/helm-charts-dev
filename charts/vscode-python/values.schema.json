@@ -944,7 +944,7 @@
                 "overwriteDefaultWith": "trucindefini.apiBase"
               }
             },
-            "apiBKey":{
+            "apiKey":{
               "type": "string",
               "default": "",
               "x-onyxia": {

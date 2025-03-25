@@ -943,6 +943,13 @@
               "x-onyxia": {
                 "overwriteDefaultWith": "trucindefini.apiBase"
               }
+            },
+            "apiBKey":{
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "trucindefini.apiKey"
+              }
             }
           }
         }  

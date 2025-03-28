@@ -1406,6 +1406,29 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.1/qdrant-0.0.1.tgz
     version: 0.0.1
+  sans-schema:
+  - apiVersion: v2
+    created: "2025-03-28T09:54:09.131686714Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.6.11
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: a00e81b902fda8c0abaa5ea8af374a56730e858898c7bbfd21d7726cbef46e24
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: sans-schema
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/sans-schema-3.0.0/sans-schema-3.0.0.tgz
+    version: 3.0.0
   ubuntu:
   - apiVersion: v2
     appVersion: latest
@@ -1998,4 +2021,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-darkmode-1.11.11/vscode-python-darkmode-1.11.11.tgz
     version: 1.11.11
-generated: "2025-03-27T15:38:27.227561408Z"
+generated: "2025-03-28T09:54:09.131829672Z"

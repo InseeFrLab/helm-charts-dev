@@ -33,7 +33,7 @@ web:
   replicaCount: 1
   image:
     repository: inseefrlab/onyxia-web
-    tag: 4.32.15
+    tag: 4.42.0
     pullPolicy: IfNotPresent
 
   ## Pod priority settings
@@ -102,7 +102,7 @@ api:
   replicaCount: 1
   image:
     repository: inseefrlab/onyxia-api
-    tag: v3.0.0
+    tag: v4.4.0
     pullPolicy: IfNotPresent
   contextPath: /api
 
@@ -162,20 +162,116 @@ api:
     #     "type": "helm",
     #   }
     # ]
-
+  userProfile:
+    enabled: true
+    rootPath: /userProfile/
+    subPathDefault: default
+    subPathRole: role
+    default:
+      profileSchema: |
+        "git": {
+          "title": "Git access",
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "title": "Enable git access from within the service",
+              "type": "boolean",
+              "default": true
+            },
+            "name": {
+              "title": "User name",
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{git.name}}"
+              },
+              "hidden": {
+                "value": false,
+                "path": "enabled",
+                "isPathRelative": true
+              }
+            },
+            "email": {
+              "title": "User email",
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{git.email}}"
+              },
+              "hidden": {
+                "value": false,
+                "path": "enabled",
+                "isPathRelative": true
+              }
+            },
+            "cache": {
+              "title": "Credentials caching duration",
+              "description": "(in seconds)",
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{git.credentials_cache_duration}}"
+              },
+              "hidden": {
+                "value": false,
+                "path": "enabled",
+                "isPathRelative": true
+              }
+            },
+            "token": {
+              "title": "Personal Access Token",
+              "type": "string",
+              "default": "",
+              "render": "password",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{git.token}}"
+              },
+              "hidden": {
+                "value": false,
+                "path": "enabled",
+                "isPathRelative": true
+              }
+            },
+            "repository": {
+              "title": "Project repository",
+              "description": "cloned in service",
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{git.project}}"
+              },
+              "hidden": {
+                "value": false,
+                "path": "enabled",
+                "isPathRelative": true
+              }
+            },
+            "branch": {
+              "title": "Specific branch to use",
+              "type": "string",
+              "default": "",
+              "hidden": {
+                "value": false,
+                "path": "enabled",
+                "isPathRelative": true
+              }
+            }
+          }
+        }
+    roles:
+      #- roleName: datascientist
+      #  profileSchema: |
+      #    ...
   schemas:
     enabled: false
     rootPath: /schemas/
-    subPathDefault : default
+    subPathDefault: default
     subPathRole: role
-    roles: 
-      #  - roleName: datascientist: 
+    roles:
+      #  - roleName: datascientist
       #    files:
       #      - relativePath: nodeSelector.json
-      #        content: |          
-    files: []
-      # - relativePath: nodeSelector.json
-      #   content: |
+      #        content: |
       #  {
       #    "$schema": "http://json-schema.org/draft-07/schema#",
       #    "title": "Node Selector",
@@ -190,6 +286,23 @@ api:
       #        "description": "The type of GPU",
       #        "type": "string",
       #        "enum": ["A2", "H100"]
+      #      }
+      #    },
+      #    "additionalProperties": false
+      #  }
+    files:
+      []
+      # - relativePath: nodeSelector.json
+      #   content: |
+      #  {
+      #    "$schema": "http://json-schema.org/draft-07/schema#",
+      #    "title": "Node Selector",
+      #    "type": "object",
+      #    "properties": {
+      #      "disktype": {
+      #        "description": "The type of disk",
+      #        "type": "string",
+      #        "enum": ["ssd", "hdd"]
       #      }
       #    },
       #    "additionalProperties": false
@@ -226,4 +339,6 @@ api:
     annotations: {}
     # The name of the service account to use.
     # If not set and create is true, a name is generated using the fullname template
-    name:
+    name: # Boolean to indicate whether the service account token must be injected into the pod or not. It can be deactivated if Onyxia doesn't use it.
+
+    automountServiceAccountToken: true

@@ -1439,6 +1439,17 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/sans-schema-3.0.0/sans-schema-3.0.0.tgz
     version: 3.0.0
+  speaches:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-04-04T16:43:55.215964258Z"
+    description: A Helm chart for Kubernetes
+    digest: a321a4bcd263f05a0b3496471636cd8dc61af6e24a998a366649992e92988d2c
+    name: speaches
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/speaches-0.1.0/speaches-0.1.0.tgz
+    version: 0.1.0
   ubuntu:
   - apiVersion: v2
     appVersion: latest
@@ -2031,4 +2042,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-darkmode-1.11.11/vscode-python-darkmode-1.11.11.tgz
     version: 1.11.11
-generated: "2025-03-31T13:22:28.940686427Z"
+generated: "2025-04-04T16:43:55.216199659Z"

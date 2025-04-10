@@ -14,18 +14,24 @@
             "user.yaml": {
               "title": "User configuration file",
               "type": "string",
-              "hidden": true,
-              "default": "common:\n  security:\n    authorizationEnabled: true\n    defaultRootPassword: '{{project.password}}'"
+              "default": "common:\n  security:\n    authorizationEnabled: true\n    defaultRootPassword: \"Milvus\"",
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "common:\n  security:\n    authorizationEnabled: true\n    defaultRootPassword: \"{{project.password}}\""
+              }
             }
           }
         },
         "standalone": {
+          "title": "Milvus",
           "type": "object",
           "properties": {
             "persistence": {
+              "title": "Persistence",
               "type": "object",
               "properties": {
                 "persistentVolumeClaim": {
+                  "title": "Persistent volume",
                   "type": "object",
                   "properties": {
                     "enabled": {
@@ -63,9 +69,11 @@
           "type": "object",
           "properties": {
             "persistence": {
+              "title": "Persistence",
               "type": "object",
               "properties": {
                 "persistentVolumeClaim": {
+                  "title": "Persistent volume",
                   "type": "object",
                   "properties": {
                     "enabled": {

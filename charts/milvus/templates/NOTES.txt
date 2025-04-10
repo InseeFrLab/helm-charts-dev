@@ -1,4 +1,5 @@
 {{- $password := (fromYaml (index .Values.milvus.extraConfigFiles "user.yaml")).common.security.defaultRootPassword -}}
+# Service access
 
 Your Milvus database is hosted at https://{{ .Values.ingress.hostname }}:443.
 - Username: **root**
@@ -9,8 +10,9 @@ Your Milvus database is hosted at https://{{ .Values.ingress.hostname }}:443.
 You may manage your database through [the Attu web interface](https://{{ .Values.ingress.hostnameWebUI }}).
 {{- end }}
 
+
 <details>
-  <summary>Access with Python</summmary>
+  <summary># Python client</summary>
 
 First define environment variables with your credentials:
 ```bash

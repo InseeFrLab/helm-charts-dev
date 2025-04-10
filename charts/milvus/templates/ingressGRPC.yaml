@@ -2,11 +2,13 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "library-chart.fullname" . }}
+  name: {{ include "library-chart.fullname" . }}-grpc
   labels:
     {{- include "library-chart.labels" . | nindent 4 }}
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: GRPC
+    nginx.ingress.kubernetes.io/proxy-body-size: 4m
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
     {{- include "library-chart.ingress.annotations" . | nindent 4 }}
 spec:
   {{- if and .Values.ingress.ingressClassName (eq "true" (include "library-chart.ingress.supportsIngressClassname" .)) }}
@@ -15,13 +17,13 @@ spec:
   {{- if .Values.ingress.tls }}
   tls:
     - hosts:
-        - {{ .Values.ingress.hostname | quote }}
+        - {{ .Values.ingress.hostnameGRPC | quote }}
       {{- if .Values.ingress.useCertManager }}
       secretName: tls-cert-{{ include "library-chart.fullname" . }}
       {{- end }}
   {{- end }}
   rules:
-    - host: {{ .Values.ingress.hostname | quote }}
+    - host: {{ .Values.ingress.hostnameGRPC | quote }}
       http:
         paths:
           - path: /

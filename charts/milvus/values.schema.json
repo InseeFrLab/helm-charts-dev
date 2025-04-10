@@ -122,13 +122,22 @@
             "overwriteDefaultWith": "k8s.ingress"
           }
         },
-        "hostname": {
-          "title": "API hostname",
+        "hostnameGRPC": {
+          "title": "GRPC API hostname",
           "type": "string",
           "form": true,
           "x-onyxia": {
             "hidden": true,
-            "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}.{{k8s.domain}}"
+            "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-grpc.{{k8s.domain}}"
+          }
+        },
+        "hostnameREST": {
+          "title": "REST API hostname",
+          "type": "string",
+          "form": true,
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-rest.{{k8s.domain}}"
           }
         },
         "hostnameWebUI": {

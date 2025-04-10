@@ -126,8 +126,9 @@ milvus:
 
 ingress:
   enabled: true
-  hostname: "chart-example.local"
-  hostnameWebUI: "chart-example.local"
+  hostnameGRPC: "chart-example-grpc.local"
+  hostnameREST: "chart-example-rest.local"
+  hostnameWebUI: "chart-example-webui.local"
   ingressClassName: ""
   usecertManager: false
   certManagerClusterIssuer: ""

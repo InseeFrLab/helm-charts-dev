@@ -1,0 +1,35 @@
+{{- $password := (fromYaml (index .Values.milvus.extraConfigFiles "user.yaml")).common.security.defaultRootPassword -}}
+
+Your Milvus database is hosted at https://{{ .Values.ingress.hostname }}:443.
+- Username: **root**
+- Password: **{{ $password }}**
+- Token: **`root:{{ $password }}`**
+
+{{ if ((.Values.milvus).attu).enabled -}}
+You may manage your database through [the Attu web interface](https://{{ .Values.ingress.hostnameWebUI }}).
+{{- end }}
+
+<details>
+  <summary>Access with Python</summmary>
+
+First define environment variables with your credentials:
+```bash
+export MILVUS_URI="https://{{ .Values.ingress.hostname }}:443"
+export MILVUS_USERNAME="root"
+export MILVUS_PASSWORD="{{ $password }}"
+export MILVUS_TOKEN="root:{{ $password }}"
+```
+
+Then use them in your Python script to setup a MilvusClient:
+```py
+import os
+from pymilvus import MilvusClient
+
+client = MilvusClient(
+    uri=os.getenv("MILVUS_URI"),
+    token=os.getenv("MILVUS_TOKEN")
+)
+
+client.create_database(db_name="my_database")
+```
+</details>

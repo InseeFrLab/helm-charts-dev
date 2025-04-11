@@ -26,6 +26,96 @@
           "title": "Milvus",
           "type": "object",
           "properties": {
+            "resources": {
+              "title": "Resources (CPU/RAM)",
+              "type": "object",
+              "properties": {
+                "requests": {
+                  "description": "Guaranteed resources",
+                  "type": "object",
+                  "properties": {
+                    "cpu": {
+                      "description": "Guaranteed CPU allocation",
+                      "title": "CPU",
+                      "type": "string",
+                      "default": "100m",
+                      "render": "slider",
+                      "sliderMin": 50,
+                      "sliderMax": 40000,
+                      "sliderStep": 50,
+                      "sliderUnit": "m",
+                      "sliderExtremity": "down",
+                      "sliderExtremitySemantic": "guaranteed",
+                      "sliderRangeId": "cpu",
+                      "x-onyxia": {
+                        "overwriteDefaultWith": "region.resources.cpuRequest",
+                        "useRegionSliderConfig": "cpu"
+                      }
+                    },
+                    "memory": {
+                      "description": "Guaranteed memory allocation",
+                      "title": "memory",
+                      "type": "string",
+                      "default": "2Gi",
+                      "render": "slider",
+                      "sliderMin": 1,
+                      "sliderMax": 200,
+                      "sliderStep": 1,
+                      "sliderUnit": "Gi",
+                      "sliderExtremity": "down",
+                      "sliderExtremitySemantic": "guaranteed",
+                      "sliderRangeId": "memory",
+                      "x-onyxia": {
+                        "overwriteDefaultWith": "region.resources.memoryRequest",
+                        "useRegionSliderConfig": "memory"
+                      }
+                    }
+                  }
+                },
+                "limits": {
+                  "description": "max resources",
+                  "type": "object",
+                  "properties": {
+                    "cpu": {
+                      "description": "Maximum CPU allocation",
+                      "title": "CPU",
+                      "type": "string",
+                      "default": "30000m",
+                      "render": "slider",
+                      "sliderMin": 50,
+                      "sliderMax": 40000,
+                      "sliderStep": 50,
+                      "sliderUnit": "m",
+                      "sliderExtremity": "up",
+                      "sliderExtremitySemantic": "Maximum",
+                      "sliderRangeId": "cpu",
+                      "x-onyxia": {
+                        "overwriteDefaultWith": "region.resources.cpuLimit",
+                        "useRegionSliderConfig": "cpu"
+                      }
+                    },
+                    "memory": {
+                      "description": "Maximum memory allocation",
+                      "title": "Memory",
+                      "type": "string",
+                      "default": "50Gi",
+                      "render": "slider",
+                      "sliderMin": 1,
+                      "sliderMax": 200,
+                      "sliderStep": 1,
+                      "sliderUnit": "Gi",
+                      "sliderExtremity": "up",
+                      "sliderExtremitySemantic": "Maximum",
+                      "sliderRangeId": "memory",
+                      "x-onyxia": {
+                        "overwriteDefaultWith": "region.resources.memoryLimit",
+                        "useRegionSliderConfig": "memory"
+                      }
+                    }
+                  }
+                }
+              }
+            },
             "persistence": {
               "title": "Persistence",
               "type": "object",
@@ -88,7 +178,7 @@
                       "form": true,
                       "render": "slider",
                       "sliderMin": 1,
-                      "sliderMax": 100,
+                      "sliderMax": 500,
                       "sliderStep": 1,
                       "sliderUnit": "Gi",
                       "x-onyxia": {

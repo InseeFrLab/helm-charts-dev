@@ -56,46 +56,6 @@ milvus:
     hpa:
       enabled: false
 
-  queryNode:
-    enabled: true
-    replicas: 1
-    resources: {}
-    heaptrack:
-      enabled: false
-    disk:
-      enabled: true
-      size:
-        enabled: false  # Enable local storage size limit
-    profiling:
-      enabled: false
-    hpa:
-      enabled: false
-
-  indexNode:
-    enabled: true
-    replicas: 1
-    resources: {}
-    heaptrack:
-      enabled: false
-    profiling:
-      enabled: false  # Enable live profiling
-    disk:
-      enabled: true  # Enable index node build disk vector index
-      size:
-        enabled: false  # Enable local storage size limit
-    hpa:
-      enabled: false
-
-  dataNode:
-    enabled: true
-    replicas: 1
-    heaptrack:
-      enabled: false
-    profiling:
-      enabled: false
-    hpa:
-      enabled: false
-
   attu:
     enabled: true
     ingress:
@@ -115,6 +75,12 @@ milvus:
   etcd:
     replicaCount: 1
 
+  queryNode:
+    enabled: false
+  indexNode:
+    enabled: false
+  dataNode:
+    enabled: false
   pulsarv3:
     enabled: false
   pulsar:

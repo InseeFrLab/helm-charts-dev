@@ -367,6 +367,35 @@ entries:
   milvus:
   - apiVersion: v2
     appVersion: 2.5.8
+    created: "2025-04-11T07:56:53.188175793Z"
+    dependencies:
+    - name: milvus
+      repository: https://zilliztech.github.io/milvus-helm
+      version: 4.2.44
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.6.13
+    description: Milvus is an open-source vector database built to power AI applications
+      and vector similarity search.
+    digest: 3120f57587ff2a783152397a694ef8f8b95d54eb300b66b8d98b40ef38607b22
+    home: https://milvus.io/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/milvus.png
+    keywords:
+    - Vector Database
+    - Vector Store
+    - AI/ML
+    - Embedding
+    - Elastic
+    name: milvus
+    sources:
+    - https://github.com/milvus-io/milvus
+    - https://github.com/zilliztech/milvus-helm/
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/milvus-0.0.4/milvus-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 2.5.8
     created: "2025-04-10T16:06:42.272271764Z"
     dependencies:
     - name: milvus
@@ -1302,4 +1331,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-darkmode-1.11.11/vscode-python-darkmode-1.11.11.tgz
     version: 1.11.11
-generated: "2025-04-10T16:06:42.272381327Z"
+generated: "2025-04-11T07:56:53.188318669Z"

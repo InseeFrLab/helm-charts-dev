@@ -76,12 +76,19 @@ spec:
         {{- end }}
           resources:
             {{- toYaml .Values.api.resources | nindent 12 }}
-          {{- if or .Values.api.schemas.enabled .Values.api.extraVolumes }}
+          {{- if or .Values.api.schemas.enabled .Values.api.extraVolumes .Values.api.userProfile.enabled }}
           volumeMounts:
+            {{ $fullname := include "onyxia.fullname" . }}
+            {{- if .Values.api.userProfile.enabled }}
+            {{- $pathProfile := .Values.api.userProfile.rootPath }}
+            {{- $subpathProfile := .Values.api.userProfile.subPathDefault }} 
+            - name: {{ $fullname }}-userprofile
+              mountPath: {{ printf "%s%s" $pathProfile $subpathProfile }}
+              subPath: default
+            {{- end }}
             {{- if .Values.api.schemas.enabled }}
             {{- $path := .Values.api.schemas.rootPath -}}
             {{- $subpath := .Values.api.schemas.subPathDefault -}}
-            {{- $fullname := include "onyxia.fullname" . -}}
             {{- range .Values.api.schemas.files }}
             - name: {{ $fullname }}-{{ printf "%s %s" .relativePath "default" | sha256sum | trunc 8 }}
               mountPath: {{ printf "%s%s/%s" $path $subpath .relativePath }}

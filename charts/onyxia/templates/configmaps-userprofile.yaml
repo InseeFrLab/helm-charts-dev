@@ -4,8 +4,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ $fullname }}-userprofile
-data: |-
-{{ .Values.api.userProfile.default.profileSchema }}
+data: 
+  default: |-
+{{ .Values.api.userProfile.default.profileSchema | indent 4 }}
 ---
 {{- range .Values.api.userProfile.roles }}
 {{- $role := .roleName -}}

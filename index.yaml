@@ -1066,6 +1066,29 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/sans-schema-3.0.0/sans-schema-3.0.0.tgz
     version: 3.0.0
+  sans-schema-sans-notes:
+  - apiVersion: v2
+    created: "2025-04-17T08:47:02.46047195Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.6.11
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: fe5986549ea0395ea2cca060e089577cc647922b5f37492cb3d9cfa49aa0a12d
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: sans-schema-sans-notes
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/sans-schema-sans-notes-3.0.0/sans-schema-sans-notes-3.0.0.tgz
+    version: 3.0.0
   speaches:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -1234,4 +1257,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-darkmode-1.11.11/vscode-python-darkmode-1.11.11.tgz
     version: 1.11.11
-generated: "2025-04-16T15:06:56.395188977Z"
+generated: "2025-04-17T08:47:02.460625819Z"

@@ -1,0 +1,22 @@
+{{- $hostname := "http://localhost" -}}
+{{- $httpport := "<port-local>" -}}
+{{- $ssl := "False" -}}
+{{- if or (.Values.ingress).enabled (.Values.route).enabled -}}
+{{-   $hostname = include "library-chart.service-url" . -}}
+{{-   $httpport = "80" -}}
+{{-   if or (.Values.route).enabled (.Values.ingress).tls -}}
+{{-     $httpport = "443" -}}
+{{-     $ssl = "True" -}}
+{{-   end -}}
+{{- end -}}
+
+### Access
+
+{{ if not (or (.Values.ingress).enabled (.Values.route).enabled) -}}
+Enable access to your service using port forwarding:
+```bash
+kubectl port-forward service/{{ include "langfuse.fullname" .Subcharts.langfuse }}-web <port-local>:{{ .Values.langfuse.langfuse.web.service.port }}
+```
+{{ else -}}
+Your service is available at the following URI: [{{ $hostname }}]({{ $hostname }})
+{{ end -}}

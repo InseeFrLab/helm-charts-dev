@@ -210,6 +210,54 @@
                   }
                 }
               }
+            },
+            "fullnameOverride": {
+              "title": "Name of the backend PostgreSQL service",
+              "description": "Reuse retained data from a previous PostgreSQL service with the same name",
+              "type": "string",
+              "default": "langfuse-postgresql"
+            },
+            "primary": {
+              "type": "object",
+              "properties": {
+                "persistentVolumeClaimRetentionPolicy": {
+                  "title": "PVC Retention Policy",
+                  "type": "object",
+                  "properties": {
+                    "enabled": {
+                      "title": "Customize retention policy",
+                      "type": "boolean",
+                      "default": true
+                    },
+                    "whenScaled": {
+                      "type": "string",
+                      "default": "Retain",
+                      "enum": [
+                        "Retain",
+                        "Delete"
+                      ],
+                      "hidden": {
+                        "value": false,
+                        "path": "enabled",
+                        "isPathRelative": true
+                      }
+                    },
+                    "whenDeleted": {
+                      "type": "string",
+                      "default": "Delete",
+                      "enum": [
+                        "Retain",
+                        "Delete"
+                      ],
+                      "hidden": {
+                        "value": false,
+                        "path": "enabled",
+                        "isPathRelative": true
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         },
@@ -233,6 +281,54 @@
                   "x-onyxia": {
                     "hidden": true,
                     "overwriteDefaultWith": "{{service.oneTimePassword}}"
+                  }
+                }
+              }
+            },
+            "fullnameOverride": {
+              "title": "Name of the backend Redis service",
+              "description": "Reuse retained data from a previous Redis service with the same name",
+              "type": "string",
+              "default": "langfuse-redis"
+            },
+            "primary": {
+              "type": "object",
+              "properties": {
+                "persistentVolumeClaimRetentionPolicy": {
+                  "title": "PVC Retention Policy",
+                  "type": "object",
+                  "properties": {
+                    "enabled": {
+                      "title": "Customize retention policy",
+                      "type": "boolean",
+                      "default": true
+                    },
+                    "whenScaled": {
+                      "type": "string",
+                      "default": "Retain",
+                      "enum": [
+                        "Retain",
+                        "Delete"
+                      ],
+                      "hidden": {
+                        "value": false,
+                        "path": "enabled",
+                        "isPathRelative": true
+                      }
+                    },
+                    "whenDeleted": {
+                      "type": "string",
+                      "default": "Delete",
+                      "enum": [
+                        "Retain",
+                        "Delete"
+                      ],
+                      "hidden": {
+                        "value": false,
+                        "path": "enabled",
+                        "isPathRelative": true
+                      }
+                    }
                   }
                 }
               }

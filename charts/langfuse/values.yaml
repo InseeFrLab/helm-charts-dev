@@ -64,23 +64,37 @@ langfuse:
     deploy: true
     auth:
       password: "change-me"
+    fullnameOverride: "langfuse-postgresql"
+    primary:
+      persistentVolumeClaimRetentionPolicy:
+        enabled: true
+        whenScaled: Retain
+        whenDeleted: Delete
 
   redis:
     # If you want to use a Redis or Valkey server already deployed, set to false.
     deploy: true
     auth:
       password: "change-me"
+    fullnameOverride: "langfuse-redis"
+    primary:
+      persistentVolumeClaimRetentionPolicy:
+        enabled: true
+        whenScaled: Retain
+        whenDeleted: Delete
 
   clickhouse:
     deploy: true
     auth:
       password: "change-me"
+    fullnameOverride: "langfuse-clickhouse"
 
   s3:
     # If you want to use a custom BlobStorage, e.g. S3, set to false.
     deploy: true
     auth:
       rootPassword: "change-me"
+    fullnameOverride: "langfuse-s3"
 
 ingress:
   hostname: "chart-example.local"

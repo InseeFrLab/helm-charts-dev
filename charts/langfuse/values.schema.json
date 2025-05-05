@@ -125,6 +125,22 @@
             },
             "additionalEnv": {
               "type": "array",
+              "x-onyxia": {
+                "overwriteDefaultWith": [
+                  {
+                    "name": "LANGFUSE_INIT_USER_EMAIL",
+                    "value": "{{git.email}}"
+                  },
+                  {
+                    "name": "LANGFUSE_INIT_USER_NAME",
+                    "value": "langfuse"
+                  },
+                  {
+                    "name": "LANGFUSE_INIT_USER_PASSWORD",
+                    "value": "{{service.oneTimePassword}}"
+                  }
+                ]
+              },
               "prefixItems": [
                 {
                   "type": "object",
@@ -134,7 +150,7 @@
                     },
                     "value": {
                       "type": "string",
-                      "default": "{{git.email}}"
+                      "default": ""
                     }
                   }
                 },
@@ -142,7 +158,7 @@
                   "type": "object",
                   "properties": {
                     "name": {
-                      "const": "LANGFUSE_INIT_USER_PASSWORD"
+                      "const": "LANGFUSE_INIT_USER_NAME"
                     },
                     "value": {
                       "type": "string",
@@ -158,7 +174,7 @@
                     },
                     "value": {
                       "type": "string",
-                      "default": "{{service.oneTimePassword}}"
+                      "default": "changeme"
                     }
                   }
                 }

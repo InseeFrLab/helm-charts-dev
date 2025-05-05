@@ -315,6 +315,35 @@ entries:
   langfuse:
   - apiVersion: v2
     appVersion: 3.51.2
+    created: "2025-05-05T13:16:55.954466987Z"
+    dependencies:
+    - name: langfuse
+      repository: https://langfuse.github.io/langfuse-k8s
+      version: 1.2.5
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.7.0
+    description: LLM engineering platform - LLM observability, metrics, evaluations,
+      prompt management.
+    digest: 699a83a92e59e12ff8d1100fd046d9ed5e498961b13a8f6ddf7ab75eb3c8b1d6
+    home: https://langfuse.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
+    keywords:
+    - langfuse
+    - llm
+    - observability
+    - prompt management
+    - metrics
+    name: langfuse
+    sources:
+    - https://github.com/langfuse/langfuse
+    - https://github.com/langfuse/langfuse-k8s
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.7/langfuse-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v2
+    appVersion: 3.51.2
     created: "2025-05-05T10:07:07.928341771Z"
     dependencies:
     - name: langfuse
@@ -1455,4 +1484,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-darkmode-1.11.11/vscode-python-darkmode-1.11.11.tgz
     version: 1.11.11
-generated: "2025-05-05T10:07:07.928474799Z"
+generated: "2025-05-05T13:16:55.954632427Z"

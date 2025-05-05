@@ -18,5 +18,7 @@ Enable access to your service using port forwarding:
 kubectl port-forward service/{{ include "langfuse.fullname" .Subcharts.langfuse }}-web <port-local>:{{ .Values.langfuse.langfuse.web.service.port }}
 ```
 {{ else -}}
-Your service is available at the following URI: [{{ $hostname }}]({{ $hostname }})
+- Your service is available at the following URI: [{{ $hostname }}]({{ $hostname }})
+- Your password: {{git.email}}
+- Your password: L*{{service.oneTimePassword}}
 {{ end -}}

@@ -137,7 +137,7 @@
                   },
                   {
                     "name": "LANGFUSE_INIT_USER_PASSWORD",
-                    "value": "{{service.oneTimePassword}}"
+                    "value": "L*{{service.oneTimePassword}}"
                   }
                 ]
               },

@@ -9,6 +9,24 @@
 {{-     $ssl = "True" -}}
 {{-   end -}}
 {{- end -}}
+{{- $orgid := "" -}}
+{{- $username := "" -}}
+{{- $password := "" -}}
+{{- $email := "" -}}
+{{- with .Values.langfuse.langfuse.additionalEnv -}}
+{{-   range . -}}
+{{-     if eq .name "LANGFUSE_INIT_ORG_ID" -}}
+{{-       $orgid = .value -}}
+{{-     else if eq .name "LANGFUSE_INIT_USER_EMAIL" -}}
+{{-       $email = .value -}}
+{{-     else if eq .name "LANGFUSE_INIT_USER_NAME" -}}
+{{-       $username = .value -}}
+{{-     else if eq .name "LANGFUSE_INIT_USER_PASSWORD" -}}
+{{-       $password = .value -}}
+{{-     end -}}
+{{-   end -}}
+{{- end -}}
+
 
 ### Access
 
@@ -19,6 +37,8 @@ kubectl port-forward service/{{ include "langfuse.fullname" .Subcharts.langfuse 
 ```
 {{ else -}}
 - Your service is available at the following URI: [{{ $hostname }}]({{ $hostname }})
-- Your password: {{git.email}}
-- Your password: L*{{service.oneTimePassword}}
+- Your email: `{{ $email }}`
+- Your password: `{{ $password }}`
+- Your username: `{{ $username }}`
+- Your organisation ID: `{{ $orgid }}`
 {{ end -}}

@@ -50,6 +50,8 @@ langfuse:
       secret:
         value: "change-me"
     additionalEnv:
+      - name: "LANGFUSE_INIT_ORG_ID"
+        value: "onyxia"
       - name: "LANGFUSE_INIT_USER_EMAIL"
         value: "test@langfuse.com"
       - name: "LANGFUSE_INIT_USER_NAME"

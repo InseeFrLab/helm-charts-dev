@@ -126,6 +126,7 @@
             "additionalEnv": {
               "type": "array",
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": [
                   {
                     "name": "LANGFUSE_INIT_ORG_ID",
@@ -141,7 +142,7 @@
                   },
                   {
                     "name": "LANGFUSE_INIT_USER_PASSWORD",
-                    "value": "L*{{service.oneTimePassword}}"
+                    "value": "{{service.oneTimePassword}}"
                   }
                 ]
               },

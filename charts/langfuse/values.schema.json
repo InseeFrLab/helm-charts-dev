@@ -134,7 +134,7 @@
                   },
                   {
                     "name": "LANGFUSE_INIT_USER_EMAIL",
-                    "value": "{{ git.email | default \"langfuse@onyxia.fr\" }}"
+                    "value": "{{#git.email}}{{git.email}}{{/git.email}}{{^git.email}}langfuse@onyxia.fr{{/git.email}}"
                   },
                   {
                     "name": "LANGFUSE_INIT_USER_NAME",

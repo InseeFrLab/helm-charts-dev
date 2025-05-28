@@ -44,6 +44,20 @@ s3:
   secretAccessKey: ""
   sessionToken: ""
   pathStyleAccess: false
+  profiles: 
+    - name : s3
+      region: us-west-2
+      endpoint_url: https://minio.lab.sspcloud.fr
+      accessKeyId: ABC123
+      secretAccessKey: XYZ456
+      sessionToken: TOKEN123
+      output: json
+      addressing_style: path
+    - name : other
+      region: us-east-1
+      endpoint_url: https://s3.us-east-1.amazonaws.com
+      accessKeyId: OTHERKEY
+      secretAccessKey: OTHERSECRET
   workingDirectoryPath: ""
 
 vault:

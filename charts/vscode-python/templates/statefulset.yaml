@@ -23,6 +23,9 @@ spec:
         {{- if (.Values.git).enabled }}
         checksum/git: {{ include (print $.Template.BasePath "/secret-git.yaml") . | sha256sum }}
         {{- end }}
+        {{- if (.Values.aiAssistant).enabled }}
+        checksum/s3: {{ include (print $.Template.BasePath "/secret-assistant.yaml") . | sha256sum }}
+        {{- end }}
         {{- if (.Values.s3).enabled }}
         checksum/s3: {{ include (print $.Template.BasePath "/secret-s3.yaml") . | sha256sum }}
         checksum/s3: {{ include (print $.Template.BasePath "/configmap-s3.yaml") . | sha256sum }}
@@ -96,12 +99,14 @@ spec:
           secret:
             secretName: {{ include "library-chart.secretNameAssistant" . }}
         {{- end }}
+        {{- if (.Values.s3).enabled }}
         - name: configmap-s3
           configMap:
-            name: configmap-s3
+            name: {{ printf "%s-configmaps3" (include "library-chart.fullname" .) }}
         - name: secret-s3
           secret: 
-            secretName: secret-s3
+            secretName: {{ include "library-chart.secretNameS3" . }}
+        {{- end }}
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -122,10 +127,11 @@ spec:
               mkdir /dest/continue
               cp /src/continue/config.yaml /dest/continue/config.yaml
               {{- end }}
-              # TODO AJOUT IF AWS 
+              {{- if (.Values.s3).enabled }} 
               mkdir /dest/aws;
               cp /src/aws/bis/credentials /dest/aws/credentials;
               cp /src/aws/config /dest/aws/config;
+              {{- end }}
               {{- if .Values.discovery.hive }}
               mkdir /dest/hive;
               cp /src/hive/hive-site.xml /dest/hive/hive-site.xml;
@@ -162,10 +168,12 @@ spec:
             - name : secret-metaflow
               mountPath: /src/metaflow
             {{- end }}
+            {{- if (.Values.s3).enabled }}
             - name: secret-s3
               mountPath: /src/aws/bis
             - name: configmap-s3
               mountPath: /src/aws
+            {{- end }}
           resources:
             limits:
               cpu: 50m
@@ -213,6 +221,8 @@ spec:
             {{- end }}
           envFrom:
             - secretRef:
+                name: {{ include  "library-chart.secretNameMc" .}}
+            - secretRef:
                 name : {{ include "library-chart.secretNameToken" . }}
             {{- if (.Values.git).enabled }}
             - secretRef:
@@ -250,16 +260,14 @@ spec:
             - secretRef:
                 name: {{ include "library-chart.secretNameExtraEnv" . }}
             {{- end }}
-            - secretRef:
-                name: secret-mc
-            {{/* TODO
+            - configMapRef:
+                name: {{ printf "%s-configmaps3" (include "library-chart.fullname" .) }}
             {{- if .Values.s3.enabled }}
-            {{- if not (empty (trim (include "library-chart.secretS3" .))) }}
+            {{/*- if not (empty (trim (include "library-chart.secretS3" .))) }}
             - secretRef:
                 name: {{ include "library-chart.secretNameS3" . }}
+            {{- end */}}
             {{- end }}
-            {{- end }}
-            */}}
           livenessProbe:
             httpGet:
               path: /

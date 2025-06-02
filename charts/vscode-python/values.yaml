@@ -38,27 +38,15 @@ s3:
   enabled: false
   # The name of the secret storing the S3 credentials
   secretName: ""  # Generated based on the service's name if empty or not set
-  accessKeyId: ""
-  endpoint: ""
-  defaultRegion: ""
-  secretAccessKey: ""
-  sessionToken: ""
-  pathStyleAccess: false
-  profiles: 
-    - name : s3
-      region: us-west-2
-      endpoint_url: https://minio.lab.sspcloud.fr
-      accessKeyId: ABC123
-      secretAccessKey: XYZ456
-      sessionToken: TOKEN123
-      output: json
-      addressing_style: path
-    - name : other
-      region: us-east-1
-      endpoint_url: https://s3.us-east-1.amazonaws.com
-      accessKeyId: OTHERKEY
-      secretAccessKey: OTHERSECRET
-  workingDirectoryPath: ""
+  profiles: []
+#    - name : s3
+#      region: us-west-2
+#      endpoint_url: https://minio.lab.sspcloud.fr
+#      accessKeyId: ABC123
+#      secretAccessKey: XYZ456
+#      sessionToken: TOKEN123
+#      addressing_style: path
+#      workingDirectoryPath: ""
 
 vault:
   # Specifies whether Vault credentials should be made available

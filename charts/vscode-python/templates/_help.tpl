@@ -42,14 +42,28 @@ metadata:
 data:
   config: |
     [default]
+    {{- if $defaultProfile.region }}
     region = {{ $defaultProfile.region }}
+    {{- end }}
+    {{- if $defaultProfile.endpoint_url }}
     endpoint_url = {{ $defaultProfile.endpoint_url }}
+    {{- end }}
+    {{- if $defaultProfile.addressing_style }}
     s3 = 
       addressing_style = {{ $defaultProfile.addressing_style }}
+    {{- end }}
     {{- range $name, $profile := .Values.s3.profiles }}
     [{{ $profile.name }}]
+    {{- if  $profile.region }}
     region = {{ $profile.region }}
+    {{- end }}
+    {{- if $profile.endpoint_url }}
     endpoint_url = {{ $profile.endpoint_url }}
+    {{- end }}
+    {{- if $defaultProfile.addressing_style $}}
+        s3 = 
+      addressing_style = {{ $defaultProfile.addressing_style }}
+    {{- end }}
     {{- end }}
 {{- end }}
 {{- end -}}
@@ -69,16 +83,24 @@ type: Opaque
 stringData: 
   credentials: |
     [default]
+    {{- if $defaultProfile.accessKeyId }}
     aws_access_key_id = {{ $defaultProfile.accessKeyId }}
+    {{- end }}
+    {{- if $defaultProfile.secretAccessKey }}
     aws_secret_access_key = {{ $defaultProfile.secretAccessKey }}
+    {{- end }}
     {{- if $defaultProfile.sessionToken }}
     aws_session_token = {{ $defaultProfile.sessionToken }}
     {{- end }}
     
     {{- range $name, $profile := .Values.s3.profiles }}
     [{{ $profile.name }}]
+    {{- if $profile.accessKeyId }}
     aws_access_key_id = {{ $profile.accessKeyId }}
+    {{- end }}
+    {{- if  $profile.secretAccessKey }}
     aws_secret_access_key = {{ $profile.secretAccessKey }}
+    {{- end }}
     {{- if $profile.sessionToken }}
     aws_session_token = {{ $profile.sessionToken }}
     {{- end }}

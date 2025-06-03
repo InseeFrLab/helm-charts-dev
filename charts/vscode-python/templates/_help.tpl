@@ -48,10 +48,13 @@ data:
     {{- if $defaultProfile.endpoint_url }}
     endpoint_url = {{ $defaultProfile.endpoint_url }}
     {{- end }}
-    {{- if $defaultProfile.addressing_style }}
-    s3 = 
-      addressing_style = {{ $defaultProfile.addressing_style }}
-    {{- end }}
+    {{- if $defaultProfile.pathStyleAccess }}
+        s3 = 
+      addressing_style = path
+    {{- else }}
+        s3 = 
+      addressing_style = virtual
+    {{- end }}    
     {{- range $name, $profile := .Values.s3.profiles }}
     [{{ $profile.name }}]
     {{- if  $profile.region }}
@@ -60,9 +63,12 @@ data:
     {{- if $profile.endpoint_url }}
     endpoint_url = {{ $profile.endpoint_url }}
     {{- end }}
-    {{- if $defaultProfile.addressing_style $}}
+    {{- if $defaultProfile.pathStyleAccess }}
         s3 = 
-      addressing_style = {{ $defaultProfile.addressing_style }}
+      addressing_style = path
+    {{- else }}
+        s3 = 
+      addressing_style = virtual
     {{- end }}
     {{- end }}
 {{- end }}

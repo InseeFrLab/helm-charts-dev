@@ -45,7 +45,7 @@ s3:
 #      accessKeyId: ABC123
 #      secretAccessKey: XYZ456
 #      sessionToken: TOKEN123
-#      addressing_style: path
+#      pathStyleAccess: true
 #      workingDirectoryPath: ""
 
 vault:

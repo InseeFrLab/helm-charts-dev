@@ -697,6 +697,31 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-8.25.0/onyxia-8.25.0.tgz
     version: 8.25.0
+  postgresql-dev:
+  - apiVersion: v2
+    appVersion: 17.5.0
+    created: "2025-06-13T10:03:44.917360849Z"
+    dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.7.11
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.7.3
+    description: An object-relational database management system, a database server.
+    digest: a1fa381c75eec02285f4957b718202af0f98769cc6aa5445207a721df50e2293
+    home: https://www.postgresql.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/post.png
+    keywords:
+    - SQL
+    - Database
+    name: postgresql-dev
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/postgresql
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/postgresql-dev-0.0.1/postgresql-dev-0.0.1.tgz
+    version: 0.0.1
   qdrant:
   - apiVersion: v2
     appVersion: 1.13.2
@@ -1675,4 +1700,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.7/vscode-python-s3-config-2.3.7.tgz
     version: 2.3.7
-generated: "2025-06-03T08:10:09.782677593Z"
+generated: "2025-06-13T10:03:44.917487859Z"

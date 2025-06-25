@@ -1,0 +1,289 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "global": {
+      "title": "Global configuration",
+      "type": "object",
+      "properties": {
+        "security": {
+          "title": "Security",
+          "type": "object",
+          "properties": {
+            "allowInsecureImages": {
+              "title": "Allow custom insecure images",
+              "description": "Must be ticked to change the PostgreSQL image",
+              "type": "boolean",
+              "default": true
+            }
+          }
+        }
+      }
+    },
+    "postgresql": {
+      "title": "PostgreSQL",
+      "type": "object",
+      "properties": {
+        "image": {
+          "title": "Image",
+          "type": "object",
+          "properties": {
+            "repository": {
+              "title": "Image name",
+              "type": "string",
+              "enum": [
+                "bitnami/postgresql",
+                "inseefrlab/onyxia-postgresql-pgvector"
+              ],
+              "default": "bitnami/postgresql"
+            },
+            "tag": {
+              "title": "Version",
+              "type": "string",
+              "enum": [
+                "17",
+                "16",
+                "15",
+                "14",
+                "13",
+                "12",
+                "11",
+                "10"
+              ],
+              "default": "17"
+            }
+          }
+        },
+        "primary": {
+          "title": "Resources",
+          "type": "object",
+          "properties": {
+            "persistence": {
+              "title": "Persistence",
+              "type": "object",
+              "properties": {
+                "enabled": {
+                  "title": "Create a persistent volume",
+                  "type": "boolean",
+                  "default": true
+                },
+                "size": {
+                  "title": "Persistent volume size",
+                  "type": "string",
+                  "default": "10Gi",
+                  "form": true,
+                  "render": "slider",
+                  "sliderMin": 1,
+                  "sliderMax": 100,
+                  "sliderStep": 1,
+                  "sliderUnit": "Gi",
+                  "hidden": {
+                    "value": false,
+                    "path": "postgresql/primary/persistence/enabled"
+                  }
+                }
+              }
+            },
+            "resources": {
+              "title": "Resources (CPU/RAM)",
+              "description": "Requested resources are reserved, even if unused, please be considerate of others. Limits are strict and may cause slowdowns or out-of-memory errors.",
+              "type": "object",
+              "properties": {
+                "requests": {
+                  "description": "Guaranteed resources",
+                  "type": "object",
+                  "properties": {
+                    "cpu": {
+                      "description": "Guaranteed CPU allocation",
+                      "title": "CPU",
+                      "type": "string",
+                      "default": "250m",
+                      "render": "slider",
+                      "sliderMin": 50,
+                      "sliderMax": 40000,
+                      "sliderStep": 50,
+                      "sliderUnit": "m",
+                      "sliderExtremity": "down",
+                      "sliderExtremitySemantic": "guaranteed",
+                      "sliderRangeId": "cpu"
+                    },
+                    "memory": {
+                      "description": "Guaranteed memory allocation",
+                      "title": "memory",
+                      "type": "string",
+                      "default": "1Gi",
+                      "render": "slider",
+                      "sliderMin": 1,
+                      "sliderMax": 200,
+                      "sliderStep": 1,
+                      "sliderUnit": "Gi",
+                      "sliderExtremity": "down",
+                      "sliderExtremitySemantic": "guaranteed",
+                      "sliderRangeId": "memory"
+                    }
+                  }
+                },
+                "limits": {
+                  "description": "max resources",
+                  "type": "object",
+                  "properties": {
+                    "cpu": {
+                      "description": "Maximum CPU allocation",
+                      "title": "CPU",
+                      "type": "string",
+                      "default": "30000m",
+                      "render": "slider",
+                      "sliderMin": 50,
+                      "sliderMax": 40000,
+                      "sliderStep": 50,
+                      "sliderUnit": "m",
+                      "sliderExtremity": "up",
+                      "sliderExtremitySemantic": "Maximum",
+                      "sliderRangeId": "cpu"
+                    },
+                    "memory": {
+                      "description": "Maximum memory allocation",
+                      "title": "Memory",
+                      "type": "string",
+                      "default": "50Gi",
+                      "render": "slider",
+                      "sliderMin": 1,
+                      "sliderMax": 200,
+                      "sliderStep": 1,
+                      "sliderUnit": "Gi",
+                      "sliderExtremity": "up",
+                      "sliderExtremitySemantic": "Maximum",
+                      "sliderRangeId": "memory"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "auth": {
+          "title": "Database authentication",
+          "type": "object",
+          "properties": {
+            "postgresPassword": {
+              "title": "Admin password",
+              "type": "string",
+              "default": "changeme",
+              "render": "password",
+              "x-form": {
+                "value": "{{project.password}}"
+              },
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{project.password}}"
+              }
+            },
+            "username": {
+              "title": "User name",
+              "type": "string",
+              "default": "admin",
+              "x-form": {
+                "value": "{{project.id}}"
+              },
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{project.id}}"
+              }
+            },
+            "password": {
+              "title": "User password",
+              "type": "string",
+              "default": "changeme",
+              "render": "password",
+              "x-form": {
+                "value": "{{project.password}}"
+              },
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{project.password}}"
+              }
+            },
+            "database": {
+              "title": "Name for the default database",
+              "description": "(will be created)",
+              "type": "string",
+              "default": "defaultdb"
+            }
+          }
+        },
+        "extensions": {
+          "title": "Postgres extensions",
+          "type": "object",
+          "properties": {
+            "postgis": {
+              "title": "Enable PostGIS",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      }
+    },
+    "security": {
+      "title": "Security",
+      "type": "object",
+      "properties": {
+        "networkPolicy": {
+          "title": "Access to the service",
+          "type": "object",
+          "x-onyxia": {
+            "overwriteSchemaWith": "network-policy.json"
+          },
+          "properties": {
+            "enabled": {
+              "title": "Enable network policy",
+              "description": "Only pod from the same namespace will be allowed",
+              "type": "boolean",
+              "default": false,
+              "x-onyxia": {
+                "overwriteDefaultWith": "region.defaultNetworkPolicy"
+              }
+            },
+            "from": {
+              "title": "Sources allowed to access to your service",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "default": [],
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.from"
+              }
+            }
+          }
+        }
+      }
+    },
+    "discovery": {
+      "title": "Database discovery",
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "title": "Enabled discovery",
+          "description": "Allows clients to automatically preconfigure a connection to this database",
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "userPreferences": {
+      "title": "User Preferences",
+      "type": "object",
+      "properties": {
+        "language": {
+          "title": "Preferred language",
+          "type": "string",
+          "default": "en",
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "user.lang"
+          }
+        }
+      }
+    }
+  }
+}

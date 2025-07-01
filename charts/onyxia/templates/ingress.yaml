@@ -37,6 +37,15 @@ spec:
     - host: {{ .host | quote }}
       http:
         paths:
+          {{ if $onboardingEnabled }}
+          - path: /api/onboarding
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $fullNameOnboarding }}
+                port:
+                  number: {{ $svcPortOnboarding }}
+          {{- end }}
           - path: /api
             pathType: Prefix
             backend:
@@ -51,14 +60,5 @@ spec:
                 name: {{ $fullNameWeb }}
                 port:
                   number: {{ $svcPortWeb }}
-          {{ if $onboardingEnabled }}
-          - path: /onboarding
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ $fullNameOnboarding }}
-                port:
-                  number: {{ $svcPortOnboarding }}
-          {{- end }}
     {{- end }}
 {{- end }}

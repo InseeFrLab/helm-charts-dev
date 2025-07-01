@@ -29,6 +29,17 @@
         }
       }
     },
+    "model": {
+      "title": "Model",
+      "type": "object",
+      "properties": {
+        "image": {
+          "title": "Model to specify cubes",
+          "type": "string",
+          "default": "cubes:\n  - name: demo\n    sql: SELECT * FROM 's3://demo/demo_file'\n    public: false\n    measures:\n      - name: count\n        type: count\n    dimensions:\n      - name: commune\n        primary_key: true\n        sql: commune\n        type: string\n      - name: annee\n        sql: annee\n        type: string"
+        }
+      }  
+    },
     "extraEnvVars": {
       "title": "Environment variables available within your service",
       "type": "array",

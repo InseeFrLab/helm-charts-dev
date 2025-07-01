@@ -64,3 +64,11 @@ spec:
           resources:
             {{- toYaml . | nindent 12 }}
           {{- end }}
+          volumeMounts:
+          - name: config-model
+            mountPath: /cube/conf/model
+      volumes:
+        - name: config-model
+          configMap:
+            name: model
+

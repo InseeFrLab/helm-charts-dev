@@ -33,7 +33,7 @@ web:
   replicaCount: 1
   image:
     repository: inseefrlab/onyxia-web
-    tag: 4.45.0
+    tag: 4.53.1
     pullPolicy: IfNotPresent
 
   ## Pod priority settings
@@ -102,7 +102,7 @@ api:
   replicaCount: 1
   image:
     repository: inseefrlab/onyxia-api
-    tag: v4.5.0
+    tag: v4.7.0
     pullPolicy: IfNotPresent
   contextPath: /api
 
@@ -163,101 +163,70 @@ api:
     #   }
     # ]
   userProfile:
-    enabled: true
+    # See https://docs.onyxia.sh/admin-doc/catalog-of-services/customize-your-charts/declarative-user-profile
+    enabled: false
     rootPath: /userProfile/
     subPathDefault: default
     subPathRole: role
     default:
-      profileSchema: |
-        "git": {
-          "title": "Git access",
-          "type": "object",
-          "properties": {
-            "enabled": {
-              "title": "Enable git access from within the service",
-              "type": "boolean",
-              "default": true
-            },
-            "name": {
-              "title": "User name",
-              "type": "string",
-              "default": "",
-              "x-onyxia": {
-                "overwriteDefaultWith": "{{git.name}}"
-              },
-              "hidden": {
-                "value": false,
-                "path": "enabled",
-                "isPathRelative": true
-              }
-            },
-            "email": {
-              "title": "User email",
-              "type": "string",
-              "default": "",
-              "x-onyxia": {
-                "overwriteDefaultWith": "{{git.email}}"
-              },
-              "hidden": {
-                "value": false,
-                "path": "enabled",
-                "isPathRelative": true
-              }
-            },
-            "cache": {
-              "title": "Credentials caching duration",
-              "description": "(in seconds)",
-              "type": "string",
-              "default": "",
-              "x-onyxia": {
-                "overwriteDefaultWith": "{{git.credentials_cache_duration}}"
-              },
-              "hidden": {
-                "value": false,
-                "path": "enabled",
-                "isPathRelative": true
-              }
-            },
-            "token": {
-              "title": "Personal Access Token",
-              "type": "string",
-              "default": "",
-              "render": "password",
-              "x-onyxia": {
-                "overwriteDefaultWith": "{{git.token}}"
-              },
-              "hidden": {
-                "value": false,
-                "path": "enabled",
-                "isPathRelative": true
-              }
-            },
-            "repository": {
-              "title": "Project repository",
-              "description": "cloned in service",
-              "type": "string",
-              "default": "",
-              "x-onyxia": {
-                "overwriteDefaultWith": "{{git.project}}"
-              },
-              "hidden": {
-                "value": false,
-                "path": "enabled",
-                "isPathRelative": true
-              }
-            },
-            "branch": {
-              "title": "Specific branch to use",
-              "type": "string",
-              "default": "",
-              "hidden": {
-                "value": false,
-                "path": "enabled",
-                "isPathRelative": true
-              }
-            }
-          }
-        }
+      # profileSchema: |
+      #   {
+      #     "type": "object",
+      #     "properties": {
+      #       "generalInfo": {
+      #         "type": "object",
+      #         "description": "General profile information",
+      #         "properties": {
+      #           "firstName": {
+      #             "type": "string",
+      #             "title": "First name",
+      #             "x-onyxia": {
+      #               "overwriteDefaultWith": "{{user.decodedIdToken.given_name}}"
+      #             },
+      #             "description": "Your first name"
+      #           },
+      #           "familyName": {
+      #             "type": "string",
+      #             "title": "Family name",
+      #             "x-onyxia": {
+      #               "overwriteDefaultWith": "{{user.decodedIdToken.family_name}}"
+      #             },
+      #             "description": "Your family name"
+      #           },
+      #           "email": {
+      #             "type": "string",
+      #             "title": "Email",
+      #             "x-onyxia": {
+      #               "overwriteDefaultWith": "{{user.decodedIdToken.email}}"
+      #             },
+      #             "description": "Your email address"
+      #           }
+      #         }
+      #       },
+      #       "git": {
+      #         "type": "object",
+      #         "description": "Git configuration",
+      #         "properties": {
+      #           "username": {
+      #             "type": "string",
+      #             "title": "Git username",
+      #             "x-onyxia": {
+      #               "overwriteDefaultWith": "{{git.name}}"
+      #             },
+      #             "description": "Your username for git operations (e.g. git commit, git push)"
+      #           },
+      #           "email": {
+      #             "type": "string",
+      #             "title": "Git email",
+      #             "description": "Your username for git operations (e.g. git commit, git push)",
+      #             "x-onyxia": {
+      #               "overwriteDefaultWith": "{{git.email}}"
+      #             }
+      #           }
+      #         }
+      #       }
+      #     }
+      #   }
     roles:
       #- roleName: datascientist
       #  profileSchema: |
@@ -342,3 +311,73 @@ api:
     name: # Boolean to indicate whether the service account token must be injected into the pod or not. It can be deactivated if Onyxia doesn't use it.
 
     automountServiceAccountToken: true
+onboarding:
+  enabled: false
+  name: onboarding
+  replicaCount: 1
+  image:
+    repository: inseefrlab/onyxia-onboarding
+    tag: latest # To be changed once releases are stable
+    pullPolicy: Always
+
+  ## Pod priority settings
+  ## ref: https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/
+  ##
+  priorityClassName: ""
+
+  podLabels: {}
+  podSecurityContext: {} # fsGroup: 2000
+  securityContext:
+    {}
+    # capabilities:
+    #   drop:
+    #   - ALL
+    # readOnlyRootFilesystem: true
+    # runAsNonRoot: true
+    # runAsUser: 1000
+  containerPort: 8080
+  service:
+    type: ClusterIP
+    port: 80
+  resources:
+    #limits:
+    requests:
+      cpu: 200m
+      memory: 128Mi
+  extraVolumes: []
+  extraVolumeMounts: []
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+  env:
+
+  serviceAccount:
+    # Specifies whether a service account should be created
+    create: true
+    # Annotations to add to the service account
+    annotations: {}
+    # The name of the service account to use.
+    # If not set and create is true, a name is generated using the fullname template
+    name:
+    automountServiceAccountToken: true
+  livenessProbe:
+    enabled: true
+    path: /
+    failureThreshold: 3
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 1
+  readinessProbe:
+    enabled: true
+    path: /
+    failureThreshold: 3
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 1
+  startupProbe:
+    enabled: false
+    path: /
+    failureThreshold: 3
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 1

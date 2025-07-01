@@ -1,10 +1,10 @@
 {{- if (.Values.ingress).enabled -}}
-{{- $fullName := include include "cubejs.fullname" . -}}
+{{- $fullName := include "cubejs.fullname" . -}}
 {{- $svcPort := .Values.service.port -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ $fullName }}-
+  name: {{ $fullName }}
   labels:
     {{- include "cubejs.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
@@ -29,6 +29,4 @@ spec:
                 name: {{ $fullName }}
                 port:
                   number: {{ $svcPort }}
-{{- end }}
-{{- end }}
 {{- end }}

@@ -57,6 +57,16 @@ entries:
   cubejs:
   - apiVersion: v2
     appVersion: v.1.3.28
+    created: "2025-07-01T15:42:49.645482526Z"
+    description: A Helm chart for Kubernetes
+    digest: 1b4349fe9366f5ec1b3d6befe5d01e9a0e5134e31b2838ab8d9c3e27987a146a
+    name: cubejs
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/cubejs-0.0.4/cubejs-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: v.1.3.28
     created: "2025-07-01T14:02:36.751703694Z"
     description: A Helm chart for Kubernetes
     digest: 36aaffbe18e1e5095161898e43c636366a3279cefc5f2f298adc57367345d997
@@ -1799,4 +1809,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.7/vscode-python-s3-config-2.3.7.tgz
     version: 2.3.7
-generated: "2025-07-01T14:02:36.751856482Z"
+generated: "2025-07-01T15:42:49.645668335Z"

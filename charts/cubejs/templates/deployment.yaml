@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "cubejs.fullname" . }}
+  labels:
+    {{- include "cubejs.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "cubejs.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "cubejs.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.podSecurityContext }}
+      securityContext:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          {{- with .Values.securityContext }}
+          securityContext:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          image: {{ .Values.service.image.version }}
+          imagePullPolicy: {{ .Values.service.image.pullPolicy }}
+          env:
+          - name: CUBEJS_DB_TYPE
+            value: duckdb
+          - name: CUBEJS_DB_DUCKDB_S3_ACCESS_KEY_ID	
+            value: {{ .Values.s3.accessKeyId }}
+          - name: CUBEJS_DB_DUCKDB_S3_SECRET_ACCESS_KEY		
+            value: {{ .Values.s3.secretAccessKey }}
+          - name: CUBEJS_DB_DUCKDB_S3_ENDPOINT		
+            value: {{ .Values.s3.endpoint }}
+          - name: CUBEJS_DB_DUCKDB_S3_REGION		
+            value: {{ .Values.s3.defaultRegion }}
+          - name: CUBEJS_DB_DUCKDB_S3_SESSION_TOKEN		
+            value: {{ .Values.s3.sessionToken }}
+          - name: CUBEJS_DB_DUCKDB_EXTENSIONS
+            value: httpfs
+          - name: CUBEJS_CONCURRENCY
+            value: "30"
+          - name: CUBEJS_DEV_MODE
+            value: "true"
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          {{- with .Values.resources }}
+          resources:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}

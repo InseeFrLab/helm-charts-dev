@@ -9,7 +9,7 @@ home: https://www.postgresql.org/
 sources:
   - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/postgresql
 type: application
-version: 0.0.1
+version: 0.0.2
 appVersion: 17.5.0
 dependencies:
 - name: postgresql

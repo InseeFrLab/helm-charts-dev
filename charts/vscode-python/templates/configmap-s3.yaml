@@ -1,13 +1,1 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: configmap-s3
-data:
-  config: |
-    [default]
-    region = {{ .Values.s3.defaultRegion }}
-    output = json
-    endpoint_url =  {{ printf "https://%s" .Values.s3.endpoint }}
-
-    [profile other]
-    region = us-east-1
+{{ include "library-chart.configMapS3" . }}

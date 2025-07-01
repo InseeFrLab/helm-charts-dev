@@ -384,7 +384,7 @@
       "title": "S3 object storage",
       "type": "object",
       "x-onyxia": {
-        "overwriteSchemaWith": "ide/s3.json"
+        "overwriteSchemaWith": "test/s3.json"
       },
       "properties": {
         "enabled": {
@@ -392,92 +392,110 @@
           "type": "boolean",
           "default": true
         },
-        "accessKeyId": {
-          "title": "Access Key ID",
-          "type": "string",
-          "x-onyxia": {
-            "overwriteDefaultWith": "s3.AWS_ACCESS_KEY_ID"
-          },
-          "hidden": {
-            "value": false,
-            "path": "enabled",
-            "isPathRelative": true
-          }
-        },
-        "endpoint": {
-          "title": "S3 endpoint URL",
-          "type": "string",
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{s3.AWS_S3_ENDPOINT}}"
-          },
-          "hidden": {
-            "value": false,
-            "path": "enabled",
-            "isPathRelative": true
-          }
-        },
-        "defaultRegion": {
-          "title": "Default region",
-          "type": "string",
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{s3.AWS_DEFAULT_REGION}}"
-          },
-          "hidden": {
-            "value": false,
-            "path": "enabled",
-            "isPathRelative": true
-          }
-        },
-        "secretAccessKey": {
-          "title": "Secret Access Key",
-          "type": "string",
-          "render": "password",
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{s3.AWS_SECRET_ACCESS_KEY}}"
-          },
-          "hidden": {
-            "value": false,
-            "path": "enabled",
-            "isPathRelative": true
-          }
-        },
-        "sessionToken": {
-          "title": "Session token",
-          "type": "string",
-          "render": "password",
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{s3.AWS_SESSION_TOKEN}}"
-          },
-          "hidden": {
-            "value": false,
-            "path": "enabled",
-            "isPathRelative": true
-          }
-        },
-        "pathStyleAccess": {
-          "title": "Path-style access",
-          "type": "boolean",
-          "default": false,
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{s3.pathStyleAccess}}"
-          },
-          "hidden": {
-            "value": false,
-            "path": "enabled",
-            "isPathRelative": true
-          }
-        },
-        "workingDirectoryPath": {
-          "title": "Working directory path",
-          "type": "string",
-          "default": "",
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{s3.workingDirectoryPath}}"
-          },
-          "hidden": {
-            "value": false,
-            "path": "enabled",
-            "isPathRelative": true
+        "profiles": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "default": "s3"
+              },
+              "accessKeyId": {
+                "title": "Access Key ID",
+                "type": "string",
+                "default": "",
+                "x-onyxia": {
+                  "overwriteDefaultWith": "s3.AWS_ACCESS_KEY_ID"
+                },
+                "hidden": {
+                  "value": false,
+                  "path": "enabled",
+                  "isPathRelative": true
+                }
+              },
+              "endpoint": {
+                "title": "S3 endpoint URL",
+                "type": "string",
+                "default": "",
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{s3.AWS_S3_ENDPOINT}}"
+                },
+                "hidden": {
+                  "value": false,
+                  "path": "enabled",
+                  "isPathRelative": true
+                }
+              },
+              "defaultRegion": {
+                "title": "Default region",
+                "type": "string",
+                "default": "",
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{s3.AWS_DEFAULT_REGION}}"
+                },
+                "hidden": {
+                  "value": false,
+                  "path": "enabled",
+                  "isPathRelative": true
+                }
+              },
+              "secretAccessKey": {
+                "title": "Secret Access Key",
+                "type": "string",
+                "render": "password",
+                "default": "",
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{s3.AWS_SECRET_ACCESS_KEY}}"
+                },
+                "hidden": {
+                  "value": false,
+                  "path": "enabled",
+                  "isPathRelative": true
+                }
+              },
+              "sessionToken": {
+                "title": "Session token",
+                "type": "string",
+                "render": "password",
+                "default": "",
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{s3.AWS_SESSION_TOKEN}}"
+                },
+                "hidden": {
+                  "value": false,
+                  "path": "enabled",
+                  "isPathRelative": true
+                }
+              },
+              "pathStyleAccess": {
+                "title": "Path-style access",
+                "type": "boolean",
+                "default": false,
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{s3.pathStyleAccess}}"
+                },
+                "hidden": {
+                  "value": false,
+                  "path": "enabled",
+                  "isPathRelative": true
+                }
+              },
+              "workingDirectoryPath": {
+                "title": "Working directory path",
+                "type": "string",
+                "default": "",
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{s3.workingDirectoryPath}}"
+                },
+                "hidden": {
+                  "value": false,
+                  "path": "enabled",
+                  "isPathRelative": true
+                }
+              }
+            }
           }
         }
       }
@@ -913,7 +931,7 @@
             "overwriteDefaultWith": "user.lang"
           }
         },
-        "aiAssistant":{
+        "aiAssistant": {
           "title": "AI Assistant",
           "type": "object",
           "description": "Configure Continue, an extension to use custom AI code assistants",
@@ -931,7 +949,7 @@
             },
             "model": {
               "type": "string",
-              "default":"",
+              "default": "",
               "hidden": {
                 "value": false,
                 "path": "enabled",
@@ -953,7 +971,7 @@
                 "overwriteDefaultWith": "user.profile.aiAssistant.provider"
               }
             },
-            "apiBase":{
+            "apiBase": {
               "type": "string",
               "default": "",
               "hidden": {
@@ -965,7 +983,7 @@
                 "overwriteDefaultWith": "user.profile.aiAssistant.apiBase"
               }
             },
-            "apiKey":{
+            "apiKey": {
               "type": "string",
               "default": "",
               "hidden": {
@@ -977,7 +995,7 @@
                 "overwriteDefaultWith": "user.profile.aiAssistant.apiKey"
               }
             },
-            "useLegacyCompletionsEndpoint":{
+            "useLegacyCompletionsEndpoint": {
               "title": "use legacy completions endpoint",
               "type": "boolean",
               "default": true,

@@ -1388,6 +1388,27 @@ entries:
     version: 0.0.1
   rstudio-dev:
   - apiVersion: v2
+    created: "2025-07-02T15:56:25.842365379Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.7.10
+    description: The RStudio IDE with a collection of standard data science packages.
+    digest: 28eaf227f36933ff5621b3216651dde0f18b40b80c5348e91f1db8043dc9fb4d
+    home: https://www.rstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
+    keywords:
+    - RStudio
+    - R
+    name: rstudio-dev
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/rstudio-dev-0.0.3/rstudio-dev-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
     created: "2025-07-02T14:55:19.267042555Z"
     dependencies:
     - name: library-chart
@@ -1556,6 +1577,28 @@ entries:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-darkmode-1.11.11/vscode-python-darkmode-1.11.11.tgz
     version: 1.11.11
   vscode-python-dev:
+  - apiVersion: v2
+    created: "2025-07-02T15:56:25.974432362Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 1.7.10
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: c4ed7e804df0dba53e36cc23407ca402e9e80e5a6631c6fc5fb687e57a9ad8c4
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python-dev
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-dev-0.0.4/vscode-python-dev-0.0.4.tgz
+    version: 0.0.4
   - apiVersion: v2
     created: "2025-07-02T14:55:19.481934501Z"
     dependencies:
@@ -1755,4 +1798,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.7/vscode-python-s3-config-2.3.7.tgz
     version: 2.3.7
-generated: "2025-07-02T14:55:19.482111795Z"
+generated: "2025-07-02T15:56:25.97456471Z"

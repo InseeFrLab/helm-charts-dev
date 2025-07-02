@@ -6,12 +6,12 @@ metadata:
   labels:
     {{- include "library-chart.labels" . | nindent 4 }}
 spec:
-{{- if not (.Values.autoscaling).enabled }}
-  {{- if (.Values.global).suspend }}
+{{- if not .Values.autoscaling.enabled }}
+  {{- if .Values.global.suspend }}
   replicas: 0
-  {{- else }}
+  {{- else}}
   replicas: {{ .Values.replicaCount }}
-  {{- end }}
+  {{- end}}
 {{- end }}
   serviceName: {{ include "library-chart.fullname" . }}
   selector:
@@ -20,29 +20,14 @@ spec:
   template:
     metadata:
       annotations:
-        {{- if (.Values.git).enabled }}
+        {{- if .Values.git.enabled }}
         checksum/git: {{ include (print $.Template.BasePath "/secret-git.yaml") . | sha256sum }}
         {{- end }}
-        {{- if (.Values.s3).enabled }}
+        {{- if .Values.s3.enabled }}
         checksum/s3: {{ include (print $.Template.BasePath "/secret-s3.yaml") . | sha256sum }}
         {{- end }}
-        {{- if (.Values.vault).enabled }}
+        {{- if .Values.vault.enabled }}
         checksum/vault: {{ include (print $.Template.BasePath "/secret-vault.yaml") . | sha256sum }}
-        {{- end }}
-        {{- if not (empty (trim (include "library-chart.secretHive" .))) }}
-        checksum/hive: {{ include (print $.Template.BasePath "/secret-hive.yaml") . | sha256sum }}
-        {{- end }}
-        {{- if not (empty (trim (include "library-chart.secretMetaflow" .))) }}
-        checksum/metaflow: {{ include (print $.Template.BasePath "/secret-metaflow.yaml") . | sha256sum }}
-        {{- end }}
-        {{- if not (empty (trim (include "library-chart.secretMLFlow" .))) }}
-        checksum/mlflow: {{ include (print $.Template.BasePath "/secret-mlflow.yaml") . | sha256sum }}
-        {{- end }}
-        {{- if not (empty (trim (include "library-chart.secretChromaDB" .))) }}
-        checksum/chromadb: {{ include (print $.Template.BasePath "/secret-chromadb.yaml") . | sha256sum }}
-        {{- end }}
-        {{- if not (empty (trim (include "library-chart.secretMilvus" .))) }}
-        checksum/milvus: {{ include (print $.Template.BasePath "/secret-milvus.yaml") . | sha256sum }}
         {{- end }}
         {{- if not (empty (trim (include "library-chart.secretPostgreSQL" .))) }}
         checksum/postgresql: {{ include (print $.Template.BasePath "/secret-postgresql.yaml") . | sha256sum }}
@@ -50,7 +35,7 @@ spec:
         {{- if (include "library-chart.repository.enabled"  .) }}
         checksum/repository: {{ include (print $.Template.BasePath "/configmap-repository.yaml") . | sha256sum }}
         {{- end }}
-        {{- if and .Values.certificates .Values.certificates.cacerts }}
+        {{- if (.Values.certificates).cacerts }}
         checksum/cacerts: {{ .Values.certificates.cacerts | sha256sum }}
         {{- end }}
         {{- with .Values.podAnnotations }}
@@ -63,41 +48,26 @@ spec:
         - name: config-files
           emptyDir: {}
         - name: home
-        {{- if .Values.persistence.enabled }}
+          {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
             claimName: {{ .Values.persistence.existingClaim | default (include "library-chart.fullname" .) }}
-        {{- else }}
+          {{- else }}
           emptyDir: {}
-        {{- end }}
+          {{- end }}
         - name: dshm
           emptyDir:
             medium: Memory
             sizeLimit: 10Gi
-        {{- if (.Values.proxy).enabled }}
+          {{- if (.Values.proxy).enabled }}
         - name: secret-proxy
           secret:
             secretName: {{ include "library-chart.secretNameProxy" . }}
-        {{- end }}
-        {{- if .Values.discovery.hive }}
-        - name: secret-hive
-          secret:
-            secretName: {{ include "library-chart.secretNameHive" . }}
-        {{- end }}
-        {{- if .Values.discovery.metaflow }}
-        - name: secret-metaflow
-          secret:
-            secretName: {{ include "library-chart.secretNameMetaflow" . }}
-        {{- end }}
-        {{- if and .Values.certificates .Values.certificates.cacerts }}
+          {{- end }}
+          {{- if and .Values.certificates .Values.certificates.cacerts }}
         - name: cacerts
           secret:
             secretName: {{ include "library-chart.secretNameCacerts" . }}
-        {{- end }}
-        {{- if (.Values.userPreferences.aiAssistant).enabled }}
-        - name: secret-assistant
-          secret:
-            secretName: {{ include "library-chart.secretNameAssistant" . }}
-        {{- end }}
+          {{- end }}
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -105,6 +75,8 @@ spec:
       serviceAccountName: {{ include "library-chart.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      subdomain: {{ include "library-chart.fullname" . }}
+      hostname: rstudio
       initContainers:
         - name: make-secrets-writable
           image: inseefrlab/onyxia-base:latest
@@ -114,18 +86,6 @@ spec:
             - -c
             - |
               echo 'initContainer make-secrets-writable is started';
-              {{ if (.Values.userPreferences.aiAssistant).enabled }}
-              mkdir /dest/continue
-              cp /src/continue/config.yaml /dest/continue/config.yaml
-              {{- end }}
-              {{- if .Values.discovery.hive }}
-              mkdir /dest/hive;
-              cp /src/hive/hive-site.xml /dest/hive/hive-site.xml;
-              {{- end }}
-              {{- if .Values.discovery.metaflow }}
-              mkdir /dest/metaflow;
-              cp /src/metaflow/config.json /dest/metaflow/config.json;
-              {{- end }}
               {{- if and .Values.certificates .Values.certificates.cacerts }}
               mkdir /dest/cacerts;
               {{- if regexMatch "^https?://" .Values.certificates.cacerts }}
@@ -136,30 +96,18 @@ spec:
               awk 'BEGIN {c=0;} /BEGIN CERT/{c++} { print > "/dest/cacerts/cert." c ".crt"}' < /tmp/ca.pem;
               {{- end }}
           volumeMounts:
-            {{- if (.Values.userPreferences.aiAssistant).enabled }}
-            - name: secret-assistant
-              mountPath: /src/continue
-            {{- end }}
             - name: config-files
               mountPath: /dest
-            {{- if and .Values.certificates .Values.certificates.cacerts }}
+              {{- if and .Values.certificates .Values.certificates.cacerts }}
             - name: cacerts
               mountPath: /cacerts
-            {{- end }}
-            {{- if .Values.discovery.hive }}
-            - name: secret-hive
-              mountPath: /src/hive
-            {{- end }}
-            {{- if .Values.discovery.metaflow }}
-            - name : secret-metaflow
-              mountPath: /src/metaflow
-            {{- end }}
+              {{- end }}
           resources:
             limits:
               cpu: 50m
               memory: 50Mi
           securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
+            {{- toYaml .Values.initContainerSecurityContext | nindent 12 }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -170,16 +118,28 @@ spec:
           image: "{{ .Values.service.image.version }}"
           {{- end }}
           command: ["/bin/sh","-c"]
-          args: ["{{ .Values.init.standardInitPath }} /usr/bin/code-server --host 0.0.0.0 /home/{{ .Values.environment.user }}/work"]
+          args: ["{{ .Values.init.standardInitPath }} /init"]
           imagePullPolicy: {{ .Values.service.image.pullPolicy }}
           env:
+            - name: KUBERNETES_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: IMAGE_NAME
+              {{- if .Values.service.image.custom.enabled }}
+              value: "{{ .Values.service.image.custom.version }}"
+              {{- else }}
+              value: "{{ .Values.service.image.version }}"
+              {{- end }}
+            - name: PROJECT_USER
+              value: {{ .Values.environment.user }}
+            - name: PROJECT_GROUP
+              value: {{ .Values.environment.group }}
+            - name: ROOT_PROJECT_DIRECTORY
+              value: /home/{{ .Values.environment.user }}/work
             {{- if .Values.init.regionInit }}
             - name: REGION_INIT_SCRIPT
               value: {{ .Values.init.regionInit }}
-            {{- end }}
-            {{- if .Values.init.regionInitCheckSum }}
-            - name: REGION_INIT_SCRIPT_CHECKSUM
-              value: {{ .Values.init.regionInitCheckSum }}
             {{- end }}
             {{- if .Values.init.personalInit }}
             - name: PERSONAL_INIT_SCRIPT
@@ -189,21 +149,11 @@ spec:
             - name: PERSONAL_INIT_ARGS
               value: {{ .Values.init.personalInitArgs }}
             {{- end }}
-            - name: PROJECT_USER
-              value: {{ .Values.environment.user }}
-            - name: PROJECT_GROUP
-              value: {{ .Values.environment.group }}
-            - name: ROOT_PROJECT_DIRECTORY
-              value: /home/{{ .Values.environment.user }}/work
             {{- if .Values.userPreferences.darkMode }}
             - name: DARK_MODE
               value: "true"
             {{- end }}
-            - name: UV_CACHE_DIR
-              value: /home/{{ .Values.environment.user }}/work/.cache/uv
           envFrom:
-            - secretRef:
-                name : {{ include "library-chart.secretNameToken" . }}
             {{- if (.Values.git).enabled }}
             - secretRef:
                 name: {{ include "library-chart.secretNameGit" . }}
@@ -220,26 +170,16 @@ spec:
             - secretRef:
                 name: {{ include "library-chart.secretNameProxy" . }}
             {{- end }}
-            {{- if (include "library-chart.repository.enabled" .) }}
+            {{- if (include "library-chart.repository.enabled"  .) }}
             - configMapRef:
                 name: {{ include "library-chart.configMapNameRepository" . }}
-            {{- end }}
-            {{- if not (empty (trim (include "library-chart.secretMLFlow" .))) }}
-            - secretRef:
-                name: {{ include "library-chart.secretNameMLFlow" . }}
             {{- end }}
             {{- if not (empty (trim (include "library-chart.secretPostgreSQL" .))) }}
             - secretRef:
                 name: {{ include "library-chart.secretNamePostgreSQL" . }}
             {{- end }}
-            {{- if not (empty (trim (include "library-chart.secretChromaDB" .))) }}
             - secretRef:
-                name: {{ include "library-chart.secretNameChromaDB" . }}
-            {{- end }}
-            {{- if not (empty (trim (include "library-chart.secretMilvus" .))) }}
-            - secretRef:
-                name: {{ include "library-chart.secretNameMilvus" . }}
-            {{- end }}
+                name: {{ include "library-chart.secretNameToken" . }}
             {{- if .Values.extraEnvVars }}
             - secretRef:
                 name: {{ include "library-chart.secretNameExtraEnv" . }}
@@ -269,22 +209,7 @@ spec:
               name: home
             - mountPath: /dev/shm
               name: dshm
-            {{ if (.Values.userPreferences.aiAssistant).enabled }}
-            - mountPath: /home/{{ .Values.environment.user }}/.continue
-              subPath: continue
-              name: config-files
-            {{- end }}
-            {{- if (.Values.discovery).hive }}
-            - name: config-files
-              mountPath: /usr/local/lib/hive/conf/hive-site.xml
-              subPath: hive/hive-site.xml
-            {{- end }}
-            {{- if (.Values.discovery).metaflow }}
-            - name: config-files
-              mountPath: /home/{{ .Values.environment.user }}/.metaflowconfig
-              subPath: metaflow
-            {{- end }}
-            {{- if (.Values.certificates).pathToCaBundle }}
+            {{- if and .Values.certificates .Values.certificates.pathToCaBundle }}
             - name: config-files
               mountPath: {{ .Values.certificates.pathToCaBundle }}
               subPath: cacerts

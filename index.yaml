@@ -1,1832 +1,1734 @@
 apiVersion: v1
 entries:
   argo-cd:
-  - apiVersion: v2
-    appVersion: "1"
-    created: "2024-12-12T10:21:03.132880272Z"
-    dependencies:
-    - name: argo-cd
-      repository: https://argoproj.github.io/argo-helm
-      version: 6.11.1
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.21
-    description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
-    digest: c6712d6e1e252929bee5126903eb5214abbe64fa245da9b69df21aa07ac69cc1
-    home: https://argo-cd.readthedocs.io/en/stable/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/argo.png
-    keywords:
-    - gitops
-    - deployment
-    - delivery
-    name: argo-cd
-    sources:
-    - https://github.com/InseeFrLab/helm-charts-automation/blob/master/charts/argo-cd
-    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/argo-cd-1.0.1/argo-cd-1.0.1.tgz
-    version: 1.0.1
+    - apiVersion: v2
+      appVersion: "1"
+      created: "2024-12-12T10:21:03.132880272Z"
+      dependencies:
+        - name: argo-cd
+          repository: https://argoproj.github.io/argo-helm
+          version: 6.11.1
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.21
+      description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
+      digest: c6712d6e1e252929bee5126903eb5214abbe64fa245da9b69df21aa07ac69cc1
+      home: https://argo-cd.readthedocs.io/en/stable/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/argo.png
+      keywords:
+        - gitops
+        - deployment
+        - delivery
+      name: argo-cd
+      sources:
+        - https://github.com/InseeFrLab/helm-charts-automation/blob/master/charts/argo-cd
+        - https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/argo-cd-1.0.1/argo-cd-1.0.1.tgz
+      version: 1.0.1
   argo-workflows:
-  - apiVersion: v2
-    appVersion: "1"
-    created: "2024-12-12T10:21:03.275826451Z"
-    dependencies:
-    - name: argo-workflows
-      repository: https://argoproj.github.io/argo-helm
-      version: 0.40.11
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.21
-    description: Argo Workflows is an open source container-native workflow engine
-      for orchestrating parallel jobs on Kubernetes.
-    digest: f5e99df0979b283cff16c542436b4b792f40c0703f9ace5345e05646a7b5eebd
-    home: https://argoproj.github.io/argo-workflows/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/argo.png
-    keywords:
-    - Worklow
-    - Job
-    - Task
-    name: argo-workflows
-    sources:
-    - https://github.com/InseeFrLab/helm-charts-automation/tree/master/charts/argo-workflows
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/argo-workflows-1.0.1/argo-workflows-1.0.1.tgz
-    version: 1.0.1
+    - apiVersion: v2
+      appVersion: "1"
+      created: "2024-12-12T10:21:03.275826451Z"
+      dependencies:
+        - name: argo-workflows
+          repository: https://argoproj.github.io/argo-helm
+          version: 0.40.11
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.21
+      description: Argo Workflows is an open source container-native workflow engine for orchestrating parallel jobs on Kubernetes.
+      digest: f5e99df0979b283cff16c542436b4b792f40c0703f9ace5345e05646a7b5eebd
+      home: https://argoproj.github.io/argo-workflows/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/argo.png
+      keywords:
+        - Worklow
+        - Job
+        - Task
+      name: argo-workflows
+      sources:
+        - https://github.com/InseeFrLab/helm-charts-automation/tree/master/charts/argo-workflows
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/argo-workflows-1.0.1/argo-workflows-1.0.1.tgz
+      version: 1.0.1
   cubejs:
-  - apiVersion: v2
-    appVersion: v.1.3.28
-    created: "2025-07-02T08:13:55.013674611Z"
-    description: A Helm chart for Kubernetes
-    digest: 49bd4ff7763acf430b6522f7c9463875b35347b2e1038201c9ee1ca3619c496e
-    name: cubejs
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/cubejs-0.0.8/cubejs-0.0.8.tgz
-    version: 0.0.8
-  - apiVersion: v2
-    appVersion: v.1.3.28
-    created: "2025-07-01T21:27:54.350627504Z"
-    description: A Helm chart for Kubernetes
-    digest: 9cc5352a39b6fa528f2e831372c19d6b1354d151fa811d85f7a3104716ffab45
-    name: cubejs
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/cubejs-0.0.7/cubejs-0.0.7.tgz
-    version: 0.0.7
-  - apiVersion: v2
-    appVersion: v.1.3.28
-    created: "2025-07-01T15:42:49.645482526Z"
-    description: A Helm chart for Kubernetes
-    digest: 1b4349fe9366f5ec1b3d6befe5d01e9a0e5134e31b2838ab8d9c3e27987a146a
-    name: cubejs
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/cubejs-0.0.4/cubejs-0.0.4.tgz
-    version: 0.0.4
-  - apiVersion: v2
-    appVersion: v.1.3.28
-    created: "2025-07-01T14:02:36.751703694Z"
-    description: A Helm chart for Kubernetes
-    digest: 36aaffbe18e1e5095161898e43c636366a3279cefc5f2f298adc57367345d997
-    name: cubejs
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/cubejs-0.0.3/cubejs-0.0.3.tgz
-    version: 0.0.3
-  - apiVersion: v2
-    appVersion: v.1.3.28
-    created: "2025-07-01T13:36:47.503100046Z"
-    description: A Helm chart for Kubernetes
-    digest: cb242602eb43a25fd161bfed4db948ccc051cfd800577a1e4d09bac24e135808
-    name: cubejs
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/cubejs-0.0.2/cubejs-0.0.2.tgz
-    version: 0.0.2
-  - apiVersion: v2
-    appVersion: v.1.3.28
-    created: "2025-07-01T13:26:34.424860467Z"
-    description: A Helm chart for Kubernetes
-    digest: fa2a065216993bc0140fb0096dc3d55a90d1587364fb08b0d3faa945421a07a3
-    name: cubejs
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/cubejs-0.0.1/cubejs-0.0.1.tgz
-    version: 0.0.1
+    - apiVersion: v2
+      appVersion: v.1.3.28
+      created: "2025-07-02T08:13:55.013674611Z"
+      description: A Helm chart for Kubernetes
+      digest: 49bd4ff7763acf430b6522f7c9463875b35347b2e1038201c9ee1ca3619c496e
+      name: cubejs
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/cubejs-0.0.8/cubejs-0.0.8.tgz
+      version: 0.0.8
+    - apiVersion: v2
+      appVersion: v.1.3.28
+      created: "2025-07-01T21:27:54.350627504Z"
+      description: A Helm chart for Kubernetes
+      digest: 9cc5352a39b6fa528f2e831372c19d6b1354d151fa811d85f7a3104716ffab45
+      name: cubejs
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/cubejs-0.0.7/cubejs-0.0.7.tgz
+      version: 0.0.7
+    - apiVersion: v2
+      appVersion: v.1.3.28
+      created: "2025-07-01T15:42:49.645482526Z"
+      description: A Helm chart for Kubernetes
+      digest: 1b4349fe9366f5ec1b3d6befe5d01e9a0e5134e31b2838ab8d9c3e27987a146a
+      name: cubejs
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/cubejs-0.0.4/cubejs-0.0.4.tgz
+      version: 0.0.4
+    - apiVersion: v2
+      appVersion: v.1.3.28
+      created: "2025-07-01T14:02:36.751703694Z"
+      description: A Helm chart for Kubernetes
+      digest: 36aaffbe18e1e5095161898e43c636366a3279cefc5f2f298adc57367345d997
+      name: cubejs
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/cubejs-0.0.3/cubejs-0.0.3.tgz
+      version: 0.0.3
+    - apiVersion: v2
+      appVersion: v.1.3.28
+      created: "2025-07-01T13:36:47.503100046Z"
+      description: A Helm chart for Kubernetes
+      digest: cb242602eb43a25fd161bfed4db948ccc051cfd800577a1e4d09bac24e135808
+      name: cubejs
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/cubejs-0.0.2/cubejs-0.0.2.tgz
+      version: 0.0.2
+    - apiVersion: v2
+      appVersion: v.1.3.28
+      created: "2025-07-01T13:26:34.424860467Z"
+      description: A Helm chart for Kubernetes
+      digest: fa2a065216993bc0140fb0096dc3d55a90d1587364fb08b0d3faa945421a07a3
+      name: cubejs
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/cubejs-0.0.1/cubejs-0.0.1.tgz
+      version: 0.0.1
   dagster:
-  - apiVersion: v2
-    created: "2024-04-02T08:44:28.124958975Z"
-    dependencies:
-    - name: dagster
-      repository: https://dagster-io.github.io/helm
-      version: 1.6.14
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.20
-    description: The data orchestration platform built for productivity.
-    digest: 23c66e5f9a1e405c5c84ed928e679ea68af5e7bc553fb3154743b34008be9e9e
-    icon: https://dagster.io/images/brand/logos/dagster-primary-mark.png
-    keywords:
-    - analytics
-    - data-orchestrator
-    - data-pipelines
-    - etl
-    - workflow
-    name: dagster
-    sources:
-    - https://github.com/dagster-io/dagster/tree/master/helm/dagster
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dagster-0.0.1/dagster-0.0.1.tgz
-    version: 0.0.1
+    - apiVersion: v2
+      created: "2024-04-02T08:44:28.124958975Z"
+      dependencies:
+        - name: dagster
+          repository: https://dagster-io.github.io/helm
+          version: 1.6.14
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.20
+      description: The data orchestration platform built for productivity.
+      digest: 23c66e5f9a1e405c5c84ed928e679ea68af5e7bc553fb3154743b34008be9e9e
+      icon: https://dagster.io/images/brand/logos/dagster-primary-mark.png
+      keywords:
+        - analytics
+        - data-orchestrator
+        - data-pipelines
+        - etl
+        - workflow
+      name: dagster
+      sources:
+        - https://github.com/dagster-io/dagster/tree/master/helm/dagster
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dagster-0.0.1/dagster-0.0.1.tgz
+      version: 0.0.1
   dask:
-  - apiVersion: v2
-    created: "2024-05-02T14:59:19.291464399Z"
-    dependencies:
-    - name: dask
-      repository: https://helm.dask.org
-      version: 2024.1.1
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.20
-    description: Dask is a flexible open-source Python library for parallel computing
-    digest: b45f8e059a6215a85bfea9e0b758861781729ae56623f465f98922562498f194
-    home: https://www.dask.org/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-    name: dask
-    sources:
-    - https://github.com/InseeFrLab/helm-charts-databases
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.8/dask-0.1.8.tgz
-    version: 0.1.8
-  - apiVersion: v2
-    created: "2024-05-02T14:34:47.887433566Z"
-    dependencies:
-    - name: dask
-      repository: https://helm.dask.org
-      version: 2024.1.1
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.20
-    description: Dask is a flexible open-source Python library for parallel computing
-    digest: 8919fa3dcd1659d804dabc562fdb272eae181ad7bca6ad8acd6476f90fd7687b
-    home: https://www.dask.org/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-    name: dask
-    sources:
-    - https://github.com/InseeFrLab/helm-charts-databases
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.7/dask-0.1.7.tgz
-    version: 0.1.7
-  - apiVersion: v2
-    created: "2024-05-02T11:12:55.888671719Z"
-    dependencies:
-    - name: dask
-      repository: https://helm.dask.org
-      version: 2024.1.1
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.20
-    description: Dask is a flexible open-source Python library for parallel computing
-    digest: 47e4ca01e2b281fb2772f0543286e8d37c318e02e778eb99fc3a3de3cd0f5292
-    home: https://www.dask.org/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-    name: dask
-    sources:
-    - https://github.com/InseeFrLab/helm-charts-databases
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.6/dask-0.1.6.tgz
-    version: 0.1.6
-  - apiVersion: v2
-    created: "2024-05-02T09:15:41.780868823Z"
-    dependencies:
-    - name: dask
-      repository: https://helm.dask.org
-      version: 2024.1.1
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.20
-    description: Dask is a flexible open-source Python library for parallel computing
-    digest: 8a7a59c11b775b03596b7cf9fad8086f9ceaede9c9d0cadcdfe51be64db182cb
-    home: https://www.dask.org/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-    name: dask
-    sources:
-    - https://github.com/InseeFrLab/helm-charts-databases
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.5/dask-0.1.5.tgz
-    version: 0.1.5
-  - apiVersion: v2
-    created: "2024-05-02T09:13:36.153721604Z"
-    dependencies:
-    - name: dask
-      repository: https://helm.dask.org
-      version: 2024.1.1
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.20
-    description: Dask is a flexible open-source Python library for parallel computing
-    digest: 25fb8be4fa553a9d8bc55d6776a1240489498e4e4e1e95e31ae36bb1b4b02828
-    home: https://www.dask.org/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-    name: dask
-    sources:
-    - https://github.com/InseeFrLab/helm-charts-databases
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.4/dask-0.1.4.tgz
-    version: 0.1.4
-  - apiVersion: v2
-    created: "2024-05-02T08:56:08.929059669Z"
-    dependencies:
-    - name: dask
-      repository: https://helm.dask.org
-      version: 2024.1.1
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.20
-    description: Dask is a flexible open-source Python library for parallel computing
-    digest: 442e16285858ea02e09f5c7ca2d5490186414ef1ba97b3a0d24379f5735119d2
-    home: https://www.dask.org/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-    name: dask
-    sources:
-    - https://github.com/InseeFrLab/helm-charts-databases
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.3/dask-0.1.3.tgz
-    version: 0.1.3
-  - apiVersion: v2
-    created: "2024-05-02T08:44:25.007962321Z"
-    dependencies:
-    - name: dask
-      repository: https://helm.dask.org
-      version: 2024.1.1
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.20
-    description: dask
-    digest: cc364068d3956482bd9c1133cbc2f4ff5eaa8e6da6666b4b716111cc43fd0698
-    home: https://jupyter.org/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-    name: dask
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.2/dask-0.1.2.tgz
-    version: 0.1.2
-  - apiVersion: v2
-    created: "2024-05-02T08:41:32.100858619Z"
-    dependencies:
-    - name: dask
-      repository: https://helm.dask.org
-      version: 2024.1.1
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.20
-    description: dask
-    digest: df669103255db1ecbc8afb9f4c8fd22631fffe1bfdcf7fd19f0b1f2cc4b08b05
-    home: https://jupyter.org/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-    name: dask
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.1/dask-0.1.1.tgz
-    version: 0.1.1
-  - apiVersion: v2
-    created: "2024-04-29T16:12:39.338443649Z"
-    dependencies:
-    - name: dask
-      repository: https://helm.dask.org
-      version: 2024.1.1
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.20
-    description: dask
-    digest: 865d1d3bbb5fba94673c36e0c268199cccb02421b3571f34d9a47f0cdf6aa9be
-    home: https://jupyter.org/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
-    name: dask
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.0/dask-0.1.0.tgz
-    version: 0.1.0
+    - apiVersion: v2
+      created: "2024-05-02T14:59:19.291464399Z"
+      dependencies:
+        - name: dask
+          repository: https://helm.dask.org
+          version: 2024.1.1
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.20
+      description: Dask is a flexible open-source Python library for parallel computing
+      digest: b45f8e059a6215a85bfea9e0b758861781729ae56623f465f98922562498f194
+      home: https://www.dask.org/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+      name: dask
+      sources:
+        - https://github.com/InseeFrLab/helm-charts-databases
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.8/dask-0.1.8.tgz
+      version: 0.1.8
+    - apiVersion: v2
+      created: "2024-05-02T14:34:47.887433566Z"
+      dependencies:
+        - name: dask
+          repository: https://helm.dask.org
+          version: 2024.1.1
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.20
+      description: Dask is a flexible open-source Python library for parallel computing
+      digest: 8919fa3dcd1659d804dabc562fdb272eae181ad7bca6ad8acd6476f90fd7687b
+      home: https://www.dask.org/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+      name: dask
+      sources:
+        - https://github.com/InseeFrLab/helm-charts-databases
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.7/dask-0.1.7.tgz
+      version: 0.1.7
+    - apiVersion: v2
+      created: "2024-05-02T11:12:55.888671719Z"
+      dependencies:
+        - name: dask
+          repository: https://helm.dask.org
+          version: 2024.1.1
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.20
+      description: Dask is a flexible open-source Python library for parallel computing
+      digest: 47e4ca01e2b281fb2772f0543286e8d37c318e02e778eb99fc3a3de3cd0f5292
+      home: https://www.dask.org/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+      name: dask
+      sources:
+        - https://github.com/InseeFrLab/helm-charts-databases
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.6/dask-0.1.6.tgz
+      version: 0.1.6
+    - apiVersion: v2
+      created: "2024-05-02T09:15:41.780868823Z"
+      dependencies:
+        - name: dask
+          repository: https://helm.dask.org
+          version: 2024.1.1
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.20
+      description: Dask is a flexible open-source Python library for parallel computing
+      digest: 8a7a59c11b775b03596b7cf9fad8086f9ceaede9c9d0cadcdfe51be64db182cb
+      home: https://www.dask.org/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+      name: dask
+      sources:
+        - https://github.com/InseeFrLab/helm-charts-databases
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.5/dask-0.1.5.tgz
+      version: 0.1.5
+    - apiVersion: v2
+      created: "2024-05-02T09:13:36.153721604Z"
+      dependencies:
+        - name: dask
+          repository: https://helm.dask.org
+          version: 2024.1.1
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.20
+      description: Dask is a flexible open-source Python library for parallel computing
+      digest: 25fb8be4fa553a9d8bc55d6776a1240489498e4e4e1e95e31ae36bb1b4b02828
+      home: https://www.dask.org/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+      name: dask
+      sources:
+        - https://github.com/InseeFrLab/helm-charts-databases
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.4/dask-0.1.4.tgz
+      version: 0.1.4
+    - apiVersion: v2
+      created: "2024-05-02T08:56:08.929059669Z"
+      dependencies:
+        - name: dask
+          repository: https://helm.dask.org
+          version: 2024.1.1
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.20
+      description: Dask is a flexible open-source Python library for parallel computing
+      digest: 442e16285858ea02e09f5c7ca2d5490186414ef1ba97b3a0d24379f5735119d2
+      home: https://www.dask.org/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+      name: dask
+      sources:
+        - https://github.com/InseeFrLab/helm-charts-databases
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.3/dask-0.1.3.tgz
+      version: 0.1.3
+    - apiVersion: v2
+      created: "2024-05-02T08:44:25.007962321Z"
+      dependencies:
+        - name: dask
+          repository: https://helm.dask.org
+          version: 2024.1.1
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.20
+      description: dask
+      digest: cc364068d3956482bd9c1133cbc2f4ff5eaa8e6da6666b4b716111cc43fd0698
+      home: https://jupyter.org/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+      name: dask
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.2/dask-0.1.2.tgz
+      version: 0.1.2
+    - apiVersion: v2
+      created: "2024-05-02T08:41:32.100858619Z"
+      dependencies:
+        - name: dask
+          repository: https://helm.dask.org
+          version: 2024.1.1
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.20
+      description: dask
+      digest: df669103255db1ecbc8afb9f4c8fd22631fffe1bfdcf7fd19f0b1f2cc4b08b05
+      home: https://jupyter.org/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+      name: dask
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.1/dask-0.1.1.tgz
+      version: 0.1.1
+    - apiVersion: v2
+      created: "2024-04-29T16:12:39.338443649Z"
+      dependencies:
+        - name: dask
+          repository: https://helm.dask.org
+          version: 2024.1.1
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.20
+      description: dask
+      digest: 865d1d3bbb5fba94673c36e0c268199cccb02421b3571f34d9a47f0cdf6aa9be
+      home: https://jupyter.org/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/dask.png
+      name: dask
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/dask-0.1.0/dask-0.1.0.tgz
+      version: 0.1.0
   fuseki:
-  - apiVersion: v2
-    appVersion: 4.0.0
-    created: "2024-07-02T13:09:38.846537872Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.23
-    description: Apache Jena Fuseki is a SPARQL server.
-    digest: e483bfdf8a2f163d755cdbaa3dce79fb0ed117864ade99333450614386befcd4
-    home: https://jena.apache.org/documentation/fuseki2/index.html
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jena.png
-    keywords:
-    - RDF
-    - Triplestore
-    - Linked Data
-    name: fuseki
-    sources:
-    - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/fuseki
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/fuseki-0.3.6/fuseki-0.3.6.tgz
-    version: 0.3.6
-  - apiVersion: v2
-    appVersion: 4.0.0
-    created: "2024-06-27T09:10:20.493333174Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.23
-    description: Apache Jena Fuseki is a SPARQL server.
-    digest: a7c5880cfc5d28cc19a7eb44b6d64cfc5f2b0686d5ba0b91b44918e3e85c307b
-    home: https://jena.apache.org/documentation/fuseki2/index.html
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jena.png
-    keywords:
-    - RDF
-    - Triplestore
-    - Linked Data
-    name: fuseki
-    sources:
-    - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/fuseki
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/fuseki-0.3.5/fuseki-0.3.5.tgz
-    version: 0.3.5
+    - apiVersion: v2
+      appVersion: 4.0.0
+      created: "2024-07-02T13:09:38.846537872Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.23
+      description: Apache Jena Fuseki is a SPARQL server.
+      digest: e483bfdf8a2f163d755cdbaa3dce79fb0ed117864ade99333450614386befcd4
+      home: https://jena.apache.org/documentation/fuseki2/index.html
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jena.png
+      keywords:
+        - RDF
+        - Triplestore
+        - Linked Data
+      name: fuseki
+      sources:
+        - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/fuseki
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/fuseki-0.3.6/fuseki-0.3.6.tgz
+      version: 0.3.6
+    - apiVersion: v2
+      appVersion: 4.0.0
+      created: "2024-06-27T09:10:20.493333174Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.23
+      description: Apache Jena Fuseki is a SPARQL server.
+      digest: a7c5880cfc5d28cc19a7eb44b6d64cfc5f2b0686d5ba0b91b44918e3e85c307b
+      home: https://jena.apache.org/documentation/fuseki2/index.html
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jena.png
+      keywords:
+        - RDF
+        - Triplestore
+        - Linked Data
+      name: fuseki
+      sources:
+        - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/fuseki
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/fuseki-0.3.5/fuseki-0.3.5.tgz
+      version: 0.3.5
   langfuse:
-  - apiVersion: v2
-    appVersion: 3.51.2
-    created: "2025-05-12T09:36:12.654423281Z"
-    dependencies:
-    - name: langfuse
-      repository: https://langfuse.github.io/langfuse-k8s
-      version: 1.2.5
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.0
-    description: LLM engineering platform - LLM observability, metrics, evaluations,
-      prompt management.
-    digest: c551958a06296b9518bf5a6c54ecc171a8839bb948b0b25284d8c753de1a39f2
-    home: https://langfuse.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
-    keywords:
-    - langfuse
-    - llm
-    - observability
-    - prompt management
-    - metrics
-    name: langfuse
-    sources:
-    - https://github.com/langfuse/langfuse
-    - https://github.com/langfuse/langfuse-k8s
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.9/langfuse-0.0.9.tgz
-    version: 0.0.9
-  - apiVersion: v2
-    appVersion: 3.51.2
-    created: "2025-05-12T09:05:28.512780278Z"
-    dependencies:
-    - name: langfuse
-      repository: https://langfuse.github.io/langfuse-k8s
-      version: 1.2.5
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.0
-    description: LLM engineering platform - LLM observability, metrics, evaluations,
-      prompt management.
-    digest: 04fbbef039e9f25e87c81050eebeee8285d5d1ecf63599af7c85c90c4097f47a
-    home: https://langfuse.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
-    keywords:
-    - langfuse
-    - llm
-    - observability
-    - prompt management
-    - metrics
-    name: langfuse
-    sources:
-    - https://github.com/langfuse/langfuse
-    - https://github.com/langfuse/langfuse-k8s
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.8/langfuse-0.0.8.tgz
-    version: 0.0.8
-  - apiVersion: v2
-    appVersion: 3.51.2
-    created: "2025-05-05T13:16:55.954466987Z"
-    dependencies:
-    - name: langfuse
-      repository: https://langfuse.github.io/langfuse-k8s
-      version: 1.2.5
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.0
-    description: LLM engineering platform - LLM observability, metrics, evaluations,
-      prompt management.
-    digest: 699a83a92e59e12ff8d1100fd046d9ed5e498961b13a8f6ddf7ab75eb3c8b1d6
-    home: https://langfuse.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
-    keywords:
-    - langfuse
-    - llm
-    - observability
-    - prompt management
-    - metrics
-    name: langfuse
-    sources:
-    - https://github.com/langfuse/langfuse
-    - https://github.com/langfuse/langfuse-k8s
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.7/langfuse-0.0.7.tgz
-    version: 0.0.7
-  - apiVersion: v2
-    appVersion: 3.51.2
-    created: "2025-05-05T10:07:07.928341771Z"
-    dependencies:
-    - name: langfuse
-      repository: https://langfuse.github.io/langfuse-k8s
-      version: 1.2.5
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.0
-    description: LLM engineering platform - LLM observability, metrics, evaluations,
-      prompt management.
-    digest: 578a04a03594bfa02a4f794b2fe86fe9d562af7cab2b9bdebffd34fae0382b7b
-    home: https://langfuse.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
-    keywords:
-    - langfuse
-    - llm
-    - observability
-    - prompt management
-    - metrics
-    name: langfuse
-    sources:
-    - https://github.com/langfuse/langfuse
-    - https://github.com/langfuse/langfuse-k8s
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.6/langfuse-0.0.6.tgz
-    version: 0.0.6
-  - apiVersion: v2
-    appVersion: 3.51.2
-    created: "2025-05-05T09:14:46.266269194Z"
-    dependencies:
-    - name: langfuse
-      repository: https://langfuse.github.io/langfuse-k8s
-      version: 1.2.5
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.0
-    description: LLM engineering platform - LLM observability, metrics, evaluations,
-      prompt management.
-    digest: 53b16da88d01248bc12a124da3bf24367a4d5619cf3ecd8f1d5f7a4e1c7328e9
-    home: https://langfuse.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
-    keywords:
-    - langfuse
-    - llm
-    - observability
-    - prompt management
-    - metrics
-    name: langfuse
-    sources:
-    - https://github.com/langfuse/langfuse
-    - https://github.com/langfuse/langfuse-k8s
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.5/langfuse-0.0.5.tgz
-    version: 0.0.5
-  - apiVersion: v2
-    appVersion: 3.51.2
-    created: "2025-05-05T08:22:40.518702317Z"
-    dependencies:
-    - name: langfuse
-      repository: https://langfuse.github.io/langfuse-k8s
-      version: 1.2.5
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.0
-    description: LLM engineering platform - LLM observability, metrics, evaluations,
-      prompt management.
-    digest: 0f949d67c0740b19fd2fdb540b1eab9b32d202caa6a3957a4cb5e1509c8699a1
-    home: https://langfuse.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
-    keywords:
-    - langfuse
-    - llm
-    - observability
-    - prompt management
-    - metrics
-    name: langfuse
-    sources:
-    - https://github.com/langfuse/langfuse
-    - https://github.com/langfuse/langfuse-k8s
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.4/langfuse-0.0.4.tgz
-    version: 0.0.4
-  - apiVersion: v2
-    appVersion: 3.51.2
-    created: "2025-05-05T07:41:45.370587566Z"
-    dependencies:
-    - name: langfuse
-      repository: https://langfuse.github.io/langfuse-k8s
-      version: 1.2.5
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.0
-    description: LLM engineering platform - LLM observability, metrics, evaluations,
-      prompt management.
-    digest: 9f0f0624d742319b7bad8ffea9189b0e926523d499cf6027ea2e7407fddf7a0f
-    home: https://langfuse.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
-    keywords:
-    - langfuse
-    - llm
-    - observability
-    - prompt management
-    - metrics
-    name: langfuse
-    sources:
-    - https://github.com/langfuse/langfuse
-    - https://github.com/langfuse/langfuse-k8s
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.3/langfuse-0.0.3.tgz
-    version: 0.0.3
-  - apiVersion: v2
-    appVersion: 3.51.2
-    created: "2025-04-30T16:03:04.552113667Z"
-    dependencies:
-    - name: langfuse
-      repository: https://langfuse.github.io/langfuse-k8s
-      version: 1.2.5
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.0
-    description: LLM engineering platform - LLM observability, metrics, evaluations,
-      prompt management.
-    digest: 9637d74aa6c72787688a35fcc01eb7864d68ef524dbe5f4979ad18f836318aea
-    home: https://langfuse.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
-    keywords:
-    - langfuse
-    - llm
-    - observability
-    - prompt management
-    - metrics
-    name: langfuse
-    sources:
-    - https://github.com/langfuse/langfuse
-    - https://github.com/langfuse/langfuse-k8s
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.2/langfuse-0.0.2.tgz
-    version: 0.0.2
-  - apiVersion: v2
-    appVersion: 3.51.2
-    created: "2025-04-30T15:53:21.817541718Z"
-    dependencies:
-    - name: langfuse
-      repository: https://langfuse.github.io/langfuse-k8s
-      version: 1.2.5
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.0
-    description: LLM engineering platform - LLM observability, metrics, evaluations,
-      prompt management.
-    digest: 3747ced98d5897c69d457d28f00514e927d5b0bedf4ab8eea9accb736facef64
-    home: https://langfuse.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
-    keywords:
-    - langfuse
-    - llm
-    - observability
-    - prompt management
-    - metrics
-    name: langfuse
-    sources:
-    - https://github.com/langfuse/langfuse
-    - https://github.com/langfuse/langfuse-k8s
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.1/langfuse-0.0.1.tgz
-    version: 0.0.1
+    - apiVersion: v2
+      appVersion: 3.51.2
+      created: "2025-05-12T09:36:12.654423281Z"
+      dependencies:
+        - name: langfuse
+          repository: https://langfuse.github.io/langfuse-k8s
+          version: 1.2.5
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.7.0
+      description: LLM engineering platform - LLM observability, metrics, evaluations, prompt management.
+      digest: c551958a06296b9518bf5a6c54ecc171a8839bb948b0b25284d8c753de1a39f2
+      home: https://langfuse.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
+      keywords:
+        - langfuse
+        - llm
+        - observability
+        - prompt management
+        - metrics
+      name: langfuse
+      sources:
+        - https://github.com/langfuse/langfuse
+        - https://github.com/langfuse/langfuse-k8s
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.9/langfuse-0.0.9.tgz
+      version: 0.0.9
+    - apiVersion: v2
+      appVersion: 3.51.2
+      created: "2025-05-12T09:05:28.512780278Z"
+      dependencies:
+        - name: langfuse
+          repository: https://langfuse.github.io/langfuse-k8s
+          version: 1.2.5
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.7.0
+      description: LLM engineering platform - LLM observability, metrics, evaluations, prompt management.
+      digest: 04fbbef039e9f25e87c81050eebeee8285d5d1ecf63599af7c85c90c4097f47a
+      home: https://langfuse.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
+      keywords:
+        - langfuse
+        - llm
+        - observability
+        - prompt management
+        - metrics
+      name: langfuse
+      sources:
+        - https://github.com/langfuse/langfuse
+        - https://github.com/langfuse/langfuse-k8s
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.8/langfuse-0.0.8.tgz
+      version: 0.0.8
+    - apiVersion: v2
+      appVersion: 3.51.2
+      created: "2025-05-05T13:16:55.954466987Z"
+      dependencies:
+        - name: langfuse
+          repository: https://langfuse.github.io/langfuse-k8s
+          version: 1.2.5
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.7.0
+      description: LLM engineering platform - LLM observability, metrics, evaluations, prompt management.
+      digest: 699a83a92e59e12ff8d1100fd046d9ed5e498961b13a8f6ddf7ab75eb3c8b1d6
+      home: https://langfuse.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
+      keywords:
+        - langfuse
+        - llm
+        - observability
+        - prompt management
+        - metrics
+      name: langfuse
+      sources:
+        - https://github.com/langfuse/langfuse
+        - https://github.com/langfuse/langfuse-k8s
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.7/langfuse-0.0.7.tgz
+      version: 0.0.7
+    - apiVersion: v2
+      appVersion: 3.51.2
+      created: "2025-05-05T10:07:07.928341771Z"
+      dependencies:
+        - name: langfuse
+          repository: https://langfuse.github.io/langfuse-k8s
+          version: 1.2.5
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.7.0
+      description: LLM engineering platform - LLM observability, metrics, evaluations, prompt management.
+      digest: 578a04a03594bfa02a4f794b2fe86fe9d562af7cab2b9bdebffd34fae0382b7b
+      home: https://langfuse.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
+      keywords:
+        - langfuse
+        - llm
+        - observability
+        - prompt management
+        - metrics
+      name: langfuse
+      sources:
+        - https://github.com/langfuse/langfuse
+        - https://github.com/langfuse/langfuse-k8s
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.6/langfuse-0.0.6.tgz
+      version: 0.0.6
+    - apiVersion: v2
+      appVersion: 3.51.2
+      created: "2025-05-05T09:14:46.266269194Z"
+      dependencies:
+        - name: langfuse
+          repository: https://langfuse.github.io/langfuse-k8s
+          version: 1.2.5
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.7.0
+      description: LLM engineering platform - LLM observability, metrics, evaluations, prompt management.
+      digest: 53b16da88d01248bc12a124da3bf24367a4d5619cf3ecd8f1d5f7a4e1c7328e9
+      home: https://langfuse.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
+      keywords:
+        - langfuse
+        - llm
+        - observability
+        - prompt management
+        - metrics
+      name: langfuse
+      sources:
+        - https://github.com/langfuse/langfuse
+        - https://github.com/langfuse/langfuse-k8s
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.5/langfuse-0.0.5.tgz
+      version: 0.0.5
+    - apiVersion: v2
+      appVersion: 3.51.2
+      created: "2025-05-05T08:22:40.518702317Z"
+      dependencies:
+        - name: langfuse
+          repository: https://langfuse.github.io/langfuse-k8s
+          version: 1.2.5
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.7.0
+      description: LLM engineering platform - LLM observability, metrics, evaluations, prompt management.
+      digest: 0f949d67c0740b19fd2fdb540b1eab9b32d202caa6a3957a4cb5e1509c8699a1
+      home: https://langfuse.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
+      keywords:
+        - langfuse
+        - llm
+        - observability
+        - prompt management
+        - metrics
+      name: langfuse
+      sources:
+        - https://github.com/langfuse/langfuse
+        - https://github.com/langfuse/langfuse-k8s
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.4/langfuse-0.0.4.tgz
+      version: 0.0.4
+    - apiVersion: v2
+      appVersion: 3.51.2
+      created: "2025-05-05T07:41:45.370587566Z"
+      dependencies:
+        - name: langfuse
+          repository: https://langfuse.github.io/langfuse-k8s
+          version: 1.2.5
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.7.0
+      description: LLM engineering platform - LLM observability, metrics, evaluations, prompt management.
+      digest: 9f0f0624d742319b7bad8ffea9189b0e926523d499cf6027ea2e7407fddf7a0f
+      home: https://langfuse.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
+      keywords:
+        - langfuse
+        - llm
+        - observability
+        - prompt management
+        - metrics
+      name: langfuse
+      sources:
+        - https://github.com/langfuse/langfuse
+        - https://github.com/langfuse/langfuse-k8s
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.3/langfuse-0.0.3.tgz
+      version: 0.0.3
+    - apiVersion: v2
+      appVersion: 3.51.2
+      created: "2025-04-30T16:03:04.552113667Z"
+      dependencies:
+        - name: langfuse
+          repository: https://langfuse.github.io/langfuse-k8s
+          version: 1.2.5
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.7.0
+      description: LLM engineering platform - LLM observability, metrics, evaluations, prompt management.
+      digest: 9637d74aa6c72787688a35fcc01eb7864d68ef524dbe5f4979ad18f836318aea
+      home: https://langfuse.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/langfuse.png
+      keywords:
+        - langfuse
+        - llm
+        - observability
+        - prompt management
+        - metrics
+      name: langfuse
+      sources:
+        - https://github.com/langfuse/langfuse
+        - https://github.com/langfuse/langfuse-k8s
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.2/langfuse-0.0.2.tgz
+      version: 0.0.2
+    - apiVersion: v2
+      appVersion: 3.51.2
+      created: "2025-04-30T15:53:21.817541718Z"
+      dependencies:
+        - name: langfuse
+          repository: https://langfuse.github.io/langfuse-k8s
+          version: 1.2.5
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.7.0
+      description: LLM engineering platform - LLM observability, metrics, evaluations, prompt management.
+      digest: 3747ced98d5897c69d457d28f00514e927d5b0bedf4ab8eea9accb736facef64
+      home: https://langfuse.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/chroma.png
+      keywords:
+        - langfuse
+        - llm
+        - observability
+        - prompt management
+        - metrics
+      name: langfuse
+      sources:
+        - https://github.com/langfuse/langfuse
+        - https://github.com/langfuse/langfuse-k8s
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/langfuse-0.0.1/langfuse-0.0.1.tgz
+      version: 0.0.1
   launcher:
-  - apiVersion: v2
-    created: "2024-04-28T23:12:01.460216969Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.21
-    description: Test pour developpper le launcher
-    digest: a3ec013656805fa025942651f6d48a0767cd5173e2357ab63057067ec2c97f86
-    home: https://jupyter.org/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jupyter.png
-    keywords:
-    - Jupyter
-    - Python
-    name: launcher
-    sources:
-    - https://github.com/InseeFrLab/helm-charts-dev
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/launcher-1.0.0/launcher-1.0.0.tgz
-    version: 1.0.0
+    - apiVersion: v2
+      created: "2024-04-28T23:12:01.460216969Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.21
+      description: Test pour developpper le launcher
+      digest: a3ec013656805fa025942651f6d48a0767cd5173e2357ab63057067ec2c97f86
+      home: https://jupyter.org/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jupyter.png
+      keywords:
+        - Jupyter
+        - Python
+      name: launcher
+      sources:
+        - https://github.com/InseeFrLab/helm-charts-dev
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/launcher-1.0.0/launcher-1.0.0.tgz
+      version: 1.0.0
   llm-serving:
-  - apiVersion: v2
-    appVersion: 0.0.8
-    created: "2025-03-11T15:22:25.710952106Z"
-    description: An example of helm chart to deploy a llm serving
-    digest: a2a640092851edb8ec8058f3408864ab57d2fda8cc3e6863c3544f589107345a
-    name: llm-serving
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/llm-serving-0.0.10/llm-serving-0.0.10.tgz
-    version: 0.0.10
-  - apiVersion: v2
-    appVersion: 0.0.8
-    created: "2025-03-10T14:08:53.589976352Z"
-    description: An example of helm chart to deploy a llm serving
-    digest: fa0751cb5145a5d48b2824dedc8be9a5d589ebf9ba991cd7468af43827b8287f
-    name: llm-serving
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/llm-serving-0.0.9/llm-serving-0.0.9.tgz
-    version: 0.0.9
-  - apiVersion: v2
-    appVersion: 0.0.8
-    created: "2025-03-10T13:51:34.062170925Z"
-    description: An example of helm chart to deploy a llm serving
-    digest: 25bbda625f17d7bd368ba9edbbb9d90e98345ca3307c0104c11009bdb6703d1b
-    name: llm-serving
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/llm-serving-0.0.8/llm-serving-0.0.8.tgz
-    version: 0.0.8
+    - apiVersion: v2
+      appVersion: 0.0.8
+      created: "2025-03-11T15:22:25.710952106Z"
+      description: An example of helm chart to deploy a llm serving
+      digest: a2a640092851edb8ec8058f3408864ab57d2fda8cc3e6863c3544f589107345a
+      name: llm-serving
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/llm-serving-0.0.10/llm-serving-0.0.10.tgz
+      version: 0.0.10
+    - apiVersion: v2
+      appVersion: 0.0.8
+      created: "2025-03-10T14:08:53.589976352Z"
+      description: An example of helm chart to deploy a llm serving
+      digest: fa0751cb5145a5d48b2824dedc8be9a5d589ebf9ba991cd7468af43827b8287f
+      name: llm-serving
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/llm-serving-0.0.9/llm-serving-0.0.9.tgz
+      version: 0.0.9
+    - apiVersion: v2
+      appVersion: 0.0.8
+      created: "2025-03-10T13:51:34.062170925Z"
+      description: An example of helm chart to deploy a llm serving
+      digest: 25bbda625f17d7bd368ba9edbbb9d90e98345ca3307c0104c11009bdb6703d1b
+      name: llm-serving
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/llm-serving-0.0.8/llm-serving-0.0.8.tgz
+      version: 0.0.8
   onyxia:
-  - apiVersion: v2
-    created: "2025-07-01T12:28:48.794408993Z"
-    description: Onyxia is your datalab's hub.
-    digest: 5fe417b806e093fa13c4dc98083ba99a1205e58d3bd9040d19d2d75e353ad045
-    icon: https://inseefrlab.github.io/onyxia/icon.svg
-    name: onyxia
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-11.0.1/onyxia-11.0.1.tgz
-    version: 11.0.1
-  - apiVersion: v2
-    created: "2025-07-01T08:57:46.459314344Z"
-    description: Onyxia is your datalab's hub.
-    digest: 6549b29ac6bb8f6c3651b4e129bfd90b75149e563c7c8f9ef3fa020f321d325e
-    icon: https://inseefrlab.github.io/onyxia/icon.svg
-    name: onyxia
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-11.0.0/onyxia-11.0.0.tgz
-    version: 11.0.0
-  - apiVersion: v2
-    created: "2025-04-16T15:06:56.395081406Z"
-    description: Onyxia is your datalab's hub.
-    digest: 0554310b05a9f790aea152d2c27e37d5eccec50b1c748d6076b7597d07e89281
-    icon: https://inseefrlab.github.io/onyxia/icon.svg
-    name: onyxia
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-10.14.1/onyxia-10.14.1.tgz
-    version: 10.14.1
-  - apiVersion: v2
-    created: "2025-04-16T12:52:32.092556727Z"
-    description: Onyxia is your datalab's hub.
-    digest: f4068082ae66b7c87f10763613432d0fe71d50962a6c6446540bf0a1dc7b56be
-    icon: https://inseefrlab.github.io/onyxia/icon.svg
-    name: onyxia
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-10.14.0/onyxia-10.14.0.tgz
-    version: 10.14.0
-  - apiVersion: v2
-    created: "2025-03-31T13:22:28.940465644Z"
-    description: Onyxia is your datalab's hub.
-    digest: 55733d06da52dff490d4cb348833e3dfd13fa33ebec1f8681e631630b15f192a
-    icon: https://inseefrlab.github.io/onyxia/icon.svg
-    name: onyxia
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-10.12.0/onyxia-10.12.0.tgz
-    version: 10.12.0
-  - apiVersion: v2
-    created: "2024-09-17T09:00:01.870293199Z"
-    description: Onyxia is your datalab's hub.
-    digest: 994a7e9ee30d8550b036d48ae699cc065cd03b903c03ab6d500775e3275ceff1
-    icon: https://inseefrlab.github.io/onyxia/icon.svg
-    name: onyxia
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-9.0.2/onyxia-9.0.2.tgz
-    version: 9.0.2
-  - apiVersion: v2
-    created: "2024-09-17T08:33:34.214100692Z"
-    description: Onyxia is your datalab's hub.
-    digest: 56d2509dabbe7b3ae8cca41c67e12d896125a33e0073c16dc3c5726ce2e19542
-    icon: https://inseefrlab.github.io/onyxia/icon.svg
-    name: onyxia
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-9.0.1/onyxia-9.0.1.tgz
-    version: 9.0.1
-  - apiVersion: v2
-    created: "2024-09-17T07:11:02.599866997Z"
-    description: Onyxia is your datalab's hub.
-    digest: 774932d14ca081e0ffcb69ea11db7067e6128c8a1f1c389b883264c912570e3a
-    icon: https://inseefrlab.github.io/onyxia/icon.svg
-    name: onyxia
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-9.0.0/onyxia-9.0.0.tgz
-    version: 9.0.0
-  - apiVersion: v2
-    created: "2024-07-24T08:34:59.070417084Z"
-    description: Onyxia is your datalab's hub.
-    digest: 8ccd159f05cbcf1b8f67788f73c54fa0f602c1a3b1e6b007598c8be5173b0831
-    icon: https://inseefrlab.github.io/onyxia/icon.svg
-    name: onyxia
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-8.25.0/onyxia-8.25.0.tgz
-    version: 8.25.0
-  postgresql-dev:
-  - apiVersion: v2
-    appVersion: 17.5.0
-    created: "2025-07-01T13:03:48.20109322Z"
-    dependencies:
-    - name: postgresql
-      repository: https://charts.bitnami.com/bitnami
-      version: 16.7.11
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.3
-    description: An object-relational database management system, a database server.
-    digest: 1d746c5c16b8e1c5a5c76bb0d17ae361f57e39d8275c1837c9440f031121ebe9
-    home: https://www.postgresql.org/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/post.png
-    keywords:
-    - SQL
-    - Database
-    name: postgresql-dev
-    sources:
-    - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/postgresql
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/postgresql-dev-0.0.3/postgresql-dev-0.0.3.tgz
-    version: 0.0.3
-  - apiVersion: v2
-    appVersion: 17.5.0
-    created: "2025-07-01T12:50:37.722498931Z"
-    dependencies:
-    - name: postgresql
-      repository: https://charts.bitnami.com/bitnami
-      version: 16.7.11
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.3
-    description: An object-relational database management system, a database server.
-    digest: 5eb8ae1f7ca5633b755d65f9a83cdff4e3db1bf1298a5ed0efa80d2f59a18c66
-    home: https://www.postgresql.org/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/post.png
-    keywords:
-    - SQL
-    - Database
-    name: postgresql-dev
-    sources:
-    - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/postgresql
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/postgresql-dev-0.0.2/postgresql-dev-0.0.2.tgz
-    version: 0.0.2
-  - apiVersion: v2
-    appVersion: 17.5.0
-    created: "2025-06-25T16:00:42.782264477Z"
-    dependencies:
-    - name: postgresql
-      repository: https://charts.bitnami.com/bitnami
-      version: 16.7.11
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.3
-    description: An object-relational database management system, a database server.
-    digest: dba8b6f6beeac4cf0483552cbafa2ba66bc7819157c7a216b35ecd62ed182a47
-    home: https://www.postgresql.org/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/post.png
-    keywords:
-    - SQL
-    - Database
-    name: postgresql-dev
-    sources:
-    - https://github.com/InseeFrLab/helm-charts-databases/tree/master/charts/postgresql
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/postgresql-dev-0.0.1/postgresql-dev-0.0.1.tgz
-    version: 0.0.1
+    - apiVersion: v2
+      created: "2025-07-01T12:28:48.794408993Z"
+      description: Onyxia is your datalab's hub.
+      digest: 5fe417b806e093fa13c4dc98083ba99a1205e58d3bd9040d19d2d75e353ad045
+      icon: https://inseefrlab.github.io/onyxia/icon.svg
+      name: onyxia
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-11.0.1/onyxia-11.0.1.tgz
+      version: 11.0.1
+    - apiVersion: v2
+      created: "2025-07-01T08:57:46.459314344Z"
+      description: Onyxia is your datalab's hub.
+      digest: 6549b29ac6bb8f6c3651b4e129bfd90b75149e563c7c8f9ef3fa020f321d325e
+      icon: https://inseefrlab.github.io/onyxia/icon.svg
+      name: onyxia
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-11.0.0/onyxia-11.0.0.tgz
+      version: 11.0.0
+    - apiVersion: v2
+      created: "2025-04-16T15:06:56.395081406Z"
+      description: Onyxia is your datalab's hub.
+      digest: 0554310b05a9f790aea152d2c27e37d5eccec50b1c748d6076b7597d07e89281
+      icon: https://inseefrlab.github.io/onyxia/icon.svg
+      name: onyxia
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-10.14.1/onyxia-10.14.1.tgz
+      version: 10.14.1
+    - apiVersion: v2
+      created: "2025-04-16T12:52:32.092556727Z"
+      description: Onyxia is your datalab's hub.
+      digest: f4068082ae66b7c87f10763613432d0fe71d50962a6c6446540bf0a1dc7b56be
+      icon: https://inseefrlab.github.io/onyxia/icon.svg
+      name: onyxia
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-10.14.0/onyxia-10.14.0.tgz
+      version: 10.14.0
+    - apiVersion: v2
+      created: "2025-03-31T13:22:28.940465644Z"
+      description: Onyxia is your datalab's hub.
+      digest: 55733d06da52dff490d4cb348833e3dfd13fa33ebec1f8681e631630b15f192a
+      icon: https://inseefrlab.github.io/onyxia/icon.svg
+      name: onyxia
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-10.12.0/onyxia-10.12.0.tgz
+      version: 10.12.0
+    - apiVersion: v2
+      created: "2024-09-17T09:00:01.870293199Z"
+      description: Onyxia is your datalab's hub.
+      digest: 994a7e9ee30d8550b036d48ae699cc065cd03b903c03ab6d500775e3275ceff1
+      icon: https://inseefrlab.github.io/onyxia/icon.svg
+      name: onyxia
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-9.0.2/onyxia-9.0.2.tgz
+      version: 9.0.2
+    - apiVersion: v2
+      created: "2024-09-17T08:33:34.214100692Z"
+      description: Onyxia is your datalab's hub.
+      digest: 56d2509dabbe7b3ae8cca41c67e12d896125a33e0073c16dc3c5726ce2e19542
+      icon: https://inseefrlab.github.io/onyxia/icon.svg
+      name: onyxia
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-9.0.1/onyxia-9.0.1.tgz
+      version: 9.0.1
+    - apiVersion: v2
+      created: "2024-09-17T07:11:02.599866997Z"
+      description: Onyxia is your datalab's hub.
+      digest: 774932d14ca081e0ffcb69ea11db7067e6128c8a1f1c389b883264c912570e3a
+      icon: https://inseefrlab.github.io/onyxia/icon.svg
+      name: onyxia
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-9.0.0/onyxia-9.0.0.tgz
+      version: 9.0.0
+    - apiVersion: v2
+      created: "2024-07-24T08:34:59.070417084Z"
+      description: Onyxia is your datalab's hub.
+      digest: 8ccd159f05cbcf1b8f67788f73c54fa0f602c1a3b1e6b007598c8be5173b0831
+      icon: https://inseefrlab.github.io/onyxia/icon.svg
+      name: onyxia
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-8.25.0/onyxia-8.25.0.tgz
+      version: 8.25.0
   qdrant:
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-20T12:52:15.446884612Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 6da5de2d6eb4381a52450b97fb85075a5f0f2a53e239b4eaa4d03c85c283ca5a
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.31/qdrant-0.0.31.tgz
-    version: 0.0.31
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-20T12:44:18.195113843Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: a1578af32e8ac812a7871b6097896ec91e93b873d722b16627361b1b198ab6af
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.30/qdrant-0.0.30.tgz
-    version: 0.0.30
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-20T12:43:48.43707027Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 77f8e33b40a0e16c04032923b5303334c94240612bfeb36a1d743c69d79526e9
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.29/qdrant-0.0.29.tgz
-    version: 0.0.29
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-20T10:35:42.520679936Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: c0052985663254dab93f44a89f886d9051d726831dbc31d45cde900fab1d65da
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.28/qdrant-0.0.28.tgz
-    version: 0.0.28
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-20T10:26:35.683913766Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 7b2dca59d55d99420c40f66c2552de785e9a9b92d68368b6d3f813ba319ff571
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.27/qdrant-0.0.27.tgz
-    version: 0.0.27
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-19T16:39:56.360201541Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 5ee75c14e74e7e767a0b2b576c691720cbd9f0146651edbb54cf8c1a4bc1ee75
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.26/qdrant-0.0.26.tgz
-    version: 0.0.26
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-19T16:30:05.694262534Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 90b02ec7ba70d0ad03996fc7e6e9a5e9fe2e178e84c2610fa13f4afbc46e3ff2
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.25/qdrant-0.0.25.tgz
-    version: 0.0.25
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-18T15:40:47.859676959Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 410779114eb1cb4754e2e75288193f23cdc1deb8e14de11423b9fb629f9e6ff5
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.24/qdrant-0.0.24.tgz
-    version: 0.0.24
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-18T14:39:56.023841845Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 2e9a84c78a9e3820ad9036394b41bfe9c93c6a4e7641ed03571e03ae6c6b6065
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.23/qdrant-0.0.23.tgz
-    version: 0.0.23
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-18T14:15:37.399701528Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 24e1c11f5a9a612e81f79e58dc97ce93412dcb44486d5db3e79b7f17c1383402
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.22/qdrant-0.0.22.tgz
-    version: 0.0.22
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-18T12:58:40.687134971Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 8ff0a71156a1564031899160e1ef70e1e45e0766f771f0fcb2e3dfb18cf837c8
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.21/qdrant-0.0.21.tgz
-    version: 0.0.21
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-18T12:34:45.659976389Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: ac4b864e1028516d2b11152e431ce4eec0e579203d56929b5a580b12b61674e9
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.20/qdrant-0.0.20.tgz
-    version: 0.0.20
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-18T11:02:53.845823067Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: bbac0ce8f479ca727b888b6010498e713802fce444bebab46abdd2a028ec5256
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.19/qdrant-0.0.19.tgz
-    version: 0.0.19
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-18T10:52:49.284497554Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 093d864a9b00918d8ffb0843dd160d9df963f63ba5ff3f6b8bfad8e22bf68af9
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.18/qdrant-0.0.18.tgz
-    version: 0.0.18
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-14T08:24:47.721857867Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 37d8b3c74e6a49cb9ae2d095874bcd9ddf498a2646285803a309bce3bdcf6f76
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.17/qdrant-0.0.17.tgz
-    version: 0.0.17
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-14T08:05:52.763627443Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 7d4d80a109f70f120be2d941478b8acea13f233e36f64d357eb9eeb5c936d1e4
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.16/qdrant-0.0.16.tgz
-    version: 0.0.16
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-12T14:09:23.20466267Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: b6a8b1cc603a9380bca190065c8f883d3d5f3ea2c37786964fba5b6e36c0e46a
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.15/qdrant-0.0.15.tgz
-    version: 0.0.15
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-12T14:03:34.66092231Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: c007aac6f85204d2ae432098aaeca92700fe8bf8f3d98a304164d28ae44cdb2b
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.14/qdrant-0.0.14.tgz
-    version: 0.0.14
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-12T13:16:59.95648949Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 66eeadd8ab55c029924b85e239caa35580074f8bd4436d80ba30c8038bc22e66
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.13/qdrant-0.0.13.tgz
-    version: 0.0.13
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-12T13:09:34.562821749Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 46c6f233dda3f838276d73eae90b48518887c6ceed7805b434da112eec2ed99b
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.12/qdrant-0.0.12.tgz
-    version: 0.0.12
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-12T12:59:27.22292882Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 2495691ab4d32abad6d49298d2b66c899fe75aa19b3f9aa6b1e7ff7acf6ccade
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.11/qdrant-0.0.11.tgz
-    version: 0.0.11
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-12T11:07:49.223384188Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 05e93ca23883ac7a6c703cfc8f91210160315ee3d1afbef11d2eccaf398b782b
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.9/qdrant-0.0.9.tgz
-    version: 0.0.9
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-12T10:50:19.189187359Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 50cc67dd0e650d1723004b451dcb9eebb71b60262673ae8966aff6bc1e75cb4d
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.8/qdrant-0.0.8.tgz
-    version: 0.0.8
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-12T10:33:56.836755947Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: b24dfba57cac787ca7ee1b336e8b57eb21ec53718e66dce612626552e38aa99e
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.6/qdrant-0.0.6.tgz
-    version: 0.0.6
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-12T10:11:51.684271197Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 3e3b9175b79898820ef4d229af1510134b7a6650a303ce3ef42894a0e835b5bc
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.5/qdrant-0.0.5.tgz
-    version: 0.0.5
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-12T10:01:39.02449184Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 7f3d37e58d568ffc4698caac9196bf862c48d7ed3414a6642f96f8b53ac0f6ee
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.4/qdrant-0.0.4.tgz
-    version: 0.0.4
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-12T09:01:23.161533984Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 0997201197648409a0099c61e2b539d045d0a08a0cb6e9bd42c1553bad82f527
-    home: https://qdrant.tech
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.3/qdrant-0.0.3.tgz
-    version: 0.0.3
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-12T08:45:15.802916661Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: 074018f48928aa99f2ac3ac147f695cb92269a0998b5ecdc473e7a9f889ae15d
-    home: https://qdrant.tech
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.2/qdrant-0.0.2.tgz
-    version: 0.0.2
-  - apiVersion: v2
-    appVersion: 1.13.2
-    created: "2025-02-11T16:25:04.109637992Z"
-    dependencies:
-    - name: qdrant
-      repository: https://qdrant.github.io/qdrant-helm
-      version: 1.13.2
-    description: Qdrant - Vector Database for the next generation of AI applications.
-    digest: c20fd2da215151d423ce0a5c738e7c7abf996bfa974728316a8adcf345c3c378
-    home: https://qdrant.tech
-    keywords:
-    - vector database
-    name: qdrant
-    sources:
-    - https://github.com/qdrant/qdrant
-    - https://github.com/qdrant/qdrant-helm
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.1/qdrant-0.0.1.tgz
-    version: 0.0.1
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-20T12:52:15.446884612Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 6da5de2d6eb4381a52450b97fb85075a5f0f2a53e239b4eaa4d03c85c283ca5a
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.31/qdrant-0.0.31.tgz
+      version: 0.0.31
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-20T12:44:18.195113843Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: a1578af32e8ac812a7871b6097896ec91e93b873d722b16627361b1b198ab6af
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.30/qdrant-0.0.30.tgz
+      version: 0.0.30
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-20T12:43:48.43707027Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 77f8e33b40a0e16c04032923b5303334c94240612bfeb36a1d743c69d79526e9
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.29/qdrant-0.0.29.tgz
+      version: 0.0.29
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-20T10:35:42.520679936Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: c0052985663254dab93f44a89f886d9051d726831dbc31d45cde900fab1d65da
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.28/qdrant-0.0.28.tgz
+      version: 0.0.28
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-20T10:26:35.683913766Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 7b2dca59d55d99420c40f66c2552de785e9a9b92d68368b6d3f813ba319ff571
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.27/qdrant-0.0.27.tgz
+      version: 0.0.27
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-19T16:39:56.360201541Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 5ee75c14e74e7e767a0b2b576c691720cbd9f0146651edbb54cf8c1a4bc1ee75
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.26/qdrant-0.0.26.tgz
+      version: 0.0.26
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-19T16:30:05.694262534Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 90b02ec7ba70d0ad03996fc7e6e9a5e9fe2e178e84c2610fa13f4afbc46e3ff2
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.25/qdrant-0.0.25.tgz
+      version: 0.0.25
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-18T15:40:47.859676959Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 410779114eb1cb4754e2e75288193f23cdc1deb8e14de11423b9fb629f9e6ff5
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.24/qdrant-0.0.24.tgz
+      version: 0.0.24
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-18T14:39:56.023841845Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 2e9a84c78a9e3820ad9036394b41bfe9c93c6a4e7641ed03571e03ae6c6b6065
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.23/qdrant-0.0.23.tgz
+      version: 0.0.23
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-18T14:15:37.399701528Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 24e1c11f5a9a612e81f79e58dc97ce93412dcb44486d5db3e79b7f17c1383402
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.22/qdrant-0.0.22.tgz
+      version: 0.0.22
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-18T12:58:40.687134971Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 8ff0a71156a1564031899160e1ef70e1e45e0766f771f0fcb2e3dfb18cf837c8
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.21/qdrant-0.0.21.tgz
+      version: 0.0.21
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-18T12:34:45.659976389Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: ac4b864e1028516d2b11152e431ce4eec0e579203d56929b5a580b12b61674e9
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.20/qdrant-0.0.20.tgz
+      version: 0.0.20
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-18T11:02:53.845823067Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: bbac0ce8f479ca727b888b6010498e713802fce444bebab46abdd2a028ec5256
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/qdrant.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.19/qdrant-0.0.19.tgz
+      version: 0.0.19
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-18T10:52:49.284497554Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 093d864a9b00918d8ffb0843dd160d9df963f63ba5ff3f6b8bfad8e22bf68af9
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.18/qdrant-0.0.18.tgz
+      version: 0.0.18
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-14T08:24:47.721857867Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 37d8b3c74e6a49cb9ae2d095874bcd9ddf498a2646285803a309bce3bdcf6f76
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.17/qdrant-0.0.17.tgz
+      version: 0.0.17
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-14T08:05:52.763627443Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 7d4d80a109f70f120be2d941478b8acea13f233e36f64d357eb9eeb5c936d1e4
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.16/qdrant-0.0.16.tgz
+      version: 0.0.16
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-12T14:09:23.20466267Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: b6a8b1cc603a9380bca190065c8f883d3d5f3ea2c37786964fba5b6e36c0e46a
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.15/qdrant-0.0.15.tgz
+      version: 0.0.15
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-12T14:03:34.66092231Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: c007aac6f85204d2ae432098aaeca92700fe8bf8f3d98a304164d28ae44cdb2b
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.14/qdrant-0.0.14.tgz
+      version: 0.0.14
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-12T13:16:59.95648949Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 66eeadd8ab55c029924b85e239caa35580074f8bd4436d80ba30c8038bc22e66
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.13/qdrant-0.0.13.tgz
+      version: 0.0.13
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-12T13:09:34.562821749Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 46c6f233dda3f838276d73eae90b48518887c6ceed7805b434da112eec2ed99b
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.12/qdrant-0.0.12.tgz
+      version: 0.0.12
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-12T12:59:27.22292882Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 2495691ab4d32abad6d49298d2b66c899fe75aa19b3f9aa6b1e7ff7acf6ccade
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.11/qdrant-0.0.11.tgz
+      version: 0.0.11
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-12T11:07:49.223384188Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 05e93ca23883ac7a6c703cfc8f91210160315ee3d1afbef11d2eccaf398b782b
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.9/qdrant-0.0.9.tgz
+      version: 0.0.9
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-12T10:50:19.189187359Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 50cc67dd0e650d1723004b451dcb9eebb71b60262673ae8966aff6bc1e75cb4d
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.8/qdrant-0.0.8.tgz
+      version: 0.0.8
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-12T10:33:56.836755947Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: b24dfba57cac787ca7ee1b336e8b57eb21ec53718e66dce612626552e38aa99e
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.6/qdrant-0.0.6.tgz
+      version: 0.0.6
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-12T10:11:51.684271197Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 3e3b9175b79898820ef4d229af1510134b7a6650a303ce3ef42894a0e835b5bc
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.5/qdrant-0.0.5.tgz
+      version: 0.0.5
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-12T10:01:39.02449184Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 7f3d37e58d568ffc4698caac9196bf862c48d7ed3414a6642f96f8b53ac0f6ee
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.4/qdrant-0.0.4.tgz
+      version: 0.0.4
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-12T09:01:23.161533984Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 0997201197648409a0099c61e2b539d045d0a08a0cb6e9bd42c1553bad82f527
+      home: https://qdrant.tech
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/logo.png
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.3/qdrant-0.0.3.tgz
+      version: 0.0.3
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-12T08:45:15.802916661Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: 074018f48928aa99f2ac3ac147f695cb92269a0998b5ecdc473e7a9f889ae15d
+      home: https://qdrant.tech
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.2/qdrant-0.0.2.tgz
+      version: 0.0.2
+    - apiVersion: v2
+      appVersion: 1.13.2
+      created: "2025-02-11T16:25:04.109637992Z"
+      dependencies:
+        - name: qdrant
+          repository: https://qdrant.github.io/qdrant-helm
+          version: 1.13.2
+      description: Qdrant - Vector Database for the next generation of AI applications.
+      digest: c20fd2da215151d423ce0a5c738e7c7abf996bfa974728316a8adcf345c3c378
+      home: https://qdrant.tech
+      keywords:
+        - vector database
+      name: qdrant
+      sources:
+        - https://github.com/qdrant/qdrant
+        - https://github.com/qdrant/qdrant-helm
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.1/qdrant-0.0.1.tgz
+      version: 0.0.1
   sans-notes:
-  - apiVersion: v2
-    created: "2025-04-17T09:00:21.898287386Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.6.17
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: ccc1cefe41664e3c24e09e012d72bc88f9958d1cdffbaca5bfd1c1a8457d577a
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: sans-notes
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/sans-notes-2.2.14/sans-notes-2.2.14.tgz
-    version: 2.2.14
+    - apiVersion: v2
+      created: "2025-04-17T09:00:21.898287386Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.6.17
+      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+      digest: ccc1cefe41664e3c24e09e012d72bc88f9958d1cdffbaca5bfd1c1a8457d577a
+      home: https://code.visualstudio.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+      keywords:
+        - VSCode
+        - Python
+      name: sans-notes
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/sans-notes-2.2.14/sans-notes-2.2.14.tgz
+      version: 2.2.14
   sans-schema:
-  - apiVersion: v2
-    created: "2025-03-28T09:54:09.131686714Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.6.11
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: a00e81b902fda8c0abaa5ea8af374a56730e858898c7bbfd21d7726cbef46e24
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: sans-schema
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/sans-schema-3.0.0/sans-schema-3.0.0.tgz
-    version: 3.0.0
+    - apiVersion: v2
+      created: "2025-03-28T09:54:09.131686714Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.6.11
+      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+      digest: a00e81b902fda8c0abaa5ea8af374a56730e858898c7bbfd21d7726cbef46e24
+      home: https://code.visualstudio.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+      keywords:
+        - VSCode
+        - Python
+      name: sans-schema
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/sans-schema-3.0.0/sans-schema-3.0.0.tgz
+      version: 3.0.0
   sans-schema-sans-notes:
-  - apiVersion: v2
-    created: "2025-04-17T08:47:02.46047195Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.6.11
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: fe5986549ea0395ea2cca060e089577cc647922b5f37492cb3d9cfa49aa0a12d
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: sans-schema-sans-notes
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/sans-schema-sans-notes-3.0.0/sans-schema-sans-notes-3.0.0.tgz
-    version: 3.0.0
+    - apiVersion: v2
+      created: "2025-04-17T08:47:02.46047195Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.6.11
+      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+      digest: fe5986549ea0395ea2cca060e089577cc647922b5f37492cb3d9cfa49aa0a12d
+      home: https://code.visualstudio.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+      keywords:
+        - VSCode
+        - Python
+      name: sans-schema-sans-notes
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/sans-schema-sans-notes-3.0.0/sans-schema-sans-notes-3.0.0.tgz
+      version: 3.0.0
   speaches:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2025-04-04T16:43:55.215964258Z"
-    description: A Helm chart for Kubernetes
-    digest: a321a4bcd263f05a0b3496471636cd8dc61af6e24a998a366649992e92988d2c
-    name: speaches
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/speaches-0.1.0/speaches-0.1.0.tgz
-    version: 0.1.0
+    - apiVersion: v2
+      appVersion: 1.16.0
+      created: "2025-04-04T16:43:55.215964258Z"
+      description: A Helm chart for Kubernetes
+      digest: a321a4bcd263f05a0b3496471636cd8dc61af6e24a998a366649992e92988d2c
+      name: speaches
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/speaches-0.1.0/speaches-0.1.0.tgz
+      version: 0.1.0
   ubuntu:
-  - apiVersion: v2
-    appVersion: latest
-    created: "2024-09-18T09:44:07.874230899Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.25
-    description: Ubuntu with a graphical user interface.
-    digest: a76b347c0945db025ab079737631ae3270163722338ee247edffc5650c722d19
-    home: https://www.ubuntu-fr.org/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/ubuntu.png
-    keywords:
-    - Linux
-    - Tool
-    name: ubuntu
-    sources:
-    - https://github.com/InseeFrLab/ubuntu-vnc
-    - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/ubuntu
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/ubuntu-5.4.5/ubuntu-5.4.5.tgz
-    version: 5.4.5
+    - apiVersion: v2
+      appVersion: latest
+      created: "2024-09-18T09:44:07.874230899Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.25
+      description: Ubuntu with a graphical user interface.
+      digest: a76b347c0945db025ab079737631ae3270163722338ee247edffc5650c722d19
+      home: https://www.ubuntu-fr.org/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/ubuntu.png
+      keywords:
+        - Linux
+        - Tool
+      name: ubuntu
+      sources:
+        - https://github.com/InseeFrLab/ubuntu-vnc
+        - https://github.com/InseeFrLab/helm-charts-datascience/tree/master/charts/ubuntu
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/ubuntu-5.4.5/ubuntu-5.4.5.tgz
+      version: 5.4.5
   vscode-python:
-  - apiVersion: v2
-    created: "2025-03-27T15:38:27.227382556Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.6.11
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: 82e7305bf38db3c72c290c7f179448771fbfc763ff103ffb4e05f512840cb1e8
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: vscode-python
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.2.11/vscode-python-2.2.11.tgz
-    version: 2.2.11
-  - apiVersion: v2
-    created: "2025-03-25T19:25:39.950989084Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.6.10
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: 961d6e55141ae3364a718e542444a5f3606c5e1a25ff9b864d1e96b25d2e2afa
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: vscode-python
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.2.10/vscode-python-2.2.10.tgz
-    version: 2.2.10
-  - apiVersion: v2
-    created: "2025-03-25T18:24:17.146600504Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.6.10
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: 3db1e061e3576f98e550e2a9c97bbfd20ead3ce282ecfa66921c380e77792f50
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: vscode-python
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.2.9/vscode-python-2.2.9.tgz
-    version: 2.2.9
-  - apiVersion: v2
-    created: "2025-03-25T17:39:43.453353509Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.6.9
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: 4c0ef0c29148a0c98c0761b2c1186d0151df9ceea7b4ba6bc973e4d077bec57d
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: vscode-python
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.2.8/vscode-python-2.2.8.tgz
-    version: 2.2.8
-  - apiVersion: v2
-    created: "2025-03-25T17:14:12.28110042Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.6.9
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: c7c7fe0726480f7e9cb33dabcad548c6d26b8e7bc9fe30b3e85c92a9066867af
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: vscode-python
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.2.7/vscode-python-2.2.7.tgz
-    version: 2.2.7
+    - apiVersion: v2
+      created: "2025-03-27T15:38:27.227382556Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.6.11
+      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+      digest: 82e7305bf38db3c72c290c7f179448771fbfc763ff103ffb4e05f512840cb1e8
+      home: https://code.visualstudio.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+      keywords:
+        - VSCode
+        - Python
+      name: vscode-python
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.2.11/vscode-python-2.2.11.tgz
+      version: 2.2.11
+    - apiVersion: v2
+      created: "2025-03-25T19:25:39.950989084Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.6.10
+      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+      digest: 961d6e55141ae3364a718e542444a5f3606c5e1a25ff9b864d1e96b25d2e2afa
+      home: https://code.visualstudio.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+      keywords:
+        - VSCode
+        - Python
+      name: vscode-python
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.2.10/vscode-python-2.2.10.tgz
+      version: 2.2.10
+    - apiVersion: v2
+      created: "2025-03-25T18:24:17.146600504Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.6.10
+      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+      digest: 3db1e061e3576f98e550e2a9c97bbfd20ead3ce282ecfa66921c380e77792f50
+      home: https://code.visualstudio.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+      keywords:
+        - VSCode
+        - Python
+      name: vscode-python
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.2.9/vscode-python-2.2.9.tgz
+      version: 2.2.9
+    - apiVersion: v2
+      created: "2025-03-25T17:39:43.453353509Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.6.9
+      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+      digest: 4c0ef0c29148a0c98c0761b2c1186d0151df9ceea7b4ba6bc973e4d077bec57d
+      home: https://code.visualstudio.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+      keywords:
+        - VSCode
+        - Python
+      name: vscode-python
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.2.8/vscode-python-2.2.8.tgz
+      version: 2.2.8
+    - apiVersion: v2
+      created: "2025-03-25T17:14:12.28110042Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.6.9
+      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+      digest: c7c7fe0726480f7e9cb33dabcad548c6d26b8e7bc9fe30b3e85c92a9066867af
+      home: https://code.visualstudio.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+      keywords:
+        - VSCode
+        - Python
+      name: vscode-python
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.2.7/vscode-python-2.2.7.tgz
+      version: 2.2.7
   vscode-python-darkmode:
-  - apiVersion: v2
-    created: "2023-10-19T07:50:07.735966656Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.5.12
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: d2b10a7c52f67d7aa41dfa42d610142bf55ea0539208c866e25fb3e9d5a52a98
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: vscode-python-darkmode
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-darkmode-1.11.11/vscode-python-darkmode-1.11.11.tgz
-    version: 1.11.11
+    - apiVersion: v2
+      created: "2023-10-19T07:50:07.735966656Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.5.12
+      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+      digest: d2b10a7c52f67d7aa41dfa42d610142bf55ea0539208c866e25fb3e9d5a52a98
+      home: https://code.visualstudio.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+      keywords:
+        - VSCode
+        - Python
+      name: vscode-python-darkmode
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-darkmode-1.11.11/vscode-python-darkmode-1.11.11.tgz
+      version: 1.11.11
   vscode-python-s3-config:
-  - apiVersion: v2
-    created: "2025-06-03T08:10:09.782524196Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.1
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: 4310ff29b9f8728574d1839f75387ffc438a2f00436a8dd6aa2ffbcd5d47204d
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: vscode-python-s3-config
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.12/vscode-python-s3-config-2.3.12.tgz
-    version: 2.3.12
-  - apiVersion: v2
-    created: "2025-06-02T15:28:01.699017396Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.1
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: 08e20f3767a2de86d32f1a0c8a8c3923809f389c0deb4aea1d40a13539cccff6
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: vscode-python-s3-config
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.11/vscode-python-s3-config-2.3.11.tgz
-    version: 2.3.11
-  - apiVersion: v2
-    created: "2025-06-02T15:17:55.935907197Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.1
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: a675d2318d174d8aadb061dc4042b4e64ef5bfd0395def57644880b80854d089
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: vscode-python-s3-config
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.10/vscode-python-s3-config-2.3.10.tgz
-    version: 2.3.10
-  - apiVersion: v2
-    created: "2025-06-02T14:52:29.344604765Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.1
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: 66f1281ff0dca068ed673bb6d69517d10478233e9fa49db1208ead2c61785964
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: vscode-python-s3-config
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.9/vscode-python-s3-config-2.3.9.tgz
-    version: 2.3.9
-  - apiVersion: v2
-    created: "2025-05-28T16:17:10.196239712Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.1
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: 85cf3e86de3c772f3dc60e2a9f15aef7bfa5cb37b99026a39d4251abb98255e3
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: vscode-python-s3-config
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.8/vscode-python-s3-config-2.3.8.tgz
-    version: 2.3.8
-  - apiVersion: v2
-    created: "2025-05-15T22:16:37.419966232Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 1.7.1
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: 63626a9c0d8e5bd6e368809acaf473e8e64c2e7f7f07bbdcf23de5fd4161c229
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: vscode-python-s3-config
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.7/vscode-python-s3-config-2.3.7.tgz
-    version: 2.3.7
+    - apiVersion: v2
+      created: "2025-06-03T08:10:09.782524196Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.7.1
+      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+      digest: 4310ff29b9f8728574d1839f75387ffc438a2f00436a8dd6aa2ffbcd5d47204d
+      home: https://code.visualstudio.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+      keywords:
+        - VSCode
+        - Python
+      name: vscode-python-s3-config
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.12/vscode-python-s3-config-2.3.12.tgz
+      version: 2.3.12
+    - apiVersion: v2
+      created: "2025-06-02T15:28:01.699017396Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.7.1
+      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+      digest: 08e20f3767a2de86d32f1a0c8a8c3923809f389c0deb4aea1d40a13539cccff6
+      home: https://code.visualstudio.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+      keywords:
+        - VSCode
+        - Python
+      name: vscode-python-s3-config
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.11/vscode-python-s3-config-2.3.11.tgz
+      version: 2.3.11
+    - apiVersion: v2
+      created: "2025-06-02T15:17:55.935907197Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.7.1
+      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+      digest: a675d2318d174d8aadb061dc4042b4e64ef5bfd0395def57644880b80854d089
+      home: https://code.visualstudio.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+      keywords:
+        - VSCode
+        - Python
+      name: vscode-python-s3-config
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.10/vscode-python-s3-config-2.3.10.tgz
+      version: 2.3.10
+    - apiVersion: v2
+      created: "2025-06-02T14:52:29.344604765Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.7.1
+      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+      digest: 66f1281ff0dca068ed673bb6d69517d10478233e9fa49db1208ead2c61785964
+      home: https://code.visualstudio.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+      keywords:
+        - VSCode
+        - Python
+      name: vscode-python-s3-config
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.9/vscode-python-s3-config-2.3.9.tgz
+      version: 2.3.9
+    - apiVersion: v2
+      created: "2025-05-28T16:17:10.196239712Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.7.1
+      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+      digest: 85cf3e86de3c772f3dc60e2a9f15aef7bfa5cb37b99026a39d4251abb98255e3
+      home: https://code.visualstudio.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+      keywords:
+        - VSCode
+        - Python
+      name: vscode-python-s3-config
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.8/vscode-python-s3-config-2.3.8.tgz
+      version: 2.3.8
+    - apiVersion: v2
+      created: "2025-05-15T22:16:37.419966232Z"
+      dependencies:
+        - name: library-chart
+          repository: https://inseefrlab.github.io/helm-charts-interactive-services
+          version: 1.7.1
+      description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+      digest: 63626a9c0d8e5bd6e368809acaf473e8e64c2e7f7f07bbdcf23de5fd4161c229
+      home: https://code.visualstudio.com/
+      icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+      keywords:
+        - VSCode
+        - Python
+      name: vscode-python-s3-config
+      sources:
+        - https://github.com/InseeFrLab/images-datascience
+        - https://github.com/InseeFrLab/helm-charts-interactive-services
+      type: application
+      urls:
+        - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.7/vscode-python-s3-config-2.3.7.tgz
+      version: 2.3.7
 generated: "2025-07-02T08:13:55.013884696Z"

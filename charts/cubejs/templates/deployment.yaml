@@ -21,6 +21,22 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
+      volumes:
+        - name: model
+          emptyDir: {}
+      initContainers:
+        - name: fetch-model
+          image: inseefrlab/onyxia-base:latest
+          imagePullPolicy: IfNotPresent
+          command:
+            - sh
+            - -c
+            - |
+              echo 'fetch the model';
+              mkdir -p /model && wget -O /model/model.yml {{ .Values.model }};
+          volumeMounts:
+          - name: model
+            mountPath: "/model"
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -65,10 +81,6 @@ spec:
             {{- toYaml . | nindent 12 }}
           {{- end }}
           volumeMounts:
-          - name: config-model
-            mountPath: /cube/conf/model
-      volumes:
-        - name: config-model
-          configMap:
-            name: model
+            - name: model
+              mountPath: /cube/conf/model
 

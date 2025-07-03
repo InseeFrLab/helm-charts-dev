@@ -18,11 +18,16 @@ spec:
 {{ toYaml . | indent 8 }}
 {{- end }}
     spec:
-    {{- with .Values.imagePullSecrets }}
+    {{- with .Values.onboarding.hostAliases }}
+      hostAliases:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.onboarding.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
     {{- end }}
       serviceAccountName: {{ include "onyxia.onboarding.serviceAccountName" . }}
+      automountServiceAccountToken: {{ .Values.onboarding.serviceAccount.automount }}
       securityContext:
         {{- toYaml .Values.onboarding.podSecurityContext | nindent 8 }}
       containers:

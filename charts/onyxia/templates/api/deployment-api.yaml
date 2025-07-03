@@ -38,7 +38,7 @@ spec:
           image: "{{ .Values.api.image.repository }}:{{ .Values.api.image.tag }}"
           envFrom:
             - configMapRef:
-                name: {{ template "onyxia.fullname" . }}
+                name: {{ template "onyxia.api.fullname" . }}
           imagePullPolicy: {{ .Values.api.image.pullPolicy }}
           ports:
             - name: http

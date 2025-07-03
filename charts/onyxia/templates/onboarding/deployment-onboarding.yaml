@@ -12,6 +12,8 @@ spec:
       {{- include "onyxia.onboarding.selectorLabels" . | nindent 6 }}
   template:
     metadata:
+    annotations:
+        checksum/config: {{ include "onyxia.onboarding.configmap" . | sha256sum }}
       labels:
         {{- include "onyxia.onboarding.selectorLabels" . | nindent 8 }}
 {{- with .Values.onboarding.podLabels }}
@@ -38,7 +40,7 @@ spec:
           imagePullPolicy: {{ .Values.onboarding.image.pullPolicy }}
           envFrom:
             - configMapRef:
-                name: {{ template "onyxia.fullname" . }}
+                name: {{ template "onyxia.onboarding.fullname" . }}
           ports:
             - name: http
               containerPort: {{ .Values.onboarding.containerPort }}

@@ -40,7 +40,7 @@ spec:
           imagePullPolicy: {{ .Values.onboarding.image.pullPolicy }}
           envFrom:
             - configMapRef:
-                name: {{ template "onyxia.onboarding.fullname" . }}
+                name: {{ template "onyxia.onboarding.name" . }}
           ports:
             - name: http
               containerPort: {{ .Values.onboarding.containerPort }}

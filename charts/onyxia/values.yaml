@@ -314,12 +314,12 @@ api:
     automountServiceAccountToken: true
 
 onboarding:
-  enabled: false
+  enabled: true
   name: onboarding
   replicaCount: 1
   image:
     repository: inseefrlab/onyxia-onboarding
-    tag: latest # To be changed once releases are stable
+    tag: "" # To be changed once releases are stable
     pullPolicy: Always
 
   hostAliases: []
@@ -356,7 +356,16 @@ onboarding:
   tolerations: []
   affinity: {}
 
-  env: {}
+  #env: {}
+  env:
+    authenticationMode: "oidc"
+    oidc:
+      issuerURI: "https://auth.lab.sspcloud.fr/auth/realms/sspcloud"
+      clientID: "onyxia"
+      audience: "onyxia"
+      usernameClaim: "preferred_username"
+      groupsClaim: "groups"
+      rolesClaim: "roles"
 
   serviceAccount:
     # Specifies whether a service account should be created

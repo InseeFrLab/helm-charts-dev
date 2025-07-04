@@ -12,7 +12,7 @@ spec:
       {{- include "onyxia.onboarding.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-    annotations:
+      annotations:
         checksum/config: {{ include "onyxia.onboarding.configmap" . | sha256sum }}
       labels:
         {{- include "onyxia.onboarding.selectorLabels" . | nindent 8 }}

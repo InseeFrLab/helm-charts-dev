@@ -356,16 +356,7 @@ onboarding:
   tolerations: []
   affinity: {}
 
-  #env: {}
-  env:
-    authenticationMode: "oidc"
-    oidc:
-      issuerURI: "https://auth.lab.sspcloud.fr/auth/realms/sspcloud"
-      clientID: "onyxia"
-      audience: "onyxia"
-      usernameClaim: "preferred_username"
-      groupsClaim: "groups"
-      rolesClaim: "roles"
+  env: {}
 
   serviceAccount:
     # Specifies whether a service account should be created

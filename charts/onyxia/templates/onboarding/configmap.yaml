@@ -9,10 +9,8 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 data:
+  env.yaml: |
 {{- if .Values.onboarding.env }}
-{{- range $key, $value := .Values.onboarding.env }}
-  {{ $key }}: {{ $value | quote }}
-{{- end -}}
-{{- end -}}
+{{ .Values.onboarding.env | toYaml | indent 4 }}
 {{- end }}
-{{- include "onyxia.onboarding.configmap" . }}
+{{- end }}

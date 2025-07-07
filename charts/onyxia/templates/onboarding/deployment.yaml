@@ -77,9 +77,14 @@ spec:
         {{- end }}
           resources:
             {{- toYaml .Values.onboarding.resources | nindent 12 }}
-          {{- if .Values.onboarding.extraVolumeMounts }}
-          volumeMounts: {{- toYaml .Values.onboarding.extraVolumeMounts | nindent 12 }}
-          {{- end }}
+          volumeMounts:
+            - name: config-volume
+              mountPath: /env.yaml
+              subPath: env.yaml
+              readOnly: true
+            {{- if .Values.onboarding.extraVolumeMounts }}
+            {{ toYaml .Values.onboarding.extraVolumeMounts | nindent 12 }}
+            {{- end }}
       {{- with .Values.onboarding.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -92,9 +97,16 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
     {{- end }}
-    {{- if .Values.onboarding.extraVolumes }}
-      volumes: {{- toYaml .Values.onboarding.extraVolumes | nindent 6 }}
-    {{- end }}
+    volumes:
+      - name: config-volume
+        configMap:
+          name: {{ template "onyxia.onboarding.name" . }}
+          items:
+            - key: env.yaml
+              path: env.yaml
+      {{- if .Values.onboarding.extraVolumes }}
+        {{ toYaml .Values.onboarding.extraVolumes | nindent 8 }}
+        {{- end }}
     {{- if .Values.onboarding.priorityClassName }}
       priorityClassName: "{{ .Values.onboarding.priorityClassName }}"
     {{- end }}

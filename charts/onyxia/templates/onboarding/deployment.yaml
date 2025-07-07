@@ -96,18 +96,18 @@ spec:
     {{- with .Values.onboarding.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
-    {{- end }}
-    volumes:
-      - name: config-volume
-        configMap:
-          name: {{ template "onyxia.onboarding.name" . }}
-          items:
-            - key: env.yaml
-              path: env.yaml
-      {{- if .Values.onboarding.extraVolumes }}
+      {{- end }}
+      volumes:
+        - name: config-volume
+          configMap:
+            name: {{ template "onyxia.onboarding.name" . }}
+            items:
+              - key: env.yaml
+                path: env.yaml
+        {{- if .Values.onboarding.extraVolumes }}
         {{ toYaml .Values.onboarding.extraVolumes | nindent 8 }}
         {{- end }}
-    {{- if .Values.onboarding.priorityClassName }}
+      {{- if .Values.onboarding.priorityClassName }}
       priorityClassName: "{{ .Values.onboarding.priorityClassName }}"
-    {{- end }}
+      {{- end }}
 {{- end }}

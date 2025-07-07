@@ -14,3 +14,4 @@ data:
 {{ .Values.onboarding.env | toYaml | indent 4 }}
 {{- end }}
 {{- end }}
+{{- include "onyxia.onboarding.configmap" . }}

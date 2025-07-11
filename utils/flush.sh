@@ -8,6 +8,30 @@ fi
 
 CHART_NAME="$1"
 
+# Check if in a Git repository
+if ! git rev-parse --is-inside-work-tree &>/dev/null; then
+  echo "Must be inside a Git repository."
+  exit 1
+fi
+
+# Check if on branch main
+current_branch=$(git symbolic-ref --short HEAD)
+if [[ "$current_branch" != "main" ]]; then
+  echo "Must be on branch 'main' (current: $current_branch)."
+  echo "    git checkout main"
+  exit 1
+fi
+
+# Fetch latest info from remote
+git fetch
+
+# Check if local is behind remote
+if [[ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]]; then
+  echo "Must be up to date with origin/main."
+  echo "    git pull"
+  exit 1
+fi
+
 # Deleting the chart from current branch
 CHART_FILE=$(grep -Er "^ *name *: *$CHART_NAME *$" charts/ --include=Chart.yaml)
 if [[ -n "$CHART_FILE" ]]; then

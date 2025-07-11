@@ -22,13 +22,20 @@ if [[ "$current_branch" != "main" ]]; then
   exit 1
 fi
 
+# Check for local changes
+if ! git diff --quiet || ! git diff --cached --quiet || [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
+  echo "You have local changes (modified, staged, or untracked files)."
+  echo "    git add / git commit"
+  exit 1
+fi
+
 # Fetch latest info from remote
 git fetch
 
 # Check if local is behind remote
 if [[ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]]; then
   echo "Must be up to date with origin/main."
-  echo "    git pull"
+  echo "    git pull / git push"
   exit 1
 fi
 

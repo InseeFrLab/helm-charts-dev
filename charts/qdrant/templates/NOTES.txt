@@ -1,3 +1,5 @@
+If you see this message, Nexus is working as intended!
+
 {{- if .Values.qdrant.apiKey }}
 Your token: **{{ .Values.qdrant.apiKey }}**  
 {{ end }}

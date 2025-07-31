@@ -53,6 +53,9 @@ data:
   {{- if hasKey $services "groupNamespacePrefix" }}
     {{- $_ := set $onboardingRegionEnv "groupNamespacePrefix" $services.groupNamespacePrefix }}
   {{- end }}
+  {{- if hasKey $services "namespaceLabels" }}
+    {{- $_ := set $onboardingRegionEnv "namespaceLabels" $services.namespaceLabels }}
+  {{- end }}
   {{- $annotationsEnv := dict }}
     {{- if hasKey $services "namespaceAnnotations" }}
       {{- $_ := set $annotationsEnv "static" $services.namespaceAnnotations }}

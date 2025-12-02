@@ -20,6 +20,4 @@ spec:
     initdb:
       database: demo
       owner: demo
-      secret:
-        name: demo
-
+      password: demo

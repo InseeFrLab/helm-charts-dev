@@ -878,6 +878,16 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/onyxia-8.25.0/onyxia-8.25.0.tgz
     version: 8.25.0
+  postgres-cnpg:
+  - apiVersion: v2
+    created: "2025-12-02T13:59:10.982197105Z"
+    description: A Helm chart for Kubernetes
+    digest: 8d8b3e602cde3c3214cf9933e7132a8e226e7c88d57749badb8ddd71a2868838
+    name: postgres-cnpg
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/postgres-cnpg-0.1.0/postgres-cnpg-0.1.0.tgz
+    version: 0.1.0
   qdrant:
   - apiVersion: v2
     appVersion: 1.13.2
@@ -1766,4 +1776,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.7/vscode-python-s3-config-2.3.7.tgz
     version: 2.3.7
-generated: "2025-07-31T14:38:01.907416552Z"
+generated: "2025-12-02T13:59:10.982436533Z"

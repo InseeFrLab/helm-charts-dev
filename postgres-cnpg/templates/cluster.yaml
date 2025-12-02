@@ -1,0 +1,25 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: {{ include "postgres-cnpg.fullname" . }}
+  annotations:
+  {{- if .Values.global.suspend }}
+    cnpg.io/hibernation: "on"
+  {{- else }}
+    cnpg.io/hibernation: "off"
+  {{- end }}
+spec:
+  instances: 1
+
+  storage:
+    size: 10Gi # PVC size per instance
+
+  imageName: ghcr.io/cloudnative-pg/postgresql:18.1
+
+  bootstrap:
+    initdb:
+      database: demo
+      owner: demo
+      secret:
+        name: demo
+

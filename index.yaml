@@ -880,6 +880,15 @@ entries:
     version: 8.25.0
   postgres-cnpg:
   - apiVersion: v2
+    created: "2025-12-04T12:50:34.933652804Z"
+    description: A Helm chart for Kubernetes
+    digest: 14b3c96304c7d13933e223b1803867818f0f9211ad79a9c95083ed0c2de3df9b
+    name: postgres-cnpg
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/postgres-cnpg-0.1.4/postgres-cnpg-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
     created: "2025-12-02T14:24:18.571597921Z"
     description: A Helm chart for Kubernetes
     digest: 8075ee6b686ddce044385ece3c43f21cc78b9472e18e73732f78a01afdf208a3
@@ -1803,4 +1812,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.7/vscode-python-s3-config-2.3.7.tgz
     version: 2.3.7
-generated: "2025-12-02T14:24:18.571820825Z"
+generated: "2025-12-04T12:50:34.933857675Z"

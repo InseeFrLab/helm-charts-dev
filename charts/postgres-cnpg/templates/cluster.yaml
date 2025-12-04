@@ -20,4 +20,5 @@ spec:
     initdb:
       database: demo
       owner: demo
-      password: demo
+      secret:
+        name: {{ include "postgres-cnpg.fullname" . }}

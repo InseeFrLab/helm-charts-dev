@@ -1,2 +1,20 @@
 global:
   suspend: false
+
+image: ghcr.io/cloudnative-pg/postgresql:18.1
+
+username: demo
+password: demo
+database: demo
+
+ports:
+  - name: pgbouncer
+    port: 5432
+    protocol: TCP
+    targetPort: pgbouncer
+
+storage:
+  size: 10Gi
+
+userPreferences:
+  language: en

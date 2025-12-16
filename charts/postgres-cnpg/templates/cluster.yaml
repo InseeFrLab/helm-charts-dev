@@ -12,13 +12,17 @@ spec:
   instances: 1
 
   storage:
-    size: 10Gi # PVC size per instance
+    size: {{ .Values.storage.size }} 
 
-  imageName: ghcr.io/cloudnative-pg/postgresql:18.1
+  imageName: {{ .Values.image }}
 
   bootstrap:
     initdb:
-      database: demo
-      owner: demo
+      database: {{ .Values.database }}
+      owner: {{ .Values.username }}
       secret:
         name: {{ include "postgres-cnpg.fullname" . }}
+
+  managed:
+    services:
+      disabledDefaultServices: ["ro"]

@@ -25,3 +25,6 @@ security:
 
 userPreferences:
   language: en
+
+discovery:
+  enabled: false

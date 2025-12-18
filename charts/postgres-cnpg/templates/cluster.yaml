@@ -21,8 +21,8 @@ spec:
 
   bootstrap:
     initdb:
-      database: {{ .Values.database }}
-      owner: {{ .Values.username }}
+      database: {{ .Values.auth.database }}
+      owner: {{ .Values.auth.username }}
       secret:
         name: {{ include "postgres-cnpg.fullname" . }}
 

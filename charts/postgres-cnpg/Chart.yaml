@@ -14,7 +14,3 @@ version: 0.1.8
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
 #appVersion: "1.16.0"
-dependencies:
-- name: library-chart
-  version: 2.0.3
-  repository: https://inseefrlab.github.io/helm-charts-interactive-services

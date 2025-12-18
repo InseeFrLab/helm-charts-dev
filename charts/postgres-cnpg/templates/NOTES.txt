@@ -1,14 +1,10 @@
 {{- if eq .Values.userPreferences.language "fr" }}
 - Vous pouvez vous connecter à ce service (depuis l'intérieur du cluster) avec les informations de connexion suivantes :
-    - Hostname : {{ include "postgres-cnpg.fullname" . }}-{{ include "postgres-cnpg.fullname" . }}**
+    - Hostname : {{ include "postgres-cnpg.fullname" . }}-r** (read only) or {{ include "postgres-cnpg.fullname" . }}-rw (read write)
     - Port : **{{ (index .Values.ports 0).port }}**
-    - Database : **{{ .Values.database }}**
-    - Username : **{{ .Values.username }}**
-    - Password : **{{ .Values.password }}**
-
-- Si vous avez besoin d'un accès admin à cette base de données (par exemple pour ajouter des extensions), les informations de connexion sont :
-    - Admin username : {{ .Values.owner | default .Values.database }}
-    - Admin password : **{{ .Values.password }}**
+    - Database : **{{ .Values.auth.database }}**
+    - Username : **{{ .Values.auth.username }}**
+    - Password : **{{ .Values.auth.password }}**
 
 <details>
   <summary>Renseigner les variables d'environment</summary>
@@ -16,10 +12,10 @@
 ⚠️ Ces lignes ne doivent pas faire partie du code de votre projet ni être rendues publiques ⚠️
 
 ```sh
-export PGHOST="{{ include "postgres-cnpg.fullname" . }}.{{ .Release.Namespace }}"
-export PGDATABASE="{{ .Values.database }}"
-export PGUSER="{{ .Values.username }}"
-export PGPASSWORD="{{ .Values.password }}"
+export PGHOST="{{ include "postgres-cnpg.fullname" . }}-rw"
+export PGDATABASE="{{ .Values.auth.database }}"
+export PGUSER="{{ .Values.auth.username }}"
+export PGPASSWORD="{{ .Values.auth.password }}"
 export PGPORT="{{ (index .Values.ports 0).port }}"
 ```
 </details>
@@ -56,15 +52,11 @@ dbDisconnect(conn)
 
   {{ end -}}
 - You can connect to this service (within the cluster itself) using the following connection information :
-    - Hostname : **{{ include "postgres-cnpg.fullname" . }}-{{ include "postgres-cnpg.fullname" . }}**
+    - Hostname : **{{ include "postgres-cnpg.fullname" . }}-r** (read only) or {{ include "postgres-cnpg.fullname" . }}-rw (read write)
     - Port : **{{ (index .Values.ports 0).port }}**
-    - Database : **{{ .Values.database }}**
-    - Username : **{{ .Values.username }}**
-    - Password : **{{ .Values.password }}**
-
-- If you need admin access to this database (e.g. to add extensions), the connection information are :
-    - Admin username : **{{ .Values.owner | default .Values.database }}**
-    - Admin password : **{{ .Values.password }}**
+    - Database : **{{ .Values.auth.database }}**
+    - Username : **{{ .Values.auth.username }}**
+    - Password : **{{ .Values.auth.password }}**
 
 <details>
   <summary>Setup environment variables</summary>
@@ -72,10 +64,10 @@ dbDisconnect(conn)
 ⚠️ These lines must not be included in your project's codebase, or otherwise published ⚠️
 
 ```sh
-export PGHOST="{{ include "postgres-cnpg.fullname" . }}.{{ .Release.Namespace }}"
-export PGDATABASE="{{ .Values.database }}"
-export PGUSER="{{ .Values.username }}"
-export PGPASSWORD="{{ .Values.password }}"
+export PGHOST="{{ include "postgres-cnpg.fullname" . }}-rw"
+export PGDATABASE="{{ .Values.auth.database }}"
+export PGUSER="{{ .Values.auth.username }}"
+export PGPASSWORD="{{ .Values.auth.password }}"
 export PGPORT="{{ (index .Values.ports 0).port }}"
 ```
 </details>

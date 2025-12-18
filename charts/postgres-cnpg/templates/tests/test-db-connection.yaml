@@ -1,0 +1,26 @@
+{{- if (ne .Values.auth.username "postgres") (ne .Values.auth.username "") }}
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ include "postgres-cnpg.fullname" . }}
+  annotations:
+    "helm.sh/hook": test
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  containers:
+  - name: {{ include "library-chart.fullname" . }}-test-connection
+    image: "postgres:16"
+    env:
+    - name: HOST
+      value: {{ include "postgres-cnpg.fullname" . }}-rw
+    - name: DATABASE_NAME
+      value: {{ .Values.auth.database | quote }}
+    - name: PORT
+      value: {{ (index .Values.ports 0).port | quote }}
+    - name: USER
+      value: {{ .Values.auth.username | quote }}
+    - name: PGPASSWORD
+      value: {{ .Values.auth.password | quote }}
+    command: ["sh", "-c", "psql -U $USER -h $HOST -p $PORT -d $DATABASE_NAME -l"]
+  restartPolicy: Never
+{{- end }}

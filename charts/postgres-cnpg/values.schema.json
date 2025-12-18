@@ -1,0 +1,141 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "imageCatalog": {
+            "title": "Image Catalog",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "title": "Image Catalog name",
+                    "type": "string",
+                    "listEnum": [
+                        "postgresql-standard-trixie",
+                        "postgis-standard-trixie"
+                    ],
+                    "default": "postgresql-standard-trixie"
+                },
+                "tag": {
+                    "title": "Version",
+                    "type": "string",
+                    "listEnum": [
+                        "18",
+                        "17",
+                        "16",
+                        "15",
+                        "14",
+                        "13"
+                    ],
+                    "default": "18"
+                }
+            }
+        },
+        "storage": {
+            "title": "Storage",
+            "type": "object",
+            "properties": {
+                "size": {
+                    "title": "Persistent volume size",
+                    "type": "string",
+                    "default": "10Gi",
+                    "form": true,
+                    "render": "slider",
+                    "sliderMin": 1,
+                    "sliderMax": 100,
+                    "sliderStep": 1,
+                    "sliderUnit": "Gi",
+                    "hidden": {
+                        "value": false,
+                        "path": "postgresql/primary/persistence/enabled"
+                    }
+                }
+            }
+        },
+        "auth": {
+            "title": "Database authentication",
+            "type": "object",
+            "properties": {
+                "username": {
+                    "title": "User name",
+                    "type": "string",
+                    "default": "admin",
+                    "x-form": {
+                        "value": "{{project.id}}"
+                    },
+                    "x-onyxia": {
+                        "overwriteDefaultWith": "{{project.id}}"
+                    }
+                },
+                "password": {
+                    "title": "User password",
+                    "type": "string",
+                    "default": "changeme",
+                    "render": "password",
+                    "x-form": {
+                        "value": "{{project.password}}"
+                    },
+                    "x-onyxia": {
+                        "overwriteDefaultWith": "{{project.password}}"
+                    }
+                },
+                "database": {
+                    "title": "Name for the default database",
+                    "description": "(will be created)",
+                    "type": "string",
+                    "default": "defaultdb"
+                }
+            }
+        },
+        "security": {
+            "title": "Security",
+            "type": "object",
+            "properties": {
+                "networkPolicy": {
+                    "title": "Access to the service",
+                    "type": "object",
+                    "x-onyxia": {
+                        "overwriteSchemaWith": "network-policy.json"
+                    },
+                    "properties": {
+                        "enabled": {
+                            "title": "Enable network policy",
+                            "description": "Only pod from the same namespace will be allowed",
+                            "type": "boolean",
+                            "default": false,
+                            "x-onyxia": {
+                                "overwriteDefaultWith": "region.defaultNetworkPolicy"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "discovery": {
+            "title": "Database discovery",
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "title": "Enabled discovery",
+                    "description": "Allows clients to automatically preconfigure a connection to this database",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
+        "userPreferences": {
+            "title": "User Preferences",
+            "type": "object",
+            "properties": {
+                "language": {
+                    "title": "Preferred language",
+                    "type": "string",
+                    "default": "en",
+                    "x-onyxia": {
+                        "hidden": true,
+                        "overwriteDefaultWith": "user.lang"
+                    }
+                }
+            }
+        }
+    }
+}

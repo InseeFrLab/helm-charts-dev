@@ -1,11 +1,14 @@
 global:
   suspend: false
 
-image: ghcr.io/cloudnative-pg/postgresql:18.1
+imageCatalog:
+  name: postgresql-standard-trixie
+  major: 18
 
-username: demo
-password: demo
-database: demo
+auth:
+  username: changeme
+  password: changeme
+  database: defaultdb
 
 ports:
   - name: pgbouncer
@@ -15,6 +18,10 @@ ports:
 
 storage:
   size: 10Gi
+
+security:
+  networkPolicy:
+    enabled: false
 
 userPreferences:
   language: en

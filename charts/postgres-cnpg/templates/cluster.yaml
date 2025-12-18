@@ -10,11 +10,14 @@ metadata:
   {{- end }}
 spec:
   instances: 1
+  imageCatalogRef:
+    apiGroup: postgresql.cnpg.io
+    kind: ClusterImageCatalog
+    name: {{ .Values.imageCatalog.name }}
+    major: {{ .Values.imageCatalog.major }}
 
   storage:
     size: {{ .Values.storage.size }} 
-
-  imageName: {{ .Values.image }}
 
   bootstrap:
     initdb:

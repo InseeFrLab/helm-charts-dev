@@ -1,4 +1,4 @@
-{{- if (ne .Values.auth.username "postgres") (ne .Values.auth.username "") }}
+{{- if (ne .Values.auth.username "") }}
 apiVersion: v1
 kind: Pod
 metadata:

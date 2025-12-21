@@ -46,13 +46,13 @@ data:
     region = {{ $defaultProfile.region }}
     {{- end }}
     {{- if $defaultProfile.endpoint_url }}
-    endpoint_url = {{ $defaultProfile.endpoint_url }}
+    endpoint_url = {{ printf "https://%s" $defaultProfile.endpoint_url }}
     {{- end }}
     {{- if $defaultProfile.pathStyleAccess }}
-        s3 = 
+    s3 = 
       addressing_style = path
     {{- else }}
-        s3 = 
+    s3 = 
       addressing_style = virtual
     {{- end }}    
     {{- range $name, $profile := .Values.s3.profiles }}
@@ -61,13 +61,13 @@ data:
     region = {{ $profile.region }}
     {{- end }}
     {{- if $profile.endpoint_url }}
-    endpoint_url = {{ $profile.endpoint_url }}
+    endpoint_url = {{ printf "https://%s" $defaultProfile.endpoint_url }}
     {{- end }}
     {{- if $defaultProfile.pathStyleAccess }}
-        s3 = 
+     s3 = 
       addressing_style = path
     {{- else }}
-        s3 = 
+    s3 = 
       addressing_style = virtual
     {{- end }}
     {{- end }}

@@ -30,6 +30,17 @@
                 }
             }
         },
+        "extension": {
+            "title": "Extension",
+            "type": "object",
+            "properties": {
+                "pgvector": {
+                    "type": "boolean",
+                    "description": "Install pg_vector",
+                    "default": false
+                }
+            }
+        },
         "storage": {
             "title": "Storage",
             "type": "object",
@@ -47,6 +58,80 @@
                     "hidden": {
                         "value": false,
                         "path": "postgresql/primary/persistence/enabled"
+                    }
+                }
+            }
+        },
+        "resources": {
+            "title": "Resources (CPU/RAM)",
+            "type": "object",
+            "properties": {
+                "requests": {
+                    "description": "Guaranteed resources",
+                    "type": "object",
+                    "properties": {
+                        "cpu": {
+                            "description": "Guaranteed CPU allocation",
+                            "title": "CPU",
+                            "type": "string",
+                            "default": "250m",
+                            "render": "slider",
+                            "sliderMin": 50,
+                            "sliderMax": 40000,
+                            "sliderStep": 50,
+                            "sliderUnit": "m",
+                            "sliderExtremity": "down",
+                            "sliderExtremitySemantic": "guaranteed",
+                            "sliderRangeId": "cpu"
+                        },
+                        "memory": {
+                            "description": "Guaranteed memory allocation",
+                            "title": "memory",
+                            "type": "string",
+                            "default": "1Gi",
+                            "render": "slider",
+                            "sliderMin": 1,
+                            "sliderMax": 200,
+                            "sliderStep": 1,
+                            "sliderUnit": "Gi",
+                            "sliderExtremity": "down",
+                            "sliderExtremitySemantic": "guaranteed",
+                            "sliderRangeId": "memory"
+                        }
+                    }
+                },
+                "limits": {
+                    "description": "max resources",
+                    "type": "object",
+                    "properties": {
+                        "cpu": {
+                            "description": "Maximum CPU allocation",
+                            "title": "CPU",
+                            "type": "string",
+                            "default": "30000m",
+                            "render": "slider",
+                            "sliderMin": 50,
+                            "sliderMax": 40000,
+                            "sliderStep": 50,
+                            "sliderUnit": "m",
+                            "sliderExtremity": "up",
+                            "sliderExtremitySemantic": "Maximum",
+                            "sliderRangeId": "cpu"
+                        },
+                        "memory": {
+                            "description": "Maximum memory allocation",
+                            "title": "Memory",
+                            "type": "string",
+                            "default": "50Gi",
+                            "render": "slider",
+                            "sliderMin": 1,
+                            "sliderMax": 200,
+                            "sliderStep": 1,
+                            "sliderUnit": "Gi",
+                            "sliderExtremity": "up",
+                            "sliderExtremitySemantic": "Maximum",
+                            "sliderRangeId": "memory"
+                        }
                     }
                 }
             }

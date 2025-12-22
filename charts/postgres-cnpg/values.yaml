@@ -5,6 +5,9 @@ imageCatalog:
   name: postgresql-standard-trixie
   major: 18
 
+extension:
+  pgvector: false
+
 auth:
   username: changeme
   password: changeme
@@ -18,6 +21,12 @@ ports:
 
 storage:
   size: 10Gi
+
+resources:
+  limits: {}
+  requests:
+    memory: 256Mi
+    cpu: 250m
 
 security:
   networkPolicy:

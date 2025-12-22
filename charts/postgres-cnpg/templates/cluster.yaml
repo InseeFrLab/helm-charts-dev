@@ -15,9 +15,16 @@ spec:
     kind: ClusterImageCatalog
     name: {{ .Values.imageCatalog.name }}
     major: {{ .Values.imageCatalog.major }}
+  {{ if .Values.extension.pgvector }}
+  extensions:
+    - name: vector
+  {{- end }}
 
   storage:
     size: {{ .Values.storage.size }} 
+  
+  resources:
+    {{- toYaml .Values.resources | nindent 4 }}
 
   bootstrap:
     initdb:

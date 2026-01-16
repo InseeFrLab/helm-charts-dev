@@ -880,6 +880,20 @@ entries:
     version: 8.25.0
   postgres-cnpg:
   - apiVersion: v2
+    created: "2026-01-16T12:27:03.253008415Z"
+    description: An object-relational database management system, a database server.
+    digest: bce0d14a1ec1c15997b1176080a3f2b50010dab979a004efbf8ec73148d8056e
+    home: https://www.postgresql.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/post.png
+    keywords:
+    - SQL
+    - Database
+    name: postgres-cnpg
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/postgres-cnpg-0.2.1/postgres-cnpg-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     created: "2025-12-18T18:34:22.467742269Z"
     description: An object-relational database management system, a database server.
     digest: aa4fa010eb0ffc80d396424dbdb033534c92f0ea6f48679647a3786dd457e7f6
@@ -1958,4 +1972,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.7/vscode-python-s3-config-2.3.7.tgz
     version: 2.3.7
-generated: "2025-12-22T09:34:29.712006249Z"
+generated: "2026-01-16T12:27:03.253288571Z"

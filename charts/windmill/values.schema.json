@@ -37,7 +37,29 @@
             }
           }
         },
-        "ingress": {},
+        "ingress": {
+          "title": "Ingress Details",
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "description": "Enable Ingress",
+              "type": "boolean",
+              "default": true,
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "k8s.ingress"
+              }
+            },
+            "className": {
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "{{k8s.ingressClassName}}"
+              }
+            },
+          }
+        },
         "postgresql": {
           "type": "object",
           "properties": {

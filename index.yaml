@@ -1986,4 +1986,24 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-s3-config-2.3.7/vscode-python-s3-config-2.3.7.tgz
     version: 2.3.7
-generated: "2026-02-01T20:59:29.98973676Z"
+  windmill:
+  - apiVersion: v2
+    created: "2026-02-18T23:02:00.860347726Z"
+    dependencies:
+    - name: windmill
+      repository: https://windmill-labs.github.io/windmill-helm-charts/
+      version: 4.0.82
+    description: windmill
+    digest: d780c9c44fe1b85754a1c741d1cf974e2d927e97f5c11719d1348958f1df6d30
+    home: https:/https://www.windmill.dev/
+    keywords:
+    - windmill
+    name: windmill
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-miscellaneous
+    - https://github.com/windmill-labs/windmill-helm-charts
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/windmill-0.1.0/windmill-0.1.0.tgz
+    version: 0.1.0
+generated: "2026-02-18T23:02:00.860580602Z"

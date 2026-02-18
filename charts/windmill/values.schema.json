@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "windmill": {
+      "type": "object",
+      "properties": {
+        "windmill": {
+          "type": "object",
+          "properties": {
+            "baseDomain": {
+              "type": "string",
+              "default": "test.example.com",
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}"
+              }
+            },
+            "databaseUrl": {
+              "type": "string",
+              "description": "PostgreSQL connection URL",
+              "default": "postgres://postgres:windmill@windmill-postgresql/windmill?sslmode=disable",
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "postgres://{{project.id}}:{{project.password}}@postgres-windmill/windmill?sslmode=disable"
+              }
+            },
+            "imagePullPolicy": {
+              "type": "string",
+              "description": "Image pull policy for Windmill containers",
+              "enum": [
+                "Always",
+                "IfNotPresent",
+                "Never"
+              ],
+              "default": "IfNotPresent"
+            }
+          }
+        },
+        "ingress": {},
+        "postgresql": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "default": true
+            },
+            "auth": {
+              "type": "object",
+              "properties": {
+                "postgresUser": {
+                  "type": "string",
+                  "default": "postgres",
+                  "x-onyxia": {
+                    "hidden": true,
+                    "overwriteDefaultWith": "{{project.id}}"
+                  }
+                },
+                "postgresPassword": {
+                  "type": "string",
+                  "default": "windmill",
+                  "x-onyxia": {
+                    "hidden": true,
+                    "overwriteDefaultWith": "{{project.password}}"
+                  }
+                },
+                "database": {
+                  "type": "string",
+                  "default": "windmill"
+                }
+              }
+            }
+          },
+          "persistance": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "default": "false"
+              },
+              "size": {
+                "type": "string",
+                "default": "50Gi"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

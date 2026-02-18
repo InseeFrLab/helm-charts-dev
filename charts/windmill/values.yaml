@@ -1,0 +1,40 @@
+windmill: 
+  windmill:
+    baseDomain: test.example.com
+    workerGroups: 
+      - name: "default"
+        # -- Controller to use. Valid options are "Deployment" and "StatefulSet"
+        controller: "Deployment"
+        replicas: 1
+        privileged: false
+    privileges: false
+    databaseUrl: postgres://postgres:windmill@windmill-postgresql/windmill?sslmode=disable
+    imagePullPolicy: Always
+
+  ingress:
+    enabled: false
+    className: ""
+    annotations: {}
+    # -- TLS config for the ingress resource. Useful when using cert-manager and nginx-ingress
+    tls: []
+
+  postgresql:
+    # -- enabled included Postgres container for demo purposes only using cloudnative-pg
+    enabled: true
+    resources:
+      limits:
+        memory: "2Gi"
+    auth:
+      postgresUser: postgres
+      postgresPassword: windmill
+      database: windmill
+    # -- persistence configuration for PostgreSQL data
+    persistence:
+      # -- enable persistence using PVC
+      enabled: false
+      # -- storage class for the PVC (leave empty for default)
+      storageClass: ""
+      # -- access mode for the PVC
+      accessMode: ReadWriteOnce
+      # -- size of the PVC
+      size: 50Gi

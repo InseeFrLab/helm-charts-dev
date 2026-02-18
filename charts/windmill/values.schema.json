@@ -57,7 +57,7 @@
                 "hidden": true,
                 "overwriteDefaultWith": "{{k8s.ingressClassName}}"
               }
-            },
+            }
           }
         },
         "postgresql": {

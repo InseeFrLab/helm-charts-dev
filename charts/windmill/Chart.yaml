@@ -1,7 +1,7 @@
 apiVersion: v2
 name: windmill
 description: windmill
-# icon: 
+# icon: todo
 keywords:
   - windmill
 home: https:/https://www.windmill.dev/

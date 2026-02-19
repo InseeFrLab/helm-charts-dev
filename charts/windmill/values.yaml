@@ -1,6 +1,6 @@
 windmill: 
   windmill:
-    baseDomain: test.example.com
+    baseDomain: user-inesh-916857-0.user.lab.sspcloud.fr
     workerGroups: 
       - name: "default"
         # -- Controller to use. Valid options are "Deployment" and "StatefulSet"
@@ -8,16 +8,14 @@ windmill:
         replicas: 1
         privileged: false
     privileges: false
-    databaseUrl: postgres://postgres:windmill@windmill-postgresql/windmill?sslmode=disable
+    databaseUrl: postgres://user-inesh:tyignnhexh0j7pigs4y9@windmill-postgresql/windmill?sslmode=disable
     imagePullPolicy: Always
-
   ingress:
-    enabled: false
-    className: ""
+    enabled: true
+    className: "onyxia"
     annotations: {}
     # -- TLS config for the ingress resource. Useful when using cert-manager and nginx-ingress
     tls: []
-
   postgresql:
     # -- enabled included Postgres container for demo purposes only using cloudnative-pg
     enabled: true
@@ -25,8 +23,8 @@ windmill:
       limits:
         memory: "2Gi"
     auth:
-      postgresUser: postgres
-      postgresPassword: windmill
+      postgresUser: user-inesh
+      postgresPassword: tyignnhexh0j7pigs4y9
       database: windmill
     # -- persistence configuration for PostgreSQL data
     persistence:

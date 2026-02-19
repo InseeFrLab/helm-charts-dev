@@ -7,6 +7,7 @@
       "properties": {
         "windmill": {
           "type": "object",
+          "additionalProperties": true,
           "properties": {
             "baseDomain": {
               "type": "string",
@@ -40,6 +41,7 @@
         "ingress": {
           "title": "Ingress Details",
           "type": "object",
+          "additionalProperties": true,
           "properties": {
             "enabled": {
               "description": "Enable Ingress",
@@ -62,6 +64,7 @@
         },
         "postgresql": {
           "type": "object",
+          "additionalProperties": true,
           "properties": {
             "enabled": {
               "type": "boolean",

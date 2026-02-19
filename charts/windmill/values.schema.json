@@ -23,7 +23,7 @@
               "default": "postgres://postgres:windmill@windmill-postgresql/windmill?sslmode=disable",
               "x-onyxia": {
                 "hidden": true,
-                "overwriteDefaultWith": "postgres://{{project.id}}:{{project.password}}@postgres-windmill/windmill?sslmode=disable"
+                "overwriteDefaultWith": "postgres://{{project.id}}:{{project.password}}@windmill-postgresql/windmill?sslmode=disable"
               }
             },
             "imagePullPolicy": {
@@ -98,6 +98,7 @@
           },
           "persistance": {
             "type": "object",
+            "additionalProperties": true,
             "properties": {
               "enabled": {
                 "type": "boolean",

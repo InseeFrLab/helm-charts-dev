@@ -1988,6 +1988,25 @@ entries:
     version: 2.3.7
   windmill:
   - apiVersion: v2
+    created: "2026-02-19T12:01:51.676967018Z"
+    dependencies:
+    - name: windmill
+      repository: https://windmill-labs.github.io/windmill-helm-charts/
+      version: 4.0.82
+    description: windmill
+    digest: c56e3713b4331735a09a27e1873288bcb811557c18947a2565a44ebab250a89d
+    home: https:/https://www.windmill.dev/
+    keywords:
+    - windmill
+    name: windmill
+    sources:
+    - https://github.com/InseeFrLab/helm-charts-miscellaneous
+    - https://github.com/windmill-labs/windmill-helm-charts
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/windmill-0.1.2/windmill-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     created: "2026-02-18T23:21:20.02108097Z"
     dependencies:
     - name: windmill
@@ -2025,4 +2044,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/windmill-0.1.0/windmill-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-18T23:21:20.021320391Z"
+generated: "2026-02-19T12:01:51.677148393Z"

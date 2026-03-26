@@ -23,11 +23,7 @@
                 "name": {
                     "title": "Image Catalog name",
                     "type": "string",
-                    "listEnum": [
-                        "postgresql-standard-trixie",
-                        "postgis-standard-trixie"
-                    ],
-                    "default": "postgresql-standard-trixie"
+                    "default": "postgresql-minimal-trixie"
                 },
                 "tag": {
                     "title": "Version",
@@ -49,49 +45,20 @@
             "type": "object",
             "properties": {
                 "pgvector": {
-                    "title": "Pgvector Extension",
-                    "type": "object",
-                    "properties": {
-                        "enabled": {
-                            "type": "boolean",
-                            "description": "Install pg_vector",
-                            "default": false
-                        },
-                        "version": {
-                            "type": "string",
-                            "default": "0.8.2"
-                        }
-                    }
+                    "type": "boolean",
+                    "description": "Install pg_vector",
+                    "default": false
                 },
                 "postgis": {
-                    "title": "Postgis Extension",
-                    "type": "object",
-                    "properties": {
-                        "enabled": {
-                            "type": "boolean",
-                            "description": "Install postgis",
-                            "default": false
-                        },
-                        "version": {
-                            "type": "string",
-                            "default": "3.6.2"
-                        }
+                    "type": "boolean",
+                    "description": "Install postgis",
+                    "default": false
                     }
                 },
                 "pgaudit": {
-                    "title": "Pgaudit Extension",
-                    "type": "object",
-                    "properties": {
-                        "enabled": {
-                            "type": "boolean",
-                            "description": "Install pgaudit",
-                            "default": false
-                        },
-                        "version": {
-                            "type": "string",
-                            "default": "18.0"
-                        }
-                    }
+                    "type": "boolean",
+                    "description": "Install pgaudit",
+                    "default": false
                 }
             }
         },

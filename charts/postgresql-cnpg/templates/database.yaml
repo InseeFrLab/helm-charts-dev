@@ -1,0 +1,21 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: {{ include "postgres-cnpg.fullname" . }}
+spec:
+  name: {{ .Values.auth.database }}
+  owner: {{ .Values.auth.username }}
+  cluster:
+    name: {{ include "postgres-cnpg.fullname" . }}
+  {{ if or .Values.extension.pgvector.enabled .Values.extension.postgis.enabled .Values.extension.pgaudit.enabled }}
+  extensions:
+    {{ if .Values.extension.pgvector.enabled }}
+    - name: pgvector
+    {{- end }}
+    {{ if .Values.extension.postgis.enabled }}
+    - name: postgis
+    {{- end }}
+    {{ if .Values.extension.pgaudit.enabled }}
+    - name: pgaudit
+    {{- end }}
+  {{- end }}

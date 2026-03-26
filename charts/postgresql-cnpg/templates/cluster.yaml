@@ -1,0 +1,57 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: {{ include "postgres-cnpg.fullname" . }}
+  annotations:
+  {{- if .Values.global.suspend }}
+    cnpg.io/hibernation: "on"
+  {{- else }}
+    cnpg.io/hibernation: "off"
+  {{- end }}
+spec:
+  instances: 1
+  enablePDB: false
+  imageCatalogRef:
+    apiGroup: postgresql.cnpg.io
+    kind: ClusterImageCatalog
+    name: {{ .Values.imageCatalog.name }}
+    major: {{ .Values.imageCatalog.major }}
+  storage:
+    size: {{ .Values.storage.size }}
+  resources:
+    {{- toYaml .Values.resources | nindent 4 }}
+  enableSuperuserAccess: true
+  superuserSecret:
+    name: {{ include "postgres-cnpg.fullname" . }}-superuser
+  managed:
+    roles:
+    - name: {{ .Values.auth.username }}
+      ensure: present
+      login: true
+      superuser: false
+      passwordSecret:
+        name: {{ include "postgres-cnpg.fullname" . }}-user
+    services:
+      disabledDefaultServices: ["ro", "r"]
+  {{ if or .Values.extension.postgis.enabled .Values.extension.pgvector.enabled }}
+  postgresql:
+    extensions:
+    {{ if .Values.extension.postgis.enabled }}
+      - name: postgis
+        image:
+          reference: {{ printf "ghcr.io/cloudnative-pg/postgis-extension:%s-%s-trixie" .Values.extension.postgis.version .Values.imageCatalog.tag }} 
+          pullPolicy:  IfNotPresent
+    {{- end }}
+    {{ if .Values.extension.pgvector.enabled }}
+      - name: pgvector
+        image:
+          reference: {{ printf "ghcr.io/cloudnative-pg/pgvector-extension:%s-%s-trixie" .Values.extension.pgvector.version .Values.imageCatalog.tag }} 
+          pullPolicy:  IfNotPresent
+    {{- end }}
+    {{ if .Values.extension.pgaudit.enabled }}
+      - name: pgaudit
+        image:
+          reference: {{ printf "ghcr.io/cloudnative-pg/pgaudit-extension:%s-%s-trixie" .Values.extension.pgaudit.version .Values.imageCatalog.tag }} 
+          pullPolicy:  IfNotPresent
+    {{- end }}
+  {{- end }}

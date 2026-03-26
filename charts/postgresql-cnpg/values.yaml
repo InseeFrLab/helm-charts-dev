@@ -6,7 +6,15 @@ imageCatalog:
   major: 18
 
 extension:
-  pgvector: false
+  pgvector: 
+    enabled: false
+    version: "0.8.2"
+  postgis: 
+    enabled: false
+    version: "3.6.2"
+  pgaudit: 
+    enabled: false
+    version: "18.0"
 
 auth:
   username: changeme

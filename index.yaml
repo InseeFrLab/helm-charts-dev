@@ -1034,6 +1034,20 @@ entries:
     version: 0.1.0
   postgresql-cnpg:
   - apiVersion: v2
+    created: "2026-03-27T12:20:53.90666351Z"
+    description: An object-relational database management system, a database server.
+    digest: 3f9216b9c23dca75be00b8c2260be6cd0d2ae00c97ebc7f7805509cae7b120e5
+    home: https://www.postgresql.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/post.png
+    keywords:
+    - SQL
+    - Database
+    name: postgresql-cnpg
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/postgresql-cnpg-0.4.5/postgresql-cnpg-0.4.5.tgz
+    version: 0.4.5
+  - apiVersion: v2
     created: "2026-03-26T17:27:49.865874121Z"
     description: An object-relational database management system, a database server.
     digest: 23e27717ddfe112ccd8ceecc13f3bfcf225676c5150661f8b6c0ea0c7ea88313
@@ -2111,4 +2125,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/windmill-0.1.0/windmill-0.1.0.tgz
     version: 0.1.0
-generated: "2026-03-26T17:27:49.866120119Z"
+generated: "2026-03-27T12:20:53.906859509Z"

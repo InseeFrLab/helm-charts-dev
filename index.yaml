@@ -656,6 +656,15 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/launcher-1.0.0/launcher-1.0.0.tgz
     version: 1.0.0
+  library-chart:
+  - apiVersion: v2
+    created: "2026-05-03T17:41:11.22676334Z"
+    digest: 613057b17dd212555493151fffda48413a93ce052d9a9623f1d338e369cc8de3
+    name: library-chart
+    type: library
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/library-chart-2.0.4/library-chart-2.0.4.tgz
+    version: 2.0.4
   llm-serving:
   - apiVersion: v2
     appVersion: 0.0.8
@@ -1830,6 +1839,29 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-darkmode-1.11.11/vscode-python-darkmode-1.11.11.tgz
     version: 1.11.11
+  vscode-python-httproute:
+  - apiVersion: v2
+    created: "2026-05-03T17:41:11.380459965Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.0.4
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 77451ad55070484a4bc384895fffa07565daa21acc279b4c21f20f731365569e
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python-httproute
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-httproute-2.5.5/vscode-python-httproute-2.5.5.tgz
+    version: 2.5.5
   vscode-python-s3-config:
   - apiVersion: v2
     created: "2025-12-22T09:34:29.711811196Z"
@@ -2125,4 +2157,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/windmill-0.1.0/windmill-0.1.0.tgz
     version: 0.1.0
-generated: "2026-03-27T12:20:53.906859509Z"
+generated: "2026-05-03T17:41:11.380937035Z"

@@ -1841,6 +1841,28 @@ entries:
     version: 1.11.11
   vscode-python-httproute:
   - apiVersion: v2
+    created: "2026-05-03T17:44:14.184638703Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-dev
+      version: 2.0.4
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: bc09f330b333a6cd251072f3da0f5a0d228683e704af851a8da8a269a2d906de
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python-httproute
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-httproute-2.5.6/vscode-python-httproute-2.5.6.tgz
+    version: 2.5.6
+  - apiVersion: v2
     created: "2026-05-03T17:41:11.380459965Z"
     dependencies:
     - name: library-chart
@@ -2157,4 +2179,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/windmill-0.1.0/windmill-0.1.0.tgz
     version: 0.1.0
-generated: "2026-05-03T17:41:11.380937035Z"
+generated: "2026-05-03T17:44:14.184873501Z"

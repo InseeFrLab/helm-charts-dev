@@ -912,13 +912,17 @@
       "title": "AI Assistant",
       "type": "object",
       "x-onyxia": {
-        "overwriteSchemaWith": "aiAssistant.json"
+        "overwriteSchemaWith": "ai.json"
       },
       "properties": {
         "enabled": {
           "title": "Enable AI assistant tools",
           "type": "boolean",
-          "default": false
+          "default": false,
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "{{ai.enabled}}"
+          }
         },
         "secretName": {
           "type": "string",

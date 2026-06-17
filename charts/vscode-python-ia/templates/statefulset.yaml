@@ -307,7 +307,7 @@ spec:
               subPath: metaflow
             {{- end }}
             {{- if (.Values.certificates).pathToCaBundle }}
-            - name: config-files^
+            - name: config-files
               mountPath: {{ .Values.certificates.pathToCaBundle }}
               subPath: cacerts
             {{- end }}

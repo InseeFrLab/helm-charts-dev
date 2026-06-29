@@ -373,6 +373,54 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/fuseki-0.3.5/fuseki-0.3.5.tgz
     version: 0.3.5
+  jupyter-pyspark-ia:
+  - apiVersion: v2
+    created: "2026-06-29T08:42:43.141684622Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.0.8
+    description: The JupyterLab IDE with PySpark, an interface to use Apache Spark
+      from Python.
+    digest: b0acf0ce4bb8ae8d2cf779ea4b0973eefd2c7aed15d41579a846cadfe908218b
+    home: https://jupyter.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jupyter.png
+    keywords:
+    - Jupyter
+    - Python
+    - Spark
+    - VTL
+    name: jupyter-pyspark-ia
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/jupyter-pyspark-ia-3.2.0/jupyter-pyspark-ia-3.2.0.tgz
+    version: 3.2.0
+  jupyter-python-ia:
+  - apiVersion: v2
+    created: "2026-06-29T08:42:43.3682416Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.0.8
+    description: The JupyterLab IDE with Python and a collection of standard data
+      science packages.
+    digest: eb376c490dd807d15479031ac1e516b906c85cc051f21622c21474f13cf0500a
+    home: https://jupyter.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jupyter.png
+    keywords:
+    - Jupyter
+    - Python
+    name: jupyter-python-ia
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/jupyter-python-ia-2.5.0/jupyter-python-ia-2.5.0.tgz
+    version: 2.5.0
   langfuse:
   - apiVersion: v2
     appVersion: 3.51.2
@@ -1713,6 +1761,28 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.1/qdrant-0.0.1.tgz
     version: 0.0.1
+  rstudio-ia:
+  - apiVersion: v2
+    created: "2026-06-29T08:42:43.60972805Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.0.8
+    description: The RStudio IDE with a collection of standard data science packages.
+    digest: 4d796c7197623432d1c968ba8ae40de5d9ebb791cecf93140e8879a46686304f
+    home: https://www.rstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
+    keywords:
+    - RStudio
+    - R
+    name: rstudio-ia
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/rstudio-ia-2.5.0/rstudio-ia-2.5.0.tgz
+    version: 2.5.0
   sans-notes:
   - apiVersion: v2
     created: "2025-04-17T09:00:21.898287386Z"
@@ -1816,6 +1886,31 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/ubuntu-5.4.5/ubuntu-5.4.5.tgz
     version: 5.4.5
+  vscode-pyspark-ia:
+  - apiVersion: v2
+    created: "2026-06-29T08:42:43.821555529Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.0.8
+    description: The Visual Studio Code IDE with PySpark, an interface to use Apache
+      Spark from Python.
+    digest: 3aa5c772a32b224401e00c161c002d40b3aa228d96376b56f01cd88b30373afd
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    - Spark
+    - VTL
+    name: vscode-pyspark-ia
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-pyspark-ia-3.2.0/vscode-pyspark-ia-3.2.0.tgz
+    version: 3.2.0
   vscode-python:
   - apiVersion: v2
     created: "2026-06-16T15:45:14.608164594Z"
@@ -1908,6 +2003,28 @@ entries:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-httproute-2.5.5/vscode-python-httproute-2.5.5.tgz
     version: 2.5.5
   vscode-python-ia:
+  - apiVersion: v2
+    created: "2026-06-29T08:42:44.045764324Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.0.8
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: f8f7f788f088aae32663ce47f30e9ce550f8233ddfaa7b2359864cd63c1f62cb
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python-ia
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-ia-2.6.0/vscode-python-ia-2.6.0.tgz
+    version: 2.6.0
   - apiVersion: v2
     created: "2026-06-17T12:41:48.857729629Z"
     dependencies:
@@ -2357,4 +2474,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/windmill-0.1.0/windmill-0.1.0.tgz
     version: 0.1.0
-generated: "2026-06-17T12:41:48.85790039Z"
+generated: "2026-06-29T08:42:44.046038276Z"

@@ -1,10 +1,12 @@
 apiVersion: v2
-name: vscode-python-ia
-description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
+name: vscode-pyspark-ia
+description: The Visual Studio Code IDE with PySpark, an interface to use Apache Spark from Python.
 icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
 keywords:
   - VSCode
   - Python
+  - Spark
+  - VTL
 home: https://code.visualstudio.com/
 sources:
   - https://github.com/InseeFrLab/images-datascience
@@ -22,8 +24,11 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 2.6.0
+version: 3.2.0
 dependencies:
   - name: library-chart
     version: 2.0.8
     repository: https://inseefrlab.github.io/helm-charts-interactive-services
+
+
+

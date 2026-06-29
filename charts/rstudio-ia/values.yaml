@@ -1,4 +1,4 @@
-# Default values for vscode.
+# Default values for rstudio.
 global:
   suspend: false
 
@@ -7,11 +7,11 @@ service:
     image: "inseefrlab/onyxia-base:latest"
     pullPolicy: IfNotPresent
   image:
-    version: "inseefrlab/onyxia-vscode-python:py3.13.13"
+    version: "inseefrlab/onyxia-rstudio:r4.6.0"
     pullPolicy: IfNotPresent
     custom:
       enabled: false
-      version: "inseefrlab/onyxia-vscode-python:py3.13.13"
+      version: "inseefrlab/onyxia-rstudio:r4.6.0"
 
 security:
   password: "changeme"
@@ -25,7 +25,6 @@ security:
 init:
   standardInitPath: "/opt/onyxia-init.sh"
   regionInit: ""
-  regionInitCheckSum: ""
   personalInit: ""
   personalInitArgs: ""
 
@@ -35,6 +34,10 @@ init:
 #   - name: FOO
 #     value: "bar"
 extraEnvVars: []
+
+environment:
+  user: onyxia
+  group: users
 
 s3:
   # Specifies whether S3 credentials should be made available
@@ -62,53 +65,27 @@ vault:
 
 git:
   # Specifies whether git credentials should be made available
-  enabled: true
+  enabled: false
   # The name of the secret storing the git credentials
   secretName: ""  # Generated based on the service's name if empty or not set
   name: ""
   email: ""
   cache: ""
+  token: ""
+  repository: ""
   branch: ""
-  asCodeServerRoot: false
 
 repository:
   configMapName: ""
-  pipRepository: ""
-  condaRepository: ""
+  packageManagerUrl: ""
+  rRepository: ""
 
-# active ou non la recherche de secrets discovery dans le namespace
-# see secret-{service}.yaml
 discovery:
-  hive: true
-  mlflow: true
-  metaflow: true
-  chromadb: true
-  milvus: true
   postgresql: true
-
-hive:
-  secretName: ""
-
-mlflow:
-  secretName: ""
-
-metaflow:
-  secretName: ""
-
-chromadb:
-  secretName: ""
-
-milvus:
-  secretName: ""
-
-coresite:
-  secretName: ""
 
 postgresql:
   secretName: ""
 
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
 replicaCount: 1
 
 imagePullSecrets: []
@@ -124,10 +101,6 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-environment:
-  user: onyxia
-  group: users
-
 kubernetes:
   enabled: true
   role: "view"
@@ -137,8 +110,7 @@ podAnnotations: {}
 podSecurityContext:
   fsGroup: 100
 
-securityContext:
-  {}
+securityContext: {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -150,7 +122,9 @@ networking:
   type: ClusterIP
   clusterIP: None
   service:
-    port: 8080
+    port: 8787
+  sparkui:
+    port: 4040
   # Custom user-specified extra ports exposition.
   # If ingress or route is enabled, the exposed ports are also made available at the
   # {ingress,route}.userHostname URL (or variations, in case several ports are provided).
@@ -163,7 +137,6 @@ networking:
 ingress:
   enabled: false
   tls: true
-  ingressClassName: ""
   annotations: []
     # kubernetes.io/tls-acme: "true"
   hostname: chart-example.local
@@ -177,7 +150,6 @@ ingress:
   certManagerClusterIssuer: ""
   useTlsSecret: false
   tlsSecretName: ""
-
 
 route:
   enabled: false
@@ -193,8 +165,7 @@ route:
     # destinationCACertificate:
   wildcardPolicy: None
 
-resources:
-  {}
+resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -219,7 +190,6 @@ persistence:
   accessMode: ReadWriteOnce
   size: 10Gi
   # existingClaim: ""
-
 autoscaling:
   enabled: false
   minReplicas: 1
@@ -262,10 +232,6 @@ proxy:
   noProxy: ""
   httpProxy: ""
   httpsProxy: ""
-
-certificates: {}
-  # pathToCaBundle: /usr/local/share/ca-certificates/
-  # cacerts: ""
 
 message:
   fr: ""

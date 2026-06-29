@@ -7,11 +7,37 @@ service:
     image: "inseefrlab/onyxia-base:latest"
     pullPolicy: IfNotPresent
   image:
-    version: "inseefrlab/onyxia-vscode-python:py3.13.13"
+    version: "inseefrlab/onyxia-vscode-pyspark:py3.13.13-spark4.1.1"
     pullPolicy: IfNotPresent
     custom:
       enabled: false
-      version: "inseefrlab/onyxia-vscode-python:py3.13.13"
+      version: "inseefrlab/onyxia-vscode-pyspark:py3.13.13-spark4.1.1"
+
+spark:
+  ui: false
+  hostname: chart-example-spark.local
+  path: /
+  secretName: ""
+  default: true
+  disabledCertChecking: false
+  config:
+    spark.master: k8s://https://kubernetes.default.svc:443
+    spark.kubernetes.authenticate.driver.serviceAccountName: '{{ include "library-chart.fullname" . }}'
+    spark.kubernetes.driver.pod.name: '{{ include "library-chart.fullname" . }}-0'
+    spark.kubernetes.namespace: '{{ .Release.Namespace }}'
+    spark.kubernetes.container.image: '{{ ternary .Values.service.image.custom.version .Values.service.image.version .Values.service.image.custom.enabled }}'
+    spark.driver.extraJavaOptions: '{{ include "library-chart.sparkExtraJavaOptions" . }}'
+    spark.executor.extraJavaOptions: '{{ include "library-chart.sparkExtraJavaOptions" . }}'
+  userConfig:
+    spark.dynamicAllocation.enabled: "true"
+    spark.dynamicAllocation.initialExecutors: "1"
+    spark.dynamicAllocation.minExecutors: "1"
+    spark.dynamicAllocation.maxExecutors: "10"
+    spark.executor.memory: "2g"
+    spark.driver.memory: "2g"
+    spark.dynamicAllocation.executorAllocationRatio: "1"
+    spark.dynamicAllocation.shuffleTracking.enabled: "true"
+    spark.hadoop.fs.s3a.bucket.all.committer.magic.enabled: "true"
 
 security:
   password: "changeme"
@@ -25,7 +51,6 @@ security:
 init:
   standardInitPath: "/opt/onyxia-init.sh"
   regionInit: ""
-  regionInitCheckSum: ""
   personalInit: ""
   personalInitArgs: ""
 
@@ -35,6 +60,10 @@ init:
 #   - name: FOO
 #     value: "bar"
 extraEnvVars: []
+
+environment:
+  user: onyxia
+  group: users
 
 s3:
   # Specifies whether S3 credentials should be made available
@@ -62,19 +91,28 @@ vault:
 
 git:
   # Specifies whether git credentials should be made available
-  enabled: true
+  enabled: false
   # The name of the secret storing the git credentials
   secretName: ""  # Generated based on the service's name if empty or not set
   name: ""
   email: ""
   cache: ""
+  token: ""
+  repository: ""
   branch: ""
   asCodeServerRoot: false
+
+proxy:
+  enabled: false
+  noProxy: ""
+  httpProxy: ""
+  httpsProxy: ""
 
 repository:
   configMapName: ""
   pipRepository: ""
   condaRepository: ""
+  mavenRepository: ""
 
 # active ou non la recherche de secrets discovery dans le namespace
 # see secret-{service}.yaml
@@ -101,14 +139,12 @@ chromadb:
 milvus:
   secretName: ""
 
-coresite:
-  secretName: ""
-
 postgresql:
   secretName: ""
 
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
+coresite:
+  secretName: ""
+
 replicaCount: 1
 
 imagePullSecrets: []
@@ -124,12 +160,8 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-environment:
-  user: onyxia
-  group: users
-
 kubernetes:
-  enabled: true
+  enabled: false
   role: "view"
 
 podAnnotations: {}
@@ -137,8 +169,7 @@ podAnnotations: {}
 podSecurityContext:
   fsGroup: 100
 
-securityContext:
-  {}
+securityContext: {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -151,6 +182,8 @@ networking:
   clusterIP: None
   service:
     port: 8080
+  sparkui:
+    port: 4040
   # Custom user-specified extra ports exposition.
   # If ingress or route is enabled, the exposed ports are also made available at the
   # {ingress,route}.userHostname URL (or variations, in case several ports are provided).
@@ -178,7 +211,6 @@ ingress:
   useTlsSecret: false
   tlsSecretName: ""
 
-
 route:
   enabled: false
   annotations: []
@@ -193,8 +225,7 @@ route:
     # destinationCACertificate:
   wildcardPolicy: None
 
-resources:
-  {}
+resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -256,12 +287,6 @@ userPreferences:
 openshiftSCC:
   enabled: false
   scc: ""
-
-proxy:
-  enabled: false
-  noProxy: ""
-  httpProxy: ""
-  httpsProxy: ""
 
 certificates: {}
   # pathToCaBundle: /usr/local/share/ca-certificates/

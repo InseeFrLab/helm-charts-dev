@@ -1,4 +1,4 @@
-# Default values for vscode.
+# Default values for jupyter.
 global:
   suspend: false
 
@@ -7,11 +7,11 @@ service:
     image: "inseefrlab/onyxia-base:latest"
     pullPolicy: IfNotPresent
   image:
-    version: "inseefrlab/onyxia-vscode-python:py3.13.13"
+    version: "inseefrlab/onyxia-jupyter-python:py3.13.13"
     pullPolicy: IfNotPresent
     custom:
       enabled: false
-      version: "inseefrlab/onyxia-vscode-python:py3.13.13"
+      version: "inseefrlab/onyxia-jupyter-python:py3.13.13"
 
 security:
   password: "changeme"
@@ -25,7 +25,6 @@ security:
 init:
   standardInitPath: "/opt/onyxia-init.sh"
   regionInit: ""
-  regionInitCheckSum: ""
   personalInit: ""
   personalInitArgs: ""
 
@@ -35,6 +34,10 @@ init:
 #   - name: FOO
 #     value: "bar"
 extraEnvVars: []
+
+environment:
+  user: onyxia
+  group: users
 
 s3:
   # Specifies whether S3 credentials should be made available
@@ -62,14 +65,15 @@ vault:
 
 git:
   # Specifies whether git credentials should be made available
-  enabled: true
+  enabled: false
   # The name of the secret storing the git credentials
   secretName: ""  # Generated based on the service's name if empty or not set
   name: ""
   email: ""
   cache: ""
+  token: ""
+  repository: ""
   branch: ""
-  asCodeServerRoot: false
 
 repository:
   configMapName: ""
@@ -101,14 +105,12 @@ chromadb:
 milvus:
   secretName: ""
 
-coresite:
-  secretName: ""
-
 postgresql:
   secretName: ""
 
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
+coresite:
+  secretName: ""
+
 replicaCount: 1
 
 imagePullSecrets: []
@@ -124,12 +126,8 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-environment:
-  user: onyxia
-  group: users
-
 kubernetes:
-  enabled: true
+  enabled: false
   role: "view"
 
 podAnnotations: {}
@@ -137,8 +135,7 @@ podAnnotations: {}
 podSecurityContext:
   fsGroup: 100
 
-securityContext:
-  {}
+securityContext: {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -150,7 +147,9 @@ networking:
   type: ClusterIP
   clusterIP: None
   service:
-    port: 8080
+    port: 8888
+  sparkui:
+    port: 4040
   # Custom user-specified extra ports exposition.
   # If ingress or route is enabled, the exposed ports are also made available at the
   # {ingress,route}.userHostname URL (or variations, in case several ports are provided).
@@ -178,7 +177,6 @@ ingress:
   useTlsSecret: false
   tlsSecretName: ""
 
-
 route:
   enabled: false
   annotations: []
@@ -193,8 +191,7 @@ route:
     # destinationCACertificate:
   wildcardPolicy: None
 
-resources:
-  {}
+resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -207,7 +204,7 @@ resources:
   #   memory: 128Mi
 
 persistence:
-  enabled: true
+  enabled: false
   ## database data Persistent Volume Storage Class
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -243,9 +240,9 @@ startupProbe:
 ai:
   enabled: false
   secretName: ""  # Generated based on the service's name if empty or not set
-  provider: ""
   model: ""
-  embeddingsModel: ""
+  modelProvider: ""
+  embeddingsProvider: ""
   apiBase: ""
   apiKey: ""
 

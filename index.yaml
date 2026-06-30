@@ -373,6 +373,31 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/fuseki-0.3.5/fuseki-0.3.5.tgz
     version: 0.3.5
+  jupyter-pyspark:
+  - apiVersion: v2
+    created: "2026-06-30T07:37:47.232481904Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.0.9
+    description: The JupyterLab IDE with PySpark, an interface to use Apache Spark
+      from Python.
+    digest: 987f79f91ba4de54fd3707567efaf48fa369c0dfd7d41b4bbf83488f1521ab2a
+    home: https://jupyter.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jupyter.png
+    keywords:
+    - Jupyter
+    - Python
+    - Spark
+    - VTL
+    name: jupyter-pyspark
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/jupyter-pyspark-3.2.1/jupyter-pyspark-3.2.1.tgz
+    version: 3.2.1
   jupyter-pyspark-ia:
   - apiVersion: v2
     created: "2026-06-29T08:42:43.141684622Z"
@@ -398,6 +423,29 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/jupyter-pyspark-ia-3.2.0/jupyter-pyspark-ia-3.2.0.tgz
     version: 3.2.0
+  jupyter-python:
+  - apiVersion: v2
+    created: "2026-06-30T07:37:47.464408918Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.0.9
+    description: The JupyterLab IDE with Python and a collection of standard data
+      science packages.
+    digest: 26af80dcd1461765881e5f3e43083e4134d4595f6a00e20f0f281c11e883e06a
+    home: https://jupyter.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jupyter.png
+    keywords:
+    - Jupyter
+    - Python
+    name: jupyter-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/jupyter-python-2.5.1/jupyter-python-2.5.1.tgz
+    version: 2.5.1
   jupyter-python-ia:
   - apiVersion: v2
     created: "2026-06-29T08:42:43.3682416Z"
@@ -1761,6 +1809,28 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/qdrant-0.0.1/qdrant-0.0.1.tgz
     version: 0.0.1
+  rstudio:
+  - apiVersion: v2
+    created: "2026-06-30T07:37:47.701029634Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.0.9
+    description: The RStudio IDE with a collection of standard data science packages.
+    digest: 818164407124410bd9626a1350cfd4cd9616dccc13e0ec6400029fd81f8f5b86
+    home: https://www.rstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
+    keywords:
+    - RStudio
+    - R
+    name: rstudio
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/rstudio-2.5.1/rstudio-2.5.1.tgz
+    version: 2.5.1
   rstudio-ia:
   - apiVersion: v2
     created: "2026-06-29T08:42:43.60972805Z"
@@ -1886,6 +1956,31 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/ubuntu-5.4.5/ubuntu-5.4.5.tgz
     version: 5.4.5
+  vscode-pyspark:
+  - apiVersion: v2
+    created: "2026-06-30T07:37:47.920816125Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.0.9
+    description: The Visual Studio Code IDE with PySpark, an interface to use Apache
+      Spark from Python.
+    digest: fcdb143e89591aa80e33956c44a4a37ea1865c3c6ed9c34d52b9d20810ee9d88
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    - Spark
+    - VTL
+    name: vscode-pyspark
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-pyspark-3.2.1/vscode-pyspark-3.2.1.tgz
+    version: 3.2.1
   vscode-pyspark-ia:
   - apiVersion: v2
     created: "2026-06-29T08:42:43.821555529Z"
@@ -1912,6 +2007,28 @@ entries:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-pyspark-ia-3.2.0/vscode-pyspark-ia-3.2.0.tgz
     version: 3.2.0
   vscode-python:
+  - apiVersion: v2
+    created: "2026-06-30T07:37:48.150354185Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.0.9
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 0e332929502a892ed11d78044434c43206c7d85c9e7eee65d405f12122b52f9a
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-2.6.1/vscode-python-2.6.1.tgz
+    version: 2.6.1
   - apiVersion: v2
     created: "2026-06-16T15:45:14.608164594Z"
     dependencies:
@@ -2474,4 +2591,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/windmill-0.1.0/windmill-0.1.0.tgz
     version: 0.1.0
-generated: "2026-06-29T08:42:44.046038276Z"
+generated: "2026-06-30T07:37:48.150545182Z"

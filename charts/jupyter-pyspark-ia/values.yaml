@@ -273,6 +273,8 @@ startupProbe:
 ai:
   enabled: false
   secretName: ""  # Generated based on the service's name if empty or not set
+  id: ""
+  name: ""
   model: ""
   modelProvider: ""
   embeddingsProvider: ""

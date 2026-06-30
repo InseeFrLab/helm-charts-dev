@@ -276,7 +276,6 @@ ai:
   secretName: ""  # Generated based on the service's name if empty or not set
   provider: ""
   model: ""
-  embeddingsModel: ""
   apiBase: ""
   apiKey: ""
 

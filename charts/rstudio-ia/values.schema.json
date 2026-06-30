@@ -14,11 +14,7 @@
               "title": "Pull image from registry",
               "type": "string",
               "default": "IfNotPresent",
-              "enum": [
-                "IfNotPresent",
-                "Always",
-                "Never"
-              ]
+              "enum": ["IfNotPresent", "Always", "Never"]
             },
             "version": {
               "title": "Name of the service's Docker image",
@@ -261,11 +257,7 @@
             "value": false,
             "path": "kubernetes/enabled"
           },
-          "listEnum": [
-            "view",
-            "edit",
-            "admin"
-          ],
+          "listEnum": ["view", "edit", "admin"],
           "render": "list"
         }
       }
@@ -576,20 +568,7 @@
             "isPathRelative": true
           },
           "x-onyxia": {
-            "overwriteDefaultWith": "{{ai.model}}"
-          }
-        },
-        "embeddingsModel": {
-          "title": "Embeddings model",
-          "type": "string",
-          "default": "",
-          "hidden": {
-            "value": false,
-            "path": "enabled",
-            "isPathRelative": true
-          },
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{ai.embeddingsModel}}"
+            "overwriteDefaultWith": "{{ai.selectedModel}}"
           }
         },
         "apiBase": {
@@ -833,7 +812,7 @@
             "hidden": true
           }
         },
-        "tlsSecretName":{
+        "tlsSecretName": {
           "type": "string",
           "default": "",
           "x-onyxia": {
@@ -1054,7 +1033,7 @@
         }
       }
     },
-    "runtimeClassName" : {
+    "runtimeClassName": {
       "type": "string",
       "description": "Runtime Class Name",
       "default": "",

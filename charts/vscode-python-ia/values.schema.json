@@ -614,20 +614,7 @@
             "isPathRelative": true
           },
           "x-onyxia": {
-            "overwriteDefaultWith": "{{ai.model}}"
-          }
-        },
-        "embeddingsModel": {
-          "title": "Embeddings model",
-          "type": "string",
-          "default": "",
-          "hidden": {
-            "value": false,
-            "path": "enabled",
-            "isPathRelative": true
-          },
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{ai.embeddingsModel}}"
+            "overwriteDefaultWith": "{{ai.selectedModel}}"
           }
         },
         "apiBase": {

@@ -659,12 +659,7 @@
               "apiKey": { "type": "string", "default": "" },
               "models": {
                 "type": "array",
-                "default": "",
-                "listEnum": [""],
-                "x-onyxia": {
-                  "overwriteDefaultWith": "{{ai.providers[i].selectedModel}}",
-                  "overwriteListEnumWith": "{{ai.providers[i].models}}"
-                }
+                "default": []
               }
             }
           },

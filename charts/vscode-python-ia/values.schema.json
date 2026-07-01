@@ -594,11 +594,6 @@
         "activeProvider": {
           "type": "object",
           "default": {},
-          "hidden": {
-            "value": false,
-            "path": "enabled",
-            "isPathRelative": true
-          },
           "properties": {
             "id": { "type": "string", "default": "" },
             "name": { "type": "string", "default": "" },
@@ -609,7 +604,11 @@
             "models": {
               "type": "string",
               "listEnum": [""],
-              "default": ""
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{ai.selectedModel}}",
+                "overwriteListEnumWith": "{{ai.models}}"
+              }
             }
           },
           "x-onyxia": {
@@ -636,7 +635,11 @@
               "models": {
                 "type": "string",
                 "default": "",
-                "listEnum": [""]
+                "listEnum": [""],
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{selectedModel}}",
+                  "overwriteListEnumWith": "{{models}}"
+                }
               }
             }
           },

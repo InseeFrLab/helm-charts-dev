@@ -606,7 +606,11 @@
             "apiBase": { "type": "string", "default": "" },
             "apiKey": { "type": "string", "default": "" },
             "selectedModel": { "type": "string", "default": "" },
-            "models": { "type": "array", "default": [], "items": { "type": "string" } }
+            "models": {
+              "type": "string",
+              "listEnum": [""],
+              "default": ""
+            }
           },
           "x-onyxia": {
             "overwriteDefaultWith": "{{ai.activeProvider}}"
@@ -629,7 +633,11 @@
               "apiBase": { "type": "string", "default": "" },
               "apiKey": { "type": "string", "default": "" },
               "selectedModel": { "type": "string", "default": "" },
-              "models": { "type": "array", "default": [], "items": { "type": "string" } }
+              "models": {
+                "type": "string",
+                "default": "",
+                "listEnum": [""]
+              }
             }
           },
           "x-onyxia": {

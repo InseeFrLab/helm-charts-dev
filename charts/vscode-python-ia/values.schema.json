@@ -595,13 +595,42 @@
           "type": "object",
           "default": {},
           "properties": {
-            "id": { "type": "string", "default": "" },
-            "name": { "type": "string", "default": "" },
-            "provider": { "type": "string", "default": "" },
-            "apiBase": { "type": "string", "default": "" },
-            "apiKey": { "type": "string", "default": "" },
-            "selectedModel": { "type": "string", "default": "" },
-            "models": {
+            "id": {
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{ai.activeProvider.id}}"
+              }
+            },
+            "name": {
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{ai.activeProvider.name}}"
+              }
+            },
+            "provider": {
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{ai.activeProvider.provider}}"
+              }
+            },
+            "apiBase": {
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{ai.activeProvider.apiBase}}"
+              }
+            },
+            "apiKey": {
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{ai.activeProvider.apiKey}}"
+              }
+            },
+            "selectedModel": {
               "type": "string",
               "listEnum": [""],
               "default": "",
@@ -610,9 +639,6 @@
                 "overwriteListEnumWith": "{{ai.activeProvider.models}}"
               }
             }
-          },
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{ai.activeProvider}}"
           }
         },
         "providers": {
@@ -631,9 +657,8 @@
               "provider": { "type": "string", "default": "" },
               "apiBase": { "type": "string", "default": "" },
               "apiKey": { "type": "string", "default": "" },
-              "selectedModel": { "type": "string", "default": "" },
               "models": {
-                "type": "string",
+                "type": "array",
                 "default": "",
                 "listEnum": [""],
                 "x-onyxia": {

@@ -663,7 +663,8 @@
               "selectedModel": { "type": "string", "default": "" },
               "models": {
                 "type": "array",
-                "default": []
+                "default": [],
+                "items": { "type": "string" }
               }
             }
           },

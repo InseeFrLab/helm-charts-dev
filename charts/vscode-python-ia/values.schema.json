@@ -647,6 +647,11 @@
                 "overwriteDefaultWith": "{{ai.activeProvider.models}}"
               }
             }
+          },
+          "hidden": {
+            "value": false,
+            "path": "enabled",
+            "isPathRelative": true
           }
         },
         "providers": {
@@ -670,6 +675,11 @@
           },
           "x-onyxia": {
             "overwriteDefaultWith": "{{ai.providers}}"
+          },
+          "hidden": {
+            "value": false,
+            "path": "enabled",
+            "isPathRelative": true
           }
         }
       }

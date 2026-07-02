@@ -642,6 +642,7 @@
             "models": {
               "type": "array",
               "default": [],
+              "items": { "type": "string" },
               "x-onyxia": {
                 "hidden": true,
                 "overwriteDefaultWith": "{{ai.activeProvider.models}}"

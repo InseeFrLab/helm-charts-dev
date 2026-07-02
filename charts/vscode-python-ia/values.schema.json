@@ -638,17 +638,20 @@
                 "overwriteDefaultWith": "{{ai.activeProvider.selectedModel}}",
                 "overwriteListEnumWith": "{{ai.activeProvider.models}}"
               }
+            },
+            "models": {
+              "type": "array",
+              "default": [],
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "{{ai.activeProvider.models}}"
+              }
             }
           }
         },
         "providers": {
           "type": "array",
           "default": [],
-          "hidden": {
-            "value": false,
-            "path": "enabled",
-            "isPathRelative": true
-          },
           "items": {
             "type": "object",
             "properties": {
@@ -657,6 +660,7 @@
               "provider": { "type": "string", "default": "" },
               "apiBase": { "type": "string", "default": "" },
               "apiKey": { "type": "string", "default": "" },
+              "selectedModel": { "type": "string", "default": "" },
               "models": {
                 "type": "array",
                 "default": []

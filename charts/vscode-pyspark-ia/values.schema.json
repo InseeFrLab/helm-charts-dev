@@ -672,11 +672,23 @@
               "provider": { "type": "string", "default": "" },
               "apiBase": { "type": "string", "default": "" },
               "apiKey": { "type": "string", "default": "" },
-              "selectedModel": { "type": "string", "default": "" },
+              "selectedModel": {
+                "type": "string",
+                "listEnum": [""],
+                "default": "",
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{selectedModel}}",
+                  "overwriteListEnumWith": "{{models}}"
+                }
+              },
               "models": {
                 "type": "array",
                 "default": [],
-                "items": { "type": "string" }
+                "items": { "type": "string" },
+                "x-onyxia": {
+                  "hidden": true,
+                  "overwriteDefaultWith": "{{models}}"
+                }
               }
             }
           },

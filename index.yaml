@@ -2162,6 +2162,30 @@ entries:
     version: 3.2.1
   vscode-pyspark-ia:
   - apiVersion: v2
+    created: "2026-07-06T09:05:52.105202715Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.1.1
+    description: The Visual Studio Code IDE with PySpark, an interface to use Apache
+      Spark from Python.
+    digest: 97680eb6ec15f4aab12fa272d14a790586937b9ca57d9f64cbe29fb659705ec0
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    - Spark
+    - VTL
+    name: vscode-pyspark-ia
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-pyspark-ia-3.2.3/vscode-pyspark-ia-3.2.3.tgz
+    version: 3.2.3
+  - apiVersion: v2
     created: "2026-07-02T13:01:40.881741181Z"
     dependencies:
     - name: library-chart
@@ -3038,4 +3062,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/windmill-0.1.0/windmill-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-06T08:45:20.293104739Z"
+generated: "2026-07-06T09:05:52.105445109Z"

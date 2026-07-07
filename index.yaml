@@ -929,6 +929,29 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/llm-serving-0.0.8/llm-serving-0.0.8.tgz
     version: 0.0.8
+  new-vscode-python-s3:
+  - apiVersion: v2
+    created: "2026-07-07T13:50:22.054824953Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.0.4
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 50398c50d7177fa25c17cc3f8599da6b10e79faf8d1cb27ad2084d61af23b768
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: new-vscode-python-s3
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/new-vscode-python-s3-1.0.0/new-vscode-python-s3-1.0.0.tgz
+    version: 1.0.0
   onyxia:
   - apiVersion: v2
     created: "2025-07-31T14:38:01.907163448Z"
@@ -3110,4 +3133,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/windmill-0.1.0/windmill-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-06T12:26:19.332753391Z"
+generated: "2026-07-07T13:50:22.055024671Z"

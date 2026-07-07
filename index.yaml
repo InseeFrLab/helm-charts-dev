@@ -931,6 +931,28 @@ entries:
     version: 0.0.8
   new-vscode-python-s3:
   - apiVersion: v2
+    created: "2026-07-07T15:29:26.332143266Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.0.4
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: ddef0396ed1e4a5e55d4219da5261c53d6e538deec67f70be0d5424076a2339c
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: new-vscode-python-s3
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/new-vscode-python-s3-1.0.1/new-vscode-python-s3-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     created: "2026-07-07T13:50:22.054824953Z"
     dependencies:
     - name: library-chart
@@ -3133,4 +3155,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/windmill-0.1.0/windmill-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-07T13:50:22.055024671Z"
+generated: "2026-07-07T15:29:26.3324111Z"

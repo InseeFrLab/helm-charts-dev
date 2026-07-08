@@ -395,6 +395,7 @@
         "profiles": {
           "title": "profiles",
           "type": "array",
+          "default": [],
           "x-onyxia": {
             "overwriteDefaultWith": "{{s3_array}}"
           },
@@ -411,6 +412,7 @@
               "accessKeyId": {
                 "title": "Access Key ID",
                 "type": "string",
+                "default": "",
                 "x-onyxia": {
                   "overwriteDefaultWith": "{{AWS_ACCESS_KEY_ID}}"
                 },
@@ -423,6 +425,7 @@
               "endpoint": {
                 "title": "S3 endpoint URL",
                 "type": "string",
+                "default": "",
                 "x-onyxia": {
                   "overwriteDefaultWith": "{{AWS_S3_ENDPOINT}}"
                 },
@@ -435,6 +438,7 @@
               "defaultRegion": {
                 "title": "Default region",
                 "type": "string",
+                "default": "",
                 "x-onyxia": {
                   "overwriteDefaultWith": "{{AWS_DEFAULT_REGION}}"
                 },
@@ -448,6 +452,7 @@
                 "title": "Secret Access Key",
                 "type": "string",
                 "render": "password",
+                "default": "",
                 "x-onyxia": {
                   "overwriteDefaultWith": "{{AWS_SECRET_ACCESS_KEY}}"
                 },
@@ -461,6 +466,7 @@
                 "title": "Session token",
                 "type": "string",
                 "render": "password",
+                "default": "",
                 "x-onyxia": {
                   "overwriteDefaultWith": "{{AWS_SESSION_TOKEN}}"
                 },

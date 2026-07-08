@@ -384,7 +384,7 @@
       "title": "S3 object storage",
       "type": "object",
       "x-onyxia": {
-        "overwriteSchemaWith": "ide/s3.json"
+        "overwriteSchemaWith": "ide/s3-test.json"
       },
       "properties": {
         "enabled": {

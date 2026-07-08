@@ -396,17 +396,26 @@
           "title": "profiles",
           "type": "array",
           "default": [],
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{s3_array}}"
+          },
           "items": {
             "type": "object",
             "properties": {
               "profileName": {
                 "type": "string",
-                "default": ""
+                "default": "",
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{profileName}}"
+                }
               },
               "accessKeyId": {
                 "title": "Access Key ID",
                 "type": "string",
                 "default": "",
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{AWS_ACCESS_KEY_ID}}"
+                },
                 "hidden": {
                   "value": false,
                   "path": "enabled",
@@ -417,6 +426,9 @@
                 "title": "S3 endpoint URL",
                 "type": "string",
                 "default": "",
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{AWS_S3_ENDPOINT}}"
+                },
                 "hidden": {
                   "value": false,
                   "path": "enabled",
@@ -427,6 +439,9 @@
                 "title": "Default region",
                 "type": "string",
                 "default": "",
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{AWS_DEFAULT_REGION}}"
+                },
                 "hidden": {
                   "value": false,
                   "path": "enabled",
@@ -438,6 +453,9 @@
                 "type": "string",
                 "render": "password",
                 "default": "",
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{AWS_SECRET_ACCESS_KEY}}"
+                },
                 "hidden": {
                   "value": false,
                   "path": "enabled",
@@ -449,6 +467,9 @@
                 "type": "string",
                 "render": "password",
                 "default": "",
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{AWS_SESSION_TOKEN}}"
+                },
                 "hidden": {
                   "value": false,
                   "path": "enabled",
@@ -459,6 +480,9 @@
                 "title": "Path-style access",
                 "type": "boolean",
                 "default": false,
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{pathStyleAccess}}"
+                },
                 "hidden": {
                   "value": false,
                   "path": "enabled",

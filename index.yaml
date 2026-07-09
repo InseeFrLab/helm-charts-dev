@@ -628,6 +628,29 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/jupyter-python-ia-2.5.0/jupyter-python-ia-2.5.0.tgz
     version: 2.5.0
+  jupyter-python-ines:
+  - apiVersion: v2
+    created: "2026-07-09T14:09:57.377494011Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.1.6
+    description: The JupyterLab IDE with Python and a collection of standard data
+      science packages.
+    digest: d840540f7c55fd03e85122695b6752709628cc478de1c16a9a2c5be2e36b033c
+    home: https://jupyter.org/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jupyter.png
+    keywords:
+    - Jupyter
+    - Python
+    name: jupyter-python-ines
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/jupyter-python-ines-2.5.0/jupyter-python-ines-2.5.0.tgz
+    version: 2.5.0
   langfuse:
   - apiVersion: v2
     appVersion: 3.51.2
@@ -3058,6 +3081,29 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-ia-2.5.8/vscode-python-ia-2.5.8.tgz
     version: 2.5.8
+  vscode-python-ines:
+  - apiVersion: v2
+    created: "2026-07-09T14:09:57.544117808Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.1.6
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: bd88348690482269579c053bfbfa695e77c4189e02eacb59a70aef3cc53ed4bd
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python-ines
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-ines-2.6.0/vscode-python-ines-2.6.0.tgz
+    version: 2.6.0
   vscode-python-s3-config:
   - apiVersion: v2
     created: "2025-12-22T09:34:29.711811196Z"
@@ -3353,4 +3399,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/windmill-0.1.0/windmill-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-09T13:48:12.179780771Z"
+generated: "2026-07-09T14:09:57.544632254Z"

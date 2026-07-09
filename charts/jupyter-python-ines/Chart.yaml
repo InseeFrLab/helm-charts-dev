@@ -1,11 +1,11 @@
 apiVersion: v2
-name: vscode-python
-description: The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
-icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+name: jupyter-python-ines
+description: The JupyterLab IDE with Python and a collection of standard data science packages.
+icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/jupyter.png
 keywords:
-  - VSCode
+  - Jupyter
   - Python
-home: https://code.visualstudio.com/
+home: https://jupyter.org/
 sources:
   - https://github.com/InseeFrLab/images-datascience
   - https://github.com/InseeFrLab/helm-charts-interactive-services
@@ -22,7 +22,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 2.7.4
+version: 2.5.0
 dependencies:
   - name: library-chart
     version: 2.1.6

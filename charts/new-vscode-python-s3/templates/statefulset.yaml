@@ -1,4 +1,5 @@
 {{- $fullName := include "library-chart.fullname" . -}}
+{{- $aiAssistant := include "library-chart.aiAssistant" . | fromJson -}}
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -23,8 +24,11 @@ spec:
         {{- if (.Values.git).enabled }}
         checksum/git: {{ include (print $.Template.BasePath "/secret-git.yaml") . | sha256sum }}
         {{- end }}
-        {{- if (.Values.s3).enabled }}
+        {{- if and (.Values.s3).enabled }}
         checksum/s3: {{ include (print $.Template.BasePath "/secret-s3.yaml") . | sha256sum }}
+        {{- if (.Values.s3).profiles }}
+        checksum/s3: {{ include (print $.Template.BasePath "/configmap-s3.yaml") . | sha256sum }}
+        {{- end }}
         {{- end }}
         {{- if (.Values.vault).enabled }}
         checksum/vault: {{ include (print $.Template.BasePath "/secret-vault.yaml") . | sha256sum }}
@@ -96,10 +100,21 @@ spec:
           secret:
             secretName: {{ include "library-chart.secretNameCacerts" . }}
         {{- end }}
-        {{- if (.Values.userPreferences.aiAssistant).enabled }}
-        - name: secret-assistant
+        {{- if $aiAssistant.enabled }}
+        - name: secret-continue
           secret:
-            secretName: {{ include "library-chart.secretNameAssistant" . }}
+            secretName: {{ printf "%s-secretcontinue" (include "library-chart.fullname" .) }}
+        - name: secret-opencode
+          secret:
+            secretName: {{ printf "%s-secretopencode" (include "library-chart.fullname" .) }}
+        {{- end }}
+        {{- if and (.Values.s3).enabled (.Values.s3).profiles }}
+        - name: configmap-s3
+          configMap:
+            name: {{ printf "%s-configmaps3" (include "library-chart.fullname" .) }}
+        - name: secret-s3
+          secret: 
+            secretName: {{ include "library-chart.secretNameS3" . }}
         {{- end }}
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -117,9 +132,11 @@ spec:
             - -c
             - |
               echo 'initContainer make-secrets-writable is started';
-              {{ if (.Values.userPreferences.aiAssistant).enabled }}
+              {{ if $aiAssistant.enabled }}
               mkdir /dest/continue
               cp /src/continue/config.yaml /dest/continue/config.yaml
+              mkdir /dest/opencode
+              cp /src/opencode/opencode.jsonc /dest/opencode/opencode.jsonc
               {{- end }}
               {{- if .Values.discovery.hive }}
               mkdir /dest/hive;
@@ -139,9 +156,11 @@ spec:
               awk 'BEGIN {c=0;} /BEGIN CERT/{c++} { print > "/dest/cacerts/cert." c ".crt"}' < /tmp/ca.pem;
               {{- end }}
           volumeMounts:
-            {{- if (.Values.userPreferences.aiAssistant).enabled }}
-            - name: secret-assistant
+            {{- if $aiAssistant.enabled }}
+            - name: secret-continue
               mountPath: /src/continue
+            - name: secret-opencode
+              mountPath: /src/opencode
             {{- end }}
             - name: config-files
               mountPath: /dest
@@ -211,13 +230,25 @@ spec:
           envFrom:
             - secretRef:
                 name : {{ include "library-chart.secretNameToken" . }}
+            {{- if $aiAssistant.enabled }}
+            - secretRef:
+                name: {{ include "library-chart.secretNameIa" . }}
+            {{- end }}
             {{- if (.Values.git).enabled }}
             - secretRef:
                 name: {{ include "library-chart.secretNameGit" . }}
             {{- end }}
-            {{- if (.Values.s3).enabled }}
+            {{- if and (.Values.s3).enabled (empty (.Values.s3).profiles) }}
             - secretRef:
                 name: {{ include "library-chart.secretNameS3" . }}
+            {{- end }}
+            {{- if and (.Values.s3).enabled (.Values.s3).profiles }}
+            - configMapRef:
+                name: {{ printf "%s-configmaps3" (include "library-chart.fullname" .) }}
+            {{- end }}
+            {{- if and (.Values.s3).enabled}}
+            - secretRef:
+                name: {{ include  "library-chart.secretNameMc" .}}
             {{- end }}
             {{- if (.Values.vault).enabled }}
             - secretRef:
@@ -276,9 +307,12 @@ spec:
               name: home
             - mountPath: /dev/shm
               name: dshm
-            {{ if (.Values.userPreferences.aiAssistant).enabled }}
+            {{- if $aiAssistant.enabled }}
             - mountPath: /home/{{ .Values.environment.user }}/.continue
               subPath: continue
+              name: config-files
+            - mountPath: /home/{{ .Values.environment.user }}/.config/opencode
+              subPath: opencode
               name: config-files
             {{- end }}
             {{- if (.Values.discovery).hive }}

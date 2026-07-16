@@ -41,13 +41,22 @@ s3:
   enabled: false
   # The name of the secret storing the S3 credentials
   secretName: ""  # Generated based on the service's name if empty or not set
+  # s3.profiles is used to configure .aws/config file, you can leave it empty and complete the next fields to inject corresponding environment variables
+  profiles: []
+  #  - profileName: ""
+  #    defaultRegion: ""
+  #    accessKeyId: ""
+  #    secretAccessKey: ""
+  #    endpoint: ""
+  #    pathStyleAccess: false
+  
+  # The following will inject corresponding env variables if the s3.profiles section is left empty
   accessKeyId: ""
   endpoint: ""
   defaultRegion: ""
   secretAccessKey: ""
   sessionToken: ""
   pathStyleAccess: false
-  workingDirectoryPath: ""
 
 vault:
   # Specifies whether Vault credentials should be made available
@@ -240,17 +249,15 @@ startupProbe:
   successThreshold: 1
   timeoutSeconds: 2
 
+ai:
+  enabled: false
+  secretName: ""  # Generated based on the service's name if empty or not set
+  activeProvider: {}
+  providers: []
+
 userPreferences:
   darkMode: false
   language: "en"
-  aiAssistant:
-    enabled: false
-    model: ""
-    provider: ""
-    apiBase: ""
-    apiKey: ""
-    secretName: ""  # Generated based on the service's name if empty or not set
-    useLegacyCompletionsEndpoint: false
 
 openshiftSCC:
   enabled: false

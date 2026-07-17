@@ -14,19 +14,15 @@
               "title": "Pull image from registry",
               "type": "string",
               "default": "IfNotPresent",
-              "enum": [
-                "IfNotPresent",
-                "Always",
-                "Never"
-              ]
+              "enum": ["IfNotPresent", "Always", "Never"]
             },
             "version": {
               "title": "Name of the service's Docker image",
               "type": "string",
-              "default": "inseefrlab/onyxia-vscode-python:py3.12.9",
+              "default": "inseefrlab/onyxia-vscode-python:py3.13.13",
               "listEnum": [
-                "inseefrlab/onyxia-vscode-python:py3.12.9",
-                "inseefrlab/onyxia-vscode-python:py3.11.12"
+                "inseefrlab/onyxia-vscode-python:py3.13.13",
+                "inseefrlab/onyxia-vscode-python:py3.12.13"
               ],
               "render": "list",
               "hidden": {
@@ -49,7 +45,7 @@
                 "version": {
                   "title": "Name of the custom image",
                   "type": "string",
-                  "default": "inseefrlab/onyxia-vscode-python:py3.12.9",
+                  "default": "inseefrlab/onyxia-vscode-python:py3.13.13",
                   "hidden": {
                     "value": false,
                     "path": "enabled",
@@ -270,11 +266,7 @@
             "value": false,
             "path": "kubernetes/enabled"
           },
-          "listEnum": [
-            "view",
-            "edit",
-            "admin"
-          ],
+          "listEnum": ["view", "edit", "admin"],
           "render": "list"
         }
       }
@@ -384,7 +376,7 @@
       "title": "S3 object storage",
       "type": "object",
       "x-onyxia": {
-        "overwriteSchemaWith": "test/s3.json"
+        "overwriteSchemaWith": "ide/s3.json"
       },
       "properties": {
         "enabled": {
@@ -392,110 +384,92 @@
           "type": "boolean",
           "default": true
         },
-        "profiles": {
-          "type": "array",
-          "default": [],
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string",
-                "default": "s3"
-              },
-              "accessKeyId": {
-                "title": "Access Key ID",
-                "type": "string",
-                "default": "",
-                "x-onyxia": {
-                  "overwriteDefaultWith": "s3.AWS_ACCESS_KEY_ID"
-                },
-                "hidden": {
-                  "value": false,
-                  "path": "enabled",
-                  "isPathRelative": true
-                }
-              },
-              "endpoint_url": {
-                "title": "S3 endpoint URL",
-                "type": "string",
-                "default": "",
-                "x-onyxia": {
-                  "overwriteDefaultWith": "{{s3.AWS_S3_ENDPOINT}}"
-                },
-                "hidden": {
-                  "value": false,
-                  "path": "enabled",
-                  "isPathRelative": true
-                }
-              },
-              "defaultRegion": {
-                "title": "Default region",
-                "type": "string",
-                "default": "",
-                "x-onyxia": {
-                  "overwriteDefaultWith": "{{s3.AWS_DEFAULT_REGION}}"
-                },
-                "hidden": {
-                  "value": false,
-                  "path": "enabled",
-                  "isPathRelative": true
-                }
-              },
-              "secretAccessKey": {
-                "title": "Secret Access Key",
-                "type": "string",
-                "render": "password",
-                "default": "",
-                "x-onyxia": {
-                  "overwriteDefaultWith": "{{s3.AWS_SECRET_ACCESS_KEY}}"
-                },
-                "hidden": {
-                  "value": false,
-                  "path": "enabled",
-                  "isPathRelative": true
-                }
-              },
-              "sessionToken": {
-                "title": "Session token",
-                "type": "string",
-                "render": "password",
-                "default": "",
-                "x-onyxia": {
-                  "overwriteDefaultWith": "{{s3.AWS_SESSION_TOKEN}}"
-                },
-                "hidden": {
-                  "value": false,
-                  "path": "enabled",
-                  "isPathRelative": true
-                }
-              },
-              "pathStyleAccess": {
-                "title": "Path-style access",
-                "type": "boolean",
-                "default": false,
-                "x-onyxia": {
-                  "overwriteDefaultWith": "{{s3.pathStyleAccess}}"
-                },
-                "hidden": {
-                  "value": false,
-                  "path": "enabled",
-                  "isPathRelative": true
-                }
-              },
-              "workingDirectoryPath": {
-                "title": "Working directory path",
-                "type": "string",
-                "default": "",
-                "x-onyxia": {
-                  "overwriteDefaultWith": "{{s3.workingDirectoryPath}}"
-                },
-                "hidden": {
-                  "value": false,
-                  "path": "enabled",
-                  "isPathRelative": true
-                }
-              }
-            }
+        "accessKeyId": {
+          "title": "Access Key ID",
+          "type": "string",
+          "x-onyxia": {
+            "overwriteDefaultWith": "s3.AWS_ACCESS_KEY_ID"
+          },
+          "hidden": {
+            "value": false,
+            "path": "enabled",
+            "isPathRelative": true
+          }
+        },
+        "endpoint": {
+          "title": "S3 endpoint URL",
+          "type": "string",
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{s3.AWS_S3_ENDPOINT}}"
+          },
+          "hidden": {
+            "value": false,
+            "path": "enabled",
+            "isPathRelative": true
+          }
+        },
+        "defaultRegion": {
+          "title": "Default region",
+          "type": "string",
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{s3.AWS_DEFAULT_REGION}}"
+          },
+          "hidden": {
+            "value": false,
+            "path": "enabled",
+            "isPathRelative": true
+          }
+        },
+        "secretAccessKey": {
+          "title": "Secret Access Key",
+          "type": "string",
+          "render": "password",
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{s3.AWS_SECRET_ACCESS_KEY}}"
+          },
+          "hidden": {
+            "value": false,
+            "path": "enabled",
+            "isPathRelative": true
+          }
+        },
+        "sessionToken": {
+          "title": "Session token",
+          "type": "string",
+          "render": "password",
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{s3.AWS_SESSION_TOKEN}}"
+          },
+          "hidden": {
+            "value": false,
+            "path": "enabled",
+            "isPathRelative": true
+          }
+        },
+        "pathStyleAccess": {
+          "title": "Path-style access",
+          "type": "boolean",
+          "default": false,
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{s3.pathStyleAccess}}"
+          },
+          "hidden": {
+            "value": false,
+            "path": "enabled",
+            "isPathRelative": true
+          }
+        },
+        "workingDirectoryPath": {
+          "title": "Working directory path",
+          "type": "string",
+          "default": "",
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{s3.workingDirectoryPath}}"
+          },
+          "hidden": {
+            "value": false,
+            "path": "enabled",
+            "isPathRelative": true
           }
         }
       }
@@ -589,6 +563,157 @@
             "path": "enabled",
             "isPathRelative": true
           }
+        },
+        "asCodeServerRoot": {
+          "title": "Open the service in the clone folder",
+          "type": "boolean",
+          "default": false,
+          "hidden": {
+            "value": false,
+            "path": "enabled",
+            "isPathRelative": true
+          }
+        }
+      }
+    },
+    "ai": {
+      "title": "AI Assistant",
+      "type": "object",
+      "x-onyxia": {
+        "overwriteSchemaWith": "ai.json"
+      },
+      "properties": {
+        "enabled": {
+          "title": "Enable AI assistant tools",
+          "type": "boolean",
+          "default": false,
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{ai.enabled}}"
+          }
+        },
+        "activeProvider": {
+          "type": "object",
+          "default": {},
+          "properties": {
+            "id": {
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{ai.activeProvider.id}}"
+              }
+            },
+            "name": {
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{ai.activeProvider.name}}"
+              }
+            },
+            "provider": {
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{ai.activeProvider.provider}}"
+              }
+            },
+            "apiBase": {
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{ai.activeProvider.apiBase}}"
+              }
+            },
+            "apiKey": {
+              "type": "string",
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{ai.activeProvider.apiKey}}"
+              }
+            },
+            "selectedModel": {
+              "type": "string",
+              "listEnum": [],
+              "default": "",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{ai.activeProvider.selectedModel}}",
+                "overwriteListEnumWith": "{{ai.activeProvider.models}}"
+              }
+            },
+            "models": {
+              "type": "array",
+              "default": [],
+              "items": { "type": "string" },
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "{{ai.activeProvider.models}}"
+              }
+            }
+          },
+          "hidden": {
+            "value": false,
+            "path": "enabled",
+            "isPathRelative": true
+          }
+        },
+        "providers": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "x-onyxia": { "overwriteDefaultWith": "{{id}}" }
+              },
+              "name": {
+                "type": "string",
+                "default": "",
+                "x-onyxia": { "overwriteDefaultWith": "{{name}}" }
+              },
+              "provider": {
+                "type": "string",
+                "default": "",
+                "x-onyxia": { "overwriteDefaultWith": "{{provider}}" }
+              },
+              "apiBase": {
+                "type": "string",
+                "default": "",
+                "x-onyxia": { "overwriteDefaultWith": "{{apiBase}}" }
+              },
+              "apiKey": {
+                "type": "string",
+                "default": "",
+                "x-onyxia": { "overwriteDefaultWith": "{{apiKey}}" }
+              },
+              "selectedModel": {
+                "type": "string",
+                "listEnum": [],
+                "default": "",
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{selectedModel}}",
+                  "overwriteListEnumWith": "{{models}}"
+                }
+              },
+              "models": {
+                "type": "array",
+                "default": [],
+                "items": { "type": "string" },
+                "x-onyxia": {
+                  "hidden": true,
+                  "overwriteDefaultWith": "{{models}}"
+                }
+              }
+            }
+          },
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{ai.providers}}"
+          },
+          "hidden": {
+            "value": false,
+            "path": "enabled",
+            "isPathRelative": true
+          }
         }
       }
     },
@@ -661,6 +786,11 @@
         },
         "milvus": {
           "title": "Discover Milvus services",
+          "type": "boolean",
+          "default": true
+        },
+        "postgresql": {
+          "title": "Discover PostgreSQL services",
           "type": "boolean",
           "default": true
         }
@@ -796,6 +926,13 @@
           "x-onyxia": {
             "hidden": true
           }
+        },
+        "tlsSecretName": {
+          "type": "string",
+          "default": "",
+          "x-onyxia": {
+            "hidden": true
+          }
         }
       }
     },
@@ -836,6 +973,9 @@
     "repository": {
       "description": "python repositories for pip and conda",
       "type": "object",
+      "x-onyxia": {
+        "overwriteSchemaWith": "repository.json"
+      },
       "properties": {
         "pipRepository": {
           "type": "string",
@@ -934,8 +1074,9 @@
         "aiAssistant": {
           "title": "AI Assistant",
           "type": "object",
-          "description": "Configure Continue, an extension to use custom AI code assistants",
+          "description": "Configure Jupyter-ai, an extension to use custom AI code assistants",
           "x-onyxia": {
+            "hidden": true,
             "overwriteSchemaWith": "aiAssistant.json"
           },
           "properties": {
@@ -993,19 +1134,6 @@
               },
               "x-onyxia": {
                 "overwriteDefaultWith": "user.profile.aiAssistant.apiKey"
-              }
-            },
-            "useLegacyCompletionsEndpoint": {
-              "title": "use legacy completions endpoint",
-              "type": "boolean",
-              "default": true,
-              "hidden": {
-                "value": false,
-                "path": "enabled",
-                "isPathRelative": true
-              },
-              "x-onyxia": {
-                "overwriteDefaultWith": "user.profile.aiAssistant.useLegacyCompletionsEndpoint"
               }
             }
           }
@@ -1111,6 +1239,15 @@
           "description": "message to add in notes",
           "default": ""
         }
+      }
+    },
+    "runtimeClassName": {
+      "type": "string",
+      "description": "Runtime Class Name",
+      "default": "",
+      "x-onyxia": {
+        "hidden": true,
+        "overwriteSchemaWith": "ide/runtimeClassName.json"
       }
     }
   }

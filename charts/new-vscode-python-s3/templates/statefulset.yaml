@@ -24,9 +24,9 @@ spec:
         {{- if (.Values.git).enabled }}
         checksum/git: {{ include (print $.Template.BasePath "/secret-git.yaml") . | sha256sum }}
         {{- end }}
-        {{- if and (.Values.s3).enabled }}
+        {{- if  (.Values.s3).enabled }}
         checksum/s3: {{ include (print $.Template.BasePath "/secret-s3.yaml") . | sha256sum }}
-        {{- if (.Values.s3).profiles }}
+        {{- if (not (empty .Values.s3.profiles)) }}
         checksum/s3: {{ include (print $.Template.BasePath "/configmap-s3.yaml") . | sha256sum }}
         {{- end }}
         {{- end }}
@@ -108,7 +108,7 @@ spec:
           secret:
             secretName: {{ printf "%s-secretopencode" (include "library-chart.fullname" .) }}
         {{- end }}
-        {{- if and (.Values.s3).enabled (.Values.s3).profiles }}
+        {{- if and (.Values.s3).enabled (not (empty .Values.s3.profiles)) }}
         - name: configmap-s3
           configMap:
             name: {{ printf "%s-configmaps3" (include "library-chart.fullname" .) }}
@@ -141,6 +141,11 @@ spec:
               {{- if .Values.discovery.hive }}
               mkdir /dest/hive;
               cp /src/hive/hive-site.xml /dest/hive/hive-site.xml;
+              {{- end }}
+              {{- if and (.Values.s3).enabled (not (empty (.Values.s3).profiles))}} 
+              mkdir /dest/aws;
+              cp /src/aws/bis/credentials /dest/aws/credentials;
+              cp /src/aws/config /dest/aws/config;
               {{- end }}
               {{- if .Values.discovery.metaflow }}
               mkdir /dest/metaflow;
@@ -175,6 +180,12 @@ spec:
             {{- if .Values.discovery.metaflow }}
             - name : secret-metaflow
               mountPath: /src/metaflow
+            {{- end }}
+            {{- if and (.Values.s3).enabled (not (empty (.Values.s3).profiles)) }}
+            - name: secret-s3
+              mountPath: /src/aws/bis
+            - name: configmap-s3
+              mountPath: /src/aws
             {{- end }}
           resources:
             limits:
@@ -238,15 +249,15 @@ spec:
             - secretRef:
                 name: {{ include "library-chart.secretNameGit" . }}
             {{- end }}
-            {{- if and (.Values.s3).enabled (empty (.Values.s3).profiles) }}
+            {{- if and (.Values.s3).enabled (empty .Values.s3.profiles)}}
             - secretRef:
                 name: {{ include "library-chart.secretNameS3" . }}
             {{- end }}
-            {{- if and (.Values.s3).enabled (.Values.s3).profiles }}
+            {{- if and (.Values.s3).enabled (not (empty .Values.s3.profiles)) }}
             - configMapRef:
                 name: {{ printf "%s-configmaps3" (include "library-chart.fullname" .) }}
             {{- end }}
-            {{- if and (.Values.s3).enabled}}
+            {{- if (.Values.s3).enabled}}
             - secretRef:
                 name: {{ include  "library-chart.secretNameMc" .}}
             {{- end }}
@@ -329,6 +340,11 @@ spec:
             - name: config-files
               mountPath: {{ .Values.certificates.pathToCaBundle }}
               subPath: cacerts
+            {{- end }}
+            {{- if and (.Values.s3).enabled (not (empty .Values.s3.profiles))}}
+            - name: config-files
+              mountPath: /home/{{ .Values.environment.user }}/.aws
+              subPath: aws
             {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:

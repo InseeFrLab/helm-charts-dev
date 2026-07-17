@@ -17,14 +17,15 @@ metadata:
   labels:
     {{- include "library-chart.labels" . | nindent 4 }}
 stringData: 
-{{- if (.Values.s3).profiles }}
-{{- range $name, $profile := .Values.s3.profiles }}
+  {{- with (.Values.s3).profiles }}
+  {{- range $name, $profile := . }}
   {{- if $profile.sessionToken }}
-  MC_HOST_{{ $profile.name }}: "https://{{ $profile.accessKeyId }}:{{ $profile.secretAccessKey }}:{{ $profile.sessionToken }}@{{ $profile.endpoint_url }}"
+  MC_HOST_{{ $profile.profileName }}: "https://{{ $profile.accessKeyId }}:{{ $profile.secretAccessKey }}:{{ $profile.sessionToken }}@{{ $profile.endpoint }}"
   {{- else }}
-  MC_HOST_{{ $profile.name }}: "https://{{ $profile.accessKeyId }}:{{ $profile.secretAccessKey }}@{{ $profile.endpoint_url }}"
+  MC_HOST_{{ $profile.profileName }}: "https://{{ $profile.accessKeyId }}:{{ $profile.secretAccessKey }}@{{ $profile.endpoint }}"
   {{- end }}
-{{- else }}
+{{- end }}
+{{ else }}
   {{- if .Values.s3.sessionToken  }}
   MC_HOST_s3: "https://{{  .Values.s3.accessKeyId }}:{{ .Values.s3.secretAccessKey }}:{{ .Values.s3.sessionToken }}@{{ .Values.s3.endpoint }}"
   {{- else }}
@@ -34,11 +35,9 @@ stringData:
 {{- end }}
 {{- end -}}
 
-
 {{/* Template to generate a ConfigMap for s3 */}}
 {{- define "library-chart.configMapS3" -}}
-{{- if and (.Values.s3).enabled (.Values.s3).profiles }}
-{{- $defaultProfile := index .Values.s3.profiles 0 }}
+{{- if and (.Values.s3).enabled (not (empty .Values.s3.profiles)) }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -48,14 +47,14 @@ metadata:
 data:
   config: |
     {{- range $name, $profile := .Values.s3.profiles }}
-    [{{ $profile.name }}]
+    [{{ $profile.profileName }}]
     {{- if  $profile.region }}
     region = {{ $profile.region }}
     {{- end }}
-    {{- if $profile.endpoint_url }}
-    endpoint_url = {{ printf "https://%s" $defaultProfile.endpoint_url }}
+    {{- if $profile.endpoint }}
+    endpoint_url = {{ printf "https://%s" $profile.endpoint }}
     {{- end }}
-    {{- if $defaultProfile.pathStyleAccess }}
+    {{- if $profile.pathStyleAccess }}
      s3 = 
       addressing_style = path
     {{- else }}
@@ -81,7 +80,7 @@ data:
 
 {{/* Template to generate a secret for S3 */}}
 {{- define "library-chart.secretS3" -}}
-{{- if and (.Values.s3).enabled   -}}
+{{- if (.Values.s3).enabled -}}
 apiVersion: v1
 kind: Secret
 metadata:
@@ -104,7 +103,7 @@ stringData:
 {{- $defaultProfile := index .Values.s3.profiles 0 }}
   credentials: | 
     {{- range $name, $profile := .Values.s3.profiles }}
-    [{{ $profile.name }}]
+    [{{ $profile.profileName }}]
     {{- if $profile.accessKeyId }}
     aws_access_key_id = {{ $profile.accessKeyId }}
     {{- end }}

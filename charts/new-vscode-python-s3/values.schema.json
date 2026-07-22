@@ -413,7 +413,7 @@
                   "isPathRelative": true
                 }
               },
-              "endpoint_url": {
+              "endpoint": {
                 "title": "S3 endpoint URL",
                 "type": "string",
                 "default": "",
@@ -473,19 +473,6 @@
                 "default": false,
                 "x-onyxia": {
                   "overwriteDefaultWith": "{{pathStyleAccess}}"
-                },
-                "hidden": {
-                  "value": false,
-                  "path": "enabled",
-                  "isPathRelative": true
-                }
-              },
-              "workingDirectoryPath": {
-                "title": "Working directory path",
-                "type": "string",
-                "default": "",
-                "x-onyxia": {
-                  "overwriteDefaultWith": "{{workingDirectoryPath}}"
                 },
                 "hidden": {
                   "value": false,

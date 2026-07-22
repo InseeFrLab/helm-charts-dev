@@ -395,7 +395,10 @@
             "properties": {
               "name": {
                 "type": "string",
-                "default": "s3"
+                "default": "",
+                "x-onyxia": {
+                  "overwriteDefaultWith": "{{profileName}}"
+                }
               },
               "accessKeyId": {
                 "title": "Access Key ID",

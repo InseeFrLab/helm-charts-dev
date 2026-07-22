@@ -393,7 +393,7 @@
           "items": {
             "type": "object",
             "properties": {
-              "name": {
+              "profileName": {
                 "type": "string",
                 "default": "",
                 "x-onyxia": {

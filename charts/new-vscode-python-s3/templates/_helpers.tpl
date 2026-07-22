@@ -63,7 +63,6 @@ stringData:
   AWS_PATH_STYLE_ACCESS: "{{ .Values.s3.pathStyleAccess }}"
   AWS_WORKING_DIRECTORY_PATH: "{{ .Values.s3.workingDirectoryPath }}"
 {{- else }}
-{{- $defaultProfile := index .Values.s3.profiles 0 }}
   credentials: | 
     {{- range $name, $profile := .Values.s3.profiles }}
     [{{ $profile.profileName }}]

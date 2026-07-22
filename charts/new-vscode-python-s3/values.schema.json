@@ -405,7 +405,7 @@
                 "type": "string",
                 "default": "",
                 "x-onyxia": {
-                  "overwriteDefaultWith": "s3.AWS_ACCESS_KEY_ID"
+                  "overwriteDefaultWith": "AWS_ACCESS_KEY_ID"
                 },
                 "hidden": {
                   "value": false,
@@ -418,7 +418,7 @@
                 "type": "string",
                 "default": "",
                 "x-onyxia": {
-                  "overwriteDefaultWith": "{{s3.AWS_S3_ENDPOINT}}"
+                  "overwriteDefaultWith": "{{AWS_S3_ENDPOINT}}"
                 },
                 "hidden": {
                   "value": false,
@@ -431,7 +431,7 @@
                 "type": "string",
                 "default": "",
                 "x-onyxia": {
-                  "overwriteDefaultWith": "{{s3.AWS_DEFAULT_REGION}}"
+                  "overwriteDefaultWith": "{{AWS_DEFAULT_REGION}}"
                 },
                 "hidden": {
                   "value": false,
@@ -445,7 +445,7 @@
                 "render": "password",
                 "default": "",
                 "x-onyxia": {
-                  "overwriteDefaultWith": "{{s3.AWS_SECRET_ACCESS_KEY}}"
+                  "overwriteDefaultWith": "{{AWS_SECRET_ACCESS_KEY}}"
                 },
                 "hidden": {
                   "value": false,
@@ -459,7 +459,7 @@
                 "render": "password",
                 "default": "",
                 "x-onyxia": {
-                  "overwriteDefaultWith": "{{s3.AWS_SESSION_TOKEN}}"
+                  "overwriteDefaultWith": "{{AWS_SESSION_TOKEN}}"
                 },
                 "hidden": {
                   "value": false,
@@ -472,7 +472,7 @@
                 "type": "boolean",
                 "default": false,
                 "x-onyxia": {
-                  "overwriteDefaultWith": "{{s3.pathStyleAccess}}"
+                  "overwriteDefaultWith": "{{pathStyleAccess}}"
                 },
                 "hidden": {
                   "value": false,
@@ -485,7 +485,7 @@
                 "type": "string",
                 "default": "",
                 "x-onyxia": {
-                  "overwriteDefaultWith": "{{s3.workingDirectoryPath}}"
+                  "overwriteDefaultWith": "{{workingDirectoryPath}}"
                 },
                 "hidden": {
                   "value": false,

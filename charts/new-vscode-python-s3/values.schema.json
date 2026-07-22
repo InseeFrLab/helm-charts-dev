@@ -387,6 +387,9 @@
         "profiles": {
           "type": "array",
           "default": [],
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{s3_array}}"
+          },
           "items": {
             "type": "object",
             "properties": {

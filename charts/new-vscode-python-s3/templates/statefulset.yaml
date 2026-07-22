@@ -257,10 +257,6 @@ spec:
             - configMapRef:
                 name: {{ printf "%s-configmaps3" (include "library-chart.fullname" .) }}
             {{- end }}
-            {{- if (.Values.s3).enabled}}
-            - secretRef:
-                name: {{ include  "library-chart.secretNameMc" .}}
-            {{- end }}
             {{- if (.Values.vault).enabled }}
             - secretRef:
                 name: {{ include "library-chart.secretNameVault" . }}

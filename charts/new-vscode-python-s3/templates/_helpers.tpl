@@ -10,7 +10,7 @@ metadata:
 data:
   config: |
     {{- range $name, $profile := .Values.s3.profiles }}
-    [{{ $profile.profileName }}]
+    [profile {{ $profile.profileName }}]
     {{- if  $profile.region }}
     region = {{ $profile.region }}
     {{- end }}

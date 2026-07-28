@@ -65,7 +65,7 @@ stringData:
 {{- else }}
   credentials: | 
     {{- range $name, $profile := .Values.s3.profiles }}
-    [{{ $profile.profileName }}]
+    [profile {{ $profile.profileName }}]
     {{- if $profile.accessKeyId }}
     aws_access_key_id = {{ $profile.accessKeyId }}
     {{- end }}

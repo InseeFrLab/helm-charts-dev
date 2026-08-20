@@ -11,8 +11,8 @@ data:
   config: |
     {{- range $name, $profile := .Values.s3.profiles }}
     [profile {{ $profile.profileName }}]
-    {{- if  $profile.region }}
-    region = {{ $profile.region }}
+    {{- if  $profile.defaultRegion }}
+    region = {{ $profile.dafaultRegion }}
     {{- end }}
     {{- if $profile.endpoint }}
     endpoint_url = {{ printf "https://%s" $profile.endpoint }}

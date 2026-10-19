@@ -1463,6 +1463,30 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-pyspark-ia-3.2.0/vscode-pyspark-ia-3.2.0.tgz
     version: 3.2.0
+  vscode-python-git:
+  - apiVersion: v2
+    created: "2026-10-19T13:55:44.465414046Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.1.9
+    description: '[Test] Git providers (git.credentials / GIT_CREDENTIALS). The Visual
+      Studio Code IDE with Python, Julia, and a collection of standard data science
+      packages.'
+    digest: 3ccd258acc8d67c7009a56947b923f93f0bf536309e34a29029ff68d86708eff
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python-git
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-git-0.1.0/vscode-python-git-0.1.0.tgz
+    version: 0.1.0
   vscode-python-httproute:
   - apiVersion: v2
     created: "2026-05-03T17:44:14.184638703Z"
@@ -2311,4 +2335,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/windmill-0.1.0/windmill-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-30T08:57:45.730102776Z"
+generated: "2026-10-19T13:55:44.465557841Z"

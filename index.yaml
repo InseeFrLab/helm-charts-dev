@@ -1463,30 +1463,6 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-pyspark-ia-3.2.0/vscode-pyspark-ia-3.2.0.tgz
     version: 3.2.0
-  vscode-python-git:
-  - apiVersion: v2
-    created: "2026-10-19T13:55:44.465414046Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 2.1.9
-    description: '[Test] Git providers (git.credentials / GIT_CREDENTIALS). The Visual
-      Studio Code IDE with Python, Julia, and a collection of standard data science
-      packages.'
-    digest: 3ccd258acc8d67c7009a56947b923f93f0bf536309e34a29029ff68d86708eff
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: vscode-python-git
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-git-0.1.0/vscode-python-git-0.1.0.tgz
-    version: 0.1.0
   vscode-python-git-repository:
   - apiVersion: v2
     created: "2026-10-28T08:17:21.531340929Z"
@@ -2240,29 +2216,6 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-new-s3-config-0.1.0/vscode-python-new-s3-config-0.1.0.tgz
     version: 0.1.0
-  vscode-python-python:
-  - apiVersion: v2
-    created: "2026-10-28T08:17:21.719130437Z"
-    dependencies:
-    - name: library-chart
-      repository: https://inseefrlab.github.io/helm-charts-interactive-services
-      version: 2.1.9
-    description: The Visual Studio Code IDE with Python, Julia, and a collection of
-      standard data science packages.
-    digest: fd2d28f3aa349b829e6e6666ad5eba24050e4408a5e5b12005bfb25de75e87f2
-    home: https://code.visualstudio.com/
-    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
-    keywords:
-    - VSCode
-    - Python
-    name: vscode-python-python
-    sources:
-    - https://github.com/InseeFrLab/images-datascience
-    - https://github.com/InseeFrLab/helm-charts-interactive-services
-    type: application
-    urls:
-    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-python-0.1.1/vscode-python-python-0.1.1.tgz
-    version: 0.1.1
   vscode-python-s3-config:
   - apiVersion: v2
     created: "2026-07-22T12:37:17.544908073Z"

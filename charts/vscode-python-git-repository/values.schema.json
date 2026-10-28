@@ -492,7 +492,8 @@
           "default": true,
           "x-onyxia": {
             "overwriteDefaultWith": "{{git.enabled}}"
-          }
+          },
+          "hidden": true
         },
         "name": {
           "title": "User name",
@@ -501,11 +502,7 @@
           "x-onyxia": {
             "overwriteDefaultWith": "{{git.name}}"
           },
-          "hidden": {
-            "value": false,
-            "path": "enabled",
-            "isPathRelative": true
-          }
+          "hidden": true
         },
         "email": {
           "title": "User email",
@@ -514,11 +511,7 @@
           "x-onyxia": {
             "overwriteDefaultWith": "{{git.email}}"
           },
-          "hidden": {
-            "value": false,
-            "path": "enabled",
-            "isPathRelative": true
-          }
+          "hidden": true
         },
         "cache": {
           "title": "Credentials caching duration",
@@ -528,11 +521,7 @@
           "x-onyxia": {
             "overwriteDefaultWith": "{{git.credentials_cache_duration}}"
           },
-          "hidden": {
-            "value": false,
-            "path": "enabled",
-            "isPathRelative": true
-          }
+          "hidden": true
         },
         "token": {
           "title": "Personal Access Token",
@@ -542,17 +531,19 @@
           "x-onyxia": {
             "overwriteDefaultWith": "{{git.token}}"
           },
-          "hidden": {
-            "value": false,
-            "path": "enabled",
-            "isPathRelative": true
-          }
+          "hidden": true
         },
         "repositories": {
           "title": "Git repositories",
           "description": "Cloned in the service, each one at its branch (the default one when empty)",
           "type": "array",
-          "default": [],
+          "default": [
+            {
+              "providerId": "",
+              "url": "",
+              "branch": ""
+            }
+          ],
           "maxItems": 5,
           "items": {
             "type": "object",

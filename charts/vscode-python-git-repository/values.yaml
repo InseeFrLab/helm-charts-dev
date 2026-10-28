@@ -71,7 +71,12 @@ git:
   token: ""
   # Chosen in the launcher (render: gitRepository), { providerId, url, branch } each.
   # GIT_REPOSITORY / GIT_BRANCH get the first one, for the current images.
-  repositories: []
+  # One line ready when the launcher opens, on the favorite provider; nothing is cloned
+  # while its url is empty.
+  repositories:
+    - providerId: ""
+      url: ""
+      branch: ""
   # git.providers of the Onyxia context, one entry per connected forge
   providers: []
   asCodeServerRoot: false

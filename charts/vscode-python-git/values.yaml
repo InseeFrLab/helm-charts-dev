@@ -68,9 +68,6 @@ git:
   name: ""
   email: ""
   cache: ""
-  # One entry per Git provider connected in Onyxia (type "token" or "oauth"),
-  # serialized as JSON in GIT_CREDENTIALS. Empty: the image falls back to the token.
-  credentials: []
   branch: ""
   asCodeServerRoot: false
 

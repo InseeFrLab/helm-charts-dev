@@ -477,6 +477,9 @@
     "git": {
       "title": "Git access",
       "type": "object",
+      "x-onyxia": {
+        "overwriteSchemaWith": "ide/git.json"
+      },
       "properties": {
         "enabled": {
           "title": "Enable git access from within the service",
@@ -535,19 +538,6 @@
             "value": false,
             "path": "enabled",
             "isPathRelative": true
-          }
-        },
-        "credentials": {
-          "title": "Git credentials",
-          "description": "One entry per Git provider connected in Onyxia, the favorite first. Exposed to the service as GIT_CREDENTIALS (JSON).",
-          "type": "array",
-          "default": [],
-          "items": {
-            "type": "object"
-          },
-          "hidden": true,
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{git.credentials}}"
           }
         },
         "repository": {

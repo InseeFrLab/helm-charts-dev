@@ -14,17 +14,14 @@
               "title": "Pull image from registry",
               "type": "string",
               "default": "IfNotPresent",
-              "enum": [
-                "IfNotPresent",
-                "Always",
-                "Never"
-              ]
+              "enum": ["IfNotPresent", "Always", "Never"]
             },
             "version": {
               "title": "Name of the service's Docker image",
               "type": "string",
-              "default": "inseefrlab/onyxia-vscode-python:py3.13.15",
+              "default": "inseefrlab/onyxia-vscode-python:py3.13.15-git-providers",
               "listEnum": [
+                "inseefrlab/onyxia-vscode-python:py3.13.15-git-providers",
                 "inseefrlab/onyxia-vscode-python:py3.13.15",
                 "inseefrlab/onyxia-vscode-python:py3.12.14"
               ],
@@ -49,7 +46,7 @@
                 "version": {
                   "title": "Name of the custom image",
                   "type": "string",
-                  "default": "inseefrlab/onyxia-vscode-python:py3.13.15",
+                  "default": "inseefrlab/onyxia-vscode-python:py3.13.15-git-providers",
                   "hidden": {
                     "value": false,
                     "path": "enabled",
@@ -270,11 +267,7 @@
             "value": false,
             "path": "kubernetes/enabled"
           },
-          "listEnum": [
-            "view",
-            "edit",
-            "admin"
-          ],
+          "listEnum": ["view", "edit", "admin"],
           "render": "list"
         }
       }
@@ -486,53 +479,6 @@
       "title": "Git access",
       "type": "object",
       "properties": {
-        "enabled": {
-          "title": "Enable git access from within the service",
-          "type": "boolean",
-          "default": true,
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{git.enabled}}"
-          },
-          "hidden": true
-        },
-        "name": {
-          "title": "User name",
-          "type": "string",
-          "default": "",
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{git.name}}"
-          },
-          "hidden": true
-        },
-        "email": {
-          "title": "User email",
-          "type": "string",
-          "default": "",
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{git.email}}"
-          },
-          "hidden": true
-        },
-        "cache": {
-          "title": "Credentials caching duration",
-          "description": "(in seconds)",
-          "type": "string",
-          "default": "",
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{git.credentials_cache_duration}}"
-          },
-          "hidden": true
-        },
-        "token": {
-          "title": "Personal Access Token",
-          "type": "string",
-          "default": "",
-          "render": "password",
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{git.token}}"
-          },
-          "hidden": true
-        },
         "repositories": {
           "title": "Git repositories",
           "description": "Cloned in the service, each one at its branch (the default one when empty)",
@@ -545,9 +491,12 @@
             }
           ],
           "maxItems": 5,
+
           "items": {
             "type": "object",
-            "render": "gitRepository",
+            "x-onyxia": {
+              "render": "gitRepository"
+            },
             "properties": {
               "providerId": {
                 "type": "string",

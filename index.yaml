@@ -1465,6 +1465,29 @@ entries:
     version: 3.2.0
   vscode-python-git-repository:
   - apiVersion: v2
+    created: "2026-11-19T10:27:27.846954974Z"
+    dependencies:
+    - name: library-chart
+      repository: https://inseefrlab.github.io/helm-charts-interactive-services
+      version: 2.1.10
+    description: '[Test] Git repositories picker (render: gitRepository) and ONYXIA_GIT_PROVIDERS.
+      The Visual Studio Code IDE with Python, Julia, and a collection of standard
+      data science packages.'
+    digest: 25b3206c34a64d8c2bbe46082a3e4b955a027fc0d09017a582cfd397c4faeecc
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python-git-repository
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/InseeFrLab/helm-charts-dev/releases/download/vscode-python-git-repository-0.1.3/vscode-python-git-repository-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
     created: "2026-11-18T14:35:36.674389169Z"
     dependencies:
     - name: library-chart
@@ -2381,4 +2404,4 @@ entries:
     urls:
     - https://github.com/InseeFrLab/helm-charts-dev/releases/download/windmill-0.1.0/windmill-0.1.0.tgz
     version: 0.1.0
-generated: "2026-11-18T14:35:36.674560626Z"
+generated: "2026-11-19T10:27:27.847130318Z"

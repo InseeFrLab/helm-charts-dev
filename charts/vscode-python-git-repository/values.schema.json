@@ -494,9 +494,7 @@
 
           "items": {
             "type": "object",
-            "x-onyxia": {
-              "render": "gitRepository"
-            },
+            "render": "gitRepository",
             "properties": {
               "providerId": {
                 "type": "string",

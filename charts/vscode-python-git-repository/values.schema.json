@@ -479,6 +479,47 @@
       "title": "Git access",
       "type": "object",
       "properties": {
+        "name": {
+          "title": "User name",
+          "description": "Former single forge format, for the images that predate GIT_PROVIDERS",
+          "type": "string",
+          "default": "",
+          "hidden": true,
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{git.name}}"
+          }
+        },
+        "email": {
+          "title": "User email",
+          "description": "Former single forge format, for the images that predate GIT_PROVIDERS",
+          "type": "string",
+          "default": "",
+          "hidden": true,
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{git.email}}"
+          }
+        },
+        "cache": {
+          "title": "Credentials caching duration",
+          "description": "Former single forge format, for the images that predate GIT_PROVIDERS",
+          "type": "string",
+          "default": "",
+          "hidden": true,
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{git.credentials_cache_duration}}"
+          }
+        },
+        "token": {
+          "title": "Personal Access Token",
+          "description": "Former single forge format, for the images that predate GIT_PROVIDERS",
+          "type": "string",
+          "default": "",
+          "render": "password",
+          "hidden": true,
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{git.token}}"
+          }
+        },
         "repositories": {
           "title": "Git repositories",
           "description": "Cloned in the service, each one at its branch (the default one when empty)",
@@ -528,7 +569,7 @@
         },
         "providers": {
           "title": "Git providers",
-          "description": "git.providers of the Onyxia context, one entry per connected forge (ONYXIA_GIT_PROVIDERS)",
+          "description": "git.providers of the Onyxia context, one entry per connected forge (GIT_PROVIDERS)",
           "type": "array",
           "default": [],
           "items": {
